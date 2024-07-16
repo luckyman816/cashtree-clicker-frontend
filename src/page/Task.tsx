@@ -232,7 +232,7 @@ export default function Task() {
                 className="text-[white] text-[xl]"
                 style={{ fontFamily: "poppins" }}
               >
-                Send your vibe to Farmsent TG group and earn some coins
+                Send your vibe to Highstreet TG group and earn some coins
               </h2>
               <div className="flex justify-center items-center  w-full gap-3">
                 <button
@@ -273,7 +273,7 @@ export default function Task() {
                   className="text-[white] text-[xl]"
                   style={{ fontFamily: "poppins" }}
                 >
-                  Join Farmsent TG Group
+                  Join Highstreet TG Group
                 </h2>
                 <div className="flex justify-center items-center  w-full gap-3">
                   <button
@@ -295,7 +295,7 @@ export default function Task() {
                   className="text-[white] text-[xl]"
                   style={{ fontFamily: "poppins" }}
                 >
-                  Subscribe Farmsent TC Channel
+                  Subscribe Highstreet TC Channel
                 </h2>
                 <div className="flex justify-center items-center  w-full gap-3">
                   <button
@@ -317,7 +317,7 @@ export default function Task() {
                   className="text-[white] text-[xl]"
                   style={{ fontFamily: "poppins" }}
                 >
-                  Follow Farmsent Twitter
+                  Follow Highstreet Twitter
                 </h2>
                 <div className="flex justify-center items-center  w-full gap-3">
                   <button
