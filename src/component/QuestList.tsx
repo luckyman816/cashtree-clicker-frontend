@@ -12,7 +12,7 @@ export default function QuestList() {
   const [textToCopy, setTextToCopy] = useState<string>("");
   useEffect(() => {
     setUsername(username_state);
-    setTextToCopy(`https://t.me/monster_mysterybot?start=${username_state}`);
+    setTextToCopy(`https://t.me/generalTelegram_bot?start=${username_state}`);
   }, [username_state]);
   const handleCopy = async () => {
     toast.success("Copied to clipboard!");

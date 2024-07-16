@@ -105,7 +105,7 @@ export default function Boost() {
         <div className="w-full mt-11 flex flex-col justify-center p-4">
           <div className="flex flex-col justify-center items-center">
             <div className="flex px-3 py-1 gap-5 text-white text-lg font-bold justify-center align-middle overflow-y-hidden">
-              <img src="/image/assets/task.png" alt="" className="w-10 h-10" />
+              <img src="/image/dollar.png" alt="" className="w-10 h-10" />
               <h1 className="text-4xl">{token}</h1>
             </div>
           </div>

@@ -203,7 +203,7 @@ export default function Task() {
       <div className="w-full h-full flex flex-col justify-between items-center">
         <div className="flex flex-col justify-center items-center gap-4 w-full mt-11">
           <div className="flex flex-col justify-center items-center">
-            <img src="image/assets/task.png" alt="" className=" w-28 h-28" />
+            <img src="image/dollar.png" alt="" className=" w-28 h-28" />
           </div>
           <div className="flex justify-center items-center w-[90%] h-11 rounded-[10px] bg-[#394A50]">
             <div
@@ -232,7 +232,7 @@ export default function Task() {
                 className="text-[white] text-[xl]"
                 style={{ fontFamily: "poppins" }}
               >
-                Send your vibe to Mike's TG group and earn some coins
+                Send your vibe to Aleph.im's TG group and earn some coins
               </h2>
               <div className="flex justify-center items-center  w-full gap-3">
                 <button
@@ -273,7 +273,7 @@ export default function Task() {
                   className="text-[white] text-[xl]"
                   style={{ fontFamily: "poppins" }}
                 >
-                  Join Mike's TG Group
+                  Join Aleph.im's TG Group
                 </h2>
                 <div className="flex justify-center items-center  w-full gap-3">
                   <button
@@ -295,7 +295,7 @@ export default function Task() {
                   className="text-[white] text-[xl]"
                   style={{ fontFamily: "poppins" }}
                 >
-                  Subscribe Mike's TC Channel
+                  Subscribe Aleph.im's TC Channel
                 </h2>
                 <div className="flex justify-center items-center  w-full gap-3">
                   <button
@@ -317,7 +317,7 @@ export default function Task() {
                   className="text-[white] text-[xl]"
                   style={{ fontFamily: "poppins" }}
                 >
-                  Follow Mike's Twitter
+                  Follow Aleph.im's Twitter
                 </h2>
                 <div className="flex justify-center items-center  w-full gap-3">
                   <button
