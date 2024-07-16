@@ -153,7 +153,7 @@ function Home() {
           >
             Hello, {username}
           </h3>
-          <img src="image/Highstreet.png" alt="" className=" w-10 h-10" />
+          <img src="image/highstreet.png" alt="" className=" w-10 h-10" />
         </div>
         <div className="flex gap-2 justify-around items-center w-full">
           <div className="bg-gradient-to-r from-[#567481] to-[#2D4047] flex flex-col justify-center items-center p-2 rounded-[8px] w-[30%]">
