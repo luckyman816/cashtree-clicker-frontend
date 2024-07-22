@@ -4,6 +4,7 @@ const Loading = () => {
   return (
     <div className="w-screen h-screen flex flex-col justify-around items-center" style={{ backgroundImage: "url(/image/loading/cashtree_loading.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
       <div></div>
+      <div></div>
       <div className="flex flex-col justify-center items-center">
         <div className="loader"></div>
         <h1 className="text-white text-sm">Memuat...</h1>
