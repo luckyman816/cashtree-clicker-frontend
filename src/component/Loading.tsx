@@ -9,7 +9,7 @@ const Loading = () => {
         <h1 className="text-white text-sm">Memuat...</h1>
       </div>
       <div className="flex flex-col justify-center items-center p-10">
-        <div className="text-5xl text-white" style={{ fontFamily: "jockey" }}>
+        <div className="text-7xl text-white" style={{ fontFamily: "jockey" }}>
           Cashtree Tap To Win
         </div>
         <div className="text-xl text-white" style={{ fontFamily: "poppins" }}>
