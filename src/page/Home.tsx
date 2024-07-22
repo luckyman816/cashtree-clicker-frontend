@@ -124,17 +124,6 @@ function Home() {
       handleClick(event);
     }
   };
-  // const handleTouch = (event: any) => {
-  //   const length = event.touches.length;
-  //   if (remainedEnergy - length >= 0 && length >= 1) {
-  //     setRemainedEnergy(remainedEnergy - length);
-  //     Array.from(event.touches).forEach((touch) => {
-  //       console.log("Touch's current position:", touch);
-  //       // Call handleClick for each touch point
-  //       handleClick(event);
-  //     });
-  //   }
-  // };
   const handleMouseDown = () => {
     setImgStatus(true);
   };
@@ -191,19 +180,19 @@ function Home() {
       </div>
 
       <div className="flex justify-center items-center relative h-[40vh]">
-        <div className="bg-color-animation flex justify-center items-center absolute">
-          <div
-            className={`bg-[url('/image/gts.png')] rounded-full bg-cover z-50 w-[280px] h-[270px] max-sm:w-[280px] max-sm:h-[270px] z-10 ${remainedEnergy > 0
-              ? "cursor-pointer"
-              : "cursor-not-allowed opacity-50"
-              } ${imgStatus ? " border-[5px]" : "border-0"}
-            `}
-            ref={bodyRef}
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseLeave}
-            onClick={handleTap}
-          />
+        <div className="bg-[url('/image/tap-image/cashtree_bg.png')] flex justify-center items-center absolute w-[80%] h-auto z-10">
         </div>
+        <div
+          className={`bg-[url('/image/tap-image/cashtree.png')] rounded-full bg-cover z-50 w-[60%] h-auto ${remainedEnergy > 0
+            ? "cursor-pointer"
+            : "cursor-not-allowed opacity-50"
+            } ${imgStatus ? " border-[5px]" : "border-0"}
+            `}
+          ref={bodyRef}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseLeave}
+          onClick={handleTap}
+        />
       </div>
 
       <div className="flex flex-col justify-center items-center w-full gap-2">
