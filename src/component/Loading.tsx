@@ -3,7 +3,7 @@ import "../css/font.css";
 const Loading = () => {
   return (
     <div className="w-screen h-screen bg-[#4F2596]">
-      <img src="image/loading/loading.png" alt="" className="w-full h-auto"/>
+      <img src="image/loading/cashtree_loading.png" alt="" className="w-full h-auto"/>
 
     </div>
   );
