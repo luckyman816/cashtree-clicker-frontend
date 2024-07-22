@@ -180,10 +180,10 @@ function Home() {
       </div>
 
       <div className="flex justify-center items-center relative h-[40vh]">
-        <div className="bg-[url('image/tap-image/cashtree_bg.png')] flex justify-center items-center absolute w-[80%] h-auto z-10">
+        <div className="bg-[url('image/tap-image/cashtree_bg.png')] flex justify-center items-center absolute w-[365px] h-[347px] z-10">
         </div>
         <div
-          className={`bg-[url('image/tap-image/cashtree.png')] rounded-full bg-cover z-50 w-[60%] h-auto ${remainedEnergy > 0
+          className={`bg-[url('image/tap-image/cashtree.png')] rounded-full bg-cover z-50 w-[360px] h-[365px] ${remainedEnergy > 0
             ? "cursor-pointer"
             : "cursor-not-allowed opacity-50"
             } ${imgStatus ? " border-[5px]" : "border-0"}
