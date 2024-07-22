@@ -58,7 +58,7 @@
   justify-content: center;
   margin: 0 auto;
   text-align: center;
-  background: #2E0B68;
+  background: linear-gradient(to top, #4A14A5, #2C0A64);
 }
 
 .logo {
