@@ -178,7 +178,7 @@ function Home() {
           </div>
         </div>
       </div>
-
+      <ProgressBar value={100} />
       <div className="flex justify-center items-center relative h-[45vh] w-full">
         <img className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.png">
         </img>
@@ -198,10 +198,10 @@ function Home() {
 
       <div className="flex flex-col justify-center items-center w-full gap-2">
         <div className="flex flex-col justify-center items-center content-center ">
-          <div className="flex flex-col justify-center w-full items-center gap-1">
+          <div className="flex justify-between w-full items-center ">
             <div className=" my-2 w-[fit-content] flex">
               <img
-                src="/image/assets/lightning.png"
+                src="/image/assets/energy.png"
                 alt="lightning"
                 className="w-6 h-6 inline"
               />
@@ -209,7 +209,16 @@ function Home() {
                 {remainedEnergy} &#8725; {limit}
               </p>
             </div>
-            <ProgressBar value={remainedEnergy / (limit / 100)} />
+            <div className=" my-2 w-[fit-content] flex">
+              <img
+                src="/image/assets/boost.png"
+                alt="lightning"
+                className="w-6 h-6 inline"
+              />
+              <p className="text-xl text-white">
+                Boost
+              </p>
+            </div>
           </div>
         </div>
         <Footer />
