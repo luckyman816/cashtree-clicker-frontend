@@ -189,7 +189,7 @@ function Home() {
             } ${imgStatus ? " border-[5px]" : "border-0"}
             `}
           ref={bodyRef}
-          style={{backgroundImage: "url('image/tap-image/cashtree_bg.png')"}}
+          style={{backgroundImage: "url('image/tap-image/cashtree.png')"}}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseLeave}
           onClick={handleTap}
