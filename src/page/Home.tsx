@@ -183,9 +183,9 @@ function Home() {
         <img className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[50px]" src="/image/tap-image/cashtree_bg.png">
         </img>
         <img
-          className={`absolute rounded-full bg-cover z-50 w-auto h-[100%] ${remainedEnergy > 0
+          className={`absolute rounded-full bg-cover z-50 w-auto h-[100%] bottom-[10px] ${remainedEnergy > 0
             ? "cursor-pointer"
-            : "cursor-not-allowed opacity-50 bottom-[30px]"
+            : "cursor-not-allowed opacity-50 "
             } ${imgStatus ? " border-[5px]" : "border-0"}
             `}
           ref={bodyRef}
