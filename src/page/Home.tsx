@@ -183,7 +183,7 @@ function Home() {
         <img className="flex justify-center items-center absolute w-auto h-[80%] z-10 bg-cover bg-no-repeat translate-y-[-50px]" src="/image/tap-image/cashtree_bg.png">
         </img>
         <img
-          className={`rounded-full bg-cover z-50 w-auto h-[100%] ${remainedEnergy > 0
+          className={`absolute rounded-full bg-cover z-50 w-auto h-[100%] ${remainedEnergy > 0
             ? "cursor-pointer"
             : "cursor-not-allowed opacity-50 top-[80px]"
             } ${imgStatus ? " border-[5px]" : "border-0"}
