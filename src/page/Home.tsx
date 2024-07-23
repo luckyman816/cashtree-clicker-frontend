@@ -49,9 +49,9 @@ function Home() {
   useEffect(() => {
     dispatch(insertWallet(username));
   }, [username]);
-  // function formatNumberWithCommas(number: number, locale = "en-US") {
-  //   return new Intl.NumberFormat(locale).format(number);
-  // }
+  function formatNumberWithCommas(number: number, locale = "en-US") {
+    return new Intl.NumberFormat(locale).format(number);
+  }
   const bodyRef = useRef<HTMLImageElement>(null);
   const [score, setScore] = useState<string>(`+${tap}`);
   const handleClick = (event: any) => {
@@ -166,17 +166,6 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* <div className="flex justify-center items-center w-full mb-7 bg-gradient-to-r from-[#A07FF1] to-[#06E1F4] rounded-[10px] p-2">
-          <div className="flex justify-center items-center">
-            <img src="image/dollar.png" alt="" className=" w-10 h-10" />
-            <h1
-              className=" text-2xl text-white"
-              style={{ fontFamily: " spicy" }}
-            >
-              {formatNumberWithCommas(token)}
-            </h1>
-          </div>
-        </div> */}
       </div>
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
         <ProgressBar value={100} />
@@ -188,6 +177,15 @@ function Home() {
       <div className="flex justify-center items-center relative h-[45vh] w-full">
         <img className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.png">
         </img>
+        <div className="flex justify-center items-center">
+          <img src="image/assets/coin.png" alt="" className=" w-12 h-12" />
+          <h1
+            className=" text-3xl text-white"
+            style={{ fontFamily: " spicy" }}
+          >
+            {formatNumberWithCommas(token)}
+          </h1>
+        </div>
         <img
           className={`absolute rounded-full bg-cover z-50 w-auto h-[100%] bottom-[-10%] ${remainedEnergy > 0
             ? "cursor-pointer"
