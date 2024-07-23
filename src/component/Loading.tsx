@@ -12,7 +12,7 @@ const Loading = () => {
         <div className="text-7xl text-white" style={{ fontFamily: "jockey" }}>
           Cashtree Tap To Win
         </div>
-        <div className="text-xl text-white" style={{ fontFamily: "poppins" }}>
+        <div className="text-lg text-white" style={{ fontFamily: "archivo" }}>
           Keep tapping, keep earning, and see how rich you can get! Compete with friends, unlock awesome rewards, and reign supreme in Cashtree Tap to Win
         </div>
       </div>
