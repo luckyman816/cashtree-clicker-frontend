@@ -149,7 +149,7 @@ function Home() {
             <img src="/image/assets/coin.png" alt="" className=" w-7 h-7" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-sm text-[#FFC107]">Earn Per Tap</h2>
-              <h2 className="text-sm text-[white]">+{tap} Poin</h2>
+              <h2 className="text-xl text-[white]">+{tap} Poin</h2>
             </div>
           </div>
           
@@ -157,7 +157,7 @@ function Home() {
             <img src="/image/assets/earnLevel.png" alt="" className=" w-7 h-7" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-sm text-[#FFC107]">Earn to level up</h2>
-              <h2 className="text-sm text-[white]"> {formatNumberWithCommas(10000)}k</h2>
+              <h2 className="text-xl text-[white]"> {formatNumberWithCommas(10000)}k</h2>
             </div>
           </div>
         </div>
