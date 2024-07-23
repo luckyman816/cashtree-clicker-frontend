@@ -180,7 +180,7 @@ function Home() {
       </div>
 
       <div className="flex justify-center items-center relative h-[40vh]">
-        <div className="flex justify-center items-center absolute w-[365px] h-[347px] z-10 bg-cover bg-no-repeat translate-y-[-50px]" style={{backgroundImage: "url('image/tap-image/cashtree_bg.png')"}}>
+        <div className="flex justify-center items-center absolute w-[356px] h-[347px] z-10 bg-cover bg-no-repeat translate-y-[-50px]" style={{backgroundImage: "url('image/tap-image/cashtree_bg.png')"}}>
         </div>
         <div
           className={`rounded-full bg-cover z-50 w-[360px] h-[365px] ${remainedEnergy > 0
