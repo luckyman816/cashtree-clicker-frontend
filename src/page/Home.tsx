@@ -198,7 +198,7 @@ function Home() {
 
       <div className="flex flex-col justify-center items-center w-full gap-2">
         <div className="flex flex-col justify-center items-center content-center w-full">
-          <div className="flex justify-between w-full items-center">
+          <div className="flex justify-between w-full items-center px-3">
             <div className=" my-2 w-[fit-content] flex">
               <img
                 src="/image/assets/energy.png"
