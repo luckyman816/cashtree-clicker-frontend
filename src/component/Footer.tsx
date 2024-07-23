@@ -9,7 +9,7 @@ export default function Footer() {
     setPath(location.pathname);
   }, [location]);
   return (
-    <div className="grid grid-cols-5 justify-center items-center px-3 w-full">
+    <div className="grid grid-cols-5 justify-center items-center px-3 w-full rounded-t-xl bg-[#120F29]">
       <Link
         to="/quest"
         className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/quest"
