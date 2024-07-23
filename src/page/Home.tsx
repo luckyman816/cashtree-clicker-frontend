@@ -52,7 +52,7 @@ function Home() {
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
-  const bodyRef = useRef<HTMLDivElement>(null);
+  const bodyRef = useRef<HTMLImageElement>(null);
   const [score, setScore] = useState<string>(`+${tap}`);
   const handleClick = (event: any) => {
     event.preventDefault();
@@ -182,14 +182,14 @@ function Home() {
       <div className="flex justify-center items-center relative h-[40vh]">
         <div className="flex justify-center items-center absolute w-[356px] h-[347px] z-10 bg-cover bg-no-repeat translate-y-[-50px]" style={{backgroundImage: "url('image/tap-image/cashtree_bg.png')"}}>
         </div>
-        <div
+        <img
           className={`rounded-full bg-cover z-50 w-[360px] h-[365px] ${remainedEnergy > 0
             ? "cursor-pointer"
             : "cursor-not-allowed opacity-50 top-[80px]"
             } ${imgStatus ? " border-[5px]" : "border-0"}
             `}
           ref={bodyRef}
-          style={{backgroundImage: "url('image/tap-image/cashtree.png')"}}
+          src="/image/tap-image/cashtree.png"
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseLeave}
           onClick={handleTap}
