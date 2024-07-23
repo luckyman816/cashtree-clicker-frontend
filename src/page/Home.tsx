@@ -49,9 +49,9 @@ function Home() {
   useEffect(() => {
     dispatch(insertWallet(username));
   }, [username]);
-  function formatNumberWithCommas(number: number, locale = "en-US") {
-    return new Intl.NumberFormat(locale).format(number);
-  }
+  // function formatNumberWithCommas(number: number, locale = "en-US") {
+  //   return new Intl.NumberFormat(locale).format(number);
+  // }
   const bodyRef = useRef<HTMLImageElement>(null);
   const [score, setScore] = useState<string>(`+${tap}`);
   const handleClick = (event: any) => {
@@ -166,7 +166,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center w-full mb-7 bg-gradient-to-r from-[#A07FF1] to-[#06E1F4] rounded-[10px] p-2">
+        {/* <div className="flex justify-center items-center w-full mb-7 bg-gradient-to-r from-[#A07FF1] to-[#06E1F4] rounded-[10px] p-2">
           <div className="flex justify-center items-center">
             <img src="image/dollar.png" alt="" className=" w-10 h-10" />
             <h1
@@ -176,7 +176,7 @@ function Home() {
               {formatNumberWithCommas(token)}
             </h1>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
         <ProgressBar value={100} />
