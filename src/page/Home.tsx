@@ -52,7 +52,7 @@ function Home() {
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
-  const bodyRef = useRef<HTMLImageElement>(null);
+  const bodyRef = useRef<HTMLImageElement | null>(null);
   const [score, setScore] = useState<string>(`+${tap}`);
   const handleClick = (event: any) => {
     event.preventDefault();
@@ -160,7 +160,7 @@ function Home() {
         </div>
       </div>
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
-        <ProgressBar value={100} />
+        <ProgressBar value={80} />
         <div className="flex w-full justify-between items-center p-3">
           <h1 className="text-sm text-white">Level epic</h1>
           <h1 className="text-sm text-white">Goal 8/10</h1>
@@ -179,11 +179,11 @@ function Home() {
           </h1>
         </div>
         <img
+          ref={bodyRef}
           className={`absolute rounded-full bg-cover z-50 w-auto h-[100%] bottom-[-10%] ${remainedEnergy > 0
             ? "cursor-pointer"
             : "cursor-not-allowed opacity-50 "
             }`}
-          ref={bodyRef}
           src="/image/tap-image/cashtree.png"
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseLeave}
