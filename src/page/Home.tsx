@@ -181,7 +181,7 @@ function Home() {
           <img src="image/assets/coin.png" alt="" className=" w-12 h-12" />
           <h1
             className=" text-3xl text-white"
-            style={{ fontFamily: " spicy" }}
+            style={{ fontFamily: " archivo" }}
           >
             {formatNumberWithCommas(token)}
           </h1>
