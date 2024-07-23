@@ -134,13 +134,14 @@ function Home() {
       <ToastContainer />
       <div className="w-[90%] flex flex-col justify-center items-center gap-4">
         <div className="flex justify-between items-center px-3 w-full">
+          <img src="image/icon/back.png" alt="" className=" w-8 h-8" />
           <h3
-            className="text-2xl font-bold text-[white]"
-            style={{ fontFamily: "spicy" }}
+            className="text-sm text-[white]"
+            style={{ fontFamily: "archivo" }}
           >
-            Hello, {username}
+            Cashtree Tap to Win
           </h3>
-          <img src="image/gts.png" alt="" className=" w-10 h-10" />
+          <img src="image/icon/menu.png" alt="" className=" w-8 h-8" />
         </div>
         <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(60deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[10px] border border-[#B386FB]">
           <div className=" flex justify-center items-center p-2 ">
