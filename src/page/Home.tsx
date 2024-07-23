@@ -178,7 +178,13 @@ function Home() {
           </div>
         </div>
       </div>
-      <ProgressBar value={100} />
+      <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
+        <ProgressBar value={100} />
+        <div className="flex w-full justify-between items-center p-3">
+          <h1 className="text-sm text-white">Level epic</h1>
+          <h1 className="text-sm text-white">Goal 8/10</h1>
+        </div>
+      </div>
       <div className="flex justify-center items-center relative h-[45vh] w-full">
         <img className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.png">
         </img>
