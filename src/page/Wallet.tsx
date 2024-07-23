@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Footer from "../component/Footer";
 const web3 = new Web3("https://bsc-dataseed.binance.org/");
-export default function Airdrop() {
+export default function Wallet() {
   const username_state = useSelector((state) => state.wallet.user.username);
   const [username, setUsername] = useState(username_state);
   const [address, setAddress] = useState<string>("");

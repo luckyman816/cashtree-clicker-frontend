@@ -3,15 +3,15 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Home from "./page/Home";
 import Ranking from "./page/Ranking";
-import Quest from "./page/Quest";
+import Friends from "./page/Friends";
 import { ToastContainer } from "react-toastify";
 import Layout from "./Layout";
 import Loading from "./component/Loading";
 import { Provider as ReduxProvider } from "react-redux";
 import { store } from "./store";
 import Boost from "./page/Boost";
-import Task from "./page/Task";
-import Airdrop from "./page/Airdrop";
+import Mission from "./page/Mission";
+import Wallet from "./page/Wallet";
 // import MobileQR from "./component/MobileQR";
 function App() {
   const [loading, setLoading] = useState(false);
@@ -41,11 +41,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />
+                <Route path="mission" element={<Mission />} />
+                <Route path="friends" element={<Friends />} />
+                <Route path="wallet" element={<Wallet />} />
                 <Route path="ranking" element={<Ranking />} />
-                <Route path="quest" element={<Quest />} />
                 <Route path="boost" element={<Boost />} />
-                <Route path="task" element={<Task />} />
-                <Route path="airdrop" element={<Airdrop />} />
               </Route>
             </Routes>
             <ToastContainer />
