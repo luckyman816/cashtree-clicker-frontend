@@ -141,7 +141,7 @@ function Home() {
           >
             Cashtree Tap to Win
           </h3>
-          <img src="image/icon/menu.png" alt="" className=" w-4 h-4" />
+          <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
         </div>
         <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(60deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[10px] border border-[#B386FB]">
           <div className=" flex justify-center items-center p-2 ">
