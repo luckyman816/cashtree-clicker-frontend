@@ -144,25 +144,19 @@ function Home() {
           </h3>
           <img src="image/gts.png" alt="" className=" w-10 h-10" />
         </div>
-        <div className="flex gap-2 justify-around items-center w-full">
-          <div className="bg-gradient-to-r from-[#567481] to-[#2D4047] flex flex-col justify-center items-center p-2 rounded-[8px] w-[30%]">
-            <h2 className=" text-sm text-[#F8B219]">Earn Per Tap</h2>
-            <div className="flex justify-center items-center">
-              <img src="/image/dollar.png" alt="" className=" w-5 h-5" />
-              <h2 className="text-sm text-[white]">+{tap}</h2>
+        <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(45deg,_var(--tw-gradient-stops))] from-[#7B34EF] to-[#2A0E58]">
+          <div className=" flex justify-center items-center p-2 ">
+            <img src="/image/assets/coin.png" alt="" className=" w-7 h-7" />
+            <div className="flex flex-col justify-center items-center">
+              <h2 className=" text-sm text-[#FFC107]">Earn Per Tap</h2>
+              <h2 className="text-sm text-[white]">+{tap} Poin</h2>
             </div>
           </div>
-          <div className="bg-gradient-to-r from-[#567481] to-[#2D4047] flex flex-col justify-center items-center p-2 rounded-[8px] w-[30%]">
-            <h2 className=" text-sm text-[#00E9F8]">Level</h2>
-            <div className="flex justify-center items-center">
-              <h2 className="text-sm text-[white]"> 1 </h2>
-            </div>
-          </div>
-          <div className="bg-gradient-to-r from-[#567481] to-[#2D4047] flex flex-col justify-center items-center p-2 rounded-[8px] w-[30%]">
-            <h2 className=" text-sm text-[#1ED760]">Coins Level</h2>
-            <div className="flex justify-center items-center">
-              <img src="/image/assets/mkt.png" alt="" className=" w-5 h-5" />
-              <h2 className="text-sm text-[white]"> 1 M </h2>
+          <div className=" flex justify-center items-center p-2 ">
+            <img src="/image/assets/earnLevel.png" alt="" className=" w-7 h-7" />
+            <div className="flex flex-col justify-center items-center">
+              <h2 className=" text-sm text-[#FFC107]">Earn to level up</h2>
+              <h2 className="text-sm text-[white]"> {formatNumberWithCommas(10000)}k</h2>
             </div>
           </div>
         </div>
