@@ -71,21 +71,18 @@ function Home() {
 
     const newDiv = document.createElement("div");
     newDiv.textContent = `${score}`;
-    newDiv.style.backgroundImage = "url('image/dollar.png')";
-    newDiv.style.backgroundRepeat = "no-repeat";
     newDiv.style.backgroundPosition = "center";
     newDiv.style.fontSize = "30px";
     newDiv.style.paddingLeft = "30px";
     newDiv.style.display = "flex";
     newDiv.style.justifyContent = "center";
     newDiv.style.alignItems = "center";
-    newDiv.style.backgroundSize = "cover";
     newDiv.style.width = "40px";
     newDiv.style.height = "40px";
     newDiv.style.position = "absolute";
     newDiv.style.left = `${x + 50}px`;
     newDiv.style.top = `${y}px`;
-    newDiv.style.color = score == "+1" ? "#58E1E2" : "red";
+    newDiv.style.color = "white";
     newDiv.className =
       "dynamic-div animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable";
 
@@ -152,7 +149,7 @@ function Home() {
               <h2 className="text-xl text-[white]">+{tap} Poin</h2>
             </div>
           </div>
-          
+
           <div className=" flex justify-center items-center p-2 ">
             <img src="/image/assets/earnLevel.png" alt="" className=" w-7 h-7" />
             <div className="flex flex-col justify-center items-center">
@@ -185,8 +182,7 @@ function Home() {
           className={`absolute rounded-full bg-cover z-50 w-auto h-[100%] bottom-[-10%] ${remainedEnergy > 0
             ? "cursor-pointer"
             : "cursor-not-allowed opacity-50 "
-            } ${imgStatus ? " border-[5px]" : "border-0"}
-            `}
+            }`}
           ref={bodyRef}
           src="/image/tap-image/cashtree.png"
           onMouseDown={handleMouseDown}
