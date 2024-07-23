@@ -177,7 +177,7 @@ function Home() {
       <div className="flex justify-center items-center relative h-[45vh] w-full">
         <img className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.png">
         </img>
-        <div className="flex justify-center items-center z-20">
+        <div className="absolute flex justify-center items-center z-20 top-3">
           <img src="image/assets/coin.png" alt="" className=" w-12 h-12" />
           <h1
             className=" text-3xl text-white"
