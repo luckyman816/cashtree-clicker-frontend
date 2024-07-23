@@ -52,7 +52,7 @@ function Home() {
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
-  const bodyRef = useRef<HTMLImageElement | null>(null);
+  const bodyRef = useRef<HTMLDivElement | null>(null);
   const [score, setScore] = useState<string>(`+${tap}`);
   const handleClick = (event: any) => {
     event.preventDefault();
@@ -179,17 +179,18 @@ function Home() {
             {formatNumberWithCommas(token)}
           </h1>
         </div>
-        <img
-          ref={bodyRef}
-          className={`absolute rounded-full bg-cover z-50 w-auto h-[100%] bottom-[-10%] ${remainedEnergy > 0
-            ? "cursor-pointer"
-            : "cursor-not-allowed opacity-50 "
-            }`}
-          src="/image/tap-image/cashtree.png"
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseLeave}
-          onClick={handleTap}
-        />
+        <div ref={bodyRef} className="absolute bottom-[-10%] w-auto h-full z-50">
+          <img
+            className={` rounded-full w-auto h-full  ${remainedEnergy > 0
+              ? "cursor-pointer"
+              : "cursor-not-allowed opacity-50 "
+              }`}
+            src="/image/tap-image/cashtree.png"
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseLeave}
+            onClick={handleTap}
+          />
+        </div>
       </div>
 
       <div className="flex flex-col justify-center items-center w-full gap-2">
