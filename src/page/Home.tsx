@@ -185,7 +185,7 @@ function Home() {
         <div
           className={`rounded-full bg-cover z-50 w-[360px] h-[365px] ${remainedEnergy > 0
             ? "cursor-pointer"
-            : "cursor-not-allowed opacity-50 translate-y-[80px]"
+            : "cursor-not-allowed opacity-50 top-[80px]"
             } ${imgStatus ? " border-[5px]" : "border-0"}
             `}
           ref={bodyRef}
