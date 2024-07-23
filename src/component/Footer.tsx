@@ -16,7 +16,7 @@ export default function Footer() {
           }`}
       >
         <img src="/image/footer/earn.png" alt="earn" className=" w-12 h-12 " />
-        <h1 className="text-white text-xl" style={{fontFamily: "archivo"}}>Earn</h1>
+        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Earn</h1>
       </Link>
       <Link
         to="/mission"
@@ -26,7 +26,7 @@ export default function Footer() {
           }`}
       >
         <img src="/image/footer/mission.png" alt="mission" className="w-12 h-12 border border-white rounded-lg" />
-        <h1 className="text-white text-xl" style={{fontFamily: "archivo"}}>Mission</h1>
+        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Mission</h1>
       </Link>
       <Link
         to="/friends"
@@ -40,7 +40,7 @@ export default function Footer() {
           alt="friends"
           className=" w-12 h-12 border border-white rounded-lg"
         />
-        <h1 className="text-white text-xl" style={{fontFamily: "archivo"}}>Friends</h1>
+        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Friends</h1>
       </Link>
       <Link
         to="/leaderboard"
@@ -50,7 +50,7 @@ export default function Footer() {
           }`}
       >
         <img src="/image/footer/leaderboard.png" alt="leaderboard" className=" w-12 h-12 border border-white rounded-lg" />
-        <h1 className="text-white text-xl" style={{fontFamily: "archivo"}}>leaderboard</h1>
+        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>leaderboard</h1>
       </Link>
       <Link
         to="/wallet"
@@ -64,7 +64,7 @@ export default function Footer() {
           alt="wallet"
           className=" w-12 h-12 border border-white rounded-lg"
         />
-        <h1 className="text-white text-xl" style={{fontFamily: "archivo"}}>Wallet</h1>
+        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Wallet</h1>
       </Link>
     </div>
   );
