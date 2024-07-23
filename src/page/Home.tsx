@@ -180,12 +180,12 @@ function Home() {
       </div>
 
       <div className="flex justify-center items-center relative h-[40vh]">
-        <div className="flex justify-center items-center absolute w-[365px] h-[347px] z-10 bg-cover bg-no-repeat" style={{backgroundImage: "url('image/tap-image/cashtree_bg.png')"}}>
+        <div className="flex justify-center items-center absolute w-[365px] h-[347px] z-10 bg-cover bg-no-repeat translate-y-[50px]" style={{backgroundImage: "url('image/tap-image/cashtree_bg.png')"}}>
         </div>
         <div
           className={`rounded-full bg-cover z-50 w-[360px] h-[365px] ${remainedEnergy > 0
             ? "cursor-pointer"
-            : "cursor-not-allowed opacity-50"
+            : "cursor-not-allowed opacity-50 translate-y-[-50px]"
             } ${imgStatus ? " border-[5px]" : "border-0"}
             `}
           ref={bodyRef}
