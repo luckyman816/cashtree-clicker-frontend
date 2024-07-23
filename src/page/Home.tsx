@@ -144,7 +144,7 @@ function Home() {
           </h3>
           <img src="image/gts.png" alt="" className=" w-10 h-10" />
         </div>
-        <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(45deg,_var(--tw-gradient-stops))] from-[#7B34EF] to-[#2A0E58]">
+        <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(-45deg,_var(--tw-gradient-stops))] from-[#7B34EF] to-[#2A0E58] rounded-[30px] border border-[white]">
           <div className=" flex justify-center items-center p-2 ">
             <img src="/image/assets/coin.png" alt="" className=" w-7 h-7" />
             <div className="flex flex-col justify-center items-center">
