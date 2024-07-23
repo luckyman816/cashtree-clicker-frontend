@@ -143,7 +143,7 @@ function Home() {
         </div>
         <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(-45deg,_var(--tw-gradient-stops))] from-[#7B34EF] to-[#2A0E58] rounded-[10px] border border-[#B386FB]">
           <div className=" flex justify-center items-center p-2 ">
-            <img src="/image/assets/coin.png" alt="" className=" w-7 h-7" />
+            <img src="/image/assets/coin.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-sm text-[#FFC107]">Earn Per Tap</h2>
               <h2 className="text-xl text-[white]">+{tap} Poin</h2>
@@ -151,7 +151,7 @@ function Home() {
           </div>
 
           <div className=" flex justify-center items-center p-2 ">
-            <img src="/image/assets/earnLevel.png" alt="" className=" w-7 h-7" />
+            <img src="/image/assets/earnLevel.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-sm text-[#FFC107]">Earn to level up</h2>
               <h2 className="text-xl text-[white]"> {formatNumberWithCommas(10000)}k</h2>
