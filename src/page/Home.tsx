@@ -179,7 +179,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center relative h-[40vh] w-full">
+      <div className="flex justify-center items-center relative h-[45vh] w-full">
         <img className="flex justify-center items-center absolute w-auto h-[100%] z-10 bg-cover bg-no-repeat translate-y-[-50px]" src="/image/tap-image/cashtree_bg.png">
         </img>
         <img
