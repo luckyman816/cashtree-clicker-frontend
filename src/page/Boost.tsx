@@ -121,7 +121,7 @@ export default function Boost() {
             <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10" />
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-lg text-white">Double Points for 15 Minutes 5000 P</h3>
-              <h3 className="text-sm text-white">            
+              <h3 className="text-sm text-white">
                 3/3 available
               </h3>
             </div>
@@ -143,20 +143,16 @@ export default function Boost() {
         <Footer />
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           <div className="flex flex-col items-center align-middle gap-3">
-            <img src="image/icon/lightning.svg" alt="" className=" w-12 h-12" />
-            <h1 className="text-2xl text-white">Full energy</h1>
+            <img src="image/assets/fillEnergyModal.png" alt="" className=" w-72 h-72" />
+            <h1 className="text-2xl text-white">Energy Refill</h1>
             <p className=" text-sm text-white">
-              Recharge your energy to the maximum and do another round of mining
+              Refill your energy bar instantly for 3,000 points. Maximum of 3 purchases per day
             </p>
-            <div className="flex items-center">
-              <img src="image/dollar.png" alt="" className=" w-14 h-14" />
-              <h1 className="text-white text-2xl">FREE</h1>
-            </div>
             <div
-              className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center"
+              className="w-[80%] h-9 bg-[#7520FF] text-white rounded-[20px] flex justify-center items-center"
               onClick={handleFullEnergy}
             >
-              <span className="flex justify-center items-center">Go ahead</span>
+              <span className="flex justify-center items-center text-white text-xl">Get</span>
             </div>
           </div>
         </Modal>
