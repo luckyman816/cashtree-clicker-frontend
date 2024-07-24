@@ -71,9 +71,9 @@ export default function Boost() {
     setIsModalOpen(false);
   };
   const [isTapModalOpen, setIsTapModalOpen] = useState<boolean>(false);
-  const handleMouseTapClick = () => {
-    setIsTapModalOpen(true);
-  };
+  // const handleMouseTapClick = () => {
+  //   setIsTapModalOpen(true);
+  // };
   const handleCloseTapModal = () => {
     setIsTapModalOpen(false);
   };
@@ -92,7 +92,7 @@ export default function Boost() {
             </h3>
             <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
           </div>
-          <div className="flex justify-between items-center w-full px-3 py-5 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[10px] border border-[#B386FB]">
+          <div className="flex justify-between items-center w-full px-3 py-5 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] border border-[#B386FB]">
             <div className="flex justify-center items-center">
               <img src="/image/assets/coin.png" alt="" className="w-12 h-12" />
               <h1 className="text-sm text-[#FFC107] ">Your points</h1>
@@ -102,33 +102,43 @@ export default function Boost() {
             </h1>
           </div>
           <div className="flex justify-start">
-            <h1 className="text-white text-xl">Buy Boosters<span className="text-white text-sm">Reset at 00:00 AM UTCC</span></h1>
+            <h1 className="text-white text-xl">Buy Boosters&nbsp;&nbsp;<span className="text-white text-sm">Reset at 00:00 AM UTCC</span></h1>
           </div>
           <div
             className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] gap-2`}
             onClick={handleMouseClick}
           >
             <img src="/image/assets/fillEnergy.png" alt="" className="w-10 h-10" />
-            <div className="flex flex-col">
-              <h3 className="text-2xl text-white">Energy Refrill 3000 P</h3>
-              <h3 className="text-xl text-[#a8a8a7]">
+            <div className="flex flex-col gap-1 justify-start items-start">
+              <h3 className="text-lg text-white">Energy Refrill 3000 P</h3>
+              <h3 className="text-sm text-[#a8a8a7]">
                 {full_energy}/3 available
               </h3>
             </div>
           </div>
           <div
+            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] gap-2`}>
+            <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10" />
+            <div className="flex flex-col gap-1 justify-start items-start">
+              <h3 className="text-lg text-white">Double Points for 15 Minutes 5000 P</h3>
+              <h3 className="text-sm text-[#a8a8a7]">
+                3/3 available
+              </h3>
+            </div>
+          </div>
+          {/* <div
             className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] gap-2`}
             onClick={handleMouseTapClick}
           >
             <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10" />
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-2xl text-white text-left">Multitap</h3>
               <div className="flex gap-3 align-middle">
                 <img src="/image/dollar.png" alt="" className="w-5 h-5" />
                 <h3 className="text-[#a8a8a7] text-xl">2K * 2M</h3>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <Footer />
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
