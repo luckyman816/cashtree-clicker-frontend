@@ -25,7 +25,7 @@ export default function Footer() {
           : "opacity-50 text-white"
           }`}
       >
-        <img src="/image/footer/mission.png" alt="mission" className="w-8 h-8 border border-white rounded-lg" />
+        <img src="/image/footer/mission.png" alt="mission" className="w-8 h-8" />
         <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Mission</h1>
       </Link>
       <Link
@@ -38,7 +38,7 @@ export default function Footer() {
         <img
           src="/image/footer/friends.png"
           alt="friends"
-          className=" w-8 h-8 border border-white rounded-lg"
+          className=" w-8 h-8"
         />
         <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Friends</h1>
       </Link>
@@ -49,7 +49,7 @@ export default function Footer() {
           : "opacity-50 text-white"
           }`}
       >
-        <img src="/image/footer/leaderboard.png" alt="leaderboard" className=" w-8 h-8 border border-white rounded-lg" />
+        <img src="/image/footer/leaderboard.png" alt="leaderboard" className=" w-8 h-8" />
         <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>leaderboard</h1>
       </Link>
       <Link
@@ -62,7 +62,7 @@ export default function Footer() {
         <img
           src="/image/footer/wallet.png "
           alt="wallet"
-          className=" w-8 h-8 border border-white rounded-lg"
+          className=" w-8 h-8 border"
         />
         <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Wallet</h1>
       </Link>
