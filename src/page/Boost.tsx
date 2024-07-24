@@ -116,7 +116,7 @@ export default function Boost() {
             </h1>
           </div>
           <div className="flex justify-start">
-            <h1 className="text-white text-xl">Free daily boosters</h1>
+            <h1 className="text-white text-xl">Buy Boosters<span className="text-white text-sm">Reset at 00:00 AM UTCC</span></h1>
           </div>
           <div
             className={`flex my-3 px-5 py-3 items-center bg-gradient-to-r from-[#556165] to-[#293135] rounded-[30px] hover:bg-[#3a3a3a]`}
