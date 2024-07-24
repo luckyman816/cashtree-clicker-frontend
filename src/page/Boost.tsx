@@ -1,10 +1,8 @@
 import { dispatch, useSelector } from "../store";
 import { toast, ToastContainer } from "react-toastify";
 import {
-  updateBalance,
   updateEnergy,
   updateFullEnergy,
-  updateTap,
   getWallet,
 } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
@@ -21,7 +19,6 @@ export default function Boost() {
   const [token, setToken] = useState<number>(tokenState);
   const [username, setUsername] = useState<string>(username_state);
   const [limit, setLimit] = useState<number>(limit_state);
-  const [tap, setTap] = useState<number>(tap_state);
   const [full_energy, setFullEnergy] = useState<number>(full_energy_state);
   useEffect(() => {
     dispatch(getWallet(username));
@@ -30,7 +27,6 @@ export default function Boost() {
     setToken(tokenState);
     setUsername(username_state);
     setLimit(limit_state);
-    setTap(tap_state);
     setFullEnergy(full_energy_state);
   }, [tokenState, username_state, limit_state, tap_state, full_energy_state]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
@@ -48,21 +44,6 @@ export default function Boost() {
     }
     setIsModalOpen(false);
   };
-  const handleMultiTap = () => {
-    if (tap >= 32) {
-      toast.warning("Tap limit reached!");
-    } else {
-      if (token < 2000) {
-        toast.warning("Not enough token!");
-      } else {
-        dispatch(updateTap(username, tap * 2)).then(() => {
-          dispatch(updateBalance(username, token - 2000));
-          toast.success("Successfully updated tap!");
-        });
-      }
-    }
-    setIsTapModalOpen(false);
-  };
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const handleMouseClick = () => {
     setIsModalOpen(true);
@@ -70,12 +51,12 @@ export default function Boost() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-  const [isTapModalOpen, setIsTapModalOpen] = useState<boolean>(false);
-  // const handleMouseTapClick = () => {
-  //   setIsTapModalOpen(true);
-  // };
-  const handleCloseTapModal = () => {
-    setIsTapModalOpen(false);
+  const [isDoublePointsModalOpen, setIsDoublePointsModalOpen] = useState<boolean>(false);
+  const handleOpenDoublePointsModal = () => {
+    setIsDoublePointsModalOpen(true);
+  };
+  const handleCloseDoublePointsModal = () => {
+    setIsDoublePointsModalOpen(false);
   };
   return (
     <>
@@ -117,7 +98,8 @@ export default function Boost() {
             </div>
           </div>
           <div
-            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
+            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}
+            onClick={handleOpenDoublePointsModal}>
             <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10" />
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-lg text-white">Double Points for 15 Minutes 5000 P</h3>
@@ -156,22 +138,17 @@ export default function Boost() {
             </div>
           </div>
         </Modal>
-        <Modal isOpen={isTapModalOpen} onClose={handleCloseTapModal}>
+        <Modal isOpen={isDoublePointsModalOpen} onClose={handleCloseDoublePointsModal}>
           <div className="flex flex-col items-center align-middle gap-3 rounded-[20px]">
-            <img src="image/double-tap.png" alt="" className=" w-12 h-12" />
-            <h1 className="text-2xl text-white">Multi-Tap</h1>
+            <img src="image/assets/doublePointsModal.png" alt="" className=" w-auto h-[80%]" />
+            <h1 className="text-2xl text-white">Double Points</h1>
             <p className=" text-sm text-white">
-              Select the Multi-tap, can get the token x 2
+              Double your points earned for the next 15 minutes for 5,000 points. Maximum of 3 purchases per day.
             </p>
-            <div className="flex items-center">
-              <img src="image/dollar.png" alt="" className=" w-14 h-14" />
-              <h1 className="text-white text-2xl">-2000</h1>
-            </div>
             <div
-              className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center"
-              onClick={handleMultiTap}
+              className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
             >
-              <span className="flex justify-center items-center">Go ahead</span>
+              <span className="flex justify-center items-center text-white text-xl">Get</span>
             </div>
           </div>
         </Modal>
