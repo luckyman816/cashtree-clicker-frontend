@@ -15,8 +15,8 @@ export default function Footer() {
         className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/" ? "scale-[110%] opacity-100" : "opacity-50 text-white"
           }`}
       >
-        <img src="/image/footer/earn.png" alt="earn" className=" w-6 h-6 " />
-        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Earn</h1>
+        {path === "/" ? <img src="/image/footer/earn_a.png" alt="earn" className=" w-6 h-6 " /> : <img src="/image/footer/earn.png" alt="earn" className=" w-6 h-6 " />}
+        <h1 className={`${path === "/" ? "text-[#7520FF]" : "text-white"} text-sm`} style={{ fontFamily: "archivo" }}>Earn</h1>
       </Link>
       <Link
         to="/mission"
@@ -25,8 +25,8 @@ export default function Footer() {
           : "opacity-50 text-white"
           }`}
       >
-        <img src="/image/footer/mission.png" alt="mission" className="w-6 h-6" />
-        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Mission</h1>
+        {path === "/mission" ? <img src="/image/footer/mission_a.png" alt="mission" className="w-6 h-6" /> : <img src="/image/footer/mission.png" alt="mission" className="w-6 h-6" />}
+        <h1 className={`${path === "/mission" ? "text-[#7520FF]" : "text-white"} text-sm`} style={{ fontFamily: "archivo" }}>Mission</h1>
       </Link>
       <Link
         to="/friends"
@@ -35,12 +35,8 @@ export default function Footer() {
           : "opacity-50 text-white"
           }`}
       >
-        <img
-          src="/image/footer/friends.png"
-          alt="friends"
-          className=" w-6 h-6"
-        />
-        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Friends</h1>
+        {path === "/friends" ? <img src="/image/footer/friends_a.png" alt="friends" className=" w-6 h-6" /> : <img src="/image/footer/friends.png" alt="friends" className=" w-6 h-6"/>}
+        <h1 className={`${path === "/friends" ? "text-[#7520FF]" : "text-white"} text-sm`} style={{ fontFamily: "archivo" }}>Friends</h1>
       </Link>
       <Link
         to="/leaderboard"
@@ -49,8 +45,8 @@ export default function Footer() {
           : "opacity-50 text-white"
           }`}
       >
-        <img src="/image/footer/leaderboard.png" alt="leaderboard" className=" w-6 h-6" />
-        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>leaderboard</h1>
+        {path==="learderboard" ? <img src="/image/footer/leaderboard_a.png" alt="leaderboard" className=" w-6 h-6" /> : <img src="/image/footer/leaderboard.png" alt="leaderboard" className=" w-6 h-6" />}
+        <h1 className={`${path === "/learderboard" ? "text-[#7520FF]" : "text-white"} text-sm`} style={{ fontFamily: "archivo" }}>leaderboard</h1>
       </Link>
       <Link
         to="/wallet"
@@ -59,12 +55,12 @@ export default function Footer() {
           : "opacity-50 text-white"
           }`}
       >
-        <img
-          src="/image/footer/wallet.png "
+        {path==="/wallet" ? <img
+          src="/image/footer/wallet_a.png "
           alt="wallet"
-          className=" w-6 h-6 border"
-        />
-        <h1 className="text-white text-sm" style={{fontFamily: "archivo"}}>Wallet</h1>
+          className=" w-6 h-6"
+        /> : <img src="/image/footer/wallet.png" alt="wallet" className=" w-6 h-6" />}
+        <h1 className={`${path === "/wallet" ? "text-[#7520FF]" : "text-white"} text-sm`} style={{ fontFamily: "archivo" }}>Wallet</h1>
       </Link>
     </div>
   );
