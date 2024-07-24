@@ -121,7 +121,7 @@ export default function Boost() {
             <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10" />
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-lg text-white">Double Points for 15 Minutes 5000 P</h3>
-              <h3 className="text-sm text-white">
+              <h3 className="text-sm text-white">            
                 3/3 available
               </h3>
             </div>
