@@ -20,7 +20,7 @@ export default function Footer() {
       </Link>
       <Link
         to="/mission"
-        className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/task"
+        className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/mission"
           ? "scale-[110%] opacity-100"
           : "opacity-50 text-white"
           }`}
@@ -30,7 +30,7 @@ export default function Footer() {
       </Link>
       <Link
         to="/friends"
-        className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/quest"
+        className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/friends"
           ? "scale-[110%] opacity-100"
           : "opacity-50 text-white"
           }`}
@@ -44,7 +44,7 @@ export default function Footer() {
       </Link>
       <Link
         to="/leaderboard"
-        className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/boost"
+        className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/leaderboard"
           ? "scale-[110%] opacity-100"
           : "opacity-50 text-white"
           }`}
@@ -54,7 +54,7 @@ export default function Footer() {
       </Link>
       <Link
         to="/wallet"
-        className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/airdrop"
+        className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/wallet"
           ? "scale-[110%] opacity-100"
           : "opacity-50 text-white"
           }`}
