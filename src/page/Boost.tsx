@@ -161,7 +161,7 @@ export default function Boost() {
           </div>
         </Modal>
         <Modal isOpen={isTapModalOpen} onClose={handleCloseTapModal}>
-          <div className="flex flex-col items-center align-middle gap-3">
+          <div className="flex flex-col items-center align-middle gap-3 rounded-[20px]">
             <img src="image/double-tap.png" alt="" className=" w-12 h-12" />
             <h1 className="text-2xl text-white">Multi-Tap</h1>
             <p className=" text-sm text-white">
