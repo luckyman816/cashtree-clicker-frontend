@@ -143,7 +143,7 @@ export default function Boost() {
         <Footer />
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           <div className="flex flex-col items-center align-middle gap-3">
-            <img src="image/assets/fillEnergyModal.png" alt="" className=" w-auto h-72" />
+            <img src="image/assets/fillEnergyModal.png" alt="" className=" w-auto h-[80%]" />
             <h1 className="text-2xl text-white">Energy Refill</h1>
             <p className=" text-sm text-white">
               Refill your energy bar instantly for 3,000 points. Maximum of 3 purchases per day
