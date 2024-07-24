@@ -62,7 +62,7 @@ export default function Boost() {
     <>
       <ToastContainer />
       <div className="Boost h-full w-full flex flex-col justify-between items-center">
-        <div className="w-full mt-11 flex flex-col justify-center p-4 gap-4">
+        <div className="w-full mt-11 flex flex-col justify-between p-4 gap-4 items-center">
           <div className="flex justify-between items-center px-3 w-full">
             <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
             <h3
