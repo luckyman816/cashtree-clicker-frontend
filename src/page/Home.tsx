@@ -148,7 +148,7 @@ function Home() {
           </h3>
           <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
         </div>
-        <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(45deg, _var(--tw-gradient-stops))] from-[#7B34EF] to-[#2A0E58] rounded-[10px] border border-[#B386FB]">
+        <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(45deg, _#7B34EF, _#2A0E58)] rounded-[10px] border border-[#B386FB]">
           <div className=" flex justify-center items-center p-2 ">
             <img src="/image/assets/coin.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
