@@ -4,7 +4,6 @@ import {
   updateBalance,
   updateEnergy,
   updateFullEnergy,
-  updateLimit,
   updateTap,
   getWallet,
 } from "../store/reducers/wallet";
@@ -39,7 +38,7 @@ export default function Boost() {
   }
   const handleFullEnergy = () => {
     console.log("-----full energy💰🏆💪------>", limit_state);
-    if (full_energy > 6) {
+    if (full_energy + 1 > 3) {
       toast.warning("Full energy limit reached!");
     } else {
       dispatch(updateFullEnergy(username, full_energy + 1)).then(() => {
@@ -64,21 +63,6 @@ export default function Boost() {
     }
     setIsTapModalOpen(false);
   };
-  const handleLimit = () => {
-    if (limit >= 5000) {
-      toast.warning("Energy limit reached!");
-    } else {
-      if (token < 2000) {
-        toast.warning("Not enough token!");
-      } else {
-        dispatch(updateLimit(username, limit + 1000)).then(() => {
-          dispatch(updateBalance(username, token - 2000));
-          toast.success("Successfully updated limit!");
-        });
-      }
-    }
-    setIsLimitModalOpen(false);
-  };
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const handleMouseClick = () => {
     setIsModalOpen(true);
@@ -93,20 +77,12 @@ export default function Boost() {
   const handleCloseTapModal = () => {
     setIsTapModalOpen(false);
   };
-
-  const [isLimitModalOpen, setIsLimitModalOpen] = useState<boolean>(false);
-  const handleMouseLimitClick = () => {
-    setIsLimitModalOpen(true);
-  };
-  const handleCloseLimitModal = () => {
-    setIsLimitModalOpen(false);
-  };
   return (
     <>
       <ToastContainer />
       <div className="Boost h-full w-full flex flex-col justify-between items-center">
         <div className="w-full mt-11 flex flex-col justify-center p-4">
-          <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[10px] border border-[#B386FB]">
+          <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[10px] border border-[#B386FB]">
             <div className="flex justify-center items-center">
               <img src="/image/assets/coin.png" alt="" className="w-12 h-12" />
               <h1 className="text-sm text-[#FFC107] ">Your points</h1>
@@ -119,19 +95,16 @@ export default function Boost() {
             <h1 className="text-white text-xl">Buy Boosters<span className="text-white text-sm">Reset at 00:00 AM UTCC</span></h1>
           </div>
           <div
-            className={`flex my-3 px-5 py-3 items-center bg-gradient-to-r from-[#556165] to-[#293135] rounded-[30px] hover:bg-[#3a3a3a]`}
+            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] rounded-[30px] hover:from-[#751DDA] hover:to-[#D740FF] gap-2`}
             onClick={handleMouseClick}
           >
             <img src="/image/icon/lightning.svg" alt="" className="w-10 h-10" />
             <div className="flex flex-col">
-              <h3 className="text-2xl text-white">Full energy</h3>
+              <h3 className="text-2xl text-white">Energy Refrill 3000 P</h3>
               <h3 className="text-xl text-[#a8a8a7]">
-                {full_energy}/6 available
+                {full_energy}/3 available
               </h3>
             </div>
-          </div>
-          <div className="flex justify-start">
-            <h1 className="text-white text-xl">Boosters</h1>
           </div>
           <div
             className={`flex my-3 px-5 py-3 items-center bg-gradient-to-r from-[#556165] to-[#293135] rounded-[30px] gap-2 hover:bg-[#3a3a3a]`}
@@ -140,19 +113,6 @@ export default function Boost() {
             <img src="/image/double-tap.png" alt="" className="w-10 h-10" />
             <div className="flex flex-col gap-1">
               <h3 className="text-2xl text-white text-left">Multitap</h3>
-              <div className="flex gap-3 align-middle">
-                <img src="/image/dollar.png" alt="" className="w-5 h-5" />
-                <h3 className="text-[#a8a8a7] text-xl">2K * 2M</h3>
-              </div>
-            </div>
-          </div>
-          <div
-            className={`flex my-3 px-5 py-3 items-center bg-gradient-to-r from-[#556165] to-[#293135] rounded-[30px] gap-2 hover:bg-[#3a3a3a]`}
-            onClick={handleMouseLimitClick}
-          >
-            <img src="/image/battery.png" alt="" className="w-10 h-10" />
-            <div className="flex flex-col gap-1">
-              <h3 className="text-2xl text-white text-left">Energy limit</h3>
               <div className="flex gap-3 align-middle">
                 <img src="/image/dollar.png" alt="" className="w-5 h-5" />
                 <h3 className="text-[#a8a8a7] text-xl">2K * 2M</h3>
@@ -199,25 +159,7 @@ export default function Boost() {
             </div>
           </div>
         </Modal>
-        <Modal isOpen={isLimitModalOpen} onClose={handleCloseLimitModal}>
-          <div className="flex flex-col items-center align-middle gap-3">
-            <img src="image/battery.png" alt="" className=" w-12 h-12" />
-            <h1 className="text-2xl text-white">Energy Limit</h1>
-            <p className=" text-sm text-white">
-              You can increase the Energy Limit, can get the energy x 2
-            </p>
-            <div className="flex items-center">
-              <img src="image/dollar.png" alt="" className=" w-14 h-14" />
-              <h1 className="text-white text-2xl">-2000</h1>
-            </div>
-            <div
-              className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center"
-              onClick={handleLimit}
-            >
-              <span className="flex justify-center items-center">Go ahead</span>
-            </div>
-          </div>
-        </Modal>
+        
       </div>
     </>
   );
