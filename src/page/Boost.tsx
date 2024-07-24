@@ -62,17 +62,17 @@ export default function Boost() {
     <>
       <ToastContainer />
       <div className="Boost h-full w-full flex flex-col justify-between items-center">
-        <div className="flex justify-between items-center px-3 w-full">
-          <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
-          <h3
-            className="text-sm text-[white]"
-            style={{ fontFamily: "archivo" }}
-          >
-            Cashtree Tap to Win
-          </h3>
-          <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
-        </div>
         <div className="w-full mt-11 flex flex-col justify-center p-4 gap-4">
+          <div className="flex justify-between items-center px-3 w-full">
+            <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
+            <h3
+              className="text-sm text-[white]"
+              style={{ fontFamily: "archivo" }}
+            >
+              Cashtree Tap to Win
+            </h3>
+            <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
+          </div>
           <div className="flex justify-between items-center w-full px-3 py-5 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] border border-[#B386FB]">
             <div className="flex justify-center items-center">
               <img src="/image/assets/coin.png" alt="" className="w-12 h-12" />
