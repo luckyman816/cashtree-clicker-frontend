@@ -105,23 +105,23 @@ export default function Boost() {
             <h1 className="text-white text-xl">Buy Boosters&nbsp;&nbsp;<span className="text-white text-sm">Reset at 00:00 AM UTCC</span></h1>
           </div>
           <div
-            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] gap-2`}
+            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)] rounded-[20px] gap-2`}
             onClick={handleMouseClick}
           >
             <img src="/image/assets/fillEnergy.png" alt="" className="w-10 h-10" />
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-lg text-white">Energy Refrill 3000 P</h3>
-              <h3 className="text-sm text-[#a8a8a7]">
+              <h3 className="text-sm text-white">
                 {full_energy}/3 available
               </h3>
             </div>
           </div>
           <div
-            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] gap-2`}>
+            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
             <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10" />
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-lg text-white">Double Points for 15 Minutes 5000 P</h3>
-              <h3 className="text-sm text-[#a8a8a7]">
+              <h3 className="text-sm text-white">
                 3/3 available
               </h3>
             </div>
