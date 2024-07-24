@@ -98,7 +98,7 @@ export default function Boost() {
             className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] gap-2`}
             onClick={handleMouseClick}
           >
-            <img src="/image/icon/lightning.svg" alt="" className="w-10 h-10" />
+            <img src="/image/assets/fillEnergy.png" alt="" className="w-10 h-10" />
             <div className="flex flex-col">
               <h3 className="text-2xl text-white">Energy Refrill 3000 P</h3>
               <h3 className="text-xl text-[#a8a8a7]">
@@ -110,7 +110,7 @@ export default function Boost() {
             className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] gap-2`}
             onClick={handleMouseTapClick}
           >
-            <img src="/image/double-tap.png" alt="" className="w-10 h-10" />
+            <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10" />
             <div className="flex flex-col gap-1">
               <h3 className="text-2xl text-white text-left">Multitap</h3>
               <div className="flex gap-3 align-middle">
