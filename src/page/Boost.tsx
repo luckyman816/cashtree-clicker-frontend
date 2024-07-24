@@ -82,7 +82,7 @@ export default function Boost() {
       <ToastContainer />
       <div className="Boost h-full w-full flex flex-col justify-between items-center">
         <div className="w-full mt-11 flex flex-col justify-center p-4">
-          <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[10px] border border-[#B386FB]">
+          <div className="flex justify-between items-center w-full px-3 py-5 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[10px] border border-[#B386FB]">
             <div className="flex justify-center items-center">
               <img src="/image/assets/coin.png" alt="" className="w-12 h-12" />
               <h1 className="text-sm text-[#FFC107] ">Your points</h1>
@@ -95,7 +95,7 @@ export default function Boost() {
             <h1 className="text-white text-xl">Buy Boosters<span className="text-white text-sm">Reset at 00:00 AM UTCC</span></h1>
           </div>
           <div
-            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] rounded-[30px] hover:from-[#751DDA] hover:to-[#D740FF] gap-2`}
+            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[30px] gap-2`}
             onClick={handleMouseClick}
           >
             <img src="/image/icon/lightning.svg" alt="" className="w-10 h-10" />
@@ -107,7 +107,7 @@ export default function Boost() {
             </div>
           </div>
           <div
-            className={`flex my-3 px-5 py-3 items-center bg-gradient-to-r from-[#556165] to-[#293135] rounded-[30px] gap-2 hover:bg-[#3a3a3a]`}
+            className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD]  hover:from-[#751DDA] hover:to-[#D740FF] rounded-[30px] gap-2`}
             onClick={handleMouseTapClick}
           >
             <img src="/image/double-tap.png" alt="" className="w-10 h-10" />
