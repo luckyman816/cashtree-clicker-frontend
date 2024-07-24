@@ -103,7 +103,7 @@ export default function Boost() {
       <ToastContainer />
       <div className="Boost h-full w-full flex flex-col justify-between items-center">
         <div className="w-full mt-11 flex flex-col justify-center p-4">
-          <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(45deg, _var(--tw-gradient-stops))] from-[#7B34EF] to-[#2A0E58] rounded-[10px] border border-[#B386FB]">
+          <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(45deg, _#7B34EF, _#2A0E58)] rounded-[10px] border border-[#B386FB]">
             <div className="flex justify-center items-center">
               <img src="/image/assets/coin.png" alt="" className="w-12 h-12" />
               <h1 className="text-sm text-[#FFC107] ">Your points</h1>
