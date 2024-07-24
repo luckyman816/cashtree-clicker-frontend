@@ -149,7 +149,7 @@ export default function Boost() {
               Refill your energy bar instantly for 3,000 points. Maximum of 3 purchases per day
             </p>
             <div
-              className="w-[80%] h-9 bg-[#7520FF] text-white rounded-[20px] flex justify-center items-center"
+              className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
               onClick={handleFullEnergy}
             >
               <span className="flex justify-center items-center text-white text-xl">Get</span>
