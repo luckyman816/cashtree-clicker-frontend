@@ -34,6 +34,9 @@ export default function Boost() {
     setTap(tap_state);
     setFullEnergy(full_energy_state);
   }, [tokenState, username_state, limit_state, tap_state, full_energy_state]);
+  function formatNumberWithCommas(number: number, locale = "en-US") {
+    return new Intl.NumberFormat(locale).format(number);
+  }
   const handleFullEnergy = () => {
     console.log("-----full energy💰🏆💪------>", limit_state);
     if (full_energy > 6) {
@@ -103,13 +106,13 @@ export default function Boost() {
       <ToastContainer />
       <div className="Boost h-full w-full flex flex-col justify-between items-center">
         <div className="w-full mt-11 flex flex-col justify-center p-4">
-          <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(135deg, _#7B34EF, _#2A0E58)] rounded-[10px] border border-[#B386FB]">
+          <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[10px] border border-[#B386FB]">
             <div className="flex justify-center items-center">
               <img src="/image/assets/coin.png" alt="" className="w-12 h-12" />
               <h1 className="text-sm text-[#FFC107] ">Your points</h1>
             </div>
-            <h1 className="text-white text-3xl font-bold">
-              {token}
+            <h1 className="text-white text-4xl font-bold">
+            {formatNumberWithCommas(token)}
             </h1>
           </div>
           <div className="flex justify-start">
