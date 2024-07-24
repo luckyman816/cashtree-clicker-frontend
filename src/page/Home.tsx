@@ -8,6 +8,7 @@ import { dispatch, useSelector } from "../store";
 import axios from "../utils/api";
 import "../css/font.css";
 import "../css/spread.css";
+import { useNavigate } from "react-router-dom";
 import {
   insertWallet,
   updateWallet,
@@ -16,6 +17,7 @@ import {
 } from "../store/reducers/wallet";
 
 function Home() {
+  const navigate = useNavigate();
   const usernameState = useSelector((state) => state.wallet.user?.username);
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const energyState = useSelector((state) => state.wallet.user?.energy);
@@ -128,6 +130,9 @@ function Home() {
   const handleMouseLeave = () => {
     setImgStatus(false);
   };
+  const handleBoost = () => {
+    navigate('/boost');
+  }
   console.log("imgStatus", imgStatus);
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
@@ -207,7 +212,7 @@ function Home() {
                 {remainedEnergy} &#8725; {limit}
               </p>
             </div>
-            <div className=" my-2 w-[fit-content] flex justify-center items-center">
+            <div className=" my-2 w-[fit-content] flex justify-center items-center" onClick={handleBoost}>
               <img
                 src="/image/assets/boost.png"
                 alt="lightning"
