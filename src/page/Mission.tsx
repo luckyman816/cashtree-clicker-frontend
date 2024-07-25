@@ -251,8 +251,9 @@ export default function Mission() {
     }
   };
   const [isDailyReward, setIsDailyReward] = useState<boolean>(false);
-  const [isInstagram, setIsInstagram] = useState<boolean>(false)
-  const [isYoutube, setIsYoutube] = useState<boolean>(false)
+  const [isInstagram, setIsInstagram] = useState<boolean>(false);
+  const [isYoutube, setIsYoutube] = useState<boolean>(false);
+  const [isSecretExtra, setIsSecretExtra] = useState<boolean>(false);
   const handleCloseDailyRewardModal = () => {
     setIsDailyReward(false)
   }
@@ -262,9 +263,14 @@ export default function Mission() {
   const handleCloseYoutubeModal = () => {
     setIsYoutube(false);
   }
+  const handleCloseSecretExtraModal = () => {
+    setIsSecretExtra(false);
+  }
   const handleOpenDailyTaskModal = (modalName: string) => {
     if (modalName === "dailyCheck") {
       setIsDailyReward(true);
+    } else if(modalName === "secretExtra") {
+      setIsSecretExtra(true);
     }
   }
   const handleOpenTaskListModal = (modalName: string) => {
@@ -547,6 +553,23 @@ export default function Mission() {
               className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
             >
               <span className="flex justify-center items-center text-white text-xl">Claim Now</span>
+            </div>
+          </div>
+        </Modal>
+        <Modal isOpen={isSecretExtra} onClose={handleCloseSecretExtraModal}>
+          <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+            <img src="image/mission/secretExtraModal.png" alt="secretExtraModal" className=" w-auto h-[80%]" />
+            <h1 className="text-2xl text-white">Secret Extra Point</h1>
+            <p className=" text-sm text-white">
+              Enter your secret code
+            </p>
+            <div className="w-[80%] bg-[white] flex justify-center items-center">
+              <input type="text" className="bg-white outline-none border-none w-[90%]"/>
+            </div>
+            <div
+              className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            >
+              <span className="flex justify-center items-center text-white text-xl">Check</span>
             </div>
           </div>
         </Modal>
