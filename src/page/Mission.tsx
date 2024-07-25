@@ -38,6 +38,26 @@ const dailyCheckItems = [
     coin: "+25.000"
   },
 ]
+const taskListItems = [
+  {
+    id: 1,
+    icon: "instagram",
+    name: "Follow Instagram",
+    coin: "+25.000"
+  },
+  {
+    id: 1,
+    icon: "youtube",
+    name: "Subscribe to YouTube",
+    coin: "+25.000"
+  },
+  {
+    id: 1,
+    icon: "telegram",
+    name: "Join Telegram Group",
+    coin: "+25.000"
+  }
+]
 export default function Mission() {
   // const [colorTag, setColorTag] = useState<boolean>(false);
   const username_state = useSelector((state) => state.wallet.user?.username);
@@ -248,8 +268,8 @@ export default function Mission() {
             <img src="image/assets/mission.png" alt="" className=" w-36 h-36" />
             <h1 className="text-white text-[32px] font-bold">Earn More Coins</h1>
           </div>
-          <div className="flex justify-start items-center w-[90%] text-white text-xl font-bold">Daily Task</div>
-          <div className="flex flex-col justify-center items-center w-full gap-3 max-h-[40vh] max-sm:max-h-[40vh] overflow-auto">
+          <div className="flex flex-col justify-center items-center w-full gap-3 max-h-[50vh] max-sm:max-h-[50vh] overflow-auto">
+            <div className="flex justify-start items-center w-[90%] text-white text-xl font-bold">Daily Task</div>
             {
               dailyCheckItems.map((item, index) => (
                 <div
@@ -267,7 +287,29 @@ export default function Mission() {
                       </div>
                     </div>
                   </div>
-                  <img src="/image/icon/arrowRight.png" alt="arrowRight" className="w-2 h-4"/>
+                  <img src="/image/icon/arrowRight.png" alt="arrowRight" className="w-2 h-4" />
+                </div>
+              ))
+            }
+            <div className="flex justify-start items-center w-[90%] text-white text-xl font-bold">Task List</div>
+            {
+              taskListItems.map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
+                  <div className="flex justify-center items-center">
+                    <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
+                    <div className="flex flex-col gap-1 justify-start items-start">
+                      <h3 className="text-lg text-white">{item.name}</h3>
+                      <div className="flex justify-center items-center">
+                        <img src="/image/assets/coin.png" alt="coin" className="w-4 h-4" />
+                        <h3 className="text-sm text-white">
+                          {item.coin}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <img src="/image/icon/arrowRight.png" alt="arrowRight" className="w-2 h-4" />
                 </div>
               ))
             }
