@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { useSelector } from "../store";
-import { toast, ToastContainer } from "react-toastify";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import { /*toast,*/ ToastContainer } from "react-toastify";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 import axios from "../utils/api";
 import "../css/font.css";
 export default function QuestList() {
@@ -14,9 +14,9 @@ export default function QuestList() {
     setUsername(username_state);
     setTextToCopy(`https://t.me/generalTelegram_bot?start=${username_state}`);
   }, [username_state]);
-  const handleCopy = async () => {
-    toast.success("Copied to clipboard!");
-  };
+  // const handleCopy = async () => {
+  //   toast.success("Copied to clipboard!");
+  // };
   useEffect(() => {
     if (username) {
       axios.post(`/friend/${username}`).then((res) => {
@@ -29,18 +29,36 @@ export default function QuestList() {
   return (
     <div className="overflow-auto mt-11 p-5 flex flex-col justify-center items-center gap-2 w-full">
       <ToastContainer />
-      <div className="flex flex-col justify-center items-center">
-        <h1 className=" text-white text-3xl" style={{ fontFamily: "spicy" }}>
-          {friends.length} Refferals
-        </h1>
-        <h1
-          className=" text-[#33CC66] text-2xl"
-          style={{ fontFamily: "poppins" }}
+      <div className="flex justify-between items-center px-3 w-full">
+        <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
+        <h3
+          className="text-sm text-[white]"
+          style={{ fontFamily: "archivo" }}
         >
-          + 1000
-        </h1>
+          Cashtree Tap to Win
+        </h3>
+        <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
       </div>
-      <div className="flex justify-center items-center align-middle w-full mt-8">
+      <div className="flex w-full justify-center items-center text-3xl text-white font-bold">
+        Invite Friends
+      </div>
+      <div className="flex w-full justify-center items-center">
+        <p className="text-sm text-white">You and your friend will receive bonuses</p>
+      </div>
+      <div className="flex w-[90%] justify-between px-3 py-3 items-center rounded-[20px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF]">
+        <div className="flex justify-center items-center gap-3">
+          <img src="image/friends/friends.png" alt="" className="w-10 h-10"/>
+          <div className="flex flex-col justify-start items-start">
+            <h1 className="text-white text-xl font-bold">Invite Friends</h1>
+            <h1 className="text-white text-sm ">For you and your friend</h1>
+          </div>
+        </div>
+        <div className="flex justify-center items-center gap-2">
+          <img src="image/assets/coin.png" alt="coin" className="w-5 h-5"/>
+          <h1 className="text-[#FFC107] text-sm">+25.000</h1>
+        </div>
+      </div>
+      {/* <div className="flex justify-center items-center align-middle w-full mt-8">
         <div className="w-[90%] bg-gradient-to-r from-[#57676D] to-[#2A383C]  text-white rounded-[20px] flex items-center justify-between p-5 border border-[white]">
           <div className="flex flex-col justify-center items-center gap-2">
             <span
@@ -103,9 +121,8 @@ export default function QuestList() {
               {friends.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex ${
-                    index > 0 && "my-3"
-                  } px-3 py-2 items-center bg-gradient-to-r from-[#567481] to-[#2D4047] rounded-lg w-[70%] text-[white]`}
+                  className={`flex ${index > 0 && "my-3"
+                    } px-3 py-2 items-center bg-gradient-to-r from-[#567481] to-[#2D4047] rounded-lg w-[70%] text-[white]`}
                 >
                   {item["friend"]}
                 </div>
@@ -113,7 +130,7 @@ export default function QuestList() {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
