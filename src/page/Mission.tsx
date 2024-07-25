@@ -1,4 +1,4 @@
-import axios from "../utils/api";
+// import axios from "../utils/api";
 import { useSelector, dispatch } from "../store";
 import { updateBalance, updateDailyCoins } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
@@ -6,8 +6,40 @@ import { ToastContainer, toast } from "react-toastify";
 import Modal from "../component/modal";
 import moment from "moment";
 import Footer from "../component/Footer";
+const dailyCheckItems = [
+  {
+    id: 1,
+    icon: "dailyCheck",
+    name: "Daily Check in!",
+    coin: "+25.000"
+  },
+  {
+    id: 2,
+    icon: "retweet",
+    name: "Retweet a Post",
+    coin: "+25.000"
+  },
+  {
+    id: 3,
+    icon: "comment",
+    name: "Comment on a Post",
+    coin: "+25.000"
+  },
+  {
+    id: 4,
+    icon: "likePost",
+    name: "Like a Post",
+    coin: "+25.000"
+  },
+  {
+    id: 5,
+    icon: "secretExtra",
+    name: "Secret Extra Point",
+    coin: "+25.000"
+  },
+]
 export default function Mission() {
-  const [colorTag, setColorTag] = useState<boolean>(false);
+  // const [colorTag, setColorTag] = useState<boolean>(false);
   const username_state = useSelector((state) => state.wallet.user?.username);
   const balance_state = useSelector((state) => state.wallet.user?.balance);
   const daily_coins_state = useSelector(
@@ -48,115 +80,115 @@ export default function Mission() {
     setBalance(balance_state);
     setDailyCoins(daily_coins_state ? moment(daily_coins_state) : null);
   }, [username_state, balance_state, daily_coins_state, setDailyCoins]);
-  const telegramGroupLink = "https://t.me/MikeToken";
-  const telegramChannelLink = "https://t.me/MikeTokenAnn";
-  const twitterChannelLink = "https://twitter.com/MikeTokenio";
-  const handleLetsGoTelegramGroup = () => {
-    window.open(telegramGroupLink, "_blank");
-  };
-  const handleJoinTelgramGroup = () => {
-    window.open(telegramGroupLink, "_blank");
-  };
-  const handleJoinTelegramChannel = () => {
-    window.open(telegramChannelLink, "_blank");
-  };
-  const handleTwitterChannel = () => {
-    window.open(twitterChannelLink, "_blank");
-  };
-  const handleJoinTelegramGroupCheck = async () => {
-    try {
-      fetch("https://relaxing-dane-lively.ngrok-free.app/joinTG", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ username: username }),
-      }).then(async () => {
-        await axios.post(`/earnings/${username}`).then((res) => {
-          if (res.data.joinTelegram.status) {
-            if (!res.data.joinTelegram.earned) {
-              dispatch(updateBalance(username, balance + 1000)).then(() => {
-                axios.post(`/earnings/update/joinTelegram/${username}`, {
-                  status: true,
-                  earned: true,
-                });
-                toast.success("You have received +1000 coins successfully!");
-              });
-            } else {
-              toast.warning("You have already received bonus!");
-            }
-          } else {
-            toast.warning(
-              "You didn't join Telegram Channel yet! Please join again"
-            );
-          }
-        });
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  const handleSubscribeTelegramChannelCheck = async () => {
-    try {
-      fetch("https://relaxing-dane-lively.ngrok-free.app/joinTC", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ username: username }),
-      }).then(async () => {
-        await axios.post(`/earnings/${username}`).then((res) => {
-          if (res.data.subscribeTelegram.status) {
-            if (!res.data.subscribeTelegram.earned) {
-              dispatch(updateBalance(username, balance + 1000)).then(() => {
-                axios.post(`/earnings/update/subscribeTelegram/${username}`, {
-                  status: true,
-                  earned: true,
-                });
-                toast.success("You have received +1000 coins successfully!");
-              });
-            } else {
-              toast.warning("You have already received bonus!");
-            }
-          } else {
-            toast.warning(
-              "You didn't subscribe Telegram Channel yet! Please join again"
-            );
-          }
-        });
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  const handleTwitterChannelCheck = async () => {
-    await axios.post(`/earnings/${username}`).then((res) => {
-      if (!res.data.followTwitter.earned) {
-        dispatch(updateBalance(username, balance + 1000)).then(() => {
-          axios.post(`/earnings/update/followTwitter/${username}`, {
-            status: true,
-            earned: true,
-          });
-          toast.success("You have received +1000 coins successfully!");
-        });
-      } else {
-        toast.warning("You have already received bonus!");
-      }
-    });
-  };
+  // const telegramGroupLink = "https://t.me/MikeToken";
+  // const telegramChannelLink = "https://t.me/MikeTokenAnn";
+  // const twitterChannelLink = "https://twitter.com/MikeTokenio";
+  // const handleLetsGoTelegramGroup = () => {
+  //   window.open(telegramGroupLink, "_blank");
+  // };
+  // const handleJoinTelgramGroup = () => {
+  //   window.open(telegramGroupLink, "_blank");
+  // };
+  // const handleJoinTelegramChannel = () => {
+  //   window.open(telegramChannelLink, "_blank");
+  // };
+  // const handleTwitterChannel = () => {
+  //   window.open(twitterChannelLink, "_blank");
+  // };
+  // const handleJoinTelegramGroupCheck = async () => {
+  //   try {
+  //     fetch("https://relaxing-dane-lively.ngrok-free.app/joinTG", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Accept: "application/json",
+  //       },
+  //       body: JSON.stringify({ username: username }),
+  //     }).then(async () => {
+  //       await axios.post(`/earnings/${username}`).then((res) => {
+  //         if (res.data.joinTelegram.status) {
+  //           if (!res.data.joinTelegram.earned) {
+  //             dispatch(updateBalance(username, balance + 1000)).then(() => {
+  //               axios.post(`/earnings/update/joinTelegram/${username}`, {
+  //                 status: true,
+  //                 earned: true,
+  //               });
+  //               toast.success("You have received +1000 coins successfully!");
+  //             });
+  //           } else {
+  //             toast.warning("You have already received bonus!");
+  //           }
+  //         } else {
+  //           toast.warning(
+  //             "You didn't join Telegram Channel yet! Please join again"
+  //           );
+  //         }
+  //       });
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  // const handleSubscribeTelegramChannelCheck = async () => {
+  //   try {
+  //     fetch("https://relaxing-dane-lively.ngrok-free.app/joinTC", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Accept: "application/json",
+  //       },
+  //       body: JSON.stringify({ username: username }),
+  //     }).then(async () => {
+  //       await axios.post(`/earnings/${username}`).then((res) => {
+  //         if (res.data.subscribeTelegram.status) {
+  //           if (!res.data.subscribeTelegram.earned) {
+  //             dispatch(updateBalance(username, balance + 1000)).then(() => {
+  //               axios.post(`/earnings/update/subscribeTelegram/${username}`, {
+  //                 status: true,
+  //                 earned: true,
+  //               });
+  //               toast.success("You have received +1000 coins successfully!");
+  //             });
+  //           } else {
+  //             toast.warning("You have already received bonus!");
+  //           }
+  //         } else {
+  //           toast.warning(
+  //             "You didn't subscribe Telegram Channel yet! Please join again"
+  //           );
+  //         }
+  //       });
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+  // const handleTwitterChannelCheck = async () => {
+  //   await axios.post(`/earnings/${username}`).then((res) => {
+  //     if (!res.data.followTwitter.earned) {
+  //       dispatch(updateBalance(username, balance + 1000)).then(() => {
+  //         axios.post(`/earnings/update/followTwitter/${username}`, {
+  //           status: true,
+  //           earned: true,
+  //         });
+  //         toast.success("You have received +1000 coins successfully!");
+  //       });
+  //     } else {
+  //       toast.warning("You have already received bonus!");
+  //     }
+  //   });
+  // };
 
-  const handleDailyTask = () => {
-    setColorTag(!colorTag);
-  };
-  const handleOtherTask = () => {
-    setColorTag(!colorTag);
-  };
+  // const handleDailyTask = () => {
+  //   setColorTag(!colorTag);
+  // };
+  // const handleOtherTask = () => {
+  //   setColorTag(!colorTag);
+  // };
   const [isReceiveModalOpen, setIsReceiveModalOpen] = useState(false);
-  const handleOpenReceiveModal = () => {
-    setIsReceiveModalOpen(true);
-  };
+  // const handleOpenReceiveModal = () => {
+  //   setIsReceiveModalOpen(true);
+  // };
   const handleCloseReceiveModal = () => {
     setIsReceiveModalOpen(false);
   };
@@ -172,40 +204,70 @@ export default function Mission() {
       toast.warning("Please wait for the next day!");
     }
   };
-  const handleLetsGoTelegramGroupCheck = async () => {
-    try {
-      await axios.post(`/vibe/${username}`).then((res) => {
-        if (
-          Math.floor(
-            moment().diff(res.data[0]["vibe_date"], "seconds") / (60 * 60 * 24)
-          ) >= 1 &&
-          res.data[0]["message"]
-        ) {
-          dispatch(updateBalance(username, balance + 1000)).then(() => {
-            axios.post(`/vibe/updateVibe/${username}`, {
-              vibe_date: moment(),
-            });
-            axios.post(`/vibe/updateMessage/${username}`, { message: false });
-            toast.success("You have received +1000 coins successfully!");
-          });
-        } else {
-          toast.warning("Did you post a vibe in Channel? \n Or please wait for 24 hours!");
-        }
-      });
-    } catch (err) {
-      console.log(err);
-      toast.warning(" Please join Telegram Channel");
-    }
-  };
+  // const handleLetsGoTelegramGroupCheck = async () => {
+  //   try {
+  //     await axios.post(`/vibe/${username}`).then((res) => {
+  //       if (
+  //         Math.floor(
+  //           moment().diff(res.data[0]["vibe_date"], "seconds") / (60 * 60 * 24)
+  //         ) >= 1 &&
+  //         res.data[0]["message"]
+  //       ) {
+  //         dispatch(updateBalance(username, balance + 1000)).then(() => {
+  //           axios.post(`/vibe/updateVibe/${username}`, {
+  //             vibe_date: moment(),
+  //           });
+  //           axios.post(`/vibe/updateMessage/${username}`, { message: false });
+  //           toast.success("You have received +1000 coins successfully!");
+  //         });
+  //       } else {
+  //         toast.warning("Did you post a vibe in Channel? \n Or please wait for 24 hours!");
+  //       }
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //     toast.warning(" Please join Telegram Channel");
+  //   }
+  // };
   return (
     <>
       <ToastContainer />
       <div className="w-full h-full flex flex-col justify-between items-center">
         <div className="flex flex-col justify-center items-center gap-4 w-full mt-11">
-          <div className="flex flex-col justify-center items-center">
-            <img src="image/dollar.png" alt="" className=" w-28 h-28" />
+          <div className="flex justify-between items-center px-3 w-full">
+            <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
+            <h3
+              className="text-sm text-[white]"
+              style={{ fontFamily: "archivo" }}
+            >
+              Cashtree Tap to Win
+            </h3>
+            <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
           </div>
-          <div className="flex justify-center items-center w-[90%] h-11 rounded-[10px] bg-[#394A50]">
+          <div className="flex flex-col justify-center items-center">
+            <img src="image/assets/mission.png" alt="" className=" w-36 h-36" />
+            <h1 className="text-white text-[32px] font-bold">Earn More Coins</h1>
+          </div>
+          <div className="flex justify-start items-center w-[90%] text-white text-xl font-bold">Daily Task</div>
+          <div className="flex flex-col justify-center items-center w-[90%] gap-3 min-h-[60%]">
+            {
+              dailyCheckItems.map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
+                  <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
+                  <div className="flex flex-col gap-1 justify-start items-start">
+                    <h3 className="text-lg text-white">{item.name}</h3>
+                    <h3 className="text-sm text-white">
+                      3/3 available
+                    </h3>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+
+          {/* <div className="flex justify-center items-center w-[90%] h-11 rounded-[10px] bg-[#394A50]">
             <div
               className={`h-full cursor-pointer flex items-center justify-center w-[50%] text-[white] rounded-[10px] ${!colorTag
                   ? "bg-gradient-to-r from-[#8977C8] to-[#06E2F4]"
@@ -335,9 +397,9 @@ export default function Mission() {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
         </div>
-        <Footer/>
+        <Footer />
         <Modal isOpen={isReceiveModalOpen} onClose={handleCloseReceiveModal}>
           <div className="flex flex-col items-center align-middle gap-3">
             <img

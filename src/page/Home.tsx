@@ -144,7 +144,7 @@ function Home() {
             className="text-sm text-[white]"
             style={{ fontFamily: "archivo" }}
           >
-            Cashtree Tap to Win
+            Boosters
           </h3>
           <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
         </div>
