@@ -520,7 +520,7 @@ export default function Mission() {
             </p>
             <div className="flex gap-4 w-[90%] flex-wrap h-auto">
               {dailyCoins.map((item, index) => (
-                <div key={index} className="flex flex-col gap-2 p-3 justify-center items-center border border-[#B286FA] rounded-[10px]">
+                <div key={index} className="flex flex-col gap-2 py-2 px-4 justify-center items-center border border-[#B286FA] rounded-[10px]">
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
                   <img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />
                   <h1 className="text-sm text-white font-bold">{item.points}</h1>
