@@ -251,12 +251,27 @@ export default function Mission() {
     }
   };
   const [isDailyReward, setIsDailyReward] = useState<boolean>(false);
+  const [isInstagram, setIsInstagram] = useState<boolean>(false)
+  const [isYoutube, setIsYoutube] = useState<boolean>(false)
   const handleCloseDailyRewardModal = () => {
     setIsDailyReward(false)
   }
-  const handleOpenModal = (modalName: string) => {
+  const handleCloseInstagramModal = () => {
+    setIsInstagram(false);
+  }
+  const handleCloseYoutubeModal = () => {
+    setIsYoutube(false);
+  }
+  const handleOpenDailyTaskModal = (modalName: string) => {
     if (modalName === "dailyCheck") {
       setIsDailyReward(true);
+    }
+  }
+  const handleOpenTaskListModal = (modalName: string) => {
+    if (modalName == "instagram") {
+      setIsInstagram(true);
+    } else if (modalName == "youtube") {
+      setIsYoutube(true);
     }
   }
   // const handleLetsGoTelegramGroupCheck = async () => {
@@ -311,7 +326,7 @@ export default function Mission() {
                   <div
                     key={index}
                     className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
-                    onClick={() => handleOpenModal(item.icon)}>
+                    onClick={() => handleOpenDailyTaskModal(item.icon)}>
                     <div className="flex justify-center items-center">
                       <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
                       <div className="flex flex-col gap-1 justify-start items-start">
@@ -333,7 +348,8 @@ export default function Mission() {
                 taskListItems.map((item, index) => (
                   <div
                     key={index}
-                    className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}>
+                    className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
+                    onClick={() => handleOpenTaskListModal(item.icon)}>
                     <div className="flex justify-center items-center">
                       <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
                       <div className="flex flex-col gap-1 justify-start items-start">
@@ -534,6 +550,45 @@ export default function Mission() {
             </div>
           </div>
         </Modal>
+        <Modal isOpen={isInstagram} onClose={handleCloseInstagramModal}>
+          <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+            <img src="image/mission/instagramModal.png" alt="instagramModal" className=" w-auto h-[80%]" />
+            <h1 className="text-2xl text-white">Follow our Instagram Channel</h1>
+            <div className="flex gap-2 justify-center items-center">
+              <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+              <h1 className="text-2xl text-white font-bold">+25.000</h1>
+            </div>
+            <div
+              className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            >
+              <span className="flex justify-center items-center text-white text-xl">Join Now</span>
+            </div>
+          </div>
+        </Modal>
+        <Modal isOpen={isYoutube} onClose={handleCloseYoutubeModal}>
+          <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+            <img src="image/mission/youtubeModal.png" alt="youtubeModal" className=" w-auto h-[80%]" />
+            <h1 className="text-2xl text-white">The trend you can't Ignore</h1>
+            <p className=" text-sm text-white">
+              Trump's crypto frenzy, over 1 million meme coins and false crypto promise
+            </p>
+            <div
+              className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            >
+              <span className="flex justify-center items-center text-white text-xl">Watch Video</span>
+            </div>
+            <div className="flex gap-2 justify-center items-center">
+              <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+              <h1 className="text-2xl text-white font-bold">+25.000</h1>
+            </div>
+            <div
+              className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            >
+              <span className="flex justify-center items-center text-white text-xl">Check</span>
+            </div>
+          </div>
+        </Modal>
+
       </div>
     </>
   );
