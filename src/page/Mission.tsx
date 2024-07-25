@@ -563,8 +563,8 @@ export default function Mission() {
             <p className=" text-sm text-white">
               Enter your secret code
             </p>
-            <div className="w-[80%] bg-[white] flex justify-center items-center rounded-[10px] px-3 py-4">
-              <input type="text" className="bg-white outline-none border-none w-[90%]"/>
+            <div className="w-[80%] bg-[white] flex justify-center items-center rounded-[20px] px-3 py-4">
+              <input type="text" className="bg-white outline-none border-none w-[90%]" placeholder="Enter code here"/>
             </div>
             <div
               className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
