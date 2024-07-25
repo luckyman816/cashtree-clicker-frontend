@@ -512,13 +512,13 @@ export default function Mission() {
           </div>
         </Modal>
         <Modal isOpen={isDailyReward} onClose={handleCloseDailyRewardModal}>
-          <div className="flex flex-col items-center align-middle justify-center gap-3">
+          <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
             <img src="image/mission/dailyRewardModal.png" alt="dailyRewardModal" className=" w-auto h-[80%]" />
             <h1 className="text-2xl text-white">Daily Reward</h1>
             <p className=" text-sm text-white">
               Accrue coins for logging into the game daily without skipping
             </p>
-            <div className="flex gap-4 w-full flex-wrap h-auto">
+            <div className="flex gap-4 w-[90%] flex-wrap h-auto">
               {dailyCoins.map((item, index) => (
                 <div key={index} className="flex flex-col gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]">
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
