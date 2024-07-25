@@ -249,17 +249,17 @@ export default function Mission() {
             <h1 className="text-white text-[32px] font-bold">Earn More Coins</h1>
           </div>
           <div className="flex justify-start items-center w-[90%] text-white text-xl font-bold">Daily Task</div>
-          <div className="flex flex-col justify-center items-center w-[90%] gap-3 min-h-[60%]">
+          <div className="flex flex-col justify-center items-center w-[90%] gap-3 min-h-[60%] overflow-y-scroll">
             {
               dailyCheckItems.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
+                  className={`flex w-full my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
                   <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
                   <div className="flex flex-col gap-1 justify-start items-start">
                     <h3 className="text-lg text-white">{item.name}</h3>
                     <h3 className="text-sm text-white">
-                      3/3 available
+                      25.000
                     </h3>
                   </div>
                 </div>
