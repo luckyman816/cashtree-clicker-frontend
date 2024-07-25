@@ -254,18 +254,20 @@ export default function Mission() {
               dailyCheckItems.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex w-[90%] my-3 px-5 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
-                  <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
-                  <div className="flex flex-col gap-1 justify-start items-start">
-                    <h3 className="text-lg text-white">{item.name}</h3>
-                    <div className="flex justify-center items-center">
-                      <img src="/image/assets/coin.png" alt="coin" className="w-4 h-4"/>
-                      <h3 className="text-sm text-white">
-                        25.000
-                      </h3>
-
+                  className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
+                  <div className="flex justify-center items-center">
+                    <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
+                    <div className="flex flex-col gap-1 justify-start items-start">
+                      <h3 className="text-lg text-white">{item.name}</h3>
+                      <div className="flex justify-center items-center">
+                        <img src="/image/assets/coin.png" alt="coin" className="w-4 h-4" />
+                        <h3 className="text-sm text-white">
+                          25.000
+                        </h3>
+                      </div>
                     </div>
                   </div>
+                  <img src="/image/icon/arrowRight.png" alt="arrowRight" className="w-2 h-4"/>
                 </div>
               ))
             }
