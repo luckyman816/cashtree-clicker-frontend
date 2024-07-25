@@ -518,7 +518,7 @@ export default function Mission() {
             <p className=" text-sm text-white">
               Accrue coins for logging into the game daily without skipping
             </p>
-            <div className="flex gap-4 w-[90%] flex-wrap h-auto">
+            <div className="flex gap-5 w-[90%] flex-wrap h-auto">
               {dailyCoins.map((item, index) => (
                 <div key={index} className="flex flex-col gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]">
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
