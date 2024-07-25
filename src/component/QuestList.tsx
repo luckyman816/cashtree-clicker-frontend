@@ -45,7 +45,7 @@ export default function QuestList() {
       <div className="flex w-full justify-center items-center">
         <p className="text-sm text-white">You and your friend will receive bonuses</p>
       </div>
-      <div className="flex w-[90%] justify-between px-3 py-3 items-center rounded-[20px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF]">
+      <div className="flex w-[95%] justify-between px-3 py-3 items-center rounded-[20px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#AA45FE]">
         <div className="flex justify-center items-center gap-3">
           <img src="image/friends/friends.png" alt="" className="w-10 h-10"/>
           <div className="flex flex-col justify-start items-start">
@@ -57,6 +57,9 @@ export default function QuestList() {
           <img src="image/assets/coin.png" alt="coin" className="w-5 h-5"/>
           <h1 className="text-[#FFC107] text-sm">+25.000</h1>
         </div>
+      </div>
+      <div className="flex w-full justify-start items-center">
+        <p className="text-sm text-white">List of your friends {friends.length}</p>
       </div>
       {/* <div className="flex justify-center items-center align-middle w-full mt-8">
         <div className="w-[90%] bg-gradient-to-r from-[#57676D] to-[#2A383C]  text-white rounded-[20px] flex items-center justify-between p-5 border border-[white]">
