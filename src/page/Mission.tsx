@@ -268,8 +268,8 @@ export default function Mission() {
             <img src="image/assets/mission.png" alt="" className=" w-36 h-36" />
             <h1 className="text-white text-[32px] font-bold">Earn More Coins</h1>
           </div>
-          <div className=" overflow-y-auto">
-            <div className="flex flex-col justify-center items-center w-full gap-3 max-h-[50vh]">
+          <div className=" overflow-y-auto w-full max-h-[50vh]">
+            <div className="flex flex-col justify-center items-center w-full gap-3">
               <div className="flex justify-start items-center w-[90%] text-white text-xl font-bold">Daily Task</div>
               {
                 dailyCheckItems.map((item, index) => (
