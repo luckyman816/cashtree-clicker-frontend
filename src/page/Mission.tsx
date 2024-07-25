@@ -58,6 +58,32 @@ const taskListItems = [
     coin: "+25.000"
   }
 ]
+const dailyCoins = [
+  {
+    day: "Day 1",
+    points: "500"
+  },
+  {
+    day: "Day 2",
+    points: "1000"
+  },
+  {
+    day: "Day 3",
+    points: "2000"
+  },
+  {
+    day: "Day 4",
+    points: "3000"
+  },
+  {
+    day: "Day 5",
+    points: "4000"
+  },
+  {
+    day: "Day 6",
+    points: "5000"
+  }
+]
 export default function Mission() {
   // const [colorTag, setColorTag] = useState<boolean>(false);
   const username_state = useSelector((state) => state.wallet.user?.username);
@@ -224,6 +250,15 @@ export default function Mission() {
       toast.warning("Please wait for the next day!");
     }
   };
+  const [isDailyReward, setIsDailyReward] = useState<boolean>(false);
+  const handleCloseDailyRewardModal = () => {
+    setIsDailyReward(false)
+  }
+  const handleOpenModal = (modalName: string) => {
+    if (modalName === "dailyCheck") {
+      setIsDailyReward(true);
+    }
+  }
   // const handleLetsGoTelegramGroupCheck = async () => {
   //   try {
   //     await axios.post(`/vibe/${username}`).then((res) => {
@@ -275,7 +310,8 @@ export default function Mission() {
                 dailyCheckItems.map((item, index) => (
                   <div
                     key={index}
-                    className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
+                    className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
+                    onClick={() => handleOpenModal(item.icon)}>
                     <div className="flex justify-center items-center">
                       <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
                       <div className="flex flex-col gap-1 justify-start items-start">
@@ -297,7 +333,7 @@ export default function Mission() {
                 taskListItems.map((item, index) => (
                   <div
                     key={index}
-                    className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}>
+                    className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}>
                     <div className="flex justify-center items-center">
                       <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
                       <div className="flex flex-col gap-1 justify-start items-start">
@@ -472,6 +508,29 @@ export default function Mission() {
               onClick={receivedCoins}
             >
               <span className="flex justify-center items-center">Receive</span>
+            </div>
+          </div>
+        </Modal>
+        <Modal isOpen={isDailyReward} onClose={handleCloseDailyRewardModal}>
+          <div className="flex flex-col items-center align-middle justify-center gap-3">
+            <img src="image/mission/dailyRewardModal.png" alt="dailyRewardModal" className=" w-auto h-[80%]" />
+            <h1 className="text-2xl text-white">Daily Reward</h1>
+            <p className=" text-sm text-white">
+              Accrue coins for logging into the game daily without skipping
+            </p>
+            <div className="flex gap-4 w-[90%] flex-wrap h-auto">
+              {dailyCoins.map((item, index) => (
+                <div key={index} className="flex flex-col gap-2 p-3 justify-center items-center border border-[#B286FA] rounded-[10px]">
+                  <h1 className="text-sm text-white font-bold">{item.day}</h1>
+                  <img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />
+                  <h1 className="text-sm text-white font-bold">{item.points}</h1>
+                </div>
+              ))}
+            </div>
+            <div
+              className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            >
+              <span className="flex justify-center items-center text-white text-xl">Claim Now</span>
             </div>
           </div>
         </Modal>
