@@ -233,7 +233,7 @@ export default function Mission() {
     <>
       <ToastContainer />
       <div className="w-full h-full flex flex-col justify-between items-center">
-        <div className="flex flex-col justify-center items-center gap-4 w-full mt-11 h-full">
+        <div className="flex flex-col justify-center items-center gap-4 w-full mt-11">
           <div className="flex justify-between items-center px-3 w-full">
             <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
             <h3
@@ -249,7 +249,7 @@ export default function Mission() {
             <h1 className="text-white text-[32px] font-bold">Earn More Coins</h1>
           </div>
           <div className="flex justify-start items-center w-[90%] text-white text-xl font-bold">Daily Task</div>
-          <div className="flex flex-col justify-center items-center w-full gap-3 max-h-[40%] max-sm:max-h-[40%] overflow-auto">
+          <div className="flex flex-col justify-center items-center w-full gap-3 max-h-[40vh] max-sm:max-h-[40vh] overflow-auto">
             {
               dailyCheckItems.map((item, index) => (
                 <div
