@@ -6,6 +6,9 @@ import { /*toast,*/ ToastContainer } from "react-toastify";
 import axios from "../utils/api";
 import "../css/font.css";
 import Modal from "./modal";
+const users = [
+  "Adi Dme", "Aeid lise", "Aide jdue", "Jude Ude", "Ude List", "Wdit doke", "Lise Ude", "Udjde Jude", "Jdne Mjde"
+]
 export default function QuestList() {
   const username_state = useSelector((state) => state.wallet.user?.username);
   const [username, setUsername] = useState<string>(username_state);
@@ -108,34 +111,44 @@ export default function QuestList() {
           <span className="flex justify-center items-center text-white text-xl">Invite Now</span>
         </div>
         <div className="w-[10%] bg-[#7520FF] rounded-[10px] flex justify-center items-center py-2">
-          <img src="image/friends/invite.png" alt="" className="w-6 h-6"/>
+          <img src="image/friends/invite.png" alt="" className="w-6 h-6" />
         </div>
       </div>
       <Modal isOpen={isInviteModal} onClose={handleCloseInviteModal}>
-          <div className="flex flex-col items-center align-middle gap-3 rounded-[20px]">
-            <h1 className="text-2xl text-white">Share to</h1>
-            <p className=" text-sm text-white">
-              Select chat
-            </p>
-            <div className="w-[90%] flex justify-start items-center py-2 px-2 bg-[#3B1E6A] rounded-[30px]">
-              <img src="image/friends/search.png" alt="" className="w-5 h-5"/>
-              <input type="text" className="bg-[#3B1E6A] outline-none border-none w-[90%] text-[#ABA7BA]" placeholder="Search"/>
-            </div>
-            <div className="w-[90%] flex justify-center items-center gap-3">
-              <textarea name="sendInvite" id="sendInvite" rows={3} className="bg-[#3B1E6A] rounded-[20px] w-full"></textarea>
-            </div>
-            <div
-              className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            >
-              <span className="flex justify-center items-center text-white text-xl">Send Now</span>
-            </div>
-            <div
-              className="w-[80%] bg-[#51229D] text-white rounded-[10px] flex justify-center items-center py-3"
-            >
-              <span className="flex justify-center items-center text-white text-xl">Cancel</span>
+        <div className="flex flex-col items-center align-middle gap-3 rounded-[20px]">
+          <h1 className="text-2xl text-white">Share to</h1>
+          <p className=" text-sm text-white">
+            Select chat
+          </p>
+          <div className="w-[90%] flex justify-start items-center py-2 px-2 bg-[#3B1E6A] rounded-[30px]">
+            <img src="image/friends/search.png" alt="" className="w-5 h-5" />
+            <input type="text" className="bg-[#3B1E6A] outline-none border-none w-[90%] text-[#ABA7BA]" placeholder="Search" />
+          </div>
+          <div className="min-h-[20vh] overflow-y-auto w-full">
+            <div className="flex w-full flex-wrap">
+              {users.map((item, index) => (
+                <div key={index} className="flex flex-col justify-center items-center">
+                  <div className="w-1/5 flex justify-center items-center rounded-full text-white text-2xl bg-[#47C8FF]">AB</div>
+                  <p className="text-white text-sm">{item}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </Modal>
+          <div className="w-[90%] flex justify-center items-center gap-3">
+            <textarea name="sendInvite" id="sendInvite" rows={3} className="bg-[#3B1E6A] rounded-[20px] w-full"></textarea>
+          </div>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+          >
+            <span className="flex justify-center items-center text-white text-xl">Send Now</span>
+          </div>
+          <div
+            className="w-[80%] bg-[#51229D] text-white rounded-[10px] flex justify-center items-center py-3"
+          >
+            <span className="flex justify-center items-center text-white text-xl">Cancel</span>
+          </div>
+        </div>
+      </Modal>
       {/* <div className="flex justify-center items-center align-middle w-full mt-8">
         <div className="w-[90%] bg-gradient-to-r from-[#57676D] to-[#2A383C]  text-white rounded-[20px] flex items-center justify-between p-5 border border-[white]">
           <div className="flex flex-col justify-center items-center gap-2">
