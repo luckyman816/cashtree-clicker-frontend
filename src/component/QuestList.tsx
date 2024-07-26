@@ -85,11 +85,23 @@ export default function QuestList() {
 
           </div>
         ) : (
-          <div className="flex w-[95%] justify-center items-center py-4 bg-[#120F29]">
-            <p className="text-[#ABA7BA] text-sm">You haven't invited anyone yet</p>
+          <div className="flex w-full justify-center items-start min-h-[50vh]">
+            <div className="flex w-[95%] justify-center items-center py-4 bg-[#120F29] rounded-[20px]">
+              <p className="text-[#ABA7BA] text-sm">You haven't invited anyone yet</p>
+            </div>
           </div>
         )
       }
+      <div className="flex w-full justify-between items-center gap-3">
+        <div
+          className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+        >
+          <span className="flex justify-center items-center text-white text-xl">Invite Now</span>
+        </div>
+        <div className="w-[10%] bg-[#7520FF] rounded-[10px] flex justify-center items-center py-2">
+          <img src="image/friends/invite.png" alt="" className="w-6 h-6"/>
+        </div>
+      </div>
 
       {/* <div className="flex justify-center items-center align-middle w-full mt-8">
         <div className="w-[90%] bg-gradient-to-r from-[#57676D] to-[#2A383C]  text-white rounded-[20px] flex items-center justify-between p-5 border border-[white]">
