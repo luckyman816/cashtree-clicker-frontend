@@ -1,3 +1,5 @@
+import Footer from "../component/Footer";
+
 export default function Leaderboard() {
     return (
         <div className="flex flex-col justify-between items-center h-full w-full">
@@ -12,7 +14,7 @@ export default function Leaderboard() {
                     </h3>
                     <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
                 </div>
-                
+                <Footer />
             </div>
         </div>
     )
