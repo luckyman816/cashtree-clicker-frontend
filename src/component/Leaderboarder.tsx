@@ -39,10 +39,10 @@ export default function Leaderboarder() {
             <div className="text-white text-[32px] justify-center font-[Archivo] items-center">Leaderboard</div>
             <div className="text-white text-[12px] justify-center items-center">Leaderboard & rank of worldwide players</div>
             {isLeaderboardOpen ? (
-                <div className="min-h-[45vh] max-h-[45vh] flex flex-col overflow-auto w-full gap-3">
+                <div className="min-h-[40vh] max-h-[40vh] flex flex-col overflow-auto w-full gap-3">
                     {Players.map((player, index) => (
                         <div key={index} className="flex justify-between items-center w-full bg-gradient-to-br from-[#8137F9] to-[#240C4D] rounded-[12px] px-4">
-                            <div className="flex-[1.5] py-4">
+                            <div className="flex-[1.5] py-2">
                                 <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]" />
                             </div>
                             <div className="flex-[5] flex-col  gap-2">
