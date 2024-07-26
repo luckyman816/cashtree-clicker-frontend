@@ -27,7 +27,7 @@ export default function QuestList() {
   console.log("friends", friends, friends.length);
   console.log("textToCopy", textToCopy);
   return (
-    <div className=" mt-11 p-5 flex flex-col justify-center items-center gap-4 w-full">
+    <div className="p-5 flex flex-col justify-center items-center gap-4 w-full">
       <ToastContainer />
       <div className="flex justify-between items-center px-3 w-full">
         <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
