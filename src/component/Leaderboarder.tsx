@@ -72,7 +72,36 @@ export default function Leaderboarder() {
                     </div>
                 </div>
             ) : (
-                <div className="min-h-[40vh] flex overflow-auto w-full">
+                <div className="flex flex-col justify-center items-center gap-3 w-full">
+                    <div className="flex justify-between items-center w-full">
+                        <div className="flex justify-center items-center gap-1">
+                            <img src="image/leaderboard/star.png" alt="" className="w-4 h-4"/>
+                            <h1 className="text-white text-sm">Total Current Prize</h1>
+                        </div>
+                        <div className="flex justify-center items-center gap-1">
+                            <h1 className="text-white text-lg">750,000</h1>
+                            <h1 className="text-white text-sm">$CTT</h1>
+                        </div>
+                    </div>
+                    <div className="w-[90%] px-2 py-2 flex justify-between items-center rounded-[12px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD]">
+                        <div className="flex justify-center items-center">
+                            <img src="image/leaderboard/currentPlayer.png" alt="" className="w-11 h-11"/>
+                            <div className="flex flex-col justify-center items-center">
+                                <h1 className="text-[#FFC107] text-[11px]">Current Players</h1>
+                                <h1 className="text-white text-sm font-bold">+120.000</h1>
+                            </div>
+                        </div>
+                        <div className="w-[1px] h-[30px] bg-white"></div>
+                        <div className="flex justify-center items-center">
+                            <img src="image/leaderboard/currentMilestone.png" alt="" className="w-11 h-11"/>
+                            <div className="flex flex-col justify-center items-center">
+                                <h1 className="text-[#FFC107] text-[11px]">Current Milestone</h1>
+                                <h1 className="text-white text-sm font-bold">Milestone 1</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="min-h-[40vh] flex overflow-auto w-full">
+                    </div>
                 </div>
             )
             }
