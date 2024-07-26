@@ -33,15 +33,15 @@ export default function Leaderboarder() {
           <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
         </div>
         <div className="flex w-full h-14 rounded-[12px] bg-[#120F29] justify-center items-center px-5 gap-5">
-            <div className="w-2/3 bg-[#120F29]  text-lg text-white active:bg-[#7520FF] py-3 rounded-[10px]" onClick={()=>handleLeaderboardClick()}>Leaderboard</div>
-            <div className="w-2/3 bg-[#120F29]  text-lg text-white active:bg-[#7520FF] py-3 rounded-[10px]" onClick={()=>handlePrizePoolClick()}>Prize Pool</div>
+            <div className="w-2/3 bg-[#120F29]  text-lg text-white active:bg-[#7520FF] py-2 rounded-[10px]" onClick={()=>handleLeaderboardClick()}>Leaderboard</div>
+            <div className="w-2/3 bg-[#120F29]  text-lg text-white active:bg-[#7520FF] py-2 rounded-[10px]" onClick={()=>handlePrizePoolClick()}>Prize Pool</div>
         </div>
         <div className="text-white text-[32px] justify-center font-[Archivo] items-center">Leaderboard</div>
         <div className="text-white text-[12px] justify-center items-center">Leaderboard & rank of worldwide players</div>
         { isLeaderboardOpen?(
         <div className="min-h-[45vh] max-h-[45vh] flex flex-col overflow-auto w-full gap-3">
             {Players.map((player, index) => (
-                <div key={index} className="flex justify-between items-center w-full h-[100px] bg-gradient-to-br from-[#8137F9] to-[#240C4D] rounded-[12px]">
+                <div key={index} className="flex justify-between items-center w-full h-[150px] bg-gradient-to-br from-[#8137F9] to-[#240C4D] rounded-[12px] px-4">
                     <div className="flex-[1]">
                         <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]"/>
                     </div>
