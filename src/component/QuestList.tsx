@@ -124,7 +124,7 @@ export default function QuestList() {
             <img src="image/friends/search.png" alt="" className="w-5 h-5" />
             <input type="text" className="bg-[#3B1E6A] outline-none border-none w-[90%] text-[#ABA7BA]" placeholder="Search" />
           </div>
-          <div className="min-h-[20vh] max-h-[30vh] overflow-y-auto w-full">
+          <div className="min-h-[20vh] max-h-[30vh] overflow-y-auto overflow-hidden w-full">
             <div className="flex w-full flex-wrap justify-between items-center">
               {users.map((item, index) => (
                 <div key={index} className="flex flex-col justify-center items-center max-w-20 px-3 py-3">
