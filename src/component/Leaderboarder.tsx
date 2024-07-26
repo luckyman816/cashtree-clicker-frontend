@@ -52,7 +52,7 @@ export default function Leaderboarder() {
                             <div className="text-white text-[12px]">{player.coin}</div>
                         </div>
                     </div>
-                    <div className="flex-[2] text-2xl text-white">{index+1}</div>
+                    <div className="flex-[2] text-2xl text-white justify-end items-center">{index+1}</div>
                 </div>
             ))}
         </div>
