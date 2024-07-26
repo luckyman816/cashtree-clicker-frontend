@@ -125,11 +125,11 @@ export default function QuestList() {
             <input type="text" className="bg-[#3B1E6A] outline-none border-none w-[90%] text-[#ABA7BA]" placeholder="Search" />
           </div>
           <div className="min-h-[20vh] overflow-y-auto w-full">
-            <div className="flex w-full flex-wrap">
+            <div className="flex w-full flex-wrap justify-between items-center">
               {users.map((item, index) => (
                 <div key={index} className="flex flex-col justify-center items-center max-w-20 px-3 py-3">
                   <div className="w-[20vw] h-[20vw] flex justify-center items-center rounded-full text-white text-2xl bg-gradient-to-br from-[#47C8FF] to-[#4756E5]">AB</div>
-                  <p className="text-white text-sm">{item}</p>
+                  <p className="text-white text-sm whitespace-nowrap overflow-hidden overflow-ellipsis w-full">{item}</p>
                 </div>
               ))}
             </div>
