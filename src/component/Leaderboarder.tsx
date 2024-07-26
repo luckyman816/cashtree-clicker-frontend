@@ -101,7 +101,7 @@ export default function Leaderboarder() {
                         </div>
                     </div>
                     <div className="min-h-[40vh] flex overflow-auto w-full">
-                        <div className="flex flex-col justify-center items-center py-2 px-2">
+                        <div className="flex flex-col justify-center items-center py-2 px-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD]">
                             <img src="image/leaderboard/milestone1.png" alt="" className="w-20 h-20"/>
                             <h1 className="text-white text-lg font-bold">Milestone 1</h1>
                             <h1 className="text-white text-lg font-bold">750,000 <span className="text-sm">$CTT</span></h1>
