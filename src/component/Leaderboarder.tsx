@@ -13,11 +13,13 @@ export default function Leaderboarder() {
           </h3>
           <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
         </div>
+        <div className="flex gap-3">
         <div className="flex w-full h-14 rounded-[12px] bg-[#120F29] justify-center items-center px-5 gap-5">
             <div className="w-2/3 bg-[#120F29] font-bold text-sm text-white active:bg-[#7520FF] py-3 rounded-[10px]">Leaderboard</div>
             <div className="w-2/3 bg-[#120F29] font-bold text-sm text-white active:bg-[#7520FF] py-3 rounded-[10px]">Prize Pool</div>
         </div>
+        <div className="text-white text-[32px] justify-center items-center">Leaderboard</div>
+        </div>
         
-       
       </div>)
 }
