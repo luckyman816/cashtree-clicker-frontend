@@ -119,7 +119,7 @@ export default function QuestList() {
             </p>
             <div className="w-[90%] flex justify-start items-center py-2 px-2 bg-[#3B1E6A] rounded-[30px]">
               <img src="image/friends/search.png" alt="" className="w-5 h-5"/>
-              <input type="text" className="bg-[#3B1E6A] outline-none border-none w-[90%]" placeholder="Search"/>
+              <input type="text" className="bg-[#3B1E6A] outline-none border-none w-[90%] text-[#ABA7BA]" placeholder="Search"/>
             </div>
             <div
               className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
