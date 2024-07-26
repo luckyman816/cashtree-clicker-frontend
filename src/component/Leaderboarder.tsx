@@ -13,9 +13,7 @@ export default function Leaderboarder() {
           </h3>
           <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
         </div>
-        <div className="flex w-full justify-center items-center text-3xl text-white font-bold">
-          Invite Friends
-        </div>
+        <div className="flex w-full h-14 rounded-[12px] bg-[#120F29] justify-center items-center gap-5"></div>
         <div className="flex w-full justify-center items-center">
           <p className="text-sm text-white">You and your friend will receive bonuses</p>
         </div>
