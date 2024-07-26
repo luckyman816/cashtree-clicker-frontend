@@ -17,7 +17,7 @@ export default function Leaderboarder() {
             <div className="w-2/3 bg-[#120F29]  text-lg text-white active:bg-[#7520FF] py-3 rounded-[10px]">Leaderboard</div>
             <div className="w-2/3 bg-[#120F29]  text-lg text-white active:bg-[#7520FF] py-3 rounded-[10px]">Prize Pool</div>
         </div>
-        <div className="text-white text-[32px] justify-center items-center">Leaderboard</div>
-        
+        <div className="text-white text-[32px] justify-center font-[Archivo] items-center">Leaderboard</div>
+        <div className="text-white text-[12px] justify-center items-center">Leaderboard & rank of worldwide players</div>
       </div>)
 }
