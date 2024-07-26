@@ -45,7 +45,7 @@ export default function Footer() {
           : "opacity-50 text-white"
           }`}
       >
-        {path==="/learderboard" ? <img src="/image/footer/leaderboard_a.png" alt="leaderboard" className=" w-6 h-6" /> : <img src="/image/footer/leaderboard.png" alt="leaderboard" className=" w-6 h-6" />}
+        {path==="/leaderboard" ? <img src="/image/footer/leaderboard_a.png" alt="leaderboard" className=" w-6 h-6" /> : <img src="/image/footer/leaderboard.png" alt="leaderboard" className=" w-6 h-6" />}
         <h1 className={`${path === "/learderboard" ? "text-[#7520FF]" : "text-white"} text-sm`} style={{ fontFamily: "archivo" }}>leaderboard</h1>
       </Link>
       <Link
