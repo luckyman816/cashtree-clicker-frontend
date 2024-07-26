@@ -46,8 +46,7 @@ export default function Leaderboarder() {
                                 <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]" />
                             </div>
                             <div className="flex-[5] flex-col justify-start items-center">
-                                <div className="text-white text-[12px] justify-start">
-                                    <div>{player.name}</div></div>
+                                <div className="flex text-white text-[12px] justify-start items-center">{player.name}</div>
                                 <div className="flex justify-start items-center">
                                     <img src="image/leaderboard/coin.png" alt="" />
                                     <div className="text-white text-[12px]">{player.coin}</div>
