@@ -56,10 +56,10 @@ export default function Leaderboarder() {
                         </div>
                     ))}
                 </div>
-            ) :
-
-                (<div className="min-h-[45vh] flex overflow-auto w-full">
-                </div>)
+            ) : (
+                <div className="min-h-[40vh] flex overflow-auto w-full">
+                </div>
+                )
             }
             <div className="flex justify-between items-center w-full bg-gradient-to-br from-[#AE47FF] to-[#6929F1] rounded-[12px] px-4">
                 <div className="flex-[1] py-4">
