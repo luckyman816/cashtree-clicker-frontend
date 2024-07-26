@@ -101,6 +101,16 @@ export default function Leaderboarder() {
                         </div>
                     </div>
                     <div className="min-h-[40vh] flex overflow-auto w-full">
+                        <div className="flex flex-col justify-center items-center py-2 px-2">
+                            <img src="image/leaderboard/milestone1.png" alt="" className="w-20 h-20"/>
+                            <h1 className="text-white text-lg font-bold">Milestone 1</h1>
+                            <h1 className="text-white text-lg font-bold">750,000 <span className="text-sm">$CTT</span></h1>
+                            <ul>
+                                <li className="text-[#C8A2FB] text-[12px]">1000 players</li>
+                                <li className="text-[#C8A2FB] text-[12px]">Status: Done</li>
+                            </ul>
+                            <div className="flex justify-center items-center px-2 py-2 text-white text-sm font-bold rounded-[20px]">More Info</div>
+                        </div>
                     </div>
                 </div>
             )
