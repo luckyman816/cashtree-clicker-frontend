@@ -61,5 +61,18 @@ export default function Leaderboarder() {
                 (<div className="min-h-[45vh] flex overflow-auto w-full">
                 </div>)
             }
+            <div className="flex justify-between items-center w-full bg-gradient-to-br from-[#AE47FF] to-[#6929F1] rounded-[12px] px-4">
+                <div className="flex-[1] py-4">
+                    <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]" />
+                </div>
+                <div className="flex-[5] flex-col justify-start items-center">
+                    <div className="flex text-white text-[12px] justify-start items-center">Budi</div>
+                    <div className="flex justify-start items-center">
+                        <img src="image/leaderboard/coin.png" alt="" />
+                        <div className="text-white text-[12px]">599,989,999</div>
+                    </div>
+                </div>
+                <div className="flex-[2] text-2xl text-white justify-end items-center">10000+</div>
+            </div>
         </div>)
 }
