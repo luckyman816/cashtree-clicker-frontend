@@ -2,7 +2,7 @@ import { /*toast,*/ ToastContainer } from "react-toastify";
 import { useState } from "react";
 const milestones = [
     {
-        imgpath:"../img/milestone1.png",
+        imgpath:"../img/leaderboard/milestone1.png",
         title: "Milestone 1",
         amount: "750000",
         players:  "1000",
@@ -10,7 +10,7 @@ const milestones = [
 
     },
     {
-        imgpath:"../img/milestone2.png",
+        imgpath:"../img/leaderboard/milestone2.png",
         title: "Milestone 2",
         amount: "3750000",
         players:  "5000",
