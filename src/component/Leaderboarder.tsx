@@ -41,18 +41,18 @@ export default function Leaderboarder() {
         { isLeaderboardOpen?(
         <div className="min-h-[45vh] max-h-[45vh] flex flex-col overflow-auto w-full gap-3">
             {Players.map((player, index) => (
-                <div key={index} className="flex justify-between items-center w-full h-[70px] bg-gradient-to-br from-[#8137F9] to-[#240C4D] rounded-[12px]">
+                <div key={index} className="flex justify-between items-center w-full h-[100px] bg-gradient-to-br from-[#8137F9] to-[#240C4D] rounded-[12px]">
                     <div className="flex-[1]">
                         <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]"/>
                     </div>
                     <div className="flex-[5] flex-col justify-start items-center">
-                        <div className="text-white text-[12px] justify-start items-center">{player.name}</div>
+                        <div className="text-white text-[12px]">{player.name}</div>
                         <div className="flex justify-start items-center">
                             <img src="image/leaderboard/coin.png" alt="" />
-                            <div>{player.coin}</div>
+                            <div className="text-white text-[12px]">{player.coin}</div>
                         </div>
                     </div>
-                    <div className="flex-[2] text-2xl text-white">{index}</div>
+                    <div className="flex-[2] text-2xl text-white">{index+1}</div>
                 </div>
             ))}
         </div>
