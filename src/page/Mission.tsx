@@ -331,15 +331,15 @@ export default function Mission() {
                 dailyCheckItems.map((item, index) => (
                   <div
                     key={index}
-                    className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
+                    className={`flex w-[90%] my-3 px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
                     onClick={() => handleOpenDailyTaskModal(item.icon)}>
                     <div className="flex justify-center items-center">
                       <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
                       <div className="flex flex-col gap-1 justify-start items-start">
-                        <h3 className="text-lg text-white">{item.name}</h3>
+                        <h3 className="text-sm text-white">{item.name}</h3>
                         <div className="flex justify-center items-center">
                           <img src="/image/assets/coin.png" alt="coin" className="w-4 h-4" />
-                          <h3 className="text-sm text-white">
+                          <h3 className="text-[13px] text-white font-bold">
                             25.000
                           </h3>
                         </div>
@@ -354,15 +354,15 @@ export default function Mission() {
                 taskListItems.map((item, index) => (
                   <div
                     key={index}
-                    className={`flex w-[90%] my-3 px-5 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
+                    className={`flex w-[90%] my-3 px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
                     onClick={() => handleOpenTaskListModal(item.icon)}>
                     <div className="flex justify-center items-center">
                       <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
                       <div className="flex flex-col gap-1 justify-start items-start">
-                        <h3 className="text-lg text-white">{item.name}</h3>
+                        <h3 className="text-sm text-white">{item.name}</h3>
                         <div className="flex justify-center items-center">
                           <img src="/image/assets/coin.png" alt="coin" className="w-4 h-4" />
-                          <h3 className="text-sm text-white">
+                          <h3 className="text-[13px] text-white font-bold">
                             {item.coin}
                           </h3>
                         </div>
