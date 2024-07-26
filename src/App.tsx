@@ -11,6 +11,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import { store } from "./store";
 import Boost from "./page/Boost";
 import Mission from "./page/Mission";
+import Leaderboard from "./page/Leaderboard";
 import Wallet from "./page/Wallet";
 // import MobileQR from "./component/MobileQR";
 function App() {
@@ -43,6 +44,7 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="mission" element={<Mission />} />
                 <Route path="friends" element={<Friends />} />
+                <Route path="leaderboard" element={<Leaderboard />} />
                 <Route path="wallet" element={<Wallet />} />
                 <Route path="ranking" element={<Ranking />} />
                 <Route path="boost" element={<Boost />} />
