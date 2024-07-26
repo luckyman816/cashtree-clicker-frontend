@@ -41,7 +41,7 @@ export default function Leaderboarder() {
         { isLeaderboardOpen?(
         <div className="min-h-[45vh] max-h-[45vh] flex flex-col overflow-auto w-full gap-3">
             {Players.map((player, index) => (
-                <div key={index} className="flex justify-between items-center w-full h-[150px] bg-gradient-to-br from-[#8137F9] to-[#240C4D] rounded-[12px] px-4">
+                <div key={index} className="flex justify-between items-center w-full h-20 bg-gradient-to-br from-[#8137F9] to-[#240C4D] rounded-[12px] px-4">
                     <div className="flex-[1]">
                         <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]"/>
                     </div>
