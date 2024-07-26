@@ -127,8 +127,8 @@ export default function QuestList() {
           <div className="min-h-[20vh] overflow-y-auto w-full">
             <div className="flex w-full flex-wrap">
               {users.map((item, index) => (
-                <div key={index} className="flex flex-col justify-center items-center max-w-20">
-                  <div className="w-[20vw] h-[20vw] flex justify-center items-center rounded-full text-white text-2xl bg-[#47C8FF]">AB</div>
+                <div key={index} className="flex flex-col justify-center items-center max-w-20 px-3 py-3">
+                  <div className="w-[20vw] h-[20vw] flex justify-center items-center rounded-full text-white text-2xl bg-gradient-to-br from-[#47C8FF] to-[#4756E5]">AB</div>
                   <p className="text-white text-sm">{item}</p>
                 </div>
               ))}
