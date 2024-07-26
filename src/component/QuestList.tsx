@@ -27,7 +27,7 @@ export default function QuestList() {
   console.log("friends", friends, friends.length);
   console.log("textToCopy", textToCopy);
   return (
-    <div className="overflow-auto mt-11 p-5 flex flex-col justify-center items-center gap-2 w-full">
+    <div className="overflow-auto mt-11 p-5 flex flex-col justify-center items-center gap-4 w-full">
       <ToastContainer />
       <div className="flex justify-between items-center px-3 w-full">
         <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
@@ -47,20 +47,50 @@ export default function QuestList() {
       </div>
       <div className="flex w-[95%] justify-between px-3 py-3 items-center rounded-[20px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#AA45FE]">
         <div className="flex justify-center items-center gap-3">
-          <img src="image/friends/friends.png" alt="" className="w-10 h-10"/>
+          <img src="image/friends/friends.png" alt="" className="w-10 h-10" />
           <div className="flex flex-col justify-start items-start">
             <h1 className="text-white text-xl font-bold">Invite Friends</h1>
             <h1 className="text-white text-sm ">For you and your friend</h1>
           </div>
         </div>
         <div className="flex justify-center items-center gap-2">
-          <img src="image/assets/coin.png" alt="coin" className="w-5 h-5"/>
+          <img src="image/assets/coin.png" alt="coin" className="w-5 h-5" />
           <h1 className="text-[#FFC107] text-sm">+25.000</h1>
         </div>
       </div>
       <div className="flex w-full justify-start items-center">
-        <p className="text-sm text-white">List of your friends {friends.length}</p>
+        <p className="text-lg text-white font-bold">List of your friends {friends.length}</p>
       </div>
+      {
+        friends.length > 0 ? (
+          <div className="min-h-[50vh] overflow-y-auto w-full">
+            {
+              friends.map((friend) => (
+                <div className="flex w-[95%] justify-between px-3 py-3 items-center rounded-[20px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E57] to-[#7B34EE]">
+                  <div className="flex justify-center items-center gap-3">
+                    <img src="image/friends/friend.png" alt="" className="w-10 h-10" />
+                    <div className="flex flex-col justify-start items-start">
+                      <h1 className="text-white text-xl font-bold">{friend.username}</h1>
+                      <h1 className="text-white text-sm ">silver 1.AM</h1>
+                    </div>
+                  </div>
+                  <div className="flex justify-center items-center gap-2">
+                    <img src="image/assets/coin.png" alt="coin" className="w-5 h-5" />
+                    <h1 className="text-[#FFC107] text-sm">+25.000</h1>
+                  </div>
+                </div>
+              ))
+
+            }
+
+          </div>
+        ) : (
+          <div className="flex w-[95%] justify-center items-center py-4 bg-[#120F29]">
+            <p className="text-[#ABA7BA] text-sm">You haven't invited anyone yet</p>
+          </div>
+        )
+      }
+
       {/* <div className="flex justify-center items-center align-middle w-full mt-8">
         <div className="w-[90%] bg-gradient-to-r from-[#57676D] to-[#2A383C]  text-white rounded-[20px] flex items-center justify-between p-5 border border-[white]">
           <div className="flex flex-col justify-center items-center gap-2">
