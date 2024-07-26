@@ -46,7 +46,7 @@ export default function Footer() {
           }`}
       >
         {path==="/leaderboard" ? <img src="/image/footer/leaderboard_a.png" alt="leaderboard" className=" w-6 h-6" /> : <img src="/image/footer/leaderboard.png" alt="leaderboard" className=" w-6 h-6" />}
-        <h1 className={`text-sm`} style={{ fontFamily: "archivo", color:  path === "/learderboard" ? "#7520FF" : "white" }}>Leaderboard</h1>
+        <h1 className={`text-sm`} style={{ fontFamily: "archivo", color:  path === "/leaderboard" ? "#7520FF" : "white" }}>Leaderboard</h1>
       </Link>
       <Link
         to="/wallet"
