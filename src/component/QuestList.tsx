@@ -115,7 +115,7 @@ export default function QuestList() {
         </div>
       </div>
       <Modal isOpen={isInviteModal} onClose={handleCloseInviteModal}>
-        <div className="flex flex-col items-center align-middle gap-3 rounded-[20px]">
+        <div className="flex flex-col items-center align-middle gap-3 rounded-[20px] w-full">
           <h1 className="text-2xl text-white">Share to</h1>
           <p className=" text-sm text-white">
             Select chat
