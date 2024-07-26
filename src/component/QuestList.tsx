@@ -135,7 +135,7 @@ export default function QuestList() {
             </div>
           </div>
           <div className="w-[90%] flex justify-center items-center gap-3">
-            <textarea name="sendInvite" id="sendInvite" rows={3} className="bg-[#3B1E6A] rounded-[20px] w-full"></textarea>
+            <textarea name="sendInvite" id="sendInvite" rows={3} className="bg-[#3B1E6A] rounded-[20px] w-full outline-none border-none"></textarea>
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
