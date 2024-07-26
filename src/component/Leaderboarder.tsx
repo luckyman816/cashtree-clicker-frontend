@@ -2,7 +2,7 @@ import { /*toast,*/ ToastContainer } from "react-toastify";
 import { useState } from "react";
 const milestones = [
     {
-        imgpath: "/image/leaderboard/milestone1.png",
+        imgpath: "milestone1",
         title: "Milestone 1",
         amount: "750000",
         players: "1000",
@@ -10,7 +10,7 @@ const milestones = [
 
     },
     {
-        imgpath: "/image/leaderboard/milestone2.png",
+        imgpath: "milestone2",
         title: "Milestone 2",
         amount: "3750000",
         players: "5000",
@@ -117,12 +117,12 @@ export default function Leaderboarder() {
                             </div>
                         </div>
                     </div>
-                    <div className="min-h-[40vh] flex overflow-auto w-full">
+                    <div className="min-h-[40vh] flex overflow-auto w-full gap-2 flex-wrap">
                         {
                             milestones.map((milestone, index) => (
 
                                 <div key={index} className="flex flex-col justify-center items-center py-2 px-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7F36F7]">
-                                    <img src={milestone.imgpath} alt="" className="w-20 h-20" />
+                                    <img src={`image/leaderboard/${milestone.imgpath}.png`} alt="" className="w-20 h-20" />
                                     <h1 className="text-white text-lg font-bold">{milestone.title}</h1>
                                     <h1 className="text-white text-lg font-bold">{milestone.amount}<span className="text-sm">$CTT</span></h1>
                                     <ul>
