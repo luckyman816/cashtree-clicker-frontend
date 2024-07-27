@@ -122,7 +122,7 @@ export default function Leaderboarder() {
                             {
                                 milestones.map((milestone, index) => (
                                     <div key={index} className="flex flex-col justify-center items-center py-2 px-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7F36F7]">
-                                        <img src={`image/leaderboard/${milestone.imgpath}.png`} alt="" className="w-20 h-20" />
+                                        <img src={`/image/leaderboard/${milestone.imgpath}.png`} alt="" className="w-20 h-20" />
                                         <h1 className="text-white text-lg font-bold">{milestone.title}</h1>
                                         <h1 className="text-white text-lg font-bold">{milestone.amount}<span className="text-sm">$CTT</span></h1>
                                         <ul>
