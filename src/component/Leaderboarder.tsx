@@ -15,7 +15,49 @@ const milestones = [
         amount: "3750000",
         players: "5000",
         status: "Unlocked",
-    }
+    },
+    {
+        imgpath: "milestone3",
+        title: "Milestone 3",
+        amount: "7500000",
+        players: "10000",
+        status: "Unlocked",
+    },
+    {
+        imgpath: "milestone3",
+        title: "Milestone 4",
+        amount: "15000000",
+        players: "20000",
+        status: "Unlocked",
+    },
+    {
+        imgpath: "milestone3",
+        title: "Milestone 5",
+        amount: "22500000",
+        players: "30000",
+        status: "Unlocked",
+    },
+    {
+        imgpath: "milestone3",
+        title: "Milestone 6",
+        amount: "37500000",
+        players: "50000",
+        status: "Unlocked",
+    },
+    {
+        imgpath: "milestone3",
+        title: "Milestone 7",
+        amount: "56250000",
+        players: "75000",
+        status: "Unlocked",
+    },
+    {
+        imgpath: "milestone3",
+        title: "Milestone 8",
+        amount: "75000000",
+        players: "100000+",
+        status: "Unlocked",
+    },
 ]
 export default function Leaderboarder() {
     const Players = [
