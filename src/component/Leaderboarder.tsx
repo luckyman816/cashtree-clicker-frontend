@@ -121,15 +121,15 @@ export default function Leaderboarder() {
                         <div className="flex justify-between w-[90%] items-center">
                             {
                                 milestones.map((milestone, index) => (
-                                    <div key={index} className="flex flex-col justify-center items-center py-2 px-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7F36F7]">
+                                    <div key={index} className="flex flex-col justify-center items-center py-2 px-4 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7F36F7] border border-[#885ECE] rounded-[20px]">
                                         <img src={`/image/leaderboard/${milestone.imgpath}.png`} alt="" className="w-20 h-20" />
                                         <h1 className="text-white text-lg font-bold">{milestone.title}</h1>
                                         <h1 className="text-white text-lg font-bold">{milestone.amount}<span className="text-sm">$CTT</span></h1>
-                                        <ul>
+                                        <ul className="w-full flex justify-start items-center">
                                             <li className="text-[#C8A2FB] text-[12px]">{milestone.players}</li>
                                             <li className="text-[#C8A2FB] text-[12px]">{milestone.status}</li>
                                         </ul>
-                                        <div className="flex justify-center items-center px-2 py-2 text-white text-sm font-bold rounded-[20px]">More Info</div>
+                                        <div className="flex justify-center items-center px-3 py-2 text-white text-sm font-bold rounded-[20px] bg-[#7520FF]">More Info</div>
                                     </div>
                                 ))
                             }
