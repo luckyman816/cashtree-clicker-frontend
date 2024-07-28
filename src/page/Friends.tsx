@@ -98,7 +98,7 @@ export default function Friends() {
 
             </div>
           ) : (
-            <div className="flex w-full justify-center items-start min-h-[40vh]">
+            <div className="flex w-full justify-center items-start min-h-[30vh] max-h-[40vh]">
               <div className="flex w-[95%] justify-center items-center py-4 bg-[#120F29] rounded-[20px]">
                 <p className="text-[#ABA7BA] text-sm">You haven't invited anyone yet</p>
               </div>
