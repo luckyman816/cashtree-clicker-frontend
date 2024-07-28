@@ -308,7 +308,7 @@ export default function Mission() {
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
       <ToastContainer />
-      <div className="flex flex-col justify-center items-center gap-4 w-full mt-11">
+      <div className="flex flex-col justify-center items-center gap-4 w-full">
         <div className="flex justify-between items-center px-3 w-full">
           <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
           <h3
