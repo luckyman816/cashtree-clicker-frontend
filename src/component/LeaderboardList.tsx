@@ -59,7 +59,7 @@ const milestones = [
         status: "Unlocked",
     },
 ]
-export default function Leaderboarder() {
+export default function LeaderboardList() {
     const Players = [
         { name: "User1", coin: "25.000" },
         { name: "User1", coin: "25.000" },
