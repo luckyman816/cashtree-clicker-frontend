@@ -75,7 +75,7 @@ export default function QuestList() {
         </div>
         {
           friends.length > 0 ? (
-            <div className="min-h-[40vh] overflow-y-auto w-full">
+            <div className="min-h-[40vh] overflow-y-auto w-full max-h-[40vh]">
               {
                 friends.map((friend) => (
                   <div className="flex w-[95%] justify-between px-3 py-3 items-center rounded-[20px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E57] to-[#7B34EE]">
