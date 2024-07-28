@@ -19,7 +19,7 @@ export default function Wallet() {
             <div className="text-sm text-white font-[Archivo]">Your wallet connect address</div>
         </div>
         <div className="flex flex-col w-full justify-start items-center gap-4">
-            <div>Task List</div>
+            <div className="text-white text-[17px] font-[Archivo]">Task List</div>
             <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl ">
                 <img src="image/wallet/listIcon.png" alt="" className="w-11 h-11"/>
                 <div className="flex flex-col gap-1 justify-start items-center">
