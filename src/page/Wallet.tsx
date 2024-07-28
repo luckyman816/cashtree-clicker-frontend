@@ -1,6 +1,6 @@
 import Wallet from "../component/Wallet";
 import Footer from "../component/Footer";
-export default function Wallet() {
+export default function WalletPage() {
 
   return (
     <>
