@@ -9,7 +9,7 @@ export default function Footer() {
     setPath(location.pathname);
   }, [location]);
   return (
-    <div className="grid grid-cols-5 justify-center items-center px-3 w-screen rounded-t-3xl bg-[#120F29] py-4">
+    <div className="grid grid-cols-5 justify-center items-center px-3 w-full rounded-t-3xl bg-[#120F29] py-4">
       <Link
         to="/"
         className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/" ? "scale-[110%] opacity-100" : "opacity-50 text-white"
