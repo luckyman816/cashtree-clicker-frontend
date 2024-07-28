@@ -20,7 +20,14 @@ export default function Wallet() {
         </div>
         <div className="flex flex-col w-full justify-start items-center gap-4">
             <div>Task List</div>
-            <div className=""></div>
+            <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl ">
+                <img src="image/wallet/listIcon.png" alt="" className="w-11 h-11"/>
+                <div className="flex flex-col gap-1 justify-start items-center">
+                    <div className="text-white font-[Archivo] text-sm">Connect your CTT wallet address</div>
+                    <div className="text-white font-[Archivo] text-xs">Integrate now for Secure Transactions</div>
+                </div>
+                <img src="image/wallet/Vector.png" alt=""/>
+            </div>
         </div>
         </div>
     )
