@@ -180,6 +180,5 @@ export default function Leaderboarder() {
                 </div>
             )
             }
-
         </div>)
 }
