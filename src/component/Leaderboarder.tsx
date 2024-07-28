@@ -159,8 +159,8 @@ export default function Leaderboarder() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex  w-full justify-center items-center">
-                        <div className="flex justify-between w-full items-center flex-wrap min-h-[60vh] max-h-[60vh] overflow-y-auto gap-y-4">
+                    <div className="flex  w-full justify-center items-center ">
+                        <div className="flex justify-around w-full items-center flex-wrap min-h-[60vh] max-h-[60vh] overflow-y-auto">
                             {
                                 milestones.map((milestone, index) => (
                                     <div key={index} className="flex flex-col justify-center min-w-[40%] max-w-[40%] items-center py-2 px-4 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7F36F7] border border-[#885ECE] rounded-[20px]">
