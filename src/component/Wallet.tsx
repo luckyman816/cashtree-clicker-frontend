@@ -14,9 +14,12 @@ export default function Wallet() {
                 <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
             </div>
         <div className="flex flex-col w-full justify-center items-center gap-3">
-            <img src="image/wallet/cointap.png" alt="" className="w-32 h-32"/>
-            <div className="text-3xl text-white font-[Archivo]">Wallet</div>
+            <img src="image/wallet/cointap.png" alt="" className="w-60 h-60"/>
+            <div className="text-3xl text-white font-[Archivo] font-bold">Wallet</div>
             <div className="text-sm text-white font-[Archivo]">Your wallet connect address</div>
+        </div>
+        <div className="flex flex-col w-full justify-start items-center gap-4">
+
         </div>
         </div>
     )
