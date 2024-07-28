@@ -20,7 +20,7 @@ export default function Wallet() {
             </div>
             <div className="flex flex-col w-full justify-start items-center gap-4">
                 <div className="flex justify-start text-white text-[17px] font-[Archivo]">Task List</div>
-                <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl ">
+                <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl px-1">
                     <div className="flex-1 flex">
                         <img src="image/wallet/listIcon.png" alt="" className=" w-11 h-11" />
                     </div>
