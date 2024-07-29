@@ -15,7 +15,7 @@ export default function WalletPage() {
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
       <ToastContainer />
-      <div className="flex flex-col justify-between items-center gap-2">
+      <div className="flex flex-col justify-center items-center gap-2">
         <div className="flex justify-between items-center px-3 w-full">
           <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
           <h3
