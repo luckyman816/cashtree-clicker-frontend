@@ -16,7 +16,7 @@ export default function WalletPage() {
     <div className="flex flex-col justify-between items-center h-full w-full">
       <div className="flex flex-col justify-center items-center gap-2 w-full">
         <ToastContainer />
-        <div className="flex justify-between items-center px-3 w-full">
+        <div className="flex justify-between items-center px-3 w-full mt-3">
           <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
           <h3
             className="text-sm text-[white]"
@@ -31,7 +31,7 @@ export default function WalletPage() {
           <div className="text-3xl text-white font-[Archivo] font-bold">Wallet</div>
           <div className="text-sm text-white font-[Archivo]">Your wallet connect address</div>
         </div>
-        <div className="flex flex-col w-full justify-start items-center gap-4">
+        <div className="flex flex-col w-[90%] justify-start items-center gap-4">
           <div className="flex justify-start text-white text-[17px] font-[Archivo] w-full">Task List</div>
           <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl px-1" onClick={() => handleOpenWalletModal()}>
             <img src="image/wallet/connectWallet.png" alt="" className="w-10 h-10" />
