@@ -1,7 +1,13 @@
+import { useState } from "react"
 import { ToastContainer } from "react-toastify"
+import "../css/font.css"
 export default function Wallet() {
+    const [isInviteModal, setIsInviteModal]=useState<boolean>(false)
+    const handleInviteModalClick = () => {
+        return setIsInviteModal(true)
+    }
     return (
-        <div className="p-5 flex flex-col justify-center items-center gap-5 w-full">
+        <div className="p-5 flex flex-col justify-between items-center gap-5 w-full">
             <ToastContainer />
             <div className="flex justify-between items-center px-3 w-full">
                 <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
@@ -20,10 +26,8 @@ export default function Wallet() {
             </div>
             <div className="flex flex-col w-full justify-start items-center gap-4">
                 <div className="flex justify-start text-white text-[17px] font-[Archivo]">Task List</div>
-                <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl px-1">
-                    <div className="flex-1 flex justify-center items-center">
-                        <img src="image/wallet/listIcon.png" alt="" className=" w-11 h-11" />
-                    </div>
+                <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl px-1" onClick={() =>handleInviteModalClick()}>
+                    
                     <div className="flex-7 flex flex-col gap-1 justify-start items-center">
                         <div className="text-white font-[Archivo] text-sm">Connect your CTT wallet address</div>
                         <div className="text-white font-[Archivo] text-xs">Integrate now for Secure Transactions</div>
