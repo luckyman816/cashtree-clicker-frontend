@@ -81,7 +81,7 @@ export default function Leaderboard() {
     }
     return (
         <div className="flex flex-col justify-between items-center h-full w-full ">
-            <div className="flex justify-between items-center px-3 w-full">
+            <div className="flex justify-between items-center px-3 w-full py-3">
                 <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
                 <h3
                     className="text-sm text-[white]"

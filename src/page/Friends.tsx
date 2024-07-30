@@ -40,7 +40,7 @@ export default function Friends() {
   console.log("textToCopy", textToCopy);
   return (
     <div className="h-full w-full flex flex-col justify-between items-center">
-      <div className="flex justify-between items-center px-3 w-full">
+      <div className="flex justify-between items-center px-3 w-full py-3">
         <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
         <h3
           className="text-sm text-[white]"
