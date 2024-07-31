@@ -4,7 +4,7 @@ export interface walletProfile {
     balance: number;
     energy: number;
     full_energy: number;
-    tap: number;
+    tap_level: number;
     limit: number;
     daily_coins: Date;
 }

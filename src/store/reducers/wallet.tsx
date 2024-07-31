@@ -11,7 +11,7 @@ const initialState: walletStateProps = {
     balance: 0,
     energy: 0,
     full_energy: 1,
-    tap: 1,
+    tap_level: 1,
     limit: 1000,
     daily_coins: new Date()
   },
@@ -116,12 +116,11 @@ export function updateFullEnergy(username: string, full_energy: number) {
     }
   };
 }
-export function updateTap(username: string, tap: number) {
-  console.log("------>", tap);
+export function updateTapLevel(username: string, tap_level: number) {
   return async () => {
     try {
-      const response = await axios.post(`/wallet/updateTap/${username}`, {
-        tap: tap,
+      const response = await axios.post(`/wallet/updateTapLevel/${username}`, {
+        tap_level: tap_level,
       });
       dispatch(wallet.actions.updateWalletSuccess(response.data));
     } catch (error) {

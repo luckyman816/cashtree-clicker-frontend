@@ -21,10 +21,10 @@ function Home() {
   const usernameState = useSelector((state) => state.wallet.user?.username);
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const energyState = useSelector((state) => state.wallet.user?.energy);
-  const tapState = useSelector((state) => state.wallet.user?.tap);
+  const tapLevelState = useSelector((state) => state.wallet.user?.tap_level);
   const limitState = useSelector((state) => state.wallet.user?.limit);
   const [imgStatus, setImgStatus] = useState(false);
-  const [tap, setTap] = useState<number>(tapState);
+  const [tapLevel, setTapLevel] = useState<number>(tapLevelState);
   const [username, setUsername] = useState<string>(usernameState);
   const [token, setToken] = useState<number>(tokenState);
   const [remainedEnergy, setRemainedEnergy] = useState<number>(energyState);
@@ -38,7 +38,7 @@ function Home() {
       axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
       dispatch(insertWallet(webapp["user"]["username"]));
       dispatch(getWallet(webapp["user"]["username"])).then(() => {
-        setTap(tapState);
+        setTapLevel(tapLevelState);
         setToken(tokenState);
         setRemainedEnergy(energyState);
       });
@@ -55,7 +55,7 @@ function Home() {
     return new Intl.NumberFormat(locale).format(number);
   }
   const bodyRef = useRef<HTMLDivElement | null>(null);
-  const [score, setScore] = useState<string>(`+${tap}`);
+  const [score, setScore] = useState<string>(`+${tapLevel}`);
   const handleClick = (event: any) => {
     event.preventDefault();
     const rect = event.currentTarget.getBoundingClientRect();
@@ -106,18 +106,18 @@ function Home() {
 
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token < 1000000000) {
-      setScore(`+${tap}`);
-      if (token + tap > 1000000000) {
+      setScore(`+${tapLevel}`);
+      if (token + tapLevel > 1000000000) {
         setToken(1000000000);
-        dispatch(updateWallet(username, 1000000000, remainedEnergy - tap));
+        dispatch(updateWallet(username, 1000000000, remainedEnergy - tapLevel));
       } else {
-        setToken(token + tap);
-        if (remainedEnergy - tap < 0) {
-          dispatch(updateWallet(username, token + tap, 0));
+        setToken(token + tapLevel);
+        if (remainedEnergy - tapLevel < 0) {
+          dispatch(updateWallet(username, token + tapLevel, 0));
           setRemainedEnergy(0);
         } else {
-          dispatch(updateWallet(username, token + tap, remainedEnergy - tap));
-          setRemainedEnergy(remainedEnergy - tap);
+          dispatch(updateWallet(username, token + tapLevel, remainedEnergy - tapLevel));
+          setRemainedEnergy(remainedEnergy - tapLevel);
         }
       }
 
@@ -153,7 +153,7 @@ function Home() {
             <img src="/image/assets/coin.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-sm text-[#FFC107]">Earn Per Tap</h2>
-              <h2 className="text-xl text-[white]">+{tap} Poin</h2>
+              <h2 className="text-xl text-[white]">+{tapLevel} Poin</h2>
             </div>
           </div>
 
