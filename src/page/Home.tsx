@@ -204,23 +204,23 @@ function Home() {
       <div className="flex flex-col justify-center items-center w-full gap-2">
         <div className="flex flex-col justify-center items-center content-center w-full">
           <div className="flex justify-between w-full items-center px-3">
-            <div className=" my-2 w-[fit-content] flex justify-center items-center">
+            <div className=" my-2 w-[fit-content] flex justify-center items-center gap-1">
               <img
-                src="/image/assets/energy.png"
+                src="/image/assets/energy_home.png"
                 alt="lightning"
                 className="w-8 h-8 inline"
               />
-              <p className="text-xl text-white">
+              <p className="text-[16px] text-white">
                 {remainedEnergy} &#8725; {limit}
               </p>
             </div>
-            <div className=" my-2 w-[fit-content] flex justify-center items-center" onClick={handleBoost}>
+            <div className=" my-2 w-[fit-content] flex justify-center items-center gap-1" onClick={handleBoost}>
               <img
                 src="/image/assets/boost.png"
                 alt="lightning"
                 className="w-8 h-8 inline"
               />
-              <p className="text-xl text-white">
+              <p className="text-[16px] text-[#F7BB12]">
                 Boost
               </p>
             </div>
