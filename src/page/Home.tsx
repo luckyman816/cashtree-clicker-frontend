@@ -171,8 +171,8 @@ function Home() {
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
         <ProgressBar value={tapLevel * 10} />
         <div className="flex w-full justify-between items-center p-3">
-          <h1 className="text-sm text-white">Level: {levelNames[tapLevel - 1]}</h1>
-          <h1 className="text-sm text-white">Goal {tapLevel}/10</h1>
+          <h1 className="text-[12px] text-white">Level: {levelNames[tapLevel - 1]}</h1>
+          <h1 className="text-[12px] text-white">Goal {tapLevel}/10</h1>
         </div>
       </div>
       <div className="flex justify-center items-center relative h-[45vh] w-full">
