@@ -86,7 +86,7 @@ export default function Boost() {
             <h1 className="text-white text-xl">Buy Boosters&nbsp;&nbsp;<span className="text-white text-sm">Reset at 00:00 AM UTCC</span></h1>
           </div>
           <div
-            className={`flex my-3 px-3 py-3 items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)] rounded-[20px] gap-2`}
+            className={`flex my-3 px-3 py-3 justify-between items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)] rounded-[20px] gap-2`}
             onClick={handleMouseClick}
           >
             <div className="flex justify-center items-center gap-1">

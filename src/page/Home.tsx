@@ -15,7 +15,8 @@ import {
   updateEnergy,
   getWallet,
 } from "../store/reducers/wallet";
-
+const levelNames = ['Newbie', 'Rookie', 'Beginner', 'Intermediate', 'Expert', 'Master', 'Grandmaster', 'Legendary', 'Mythical', 'Conqueror'];
+const levelTargets = [10000, 20000, 50000, 100000, 200000, 500000, 1000000, 3000000, 5000000, 10000000]
 function Home() {
   const navigate = useNavigate();
   const usernameState = useSelector((state) => state.wallet.user?.username);
@@ -162,16 +163,16 @@ function Home() {
             <img src="/image/assets/earnLevel.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-sm text-[#FFC107]">Earn to level up</h2>
-              <h2 className="text-xl text-[white]"> {formatNumberWithCommas(10000)}k</h2>
+              <h2 className="text-xl text-[white]">+{formatNumberWithCommas(levelTargets[tapLevel - 1])}k</h2>
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
-        <ProgressBar value={80} />
+        <ProgressBar value={tapLevel * 10} />
         <div className="flex w-full justify-between items-center p-3">
-          <h1 className="text-sm text-white">Level epic</h1>
-          <h1 className="text-sm text-white">Goal 8/10</h1>
+          <h1 className="text-sm text-white">Level: {levelNames[tapLevel - 1]}</h1>
+          <h1 className="text-sm text-white">Goal {tapLevel}/10</h1>
         </div>
       </div>
       <div className="flex justify-center items-center relative h-[45vh] w-full">
