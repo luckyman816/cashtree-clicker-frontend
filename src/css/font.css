@@ -7,5 +7,5 @@
   src: url('./archivo.ttf') format('truetype');
 }
 p,h1,h2,span {
-  font-family: 'archivo';
+  font-family: 'archivo', sans-serif;
 }
