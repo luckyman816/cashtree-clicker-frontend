@@ -190,7 +190,7 @@ function Home() {
           <img
             className={` rounded-full w-auto h-full  ${remainedEnergy > 0
               ? "cursor-pointer"
-              : "cursor-not-allowed opacity-50 "
+              : " opacity-50 "
               }`}
             src="/image/tap-image/cashtree.png"
             onMouseDown={handleMouseDown}
