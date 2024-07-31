@@ -112,6 +112,7 @@ function Home() {
         dispatch(updateWallet(username, 1000000000, remainedEnergy - tapLevel));
       } else {
         setToken(token + tapLevel);
+        console.log("---dsfadsfasdf--->", token, tapLevel)
         if (remainedEnergy - tapLevel < 0) {
           dispatch(updateWallet(username, token + tapLevel, 0));
           setRemainedEnergy(0);
