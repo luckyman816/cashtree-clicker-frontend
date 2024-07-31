@@ -12,7 +12,7 @@ export default function Boost() {
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const username_state = useSelector((state) => state.wallet.user?.username);
   const limit_state = useSelector((state) => state.wallet.user?.limit);
-  const tap_state = useSelector((state) => state.wallet.user?.tap);
+  const tapLevelState = useSelector((state) => state.wallet.user?.tap_level);
   const full_energy_state = useSelector(
     (state) => state.wallet.user?.full_energy
   );
@@ -28,7 +28,7 @@ export default function Boost() {
     setUsername(username_state);
     setLimit(limit_state);
     setFullEnergy(full_energy_state);
-  }, [tokenState, username_state, limit_state, tap_state, full_energy_state]);
+  }, [tokenState, username_state, limit_state, tapLevelState, full_energy_state]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
