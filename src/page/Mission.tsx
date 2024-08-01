@@ -133,6 +133,8 @@ export default function Mission() {
   const [isReceiveModalOpen, setIsReceiveModalOpen] = useState(false);
   const handleOpenReceiveModal = () => {
     setIsReceiveModalOpen(true);
+    setIsDailyReward(false);
+
   };
   const handleCloseReceiveModal = () => {
     setIsReceiveModalOpen(false);
