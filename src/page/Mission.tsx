@@ -390,7 +390,7 @@ export default function Mission() {
       </div>
       <Footer />
       <Modal isOpen={isReceiveModalOpen} onClose={handleCloseReceiveModal}>
-        <div className="flex flex-col items-center align-middle gap-3">
+        <div className="flex flex-col items-center align-middle gap-3 px-3 py-3">
           <img
             src="image/assets/sand-timer.png"
             alt=""
