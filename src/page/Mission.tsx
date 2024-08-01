@@ -6,6 +6,8 @@ import { ToastContainer, toast } from "react-toastify";
 import Modal from "../component/modal";
 import moment from "moment";
 import Footer from "../component/Footer";
+import "../css/font.css"
+import "react-toastify/dist/ReactToastify.css";
 const dailyCheckItems = [
   {
     id: 1,
@@ -410,13 +412,13 @@ export default function Mission() {
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
             onClick={handleReceiveDailyCoins}
           >
-            <span className="flex justify-center items-center text-white text-xl">Receive Daily Coins</span>
+            <span className="flex justify-center items-center text-white text-xl">Receive Daily Points</span>
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
             onClick={handleResetDailyCoins}
           >
-            <span className="flex justify-center items-center text-white text-xl">Claim Now</span>
+            <span className="flex justify-center items-center text-white text-xl">Reset Daily Points</span>
           </div>
         </div>
       </Modal>
