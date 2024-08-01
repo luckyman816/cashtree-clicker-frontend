@@ -539,14 +539,16 @@ export default function Mission() {
           <p className=" text-sm text-white">
             Accrue coins for logging into the game daily without skipping
           </p>
-          <div className="flex gap-5 w-[95%] flex-wrap h-auto">
-            {dailyCoins.map((item, index) => (
-              <div key={index} className="flex flex-col gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]">
-                <h1 className="text-sm text-white font-bold">{item.day}</h1>
-                <img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />
-                <h1 className="text-sm text-white font-bold">{item.points}</h1>
-              </div>
-            ))}
+          <div className="flex justify-center items-center w-full">
+            <div className="flex gap-5 w-[95%] flex-wrap h-auto">
+              {dailyCoins.map((item, index) => (
+                <div key={index} className="flex flex-col gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]">
+                  <h1 className="text-sm text-white font-bold">{item.day}</h1>
+                  <img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />
+                  <h1 className="text-sm text-white font-bold">{item.points}</h1>
+                </div>
+              ))}
+            </div>
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
