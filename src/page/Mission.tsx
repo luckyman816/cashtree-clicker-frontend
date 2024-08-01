@@ -82,6 +82,10 @@ const dailyCoins = [
   {
     day: "Day 6",
     points: "5000"
+  },
+  {
+    day: "Day 7",
+    points: "10000"
   }
 ]
 export default function Mission() {
@@ -107,6 +111,9 @@ export default function Mission() {
 
     return () => clearInterval(interval);
   }, []);
+  function formatNumberWithCommas(number: number, locale = "en-US") {
+    return new Intl.NumberFormat(locale).format(number);
+  }
   const calculateDifference = (currentDateTime: moment.Moment) => {
     if (daily_coins) {
       const dateDiff = daily_coins
@@ -339,7 +346,7 @@ export default function Mission() {
                       <div className="flex justify-center items-center">
                         <img src="/image/assets/coin.png" alt="coin" className="w-4 h-4" />
                         <h3 className="text-[13px] text-white font-bold">
-                          25.000
+                          +{formatNumberWithCommas(25000)}
                         </h3>
                       </div>
                     </div>
@@ -373,138 +380,6 @@ export default function Mission() {
             }
           </div>
         </div>
-
-        {/* <div className="flex justify-center items-center w-[90%] h-11 rounded-[10px] bg-[#394A50]">
-            <div
-              className={`h-full cursor-pointer flex items-center justify-center w-[50%] text-[white] rounded-[10px] ${!colorTag
-                  ? "bg-gradient-to-r from-[#8977C8] to-[#06E2F4]"
-                  : "bg-[#394A50]"
-                }`}
-              onClick={handleDailyTask}
-            >
-              Daily Tasks
-            </div>
-            <div
-              className={`h-full cursor-pointer flex items-center w-[50%] justify-center text-[white] rounded-[10px] ${colorTag
-                  ? "bg-gradient-to-r from-[#8977C8] to-[#06E2F4]"
-                  : "bg-[#394A50]"
-                }`}
-              onClick={handleOtherTask}
-            >
-              Other Tasks
-            </div>
-          </div>
-
-          {!colorTag && (
-            <div className="flex flex-col justify-center items-center w-[90%] rounded-[10px] bg-gradient-to-r from-[#556165] to-[#293135] p-3 gap-2">
-              <h2
-                className="text-[white] text-[xl]"
-                style={{ fontFamily: "poppins" }}
-              >
-                Send your vibe to GTS TG group and earn some coins
-              </h2>
-              <div className="flex justify-center items-center  w-full gap-3">
-                <button
-                  className="bg-[#3C4648] text-[white] w-[40%] rounded-[10px] flex justify-center items-center text-[16px] gap-2 border-[1px] border-[#33CC66] border-solid"
-                  onClick={handleLetsGoTelegramGroup}
-                >
-                  Let's Go
-                </button>
-                <button
-                  className="bg-[#33CC66] text-[white] w-[40%] rounded-[10px] flex justify-center items-center text-[16px] gap-2 border-[1px] border-white border-solid"
-                  onClick={handleLetsGoTelegramGroupCheck}
-                >
-                  Check
-                </button>
-              </div>
-            </div>
-          )}
-          {!colorTag && (
-            <div className="flex justify-center items-center w-[90%] rounded-[10px] bg-gradient-to-r from-[#556165] to-[#293135] p-3 gap-2">
-              <h2
-                className="text-[white] text-[xl]"
-                style={{ fontFamily: "poppins" }}
-              >
-                Receive your daily coins
-              </h2>
-              <button
-                className="bg-[#F8B219] text-[white] w-[40%] rounded-[10px] flex justify-center items-center text-[16px] gap-2 border-[1px] border-white border-solid"
-                onClick={handleOpenReceiveModal}
-              >
-                Receive
-              </button>
-            </div>
-          )}
-          {colorTag && (
-            <div className="flex flex-col justify-center items-center gap-3 w-[90%]">
-              <div className="flex flex-col justify-center items-center w-full rounded-[10px] bg-gradient-to-r from-[#556165] to-[#293135] p-3 gap-2">
-                <h2
-                  className="text-[white] text-[xl]"
-                  style={{ fontFamily: "poppins" }}
-                >
-                  Join GTS TG Group
-                </h2>
-                <div className="flex justify-center items-center  w-full gap-3">
-                  <button
-                    className="bg-[#3C4648] text-[white] w-[40%] rounded-[10px] flex justify-center items-center text-[16px] gap-2 border-[1px] border-[#33CC66] border-solid"
-                    onClick={handleJoinTelgramGroup}
-                  >
-                    Join
-                  </button>
-                  <button
-                    className="bg-[#33CC66] text-[white] w-[40%] rounded-[10px] flex justify-center items-center text-[16px] gap-2 border-[1px] border-white border-solid"
-                    onClick={handleJoinTelegramGroupCheck}
-                  >
-                    Check
-                  </button>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center items-center w-full rounded-[10px] bg-gradient-to-r from-[#556165] to-[#293135] p-3 gap-2">
-                <h2
-                  className="text-[white] text-[xl]"
-                  style={{ fontFamily: "poppins" }}
-                >
-                  Subscribe GTS TC Channel
-                </h2>
-                <div className="flex justify-center items-center  w-full gap-3">
-                  <button
-                    className="bg-[#3C4648] text-[white] w-[40%] rounded-[10px] flex justify-center items-center text-[16px] gap-2 border-[1px] border-[#33CC66] border-solid"
-                    onClick={handleJoinTelegramChannel}
-                  >
-                    Join
-                  </button>
-                  <button
-                    className="bg-[#33CC66] text-[white] w-[40%] rounded-[10px] flex justify-center items-center text-[16px] gap-2 border-[1px] border-white border-solid"
-                    onClick={handleSubscribeTelegramChannelCheck}
-                  >
-                    Check
-                  </button>
-                </div>
-              </div>
-              <div className="flex flex-col justify-center items-center w-full rounded-[10px] bg-gradient-to-r from-[#556165] to-[#293135] p-3 gap-2">
-                <h2
-                  className="text-[white] text-[xl]"
-                  style={{ fontFamily: "poppins" }}
-                >
-                  Follow GTS Twitter
-                </h2>
-                <div className="flex justify-center items-center  w-full gap-3">
-                  <button
-                    className="bg-[#3C4648] text-[white] w-[40%] rounded-[10px] flex justify-center items-center text-[16px] gap-2 border-[1px] border-[#33CC66] border-solid"
-                    onClick={handleTwitterChannel}
-                  >
-                    Join
-                  </button>
-                  <button
-                    className="bg-[#33CC66] text-[white] w-[40%] rounded-[10px] flex justify-center items-center text-[16px] gap-2 border-[1px] border-white border-solid"
-                    onClick={handleTwitterChannelCheck}
-                  >
-                    Check
-                  </button>
-                </div>
-              </div>
-            </div>
-          )} */}
       </div>
       <Footer />
       <Modal isOpen={isReceiveModalOpen} onClose={handleCloseReceiveModal}>
