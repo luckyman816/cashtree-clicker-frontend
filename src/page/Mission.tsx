@@ -89,14 +89,17 @@ const dailyCoins = [
   }
 ]
 export default function Mission() {
-  // const [colorTag, setColorTag] = useState<boolean>(false);
+  function formatNumberWithCommas(number: number, locale = "en-US") {
+    return new Intl.NumberFormat(locale).format(number);
+  }
   const username_state = useSelector((state) => state.wallet.user?.username);
   const balance_state = useSelector((state) => state.wallet.user?.balance);
+  const [username, setUsername] = useState<string>(username_state);
+  const [balance, setBalance] = useState<number>(balance_state);
+  //-------------------------Get the Daily Coins Modal Function----------------------//
   const daily_coins_state = useSelector(
     (state) => state.wallet.user?.daily_coins
   );
-  const [username, setUsername] = useState<string>(username_state);
-  const [balance, setBalance] = useState<number>(balance_state);
   const [daily_coins, setDailyCoins] = useState<moment.Moment | null>(
     daily_coins_state ? moment(daily_coins_state) : null
   );
@@ -111,9 +114,6 @@ export default function Mission() {
 
     return () => clearInterval(interval);
   }, []);
-  function formatNumberWithCommas(number: number, locale = "en-US") {
-    return new Intl.NumberFormat(locale).format(number);
-  }
   const calculateDifference = (currentDateTime: moment.Moment) => {
     if (daily_coins) {
       const dateDiff = daily_coins
@@ -128,6 +128,29 @@ export default function Mission() {
   console.log(
     `${moment()} ${diffDays}d ${diffHours}h ${diffMinutes}m ${diffSeconds}s`
   );
+  const [isReceiveModalOpen, setIsReceiveModalOpen] = useState(false);
+  const handleOpenReceiveModal = () => {
+    setIsReceiveModalOpen(true);
+  };
+  const handleCloseReceiveModal = () => {
+    setIsReceiveModalOpen(false);
+  };
+  const handleReceiveDailyCoins = () => {
+    if (diffDays > 0) {
+      dispatch(updateBalance(username, balance + diffDays * 1000)).then(() => {
+        dispatch(updateDailyCoins(username, moment())).then(() => {
+          toast.success("You have received " + diffDays * 1000 + " coins!");
+          setIsReceiveModalOpen(false);
+        });
+      });
+    } else {
+      toast.warning("Please wait for the next day!");
+    }
+  };
+  const handleResetDailyCoins = () => {
+
+  }
+  //------------------------------------------------------------------------------//
   useEffect(() => {
     setUsername(username_state);
     setBalance(balance_state);
@@ -238,29 +261,12 @@ export default function Mission() {
   // const handleOtherTask = () => {
   //   setColorTag(!colorTag);
   // };
-  const [isReceiveModalOpen, setIsReceiveModalOpen] = useState(false);
-  // const handleOpenReceiveModal = () => {
-  //   setIsReceiveModalOpen(true);
-  // };
-  const handleCloseReceiveModal = () => {
-    setIsReceiveModalOpen(false);
-  };
-  const receivedCoins = () => {
-    if (diffDays > 0) {
-      dispatch(updateBalance(username, balance + diffDays * 1000)).then(() => {
-        dispatch(updateDailyCoins(username, moment())).then(() => {
-          toast.success("You have received " + diffDays * 1000 + " coins!");
-          setIsReceiveModalOpen(false);
-        });
-      });
-    } else {
-      toast.warning("Please wait for the next day!");
-    }
-  };
+  
   const [isDailyReward, setIsDailyReward] = useState<boolean>(false);
   const [isInstagram, setIsInstagram] = useState<boolean>(false);
   const [isYoutube, setIsYoutube] = useState<boolean>(false);
   const [isSecretExtra, setIsSecretExtra] = useState<boolean>(false);
+  //----------------------Close Personal Modal------------------------------//
   const handleCloseDailyRewardModal = () => {
     setIsDailyReward(false)
   }
@@ -273,6 +279,7 @@ export default function Mission() {
   const handleCloseSecretExtraModal = () => {
     setIsSecretExtra(false);
   }
+  //------------------------Daily Task and Task List Modal Open ---------------------------//
   const handleOpenDailyTaskModal = (modalName: string) => {
     if (modalName === "dailyCheck") {
       setIsDailyReward(true);
@@ -400,10 +407,16 @@ export default function Mission() {
             &nbsp;s
           </h2>
           <div
-            className="w-full h-9 bg-indigo-600 text-white rounded-[20px] flex justify-center items-center hover:bg-indigo-400"
-            onClick={receivedCoins}
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleReceiveDailyCoins}
           >
-            <span className="flex justify-center items-center">Receive</span>
+            <span className="flex justify-center items-center text-white text-xl">Receive Daily Coins</span>
+          </div>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleResetDailyCoins}
+          >
+            <span className="flex justify-center items-center text-white text-xl">Claim Now</span>
           </div>
         </div>
       </Modal>
@@ -427,9 +440,11 @@ export default function Mission() {
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleOpenReceiveModal}
           >
             <span className="flex justify-center items-center text-white text-xl">Claim Now</span>
           </div>
+
         </div>
       </Modal>
       <Modal isOpen={isSecretExtra} onClose={handleCloseSecretExtraModal}>
