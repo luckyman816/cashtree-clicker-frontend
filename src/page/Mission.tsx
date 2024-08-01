@@ -307,18 +307,18 @@ export default function Mission() {
   // };
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
-      <ToastContainer />
+      <div className="flex justify-between items-center px-3 w-full py-3">
+        <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
+        <h3
+          className="text-sm text-[white]"
+          style={{ fontFamily: "archivo" }}
+        >
+          Cashtree Tap to Win
+        </h3>
+        <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
+      </div>
       <div className="flex flex-col justify-center items-center gap-4 w-full">
-        <div className="flex justify-between items-center px-3 w-full">
-          <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
-          <h3
-            className="text-sm text-[white]"
-            style={{ fontFamily: "archivo" }}
-          >
-            Cashtree Tap to Win
-          </h3>
-          <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
-        </div>
+        <ToastContainer />
         <div className="flex flex-col justify-center items-center">
           <img src="image/assets/mission.png" alt="" className=" w-36 h-36" />
           <h1 className="text-white text-[32px] font-bold">Earn More Coins</h1>
