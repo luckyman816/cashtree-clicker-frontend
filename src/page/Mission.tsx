@@ -8,6 +8,7 @@ import moment from "moment";
 import Footer from "../component/Footer";
 import "../css/font.css"
 import "react-toastify/dist/ReactToastify.css";
+import { getDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
 const dailyCheckItems = [
   {
     id: 1,
@@ -102,9 +103,11 @@ export default function Mission() {
   const daily_coins_state = useSelector(
     (state) => state.wallet.user?.daily_coins
   );
+  const daily_coins_received_status_state = useSelector((state) => state.dailyCoins.daily_coins);
   const [daily_coins, setDailyCoins] = useState<moment.Moment | null>(
     daily_coins_state ? moment(daily_coins_state) : null
   );
+  const [daily_coins_received_status, setDailyCoinsReceivedStatus] = useState(daily_coins_received_status_state);
   const [diffDays, setDiffDays] = useState<number>(0);
   const [diffHours, setDiffHours] = useState<number>(0);
   const [diffMinutes, setDiffMinutes] = useState<number>(0);
@@ -140,13 +143,15 @@ export default function Mission() {
     setIsReceiveModalOpen(false);
   };
   const handleReceiveDailyCoins = () => {
-    if (diffDays > 0) {
+    if (diffDays > 0 && diffDays < 2) {
       dispatch(updateBalance(username, balance + diffDays * 1000)).then(() => {
         dispatch(updateDailyCoins(username, moment())).then(() => {
           toast.success("You have received " + diffDays * 1000 + " coins!");
           setIsReceiveModalOpen(false);
         });
       });
+    } else if (diffDays > 1) {
+      toast.warning("The time has already passed! Plesae reset daily coins!");
     } else {
       toast.warning("Please wait for the next day!");
     }
@@ -154,6 +159,14 @@ export default function Mission() {
   const handleResetDailyCoins = () => {
 
   }
+  useEffect(() => {
+    if (username) {
+      dispatch(getDailyCoinsReceivedStatus(username)).then(() => {
+        setDailyCoinsReceivedStatus(daily_coins_received_status_state);
+      });
+    }
+  }, [])
+  console.log("dailyCoinsReceivedStatus------->", daily_coins_received_status);
   //------------------------------------------------------------------------------//
   useEffect(() => {
     setUsername(username_state);
@@ -265,7 +278,7 @@ export default function Mission() {
   // const handleOtherTask = () => {
   //   setColorTag(!colorTag);
   // };
-  
+
   const [isDailyReward, setIsDailyReward] = useState<boolean>(false);
   const [isInstagram, setIsInstagram] = useState<boolean>(false);
   const [isYoutube, setIsYoutube] = useState<boolean>(false);

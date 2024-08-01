@@ -15,6 +15,7 @@ import {
   updateEnergy,
   getWallet,
 } from "../store/reducers/wallet";
+import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
 const levelNames = ['Newbie', 'Rookie', 'Beginner', 'Intermediate', 'Expert', 'Master', 'Grandmaster', 'Legendary', 'Mythical', 'Conqueror'];
 const levelTargets = [10000, 20000, 50000, 100000, 200000, 500000, 1000000, 3000000, 5000000, 10000000]
 function Home() {
@@ -38,6 +39,7 @@ function Home() {
       axios.post(`/vibe/add,`, { username: webapp["user"]["username"] });
       axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
       dispatch(insertWallet(webapp["user"]["username"]));
+      dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
       dispatch(getWallet(webapp["user"]["username"])).then(() => {
         setTapLevel(tapLevelState);
         setToken(tokenState);
