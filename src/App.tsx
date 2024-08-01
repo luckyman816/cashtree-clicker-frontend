@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { useState, useEffect } from "react";
 import Home from "./page/Home";
-import Ranking from "./page/Ranking";
 import Friends from "./page/Friends";
 import { ToastContainer } from "react-toastify";
 import Layout from "./Layout";
@@ -46,7 +45,6 @@ function App() {
                 <Route path="friends" element={<Friends />} />
                 <Route path="leaderboard" element={<Leaderboard />} />
                 <Route path="wallet" element={<Wallet />} />
-                <Route path="ranking" element={<Ranking />} />
                 <Route path="boost" element={<Boost />} />
               </Route>
             </Routes>

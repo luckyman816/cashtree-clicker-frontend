@@ -122,7 +122,6 @@ function Home() {
           setRemainedEnergy(remainedEnergy - tapLevel);
         }
       }
-
       handleClick(event);
     }
   };
