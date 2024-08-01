@@ -394,14 +394,14 @@ export default function Mission() {
       </div>
       <Footer />
       <Modal isOpen={isReceiveModalOpen} onClose={handleCloseReceiveModal}>
-        <div className="flex flex-col items-center align-middle gap-3 px-3 py-3">
+        <div className="flex flex-col items-center align-middle gap-3 px-3 py-3 w-full">
           <img
             src="image/assets/sand-timer.png"
             alt=""
             className=" w-12 h-12"
           />
           <h1 className="text-2xl text-white">Daily Coins</h1>
-          <p className=" text-sm ngtext-white">You can get the Daily Coins!</p>
+          <p className=" text-sm text-white">You can get the Daily Coins!</p>
           <h2 className=" text-xl text-white">
             Remaining Time:{" "}
             <span className="text-2xl text-[red]">{diffDays}</span> &nbsp;d{" "}
