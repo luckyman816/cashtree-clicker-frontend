@@ -219,7 +219,7 @@ export default function Mission() {
   useEffect(() => {
     setDailyCoinsReceivedStatus(daily_coins_received_status_state);
   }, [daily_coins_received_status_state, setDailyCoinsReceivedStatus])
-  console.log("dailyCoinsReceivedStatus------->", daily_coins_received_status.day_1);
+  console.log("dailyCoinsReceivedStatus------->", daily_coins_received_status);
   //------------------------------------------------------------------------------//
   useEffect(() => {
     setUsername(username_state);
