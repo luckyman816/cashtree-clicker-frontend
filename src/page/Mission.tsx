@@ -119,7 +119,7 @@ export default function Mission() {
   const daily_coins_state = useSelector(
     (state) => state.wallet.user?.daily_coins
   );
-  const daily_coins_received_status_state = useSelector((state) => state.dailyCoins.daily_coins);
+  const daily_coins_received_status_state = useSelector((state) => state.dailyCoins.daily_coins_received_status);
   const [daily_coins, setDailyCoins] = useState<moment.Moment | null>(
     daily_coins_state ? moment(daily_coins_state) : null
   );

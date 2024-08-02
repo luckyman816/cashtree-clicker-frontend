@@ -10,6 +10,6 @@ export interface dailyReceivedTypes {
 export interface dailyCoinsStateTypes{
     _id: string;
     username: string;
-    daily_coins: dailyReceivedTypes;
+    daily_coins_received_status: dailyReceivedTypes;
     error: object | string | null;
 }

@@ -7,7 +7,7 @@ const initialState: dailyCoinsStateTypes = {
     error: null,
     _id: "",
     username: "",
-    daily_coins: {
+    daily_coins_received_status: {
         day_1: false,
         day_2: false,
         day_3: false,
@@ -26,13 +26,19 @@ const dailyCoins = createSlice({
             state.error = action.payload
         },
         getDailyCoinsReceivedStatusSuccess(state, action) {
-            state.daily_coins = action.payload
+            state._id = action.payload._id
+            state.username = action.payload.username
+            state.daily_coins_received_status = action.payload.daily_coins_received_status
         },
         addDailyCoinsReceivedStatusSuccess(state, action) {
-            state.daily_coins = action.payload
+            state._id = action.payload._id
+            state.username = action.payload.username
+            state.daily_coins_received_status = action.payload.daily_coins_received_status
         },
         updateDailyCoinsReceivedStatusSuccess(state, action) {
-            state.daily_coins = action.payload
+            state._id = action.payload._id
+            state.username = action.payload.username
+            state.daily_coins_received_status = action.payload.daily_coins_received_status
         }
     }
 });
@@ -52,7 +58,7 @@ export function getDailyCoinsReceivedStatus(username: string) {
 export function addDailyCoinsReceivedStatus(username: string) {
     return async () => {
         try {
-            const response = await axios.post("/dailyCoins/add", {username: username});
+            const response = await axios.post("/dailyCoins/add", { username: username });
             dispatch(dailyCoins.actions.addDailyCoinsReceivedStatusSuccess(response.data));
         } catch (error) {
             dispatch(dailyCoins.actions.hasError(error));
@@ -62,7 +68,7 @@ export function addDailyCoinsReceivedStatus(username: string) {
 export function updateDailyCoinsReceivedStatus(username: string, day: string, day_status: boolean) {
     return async () => {
         try {
-            const response = await axios.post(`/dailyCoins/update/${username}`, {day: day, day_status: day_status});
+            const response = await axios.post(`/dailyCoins/update/${username}`, { day: day, day_status: day_status });
             dispatch(dailyCoins.actions.updateDailyCoinsReceivedStatusSuccess(response.data));
         } catch (error) {
             dispatch(dailyCoins.actions.hasError(error));
