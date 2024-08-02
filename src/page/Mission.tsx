@@ -8,7 +8,7 @@ import moment from "moment";
 import Footer from "../component/Footer";
 import "../css/font.css"
 import "react-toastify/dist/ReactToastify.css";
-import { getDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
+import { getDailyCoinsReceivedStatus, updateDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
 const dailyCheckItems = [
   {
     id: 1,
@@ -151,12 +151,38 @@ export default function Mission() {
   };
   const handleReceiveDailyCoins = () => {
     if (diffDays > 0 && diffDays < 2) {
-      
-      dispatch(updateBalance(username, balance + 1000)).then(() => {
-        dispatch(updateDailyCoins(username, moment())).then(() => {
-          toast.success("You have received " + 1000 + " coins!");
-          setIsReceiveModalOpen(false);
+      if (daily_coins_received_status.day_1 === false) {
+        dispatch(updateBalance(username, balance + 500)).then(() => {
+          dispatch(updateDailyCoinsReceivedStatus(username, "Day 1", true));
         });
+      } else if (daily_coins_received_status.day_1 === true) {
+        dispatch(updateBalance(username, balance + 1000)).then(() => {
+          dispatch(updateDailyCoinsReceivedStatus(username, "Day 2", true));
+        })
+      } else if (daily_coins_received_status.day_2 === true) {
+        dispatch(updateBalance(username, balance + 2000)).then(() => {
+          dispatch(updateDailyCoinsReceivedStatus(username, "Day 3", true));
+        })
+      } else if (daily_coins_received_status.day_3 === true) {
+        dispatch(updateBalance(username, balance + 3000)).then(() => {
+          dispatch(updateDailyCoinsReceivedStatus(username, "Day 4", true));
+        })
+      } else if (daily_coins_received_status.day_4 === true) {
+        dispatch(updateBalance(username, balance + 4000)).then(() => {
+          dispatch(updateDailyCoinsReceivedStatus(username, "Day 5", true));
+        })
+      } else if (daily_coins_received_status.day_5 === true) {
+        dispatch(updateBalance(username, balance + 5000)).then(() => {
+          dispatch(updateDailyCoinsReceivedStatus(username, "Day 6", true));
+        })
+      } else if (daily_coins_received_status.day_7 === true) {
+        dispatch(updateBalance(username, balance + 10000)).then(() => {
+          dispatch(updateDailyCoinsReceivedStatus(username, "Day 7", true));
+        })
+      }
+      dispatch(updateDailyCoins(username, moment())).then(() => {
+        toast.success("You have received " + 1000 + " coins!");
+        setIsReceiveModalOpen(false);
       });
     } else if (diffDays > 1) {
       toast.warning("The time has already passed! Plesae reset daily coins!");
@@ -481,7 +507,7 @@ export default function Mission() {
                     daily_coins_received_status.day_6 ? (
                       <img src="image/mission/received.png" alt="coin" className="w-8 h-8" />
                     ) : (<img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />)
-                  ): (
+                  ) : (
                     daily_coins_received_status.day_7 ? (
                       <img src="image/mission/received.png" alt="coin" className="w-8 h-8" />) :
                       (<img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />)
