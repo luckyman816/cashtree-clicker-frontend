@@ -64,31 +64,38 @@ const taskListItems = [
 const dailyCoins = [
   {
     day: "Day 1",
-    points: "500"
+    points: "500",
+    status: "day_1"
   },
   {
     day: "Day 2",
-    points: "1000"
+    points: "1000",
+    status: "day_2"
   },
   {
     day: "Day 3",
-    points: "2000"
+    points: "2000",
+    status: "day_3"
   },
   {
     day: "Day 4",
-    points: "3000"
+    points: "3000",
+    status: "day_4"
   },
   {
     day: "Day 5",
-    points: "4000"
+    points: "4000",
+    status: "day_5"
   },
   {
     day: "Day 6",
-    points: "5000"
+    points: "5000",
+    status: "day_6"
   },
   {
     day: "Day 7",
-    points: "10000"
+    points: "10000",
+    status: "day_7"
   }
 ]
 export default function Mission() {
@@ -144,9 +151,10 @@ export default function Mission() {
   };
   const handleReceiveDailyCoins = () => {
     if (diffDays > 0 && diffDays < 2) {
-      dispatch(updateBalance(username, balance + diffDays * 1000)).then(() => {
+      
+      dispatch(updateBalance(username, balance + 1000)).then(() => {
         dispatch(updateDailyCoins(username, moment())).then(() => {
-          toast.success("You have received " + diffDays * 1000 + " coins!");
+          toast.success("You have received " + 1000 + " coins!");
           setIsReceiveModalOpen(false);
         });
       });
@@ -449,7 +457,35 @@ export default function Mission() {
               {dailyCoins.map((item, index) => (
                 <div key={index} className="flex flex-col gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]">
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
-                  <img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />
+                  {index == 0 ? (
+                    daily_coins_received_status.day_1 ? (
+                      <img src="image/mission/received.png" alt="coin" className="w-8 h-8" />
+                    ) : (<img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />)
+                  ) : index == 1 ? (
+                    daily_coins_received_status.day_2 ? (
+                      <img src="image/mission/received.png" alt="coin" className="w-8 h-8" />
+                    ) : (<img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />)
+                  ) : index == 2 ? (
+                    daily_coins_received_status.day_3 ? (
+                      <img src="image/mission/received.png" alt="coin" className="w-8 h-8" />
+                    ) : (<img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />)
+                  ) : index == 3 ? (
+                    daily_coins_received_status.day_4 ? (
+                      <img src="image/mission/received.png" alt="coin" className="w-8 h-8" />
+                    ) : (<img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />)
+                  ) : index == 4 ? (
+                    daily_coins_received_status.day_5 ? (
+                      <img src="image/mission/received.png" alt="coin" className="w-8 h-8" />
+                    ) : (<img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />)
+                  ) : index == 5 ? (
+                    daily_coins_received_status.day_6 ? (
+                      <img src="image/mission/received.png" alt="coin" className="w-8 h-8" />
+                    ) : (<img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />)
+                  ): (
+                    daily_coins_received_status.day_7 ? (
+                      <img src="image/mission/received.png" alt="coin" className="w-8 h-8" />) :
+                      (<img src="image/assets/coin.png" alt="coin" className="w-8 h-8" />)
+                  )}
                   <h1 className="text-sm text-white font-bold">{item.points}</h1>
                 </div>
               ))}
