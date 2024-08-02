@@ -40,14 +40,15 @@ function Home() {
       axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
       dispatch(insertWallet(webapp["user"]["username"]));
       dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
-      dispatch(getWallet(webapp["user"]["username"])).then(() => {
-        setTapLevel(tapLevelState);
-        setToken(tokenState);
-        setRemainedEnergy(energyState);
-      });
+      dispatch(getWallet(webapp["user"]["username"]))
     }
   }, []);
   console.log("---Telegram info----->", username);
+  useEffect(() => {
+    setTapLevel(tapLevelState);
+    setToken(tokenState);
+    setRemainedEnergy(energyState);
+  }, [tapLevelState, tokenState, energyState, setTapLevel, setToken, setRemainedEnergy])
   useEffect(() => {
     setLimit(limitState);
   }, [limitState]);
