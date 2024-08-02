@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { useSelector } from "../store";
-import { /*toast,*/ ToastContainer } from "react-toastify";
-// import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast, ToastContainer } from "react-toastify";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import axios from "../utils/api";
 import "../css/font.css";
 import Modal from "../component/modal";
@@ -21,11 +21,11 @@ export default function Friends() {
   const [isInviteModal, setIsInviteModal] = useState<boolean>(false);
   useEffect(() => {
     setUsername(username_state);
-    setTextToCopy(`https://t.me/generalTelegram_bot?start=${username_state}`);
+    setTextToCopy(`https://t.me/cashtreeTele_bot?start=${username_state}`);
   }, [username_state]);
-  // const handleCopy = async () => {
-  //   toast.success("Copied to clipboard!");
-  // };
+  const handleCopy = async () => {
+    toast.success("Copied to clipboard!");
+  };
   useEffect(() => {
     if (username) {
       axios.post(`/friend/${username}`).then((res) => {
@@ -115,9 +115,11 @@ export default function Friends() {
           >
             <span className="flex justify-center items-center text-white text-xl">Invite Now</span>
           </div>
-          <div className="w-[10%] bg-[#7520FF] rounded-[10px] flex justify-center items-center py-2">
-            <img src="image/friends/invite.png" alt="" className="w-6 h-6" />
-          </div>
+          <CopyToClipboard text={textToCopy} onCopy={handleCopy}>
+            <div className="w-[10%] bg-[#7520FF] rounded-[10px] flex justify-center items-center py-2">
+              <img src="image/friends/invite.png" alt="" className="w-6 h-6" />
+            </div>
+          </CopyToClipboard>
         </div>
         <Modal isOpen={isInviteModal} onClose={handleCloseInviteModal}>
           <div className="flex flex-col items-center align-middle gap-3 rounded-[20px] w-full">
@@ -187,46 +189,8 @@ export default function Friends() {
             </div>
           </CopyToClipboard>
         </div>
-      </div>
-      <div className="flex flex-col justify-center items-start w-[90%]">
-        <div className="flex justify-start items-center w-full">
-          <h2
-            className="text-white text-3xl mb-6"
-            style={{ fontFamily: "spicy" }}
-          >
-            My Refferals :
-          </h2>
-        </div>
-        <div className="flex justify-center items-center w-full">
-          {friends.length == 0 ? (
-            <div className="flex flex-col justify-center items-center gap-9 ">
-              <h2
-                className="text-[white] text-xl"
-                style={{ fontFamily: "poppins" }}
-              >
-                You don't have refferal!
-              </h2>
-              <img
-                src="image/assets/noRefferal.png"
-                alt=""
-                className="w-7 h-7"
-              />
-            </div>
-          ) : (
-            <div className="max-h-[30vh] max-sm:max-h-[30vh] overflow-auto w-full">
-              {friends.map((item, index) => (
-                <div
-                  key={index}
-                  className={`flex ${index > 0 && "my-3"
-                    } px-3 py-2 items-center bg-gradient-to-r from-[#567481] to-[#2D4047] rounded-lg w-[70%] text-[white]`}
-                >
-                  {item["friend"]}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div> */}
+      </div>     
+      */}
       </div>
       <Footer />
     </div>
