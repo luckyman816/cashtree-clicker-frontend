@@ -98,6 +98,15 @@ const dailyCoins = [
     status: "day_7"
   }
 ]
+interface daily_coins_received_status_types {
+    day_1: boolean,
+    day_2: boolean,
+    day_3: boolean,
+    day_4: boolean,
+    day_5: boolean,
+    day_6: boolean,
+    day_7: boolean,
+}
 export default function Mission() {
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
@@ -114,7 +123,7 @@ export default function Mission() {
   const [daily_coins, setDailyCoins] = useState<moment.Moment | null>(
     daily_coins_state ? moment(daily_coins_state) : null
   );
-  const [daily_coins_received_status, setDailyCoinsReceivedStatus] = useState(daily_coins_received_status_state);
+  const [daily_coins_received_status, setDailyCoinsReceivedStatus] = useState<daily_coins_received_status_types>(daily_coins_received_status_state);
   const [diffDays, setDiffDays] = useState<number>(0);
   const [diffHours, setDiffHours] = useState<number>(0);
   const [diffMinutes, setDiffMinutes] = useState<number>(0);
@@ -154,34 +163,40 @@ export default function Mission() {
       if (daily_coins_received_status.day_1 === false) {
         dispatch(updateBalance(username, balance + 500)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 1", true));
+          toast.success("You have received " + 500 + " coins!");
         });
       } else if (daily_coins_received_status.day_1 === true) {
         dispatch(updateBalance(username, balance + 1000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 2", true));
+          toast.success("You have received " + 1000 + " coins!");
         })
       } else if (daily_coins_received_status.day_2 === true) {
         dispatch(updateBalance(username, balance + 2000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 3", true));
+          toast.success("You have received " + 2000 + " coins!");
         })
       } else if (daily_coins_received_status.day_3 === true) {
         dispatch(updateBalance(username, balance + 3000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 4", true));
+          toast.success("You have received " + 3000 + " coins!");
         })
       } else if (daily_coins_received_status.day_4 === true) {
         dispatch(updateBalance(username, balance + 4000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 5", true));
+          toast.success("You have received " + 4000 + " coins!");
         })
       } else if (daily_coins_received_status.day_5 === true) {
         dispatch(updateBalance(username, balance + 5000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 6", true));
+          toast.success("You have received " + 5000 + " coins!");
         })
       } else if (daily_coins_received_status.day_7 === true) {
         dispatch(updateBalance(username, balance + 10000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 7", true));
+          toast.success("You have received " + 10000 + " coins!");
         })
       }
       dispatch(updateDailyCoins(username, moment())).then(() => {
-        toast.success("You have received " + 1000 + " coins!");
         setIsReceiveModalOpen(false);
       });
     } else if (diffDays > 1) {
