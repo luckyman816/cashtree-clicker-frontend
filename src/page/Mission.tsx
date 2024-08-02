@@ -226,9 +226,7 @@ export default function Mission() {
     setBalance(balance_state);
     setDailyCoins(daily_coins_state ? moment(daily_coins_state) : null);
   }, [username_state, balance_state, daily_coins_state, setDailyCoins]);
-  // const telegramGroupLink = "https://t.me/MikeToken";
-  // const telegramChannelLink = "https://t.me/MikeTokenAnn";
-  // const twitterChannelLink = "https://twitter.com/MikeTokenio";
+  // const telegramGroupLink = "https://t.me/CashtreeOfficialCommunity"
   // const handleLetsGoTelegramGroup = () => {
   //   window.open(telegramGroupLink, "_blank");
   // };

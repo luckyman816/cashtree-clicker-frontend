@@ -50,7 +50,7 @@ export default function Friends() {
         </h3>
         <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
       </div>
-      <div className="p-5 flex flex-col justify-center items-center gap-4 w-full">
+      <div className="p-5 flex flex-col justify-center items-center gap-4 w-full h-[90%]">
         <ToastContainer />
         <div className="flex w-full justify-center items-center text-3xl text-white font-bold">
           Invite Friends
@@ -76,7 +76,7 @@ export default function Friends() {
         </div>
         {
           friends.length > 0 ? (
-            <div className="min-h-[30vh] overflow-y-auto w-full max-h-[40vh]">
+            <div className="min-h-[60%] overflow-y-auto w-full max-h-[60%]">
               {
                 friends.map((friend) => (
                   <div className="flex w-[95%] justify-between px-3 py-3 items-center rounded-[20px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E57] to-[#7B34EE]">
@@ -98,7 +98,7 @@ export default function Friends() {
 
             </div>
           ) : (
-            <div className="flex w-full justify-center items-start min-h-[30vh] max-h-[40vh]">
+            <div className="flex w-full justify-center items-start min-h-[60%] max-h-[60%]">
               <div className="flex w-[95%] justify-center items-center py-4 bg-[#120F29] rounded-[20px]">
                 <p className="text-[#ABA7BA] text-sm">You haven't invited anyone yet</p>
               </div>
