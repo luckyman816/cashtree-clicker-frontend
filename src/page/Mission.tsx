@@ -218,7 +218,7 @@ export default function Mission() {
       });
     }
   }, [])
-  console.log("dailyCoinsReceivedStatus------->", daily_coins_received_status);
+  console.log("dailyCoinsReceivedStatus------->", daily_coins_received_status.day_1);
   //------------------------------------------------------------------------------//
   useEffect(() => {
     setUsername(username_state);
