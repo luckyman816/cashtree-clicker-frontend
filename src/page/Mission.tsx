@@ -150,7 +150,7 @@ export default function Mission() {
     setIsReceiveModalOpen(false);
   };
   const handleReceiveDailyCoins = () => {
-    if (diffDays > 0 && diffDays < 2) {
+    if (diffDays == 0 ) {
       if (daily_coins_received_status.day_1 === false) {
         dispatch(updateBalance(username, balance + 500)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 1", true));
@@ -191,7 +191,10 @@ export default function Mission() {
     }
   };
   const handleResetDailyCoins = () => {
-
+    dispatch(updateDailyCoins(username, moment())).then(() => {
+      toast.success("The time is reset ");
+      setIsReceiveModalOpen(false);
+    });
   }
   useEffect(() => {
     if (username) {
