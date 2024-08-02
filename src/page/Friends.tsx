@@ -11,6 +11,9 @@ const users = [
   "Adi Dme", "Aeid lise", "Aide jdue", "Jude Ude", "Ude List", "Wdit doke", "Lise Ude", "Udjde Jude", "Jdne Mjde"
 ]
 export default function Friends() {
+  function formatNumberWithCommas(number: number, locale = "en-US") {
+    return new Intl.NumberFormat(locale).format(number);
+  }
   const username_state = useSelector((state) => state.wallet.user?.username);
   const [username, setUsername] = useState<string>(username_state);
   const [friends, setFriends] = useState<any[]>([]);
@@ -68,7 +71,7 @@ export default function Friends() {
           </div>
           <div className="flex justify-center items-center gap-2">
             <img src="image/assets/coin.png" alt="coin" className="w-5 h-5" />
-            <h1 className="text-[#FFC107] text-sm">+25.000</h1>
+            <h1 className="text-[#FFC107] text-sm">+{formatNumberWithCommas(25000)}</h1>
           </div>
         </div>
         <div className="flex w-full justify-start items-center">
