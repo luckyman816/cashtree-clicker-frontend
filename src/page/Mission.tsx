@@ -159,7 +159,7 @@ export default function Mission() {
     setIsReceiveModalOpen(false);
   };
   const handleReceiveDailyCoins = () => {
-    if (diffDays == 0 ) {
+    if (diffDays === 1 ) {
       if (daily_coins_received_status.day_1 === false) {
         dispatch(updateBalance(username, balance + 500)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 1", true));
@@ -201,7 +201,7 @@ export default function Mission() {
       });
     } else if (diffDays > 1) {
       toast.warning("The time has already passed! Plesae reset daily coins!");
-    } else {
+    } else if (diffDays === 0) {
       toast.warning("Please wait for the next day!");
     }
   };
