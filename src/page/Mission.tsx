@@ -213,11 +213,12 @@ export default function Mission() {
   }
   useEffect(() => {
     if (username) {
-      dispatch(getDailyCoinsReceivedStatus(username)).then(() => {
-        setDailyCoinsReceivedStatus(daily_coins_received_status_state);
-      });
+      dispatch(getDailyCoinsReceivedStatus(username))
     }
   }, [])
+  useEffect(() => {
+    setDailyCoinsReceivedStatus(daily_coins_received_status_state);
+  }, [daily_coins_received_status_state, setDailyCoinsReceivedStatus])
   console.log("dailyCoinsReceivedStatus------->", daily_coins_received_status.day_1);
   //------------------------------------------------------------------------------//
   useEffect(() => {
