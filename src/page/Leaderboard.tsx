@@ -62,25 +62,15 @@ const milestones = [
         status: "Unlocked",
     },
 ]
-interface playerTypes {
-    _id: string;
-    username: string;
-    balance: number;
-    energy: number;
-    full_energy: number;
-    tap_level: number;
-    limit: number;
-    daily_coins: Date;
-}
 export default function Leaderboard() {
     const players_state = useSelector((state) => state.wallet.users);
-    const [players, setPlayers] = useState<playerTypes[]>(players_state);
+    const [players, setPlayers] = useState(players_state);
     useEffect(() => {
-        dispatch(getAllUsers());
-    }, [])
-    useEffect(() => {
-        setPlayers(players_state);
-    }, [players_state, setPlayers])
+        dispatch(getAllUsers()).then(() => {
+            setPlayers(players_state);
+        });
+    }, [players_state])
+
     console.log("players----------->", players);
     const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(true);
     const handleLeaderboardClick = () => {
@@ -113,7 +103,7 @@ export default function Leaderboard() {
                         <div className="text-white text-[12px] justify-center items-center">Leaderboard & rank of worldwide players</div>
                         <div className="min-h-[40vh] max-h-[40vh] flex flex-col overflow-auto w-full gap-3">
                             {players.map((player, index) => (
-                                <div key={index} className="flex justify-between items-center w-full bg-gradient-to-br from-[#8137F9] to-[#240C4D] rounded-[12px] px-4">
+                                <div key={index} className="flex justify-between items-center w-full bg-[#2D2865] rounded-[12px] px-4">
                                     <div className="flex-[1.5] py-2">
                                         <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]" />
                                     </div>
