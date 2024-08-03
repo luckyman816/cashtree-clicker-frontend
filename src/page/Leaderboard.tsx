@@ -94,12 +94,12 @@ export default function Leaderboard() {
                 </h3>
                 <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
             </div>
-            <div className="p-5 flex flex-col justify-start items-center gap-5 w-full">
+            <div className="px-2 flex flex-col justify-start items-center gap-5 w-full">
                 <ToastContainer />
                 <div className="flex w-full h-14 rounded-[12px] bg-[#120F29] justify-around items-center px-5 border-b border-[#3C375C]">
-                    <div className={`w-1/3 h-full text-lg  ${isLeaderboardOpen == 0 ? "text-[#7520FF] border-b border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handleLeaderboardClick()}>LEADERBOARD</div>
-                    <div className={`w-1/3 h-full text-lg  ${isLeaderboardOpen == 1 ? "text-[#7520FF] border-b border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handlePrizePoolClick()}>PRIZE POOL</div>
-                    <div className={`w-1/3 h-full text-lg  ${isLeaderboardOpen == 2 ? "text-[#7520FF] border-b border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handleResultClick()}>RESULT</div>
+                    <div className={`w-1/3 h-full text-sm  ${isLeaderboardOpen == 0 ? "text-[#7520FF] border-b border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handleLeaderboardClick()}>LEADERBOARD</div>
+                    <div className={`w-1/3 h-full text-sm  ${isLeaderboardOpen == 1 ? "text-[#7520FF] border-b border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handlePrizePoolClick()}>PRIZE POOL</div>
+                    <div className={`w-1/3 h-full text-sm  ${isLeaderboardOpen == 2 ? "text-[#7520FF] border-b border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handleResultClick()}>RESULT</div>
                 </div>
                 {isLeaderboardOpen ? (
                     <div className="flex flex-col justify-start items-center gap-3 w-full">
