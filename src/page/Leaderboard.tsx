@@ -63,8 +63,14 @@ const milestones = [
     },
 ]
 interface playerTypes {
+    _id: string;
     username: string;
     balance: number;
+    energy: number;
+    full_energy: number;
+    tap_level: number;
+    limit: number;
+    daily_coins: Date;
 }
 export default function Leaderboard() {
     const players_state = useSelector((state) => state.wallet.users);
