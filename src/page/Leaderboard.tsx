@@ -219,12 +219,12 @@ export default function Leaderboard() {
                             </div>
                         </div>
                         <div className="flex flex-col w-[95%] px-5 py-2 justify-between items-center rounded-[10px] bg-[#2D2865]">
-                            <div className="flex justify-between items-center">
+                            <div className="flex justify-between items-center w-full">
                                 <h1 className="text-white text-xl">Current Status</h1>
                                 <img src="image/leaderboard/arrow.png" alt="" className="w-4 h-2" />
                             </div>
                             <div className="flex flex-col gap-2 justify-center items-center w-full">
-                                <div className="flex justify-between items-center gap-2">
+                                <div className="flex justify-between items-center gap-2 w-full">
                                     <img src="image/leaderboard/point.png" alt="" className="w-9 h-9" />
                                     <div className="flex flex-col justify-center items-center gap-1">
                                         <h1 className="text-white text-lg">Your Points Earned</h1>
@@ -232,8 +232,8 @@ export default function Leaderboard() {
                                     </div>
                                     <h1 className="text-[16px] text-white">{formatNumberWithCommas(3450899)}</h1>
                                 </div>
-                                <div className="flex justify-between items-center gap-2">
-                                    <img src="image/leaderboard/point.png" alt="" className="w-9 h-9" />
+                                <div className="flex justify-between items-center gap-2 w-full">
+                                    <img src="image/leaderboard/rank.png" alt="" className="w-9 h-9" />
                                     <div className="flex flex-col justify-center items-center gap-1">
                                         <h1 className="text-white text-lg">Your Rank</h1>
                                         <h1 className="text-[#ABA7BA] text-[10px]">25 August 2024</h1>
