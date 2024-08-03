@@ -3,6 +3,7 @@ import { /*toast,*/ ToastContainer } from "react-toastify";
 import { useEffect, useState } from "react";
 import { dispatch, useSelector } from "../store";
 import { getAllUsers } from "../store/reducers/wallet";
+import "../css/font.css";
 const milestones = [
     {
         imgpath: "milestone1",
@@ -183,7 +184,14 @@ export default function Leaderboard() {
                             </div>
                         </div>
                     </div>
-                ) : (<></>)
+                ) : (
+                    <div className="flex flex-col justify-center items-center gap-3 w-full">
+                        <div className="flex justify-between items-center w-full gap-4">
+                            <h1 className="text-white text-xl font-bold">Welcome to Cashtree Tap-to-Win! <br /><span className="text-[#C8A2FB] font-bold text-xl"></span></h1>
+                            <img src="image/leaderboard/season.png" alt="" className="w-16 h-16"/>
+                        </div>
+                    </div>
+                    )
                 }
                 <ToastContainer />
             </div>
