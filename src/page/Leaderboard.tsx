@@ -100,7 +100,6 @@ export default function Leaderboard() {
                 <div className={`w-1/3 h-full text-sm  ${isLeaderboardOpen == 2 ? "text-[#7520FF] border-b-2 font-bold border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handleResultClick()}>RESULT</div>
             </div>
             <div className="px-2 flex flex-col justify-start items-center gap-5 w-full">
-                <ToastContainer />
                 {isLeaderboardOpen == 0 ? (
                     <div className="flex flex-col justify-start items-center gap-3 w-full">
                         <div className="text-white text-[32px] justify-center font-[Archivo] items-center">Leaderboard</div>
@@ -186,6 +185,7 @@ export default function Leaderboard() {
                     </div>
                 ) : (<></>)
                 }
+                <ToastContainer />
             </div>
             <Footer />
         </div>
