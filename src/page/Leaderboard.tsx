@@ -191,9 +191,9 @@ export default function Leaderboard() {
                     <div className="flex flex-col justify-center items-center gap-3 w-full">
                         <div className="flex justify-between items-center w-full gap-4">
                             <h1 className="text-white text-xl font-bold">Welcome to Cashtree Tap-to-Win! <br /><span className="text-[#C8A2FB] font-bold text-xl">Season 1!</span></h1>
-                            <img src="image/leaderboard/season.png" alt="" className="w-16 h-16"/>
+                            <img src="image/leaderboard/season.png" alt="" className="w-16 h-[70px]"/>
                         </div>
-                        <div className="flex justify-start items-center text-white text-sm">8 August - 22 August 2024 <br />Game Status:</div>
+                        <div className="flex justify-start items-center text-white text-sm w-full">8 August - 22 August 2024 <br />Game Status:</div>
                         <div className="flex w-[95%] px-5 py-2 justify-between items-center rounded-[10px] bg-[#2D2865]">
                             <div className="flex justify-center items-center gap-2">
                                 <img src="image/leaderboard/seasonUser.png" alt="" className="w-8 h-[26px]"/>
