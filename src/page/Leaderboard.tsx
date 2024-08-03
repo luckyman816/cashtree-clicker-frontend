@@ -98,7 +98,7 @@ export default function Leaderboard() {
                     <div className={`w-2/3  text-lg text-white ${!isLeaderboardOpen ? "bg-[#7520FF]" : "bg-[#120F29]"} py-2 rounded-[10px]`} onClick={() => handlePrizePoolClick()}>Prize Pool</div>
                 </div>
                 {isLeaderboardOpen ? (
-                    <div className="flex flex-col justify-center items-center gap-3 w-full">
+                    <div className="flex flex-col justify-start items-start gap-3 w-full">
                         <div className="text-white text-[32px] justify-center font-[Archivo] items-center">Leaderboard</div>
                         <div className="text-white text-[12px] justify-center items-center">Leaderboard & rank of worldwide players</div>
                         <div className="min-h-[40vh] max-h-[40vh] flex flex-col overflow-auto w-full gap-3">
