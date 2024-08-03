@@ -204,7 +204,7 @@ export default function Leaderboard() {
                             </div>
                             <h1 className="text-[16px] text-white">{formatNumberWithCommas(125350)}</h1>
                         </div>
-                        <div className="flex flex-col gap-1 w-full justify-start items-center">
+                        <div className="flex flex-col gap-1 w-full justify-start items-start">
                             <h1 className="text-white text-xl">Milestone 8 With Total Reward</h1>
                             <h1 className="text-white font-bold text-4xl">{formatNumberWithCommas(75000000)}$CTT</h1>
                         </div>
