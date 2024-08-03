@@ -72,12 +72,15 @@ export default function Leaderboard() {
     }, [players_state])
 
     console.log("players----------->", players);
-    const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(true);
+    const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(0);
     const handleLeaderboardClick = () => {
-        setIsLeaderboardOpen(true);
+        setIsLeaderboardOpen(0);
     }
     const handlePrizePoolClick = () => {
-        setIsLeaderboardOpen(false);
+        setIsLeaderboardOpen(1);
+    }
+    const handleResultClick = () => {
+        setIsLeaderboardOpen(2);
     }
     return (
         <div className="flex flex-col justify-between items-center h-full w-full bg-[#120F29]">
@@ -93,9 +96,10 @@ export default function Leaderboard() {
             </div>
             <div className="p-5 flex flex-col justify-start items-center gap-5 w-full">
                 <ToastContainer />
-                <div className="flex w-full h-14 rounded-[12px] bg-[#120F29] justify-center items-center px-5 gap-5">
-                    <div className={`w-2/3  text-lg text-white ${isLeaderboardOpen ? "bg-[#7520FF]" : "bg-[#120F29]"} py-2 rounded-[10px]`} onClick={() => handleLeaderboardClick()}>Leaderboard</div>
-                    <div className={`w-2/3  text-lg text-white ${!isLeaderboardOpen ? "bg-[#7520FF]" : "bg-[#120F29]"} py-2 rounded-[10px]`} onClick={() => handlePrizePoolClick()}>Prize Pool</div>
+                <div className="flex w-full h-14 rounded-[12px] bg-[#120F29] justify-around items-center px-5 border-b border-[#3C375C]">
+                    <div className={`w-1/3 h-full text-lg  ${isLeaderboardOpen == 0 ? "text-[#7520FF] border-b border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handleLeaderboardClick()}>LEADERBOARD</div>
+                    <div className={`w-1/3 h-full text-lg  ${isLeaderboardOpen == 1 ? "text-[#7520FF] border-b border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handlePrizePoolClick()}>PRIZE POOL</div>
+                    <div className={`w-1/3 h-full text-lg  ${isLeaderboardOpen == 2 ? "text-[#7520FF] border-b border-[#7520FF]" : "text-[#ABA7BA] border-b border-[#3C375C]"}`} onClick={() => handleResultClick()}>RESULT</div>
                 </div>
                 {isLeaderboardOpen ? (
                     <div className="flex flex-col justify-start items-center gap-3 w-full">
