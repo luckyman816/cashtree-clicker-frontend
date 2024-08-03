@@ -63,7 +63,7 @@ const milestones = [
     },
 ]
 export default function Leaderboard() {
-    const players_state = useSelector((state) => state.wallet.users);
+    const players_state = useSelector((state) => state.wallet?.users);
     const [players, setPlayers] = useState(players_state);
     useEffect(() => {
         dispatch(getAllUsers()).then(() => {
