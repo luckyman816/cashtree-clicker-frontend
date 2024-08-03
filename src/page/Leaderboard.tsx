@@ -123,10 +123,10 @@ export default function Leaderboard() {
                                 <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]" />
                             </div>
                             <div className="flex-[5] flex-col justify-start items-center">
-                                <div className="flex text-white text-[12px] justify-start items-center">Budi</div>
+                                <div className="flex text-white text-[12px] justify-start items-center">{players[0].username}</div>
                                 <div className="flex justify-start items-center">
                                     <img src="image/leaderboard/coin.png" alt="" />
-                                    <div className="text-white text-[12px]">599,989,999</div>
+                                    <div className="text-white text-[12px]">{players[0].balance}</div>
                                 </div>
                             </div>
                             <div className="flex-[2] text-2xl text-white justify-end items-center">10000+</div>
