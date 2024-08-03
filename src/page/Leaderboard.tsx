@@ -63,17 +63,6 @@ const milestones = [
     },
 ]
 export default function Leaderboard() {
-    const Players = [
-        { name: "User1", coin: "25.000" },
-        { name: "User1", coin: "25.000" },
-        { name: "User1", coin: "25.000" },
-        { name: "User1", coin: "25.000" },
-        { name: "User1", coin: "25.000" },
-        { name: "User1", coin: "25.000" },
-        { name: "User1", coin: "25.000" },
-        { name: "User1", coin: "25.000" },
-        { name: "User1", coin: "25.000" },
-    ]
     const players_state = useSelector((state) => state.wallet.users);
     const [players, setPlayers] = useState(players_state);
     useEffect(() => {
@@ -113,16 +102,16 @@ export default function Leaderboard() {
                         <div className="text-white text-[32px] justify-center font-[Archivo] items-center">Leaderboard</div>
                         <div className="text-white text-[12px] justify-center items-center">Leaderboard & rank of worldwide players</div>
                         <div className="min-h-[40vh] max-h-[40vh] flex flex-col overflow-auto w-full gap-3">
-                            {Players.map((player, index) => (
+                            {players.map((player, index) => (
                                 <div key={index} className="flex justify-between items-center w-full bg-gradient-to-br from-[#8137F9] to-[#240C4D] rounded-[12px] px-4">
                                     <div className="flex-[1.5] py-2">
                                         <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]" />
                                     </div>
                                     <div className="flex-[5] flex-col  gap-2">
-                                        <div className="flex text-white text-[12px] justify-start items-center font-[Archivo]">{player.name}</div>
+                                        <div className="flex text-white text-[12px] justify-start items-center font-[Archivo]">{player.username}</div>
                                         <div className="flex justify-start items-center">
                                             <img src="image/leaderboard/coin.png" alt="" />
-                                            <div className="text-white text-[12px] font-[Archivo]">{player.coin}</div>
+                                            <div className="text-white text-[12px] font-[Archivo]">{player.balance}</div>
                                         </div>
                                     </div>
                                     <div className="flex-[2] flex text-2xl text-white justify-end items-center">{index + 1}</div>
