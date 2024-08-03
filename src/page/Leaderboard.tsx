@@ -194,7 +194,7 @@ export default function Leaderboard() {
                             <img src="image/leaderboard/season.png" alt="" className="w-16 h-16"/>
                         </div>
                         <div className="flex justify-start items-center text-white text-sm">8 August - 22 August 2024 <br />Game Status:</div>
-                        <div className="flex w-[95%] px-5 py-2 justify-between items-center">
+                        <div className="flex w-[95%] px-5 py-2 justify-between items-center rounded-[10px] bg-[#2D2865]">
                             <div className="flex justify-center items-center gap-2">
                                 <img src="image/leaderboard/seasonUser.png" alt="" className="w-8 h-[26px]"/>
                                 <div className="flex flex-col justify-center items-center gap-1">
@@ -202,7 +202,7 @@ export default function Leaderboard() {
                                     <h1 className="text-[#ABA7BA] text-[10px]">Current all players</h1>
                                 </div>
                             </div>
-                            <h1 className="text-[16px]">{formatNumberWithCommas(125350)}</h1>
+                            <h1 className="text-[16px] text-white">{formatNumberWithCommas(125350)}</h1>
                         </div>
                     </div>
                     )
