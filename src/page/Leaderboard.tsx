@@ -63,7 +63,7 @@ const milestones = [
     },
 ]
 export default function Leaderboard() {
-    const players_state = useSelector((state) => state.wallet?.users);
+    const players_state = useSelector((state) => state.wallet.users);
     const [players, setPlayers] = useState(players_state);
     useEffect(() => {
         dispatch(getAllUsers()).then(() => {
@@ -102,7 +102,7 @@ export default function Leaderboard() {
                         <div className="text-white text-[32px] justify-center font-[Archivo] items-center">Leaderboard</div>
                         <div className="text-white text-[12px] justify-center items-center">Leaderboard & rank of worldwide players</div>
                         <div className="min-h-[40vh] max-h-[40vh] flex flex-col overflow-auto w-full gap-3">
-                            {players.map((player, index) => (
+                            {players?.map((player, index) => (
                                 <div key={index} className="flex justify-between items-center w-full bg-[#2D2865] rounded-[12px] px-4">
                                     <div className="flex-[1.5] py-2">
                                         <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]" />
@@ -123,10 +123,10 @@ export default function Leaderboard() {
                                 <img src="image/leaderboard/playerIcon.png" alt="" className="w-[42px] h-[42px]" />
                             </div>
                             <div className="flex-[5] flex-col justify-start items-center">
-                                <div className="flex text-white text-[12px] justify-start items-center">{players[0].username}</div>
+                                <div className="flex text-white text-[12px] justify-start items-center">{players[0]?.username}</div>
                                 <div className="flex justify-start items-center">
                                     <img src="image/leaderboard/coin.png" alt="" />
-                                    <div className="text-white text-[12px]">{players[0].balance}</div>
+                                    <div className="text-white text-[12px]">{players[0]?.balance}</div>
                                 </div>
                             </div>
                             <div className="flex-[2] text-2xl text-white justify-end items-center">10000+</div>
