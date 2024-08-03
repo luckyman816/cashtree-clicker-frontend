@@ -218,7 +218,7 @@ export default function Leaderboard() {
                                 <h1 className="text-white font-bold text-[18px]">{formatNumberWithCommas(25000000)}$CTT</h1>
                             </div>
                         </div>
-                        <div className="flex w-[95%] px-5 py-2 justify-between items-center rounded-[10px] bg-[#2D2865]">
+                        <div className="flex flex-col w-[95%] px-5 py-2 justify-between items-center rounded-[10px] bg-[#2D2865]">
                             <div className="flex justify-between items-center">
                                 <h1 className="text-white text-xl">Current Status</h1>
                                 <img src="image/leaderboard/arrow.png" alt="" className="w-4 h-2" />
