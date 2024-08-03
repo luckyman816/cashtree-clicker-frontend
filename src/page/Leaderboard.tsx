@@ -91,7 +91,7 @@ export default function Leaderboard() {
                 </h3>
                 <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
             </div>
-            <div className="p-5 flex flex-col justify-center items-center gap-5 w-full">
+            <div className="p-5 flex flex-col justify-start items-center gap-5 w-full">
                 <ToastContainer />
                 <div className="flex w-full h-14 rounded-[12px] bg-[#120F29] justify-center items-center px-5 gap-5">
                     <div className={`w-2/3  text-lg text-white ${isLeaderboardOpen ? "bg-[#7520FF]" : "bg-[#120F29]"} py-2 rounded-[10px]`} onClick={() => handleLeaderboardClick()}>Leaderboard</div>
