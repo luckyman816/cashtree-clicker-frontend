@@ -204,6 +204,20 @@ export default function Leaderboard() {
                             </div>
                             <h1 className="text-[16px] text-white">{formatNumberWithCommas(125350)}</h1>
                         </div>
+                        <div className="flex flex-col gap-1 w-full justify-start items-center">
+                            <h1 className="text-white text-xl">Milestone 8 With Total Reward</h1>
+                            <h1 className="text-white font-bold text-4xl">{formatNumberWithCommas(75000000)}$CTT</h1>
+                        </div>
+                        <div className="flex gap-2 justify-center items-center">
+                            <div className="flex flex-col gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#7520FF] rounded-[10px]">
+                                <h1 className="text-white text-[12px]">Reward For Leaderboard</h1>
+                                <h1 className="text-white font-bold text-[18px]">{formatNumberWithCommas(25000000)}$CTT</h1>
+                            </div>
+                            <div className="flex flex-col gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF] rounded-[10px]">
+                                <h1 className="text-white text-[12px]">Reward For Leaderboard</h1>
+                                <h1 className="text-white font-bold text-[18px]">{formatNumberWithCommas(25000000)}$CTT</h1>
+                            </div>
+                        </div>
                     </div>
                     )
                 }
