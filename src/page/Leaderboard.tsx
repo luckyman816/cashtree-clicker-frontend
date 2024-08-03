@@ -1,6 +1,8 @@
 import Footer from "../component/Footer";
 import { /*toast,*/ ToastContainer } from "react-toastify";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { dispatch, useSelector } from "../store";
+import { getAllUsers } from "../store/reducers/wallet";
 const milestones = [
     {
         imgpath: "milestone1",
@@ -72,6 +74,15 @@ export default function Leaderboard() {
         { name: "User1", coin: "25.000" },
         { name: "User1", coin: "25.000" },
     ]
+    const players_state = useSelector((state) => state.wallet.users);
+    const [players, setPlayers] = useState(players_state);
+    useEffect(() => {
+        dispatch(getAllUsers());
+    }, [])
+    useEffect(() => {
+        setPlayers(players_state);
+    }, [players_state, setPlayers])
+    console.log("players----------->", players);
     const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(true);
     const handleLeaderboardClick = () => {
         setIsLeaderboardOpen(true);
