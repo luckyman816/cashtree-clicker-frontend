@@ -2,7 +2,6 @@
 import { useEffect, useState, useRef } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import Footer from "../component/Footer";
-import "react-toastify/dist/ReactToastify.css";
 import ProgressBar from "../component/ProgressBar";
 import { dispatch, useSelector } from "../store";
 import axios from "../utils/api";

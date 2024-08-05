@@ -1,5 +1,5 @@
 import Footer from "../component/Footer";
-import { ToastContainer } from "react-toastify"
+import /*toast,*/ { Toaster } from 'react-hot-toast';
 import { useState } from "react"
 import "../css/font.css"
 import Modal from "../component/modal";
@@ -15,7 +15,7 @@ export default function WalletPage() {
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
       <div className="flex flex-col justify-center items-center gap-2 w-full">
-        <ToastContainer />
+        <Toaster />
         <div className="flex justify-between items-center px-3 w-full mt-3">
           <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
           <h3

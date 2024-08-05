@@ -1,5 +1,5 @@
 import Footer from "../component/Footer";
-import { /*toast,*/ ToastContainer } from "react-toastify";
+import /*toast,*/ { Toaster } from 'react-hot-toast';
 import { useEffect, useState } from "react";
 import { dispatch, useSelector } from "../store";
 import { getAllUsers } from "../store/reducers/wallet";
@@ -31,6 +31,7 @@ export default function Leaderboard() {
     }
     return (
         <div className="flex flex-col justify-between items-center h-full w-full bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#120F29]">
+            <Toaster />
             <div className="flex justify-between items-center px-3 w-full py-3">
                 <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
                 <h3
@@ -211,7 +212,6 @@ export default function Leaderboard() {
                     </div>
                 )
                 }
-                <ToastContainer />
             </div>
             <Footer />
         </div>

@@ -2,7 +2,7 @@
 import { useSelector, dispatch } from "../store";
 import { updateBalance, updateDailyCoins } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import toast, { Toaster } from 'react-hot-toast';
 import Modal from "../component/modal";
 import moment from "moment";
 import Footer from "../component/Footer";
@@ -113,9 +113,9 @@ export default function Mission() {
         setIsReceiveModalOpen(false);
       });
     } else if (diffDays > 1) {
-      toast.warning("The time has already passed! Plesae reset daily coins!");
+      toast.error("The time has already passed! Plesae reset daily coins!");
     } else if (diffDays === 0) {
-      toast.warning("Please wait for the next day!");
+      toast.error("Please wait for the next day!");
     }
   };
   const handleResetDailyCoins = () => {
@@ -302,6 +302,7 @@ export default function Mission() {
   // };
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
+      <Toaster />
       <div className="flex justify-between items-center px-3 w-full py-3">
         <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
         <h3
@@ -313,7 +314,6 @@ export default function Mission() {
         <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
       </div>
       <div className="flex flex-col justify-center items-center gap-4 w-full">
-        <ToastContainer />
         <div className="flex flex-col justify-center items-center">
           <img src="image/assets/mission.png" alt="" className=" w-36 h-36" />
           <h1 className="text-white text-[32px] font-bold">Earn More Coins</h1>
