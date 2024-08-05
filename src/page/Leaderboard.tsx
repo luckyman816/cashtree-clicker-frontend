@@ -188,7 +188,7 @@ export default function Leaderboard() {
                         </div>
                     </div>
                 ) : (
-                    <div className="min-h-[70vh] max-h-[70vh] overflow-y-auto w-full">
+                    <div className="min-h-[70vh] max-h-[70vh] overflow-y-auto w-[90%]">
                         <div className="flex flex-col justify-center items-center gap-3 w-full">
                             <div className="flex justify-between items-center w-full gap-4">
                                 <h1 className="text-white text-xl font-bold text-left">Welcome to Cashtree Tap-to-Win! <br /><span className="text-[#C8A2FB] font-bold text-xl">Season 1!</span></h1>
