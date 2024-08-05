@@ -114,20 +114,16 @@ function Home() {
       setScore(`+${tapLevel}`);
       if ((token + tapLevel) > levelTargets[tapLevel - 1]) {
         setToken(levelTargets[tapLevel - 1]);
-        dispatch(updateWallet(username, levelTargets[tapLevel - 1], remainedEnergy - tapLevel))
-          .then(() => {
-            if ((token + tapLevel) == levelTargets[tapLevel - 1]) {
-              if (tapLevel < 10) {
-                dispatch(updateTapLevel(username, tapLevel + 1));
-                dispatch(updateBalance(username, token + levelBonus[tapLevel - 1]))
-                dispatch(updateLimit(username, energyLimit[tapLevel - 1]))
-                toast.success("Level up! 🎉🎉🎉 You received bonus points!");
-              } else {
-                toast.info("Maximum level reached!");
-              }
-            }
-          });
-
+        dispatch(updateWallet(username, levelTargets[tapLevel - 1], remainedEnergy - tapLevel)).then(() => {
+          if (tapLevel < 10 && token == levelTargets[tapLevel - 1]) {
+            dispatch(updateTapLevel(username, tapLevel + 1));
+            dispatch(updateBalance(username, token + levelBonus[tapLevel - 1]))
+            dispatch(updateLimit(username, energyLimit[tapLevel - 1]))
+            toast.success("Level up! 🎉🎉🎉 You received bonus points!");
+          } else {
+            toast.info("Maximum level reached!");
+          }
+        });
       } else {
         setToken(token + tapLevel);
         if (remainedEnergy - tapLevel < 0) {
