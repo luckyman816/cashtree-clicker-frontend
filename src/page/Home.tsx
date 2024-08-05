@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, useRef } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import toast, { Toaster } from 'react-hot-toast';
 import Footer from "../component/Footer";
 import "react-toastify/dist/ReactToastify.css";
 import ProgressBar from "../component/ProgressBar";
@@ -122,7 +122,7 @@ function Home() {
             })
             dispatch(updateLimit(username, energyLimit[tapLevel]))
           } else {
-            toast.info("Maximum level reached!");
+            toast.error("Maximum level reached!");
           }
         });
       } else {
@@ -150,7 +150,7 @@ function Home() {
   console.log("imgStatus", imgStatus);
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
-      <ToastContainer />
+      <Toaster />
       <div className="flex justify-between items-center px-3 w-full py-3">
         <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
         <h3
