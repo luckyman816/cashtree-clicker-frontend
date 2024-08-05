@@ -117,9 +117,10 @@ function Home() {
         dispatch(updateWallet(username, levelTargets[tapLevel - 1], remainedEnergy - tapLevel)).then(() => {
           if (tapLevel < 10 && token == levelTargets[tapLevel - 1]) {
             dispatch(updateTapLevel(username, tapLevel + 1));
-            dispatch(updateBalance(username, token + levelBonus[tapLevel - 1]))
-            dispatch(updateLimit(username, energyLimit[tapLevel - 1]))
-            toast.success("Level up! 🎉🎉🎉 You received bonus points!");
+            dispatch(updateBalance(username, token + levelBonus[tapLevel - 1])).then(() => {
+              toast.success("Level up! 🎉🎉🎉 You received bonus points!");
+            })
+            dispatch(updateLimit(username, energyLimit[tapLevel]))
           } else {
             toast.info("Maximum level reached!");
           }
