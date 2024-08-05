@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, useRef } from "react";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import Footer from "../component/Footer";
 import "react-toastify/dist/ReactToastify.css";
 import ProgressBar from "../component/ProgressBar";
@@ -9,12 +9,15 @@ import axios from "../utils/api";
 import "../css/font.css";
 import "../css/spread.css";
 import { useNavigate } from "react-router-dom";
-import { levelNames, levelTargets } from "../data";
+import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
 import {
   insertWallet,
   updateWallet,
   updateEnergy,
   getWallet,
+  updateTapLevel,
+  updateBalance,
+  updateLimit,
 } from "../store/reducers/wallet";
 import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
 function Home() {
@@ -99,7 +102,6 @@ function Home() {
   };
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log("-information---->", username, remainedEnergy);
       if (remainedEnergy < limit) {
         dispatch(updateEnergy(username, remainedEnergy + 1));
       }
@@ -108,14 +110,21 @@ function Home() {
   }, [username, remainedEnergy, limit]);
 
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (remainedEnergy > 0 && token < 1000000000) {
+    if (remainedEnergy > 0 && token < levelTargets[tapLevel]) {
       setScore(`+${tapLevel}`);
-      if (token + tapLevel > 1000000000) {
-        setToken(1000000000);
-        dispatch(updateWallet(username, 1000000000, remainedEnergy - tapLevel));
+      if (token + tapLevel > levelTargets[tapLevel - 1]) {
+        setToken(levelTargets[tapLevel - 1]);
+        dispatch(updateWallet(username, levelTargets[tapLevel - 1], remainedEnergy - tapLevel));
+        if (tapLevel < 10) {
+          dispatch(updateTapLevel(username, tapLevel + 1));
+          dispatch(updateBalance(username, token + levelBonus[tapLevel - 1]))
+          dispatch(updateLimit(username, energyLimit[tapLevel - 1]))
+          toast.success("Level up! 🎉🎉🎉 You received bonus points!");
+        } else {
+          toast.info("Maximum level reached!");
+        }
       } else {
         setToken(token + tapLevel);
-        console.log("---dsfadsfasdf--->", token, tapLevel)
         if (remainedEnergy - tapLevel < 0) {
           dispatch(updateWallet(username, token + tapLevel, 0));
           setRemainedEnergy(0);

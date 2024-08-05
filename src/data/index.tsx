@@ -62,6 +62,8 @@ export const users = [
 ];
 export const levelNames = ['Newbie', 'Rookie', 'Beginner', 'Intermediate', 'Expert', 'Master', 'Grandmaster', 'Legendary', 'Mythical', 'Conqueror'];
 export const levelTargets = [10000, 20000, 50000, 100000, 200000, 500000, 1000000, 3000000, 5000000, 10000000];
+export const levelBonus = [1000, 2000, 5000, 10000, 20000, 35000, 50000, 75000, 150000];
+export const energyLimit = [5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 10000]
 export const dailyCheckItems = [
     {
       id: 1,
