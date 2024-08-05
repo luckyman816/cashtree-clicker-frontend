@@ -6,98 +6,11 @@ import { ToastContainer, toast } from "react-toastify";
 import Modal from "../component/modal";
 import moment from "moment";
 import Footer from "../component/Footer";
+import { getDailyCoinsReceivedStatus, updateDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
+import { dailyCheckItems, taskListItems, dailyCoins } from "../data";
 import "../css/font.css"
 import "react-toastify/dist/ReactToastify.css";
-import { getDailyCoinsReceivedStatus, updateDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
-const dailyCheckItems = [
-  {
-    id: 1,
-    icon: "dailyCheck",
-    name: "Daily Check in!",
-    coin: "+25.000"
-  },
-  {
-    id: 2,
-    icon: "retweet",
-    name: "Retweet a Post",
-    coin: "+25.000"
-  },
-  {
-    id: 3,
-    icon: "comment",
-    name: "Comment on a Post",
-    coin: "+25.000"
-  },
-  {
-    id: 4,
-    icon: "likePost",
-    name: "Like a Post",
-    coin: "+25.000"
-  },
-  {
-    id: 5,
-    icon: "secretExtra",
-    name: "Secret Extra Point",
-    coin: "+25.000"
-  },
-]
-const taskListItems = [
-  {
-    id: 1,
-    icon: "instagram",
-    name: "Follow Instagram",
-    coin: "+25.000"
-  },
-  {
-    id: 1,
-    icon: "youtube",
-    name: "Subscribe to YouTube",
-    coin: "+25.000"
-  },
-  {
-    id: 1,
-    icon: "telegram",
-    name: "Join Telegram Group",
-    coin: "+25.000"
-  }
-]
-const dailyCoins = [
-  {
-    day: "Day 1",
-    points: "500",
-    status: "day_1"
-  },
-  {
-    day: "Day 2",
-    points: "1000",
-    status: "day_2"
-  },
-  {
-    day: "Day 3",
-    points: "2000",
-    status: "day_3"
-  },
-  {
-    day: "Day 4",
-    points: "3000",
-    status: "day_4"
-  },
-  {
-    day: "Day 5",
-    points: "4000",
-    status: "day_5"
-  },
-  {
-    day: "Day 6",
-    points: "5000",
-    status: "day_6"
-  },
-  {
-    day: "Day 7",
-    points: "10000",
-    status: "day_7"
-  }
-]
+
 interface daily_coins_received_status_types {
     day_1: boolean,
     day_2: boolean,

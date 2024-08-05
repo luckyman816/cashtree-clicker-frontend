@@ -9,6 +9,7 @@ import axios from "../utils/api";
 import "../css/font.css";
 import "../css/spread.css";
 import { useNavigate } from "react-router-dom";
+import { levelNames, levelTargets } from "../data";
 import {
   insertWallet,
   updateWallet,
@@ -16,8 +17,6 @@ import {
   getWallet,
 } from "../store/reducers/wallet";
 import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
-const levelNames = ['Newbie', 'Rookie', 'Beginner', 'Intermediate', 'Expert', 'Master', 'Grandmaster', 'Legendary', 'Mythical', 'Conqueror'];
-const levelTargets = [10000, 20000, 50000, 100000, 200000, 500000, 1000000, 3000000, 5000000, 10000000]
 function Home() {
   const navigate = useNavigate();
   const usernameState = useSelector((state) => state.wallet.user?.username);

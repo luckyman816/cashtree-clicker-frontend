@@ -3,66 +3,9 @@ import { /*toast,*/ ToastContainer } from "react-toastify";
 import { useEffect, useState } from "react";
 import { dispatch, useSelector } from "../store";
 import { getAllUsers } from "../store/reducers/wallet";
+import { milestones } from "../data";
 import "../css/font.css";
-const milestones = [
-    {
-        imgpath: "milestone1",
-        title: "Milestone 1",
-        amount: "750000",
-        players: "1000",
-        status: "Done",
 
-    },
-    {
-        imgpath: "milestone2",
-        title: "Milestone 2",
-        amount: "3750000",
-        players: "5000",
-        status: "Unlocked",
-    },
-    {
-        imgpath: "milestone3",
-        title: "Milestone 3",
-        amount: "7500000",
-        players: "10000",
-        status: "Unlocked",
-    },
-    {
-        imgpath: "milestone3",
-        title: "Milestone 4",
-        amount: "15000000",
-        players: "20000",
-        status: "Unlocked",
-    },
-    {
-        imgpath: "milestone3",
-        title: "Milestone 5",
-        amount: "22500000",
-        players: "30000",
-        status: "Unlocked",
-    },
-    {
-        imgpath: "milestone3",
-        title: "Milestone 6",
-        amount: "37500000",
-        players: "50000",
-        status: "Unlocked",
-    },
-    {
-        imgpath: "milestone3",
-        title: "Milestone 7",
-        amount: "56250000",
-        players: "75000",
-        status: "Unlocked",
-    },
-    {
-        imgpath: "milestone3",
-        title: "Milestone 8",
-        amount: "75000000",
-        players: "100000+",
-        status: "Unlocked",
-    },
-]
 export default function Leaderboard() {
     function formatNumberWithCommas(number: number, locale = "en-US") {
         return new Intl.NumberFormat(locale).format(number);

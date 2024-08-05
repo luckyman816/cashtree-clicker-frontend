@@ -5,11 +5,10 @@ import { toast, ToastContainer } from "react-toastify";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import axios from "../utils/api";
 import "../css/font.css";
+import { users } from "../data";
 import Modal from "../component/modal";
 import Footer from "../component/Footer";
-const users = [
-  "Adi Dme", "Aeid lise", "Aide jdue", "Jude Ude", "Ude List", "Wdit doke", "Lise Ude", "Udjde Jude", "Jdne Mjde"
-]
+
 export default function Friends() {
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
@@ -75,7 +74,7 @@ export default function Friends() {
           </div>
         </div>
         <div className="flex w-full justify-start items-center">
-          <p className="text-lg text-white font-bold">List of your friends &#8317;{friends.length}&#8318;</p>
+          <p className="text-lg text-white font-bold">List of your friends &lpar; {friends.length} &rpar;</p>
         </div>
         {
           friends.length > 0 ? (
@@ -156,41 +155,6 @@ export default function Friends() {
             </div>
           </div>
         </Modal>
-        {/* <div className="flex justify-center items-center align-middle w-full mt-8">
-        <div className="w-[90%] bg-gradient-to-r from-[#57676D] to-[#2A383C]  text-white rounded-[20px] flex items-center justify-between p-5 border border-[white]">
-          <div className="flex flex-col justify-center items-center gap-2">
-            <span
-              className="flex justify-center items-cente text-2xl"
-              style={{ fontFamily: "spicy" }}
-            >
-              My invite link
-            </span>
-            <span
-              className="text-[#00E9F8]"
-              style={{
-                maxWidth: "150px",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {textToCopy}
-            </span>
-          </div>
-          <CopyToClipboard text={textToCopy} onCopy={handleCopy}>
-            <div className="bg-gradient-to-r flex justify-center items-center gap-5 from-[#806FC0] to-[#14D6F0] p-3 rounded-[8px]">
-              <img src="/image/assets/copy.png" alt="" className="w-4 h-4" />
-              <h2
-                className="text-sm text-[white]"
-                style={{ fontFamily: "poppins" }}
-              >
-                Copy
-              </h2>
-            </div>
-          </CopyToClipboard>
-        </div>
-      </div>     
-      */}
       </div>
       <Footer />
     </div>
