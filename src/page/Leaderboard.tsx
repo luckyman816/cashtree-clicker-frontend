@@ -249,7 +249,7 @@ export default function Leaderboard() {
                             </div>
                             <div className="flex flex-col w-[95%] px-5 py-2 justify-start items-start rounded-[10px] bg-[#2D2865] gap-2">
                                 <h1 className="text-white text-xl">Tips to Boost Your Points</h1>
-                                <ul className="flex flex-col justify-start w-full items-start">
+                                <ul className="flex flex-col justify-start w-full items-start list-disc">
                                     <li className="text-sm text-[#ABA7BA]">Invite Friends:</li>
                                     <li className="text-sm text-[#ABA7BA]">Complete All Missions:</li>
                                     <li className="text-sm text-[#ABA7BA]">Find the Secret Code:</li>
