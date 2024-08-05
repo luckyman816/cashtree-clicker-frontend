@@ -19,6 +19,7 @@ import {
   updateLimit,
 } from "../store/reducers/wallet";
 import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
+import { addDailyBoost } from "../store/reducers/dailyBoost";
 function Home() {
   const navigate = useNavigate();
   const usernameState = useSelector((state) => state.wallet.user?.username);
@@ -41,6 +42,7 @@ function Home() {
       axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
       dispatch(insertWallet(webapp["user"]["username"]));
       dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
+      dispatch(addDailyBoost(webapp["user"]["username"]));
       dispatch(getWallet(webapp["user"]["username"]))
     }
   }, []);

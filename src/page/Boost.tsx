@@ -5,6 +5,7 @@ import {
   updateFullEnergy,
   getWallet,
 } from "../store/reducers/wallet";
+import { getDailyBoost } from "../store/reducers/dailyBoost";
 import { useEffect, useState } from "react";
 import Modal from "../component/modal";
 import Footer from "../component/Footer";
@@ -16,19 +17,25 @@ export default function Boost() {
   const full_energy_state = useSelector(
     (state) => state.wallet.user?.full_energy
   );
+  const refill_energy_state = useSelector(
+    (state) => state.dailyBoost.daily_refill_energy.refill_energy
+  )
   const [token, setToken] = useState<number>(tokenState);
   const [username, setUsername] = useState<string>(username_state);
   const [limit, setLimit] = useState<number>(limit_state);
   const [full_energy, setFullEnergy] = useState<number>(full_energy_state);
+  const [refill_energy, setRefillEnergy] = useState<number>(refill_energy_state);
   useEffect(() => {
     dispatch(getWallet(username));
+    dispatch(getDailyBoost(username))
   }, [username]);
   useEffect(() => {
     setToken(tokenState);
     setUsername(username_state);
     setLimit(limit_state);
     setFullEnergy(full_energy_state);
-  }, [tokenState, username_state, limit_state, tapLevelState, full_energy_state]);
+    setRefillEnergy(refill_energy_state);
+  }, [tokenState, username_state, limit_state, tapLevelState, full_energy_state, refill_energy_state]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
@@ -107,7 +114,7 @@ export default function Boost() {
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-sm text-white">Double Points for 15 Minutes 5000 P</h3>
               <h3 className="text-[13px] text-white">
-                3/3 available
+                {refill_energy}/3 available
               </h3>
             </div>
           </div>
