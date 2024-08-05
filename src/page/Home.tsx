@@ -112,7 +112,7 @@ function Home() {
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token < levelTargets[tapLevel]) {
       setScore(`+${tapLevel}`);
-      if (token + tapLevel > levelTargets[tapLevel - 1]) {
+      if ((token + tapLevel) == levelTargets[tapLevel - 1]) {
         setToken(levelTargets[tapLevel - 1]);
         dispatch(updateWallet(username, levelTargets[tapLevel - 1], remainedEnergy - tapLevel));
         if (tapLevel < 10) {
