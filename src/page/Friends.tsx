@@ -74,7 +74,7 @@ export default function Friends() {
           </div>
         </div>
         <div className="flex w-full justify-start items-center">
-          <p className="text-lg text-white font-bold">List of your friends &lpar; {friends.length} &rpar;</p>
+          <p className="text-lg text-white font-bold">List of your friends &#40; {friends.length} &#41;</p>
         </div>
         {
           friends.length > 0 ? (
