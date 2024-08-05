@@ -150,6 +150,7 @@ function Home() {
   console.log("imgStatus", imgStatus);
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
+      <ToastContainer />
       <div className="flex justify-between items-center px-3 w-full py-3">
         <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
         <h3
@@ -161,7 +162,6 @@ function Home() {
         <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
       </div>
       <div className="w-[90%] flex flex-col justify-center items-center gap-4">
-        <ToastContainer />
         <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[10px] border border-[#B386FB]">
           <div className=" flex justify-center items-center p-2 ">
             <img src="/image/assets/coin.png" alt="" className=" w-11 h-11" />
