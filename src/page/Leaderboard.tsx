@@ -108,7 +108,7 @@ export default function Leaderboard() {
                     <div className="flex flex-col justify-start items-center gap-3 w-full min-h-[70vh] max-h-[70vh]">
                         <div className="text-white text-[32px] justify-center font-[Archivo] items-center">Leaderboard</div>
                         <div className="text-white text-[12px] justify-center items-center">Leaderboard & rank of worldwide players</div>
-                        <div className="min-h-[40vh] max-h-[40vh] flex flex-col overflow-auto w-full gap-3">
+                        <div className="min-h-[50vh] max-h-[50vh] flex flex-col overflow-auto w-full gap-3">
                             {players?.map((player, index) => (
                                 <div key={index} className="flex justify-between items-center w-full bg-[#2D2865] rounded-[12px] px-4">
                                     <div className="flex-[1.5] py-2">
