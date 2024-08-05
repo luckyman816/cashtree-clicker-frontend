@@ -260,6 +260,10 @@ export default function Leaderboard() {
                                     <p className="text-[#ABA7BA] text-sm">Check in every day for additional rewards and updates.</p>
                                 </ul>
                             </div>
+                            <div className="flex flex-col justify-start items-center w-full">
+                                <h1 className="text-white text-xl">Keep Tapping and Winning!</h1>
+                                <p className="text-white text-sm">After the game period ends, this page will be updated to show your total $CTT earned from leaderboard standings and conversion points.</p>
+                            </div>
                         </div>
                     </div>
                 )
