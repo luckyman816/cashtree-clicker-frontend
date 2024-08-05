@@ -39,7 +39,7 @@ export default function Boost() {
     } else {
       dispatch(updateFullEnergy(username, full_energy + 1)).then(() => {
         dispatch(updateEnergy(username, limit));
-        toast.success("Successfully updated energy!");
+        toast.success("Refilled energy!");
       });
     }
     setIsModalOpen(false);
@@ -71,7 +71,7 @@ export default function Boost() {
         </h3>
         <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
       </div>
-      <div className="w-full mt-11 flex flex-col justify-start items-start p-4 gap-4 h-[60%]">
+      <div className="w-full mt-11 flex flex-col justify-start items-start p-4 gap-4 max-h-[70vh] min-h-[70vh]:">
         <div className="flex justify-between items-center w-full px-3 py-5 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] border border-[#B386FB]">
           <div className="flex justify-center items-center">
             <img src="/image/assets/coin.png" alt="" className="w-12 h-12" />
@@ -85,7 +85,7 @@ export default function Boost() {
           <h1 className="text-white text-xl">Buy Boosters&nbsp;&nbsp;<span className="text-white text-sm">Reset at 00:00 AM UTCC</span></h1>
         </div>
         <div
-          className={`flex my-3 px-3 py-3 justify-between items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)] rounded-[20px] gap-2`}
+          className={`w-full flex my-3 px-3 py-3 justify-between items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)] rounded-[20px] gap-2`}
           onClick={handleMouseClick}
         >
           <div className="flex justify-center items-center gap-1">
@@ -100,7 +100,7 @@ export default function Boost() {
           <img src="image/icon/arrowRight.png" alt="" className="w-2 h-4" />
         </div>
         <div
-          className={`flex my-3 px-3 py-3 justify-between items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}
+          className={`w-full flex my-3 px-3 py-3 justify-between items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}
           onClick={handleOpenDoublePointsModal}>
           <div className="flex justify-center items-center gap-1">
             <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10" />
