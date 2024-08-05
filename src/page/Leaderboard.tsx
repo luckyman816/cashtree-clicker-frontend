@@ -105,7 +105,7 @@ export default function Leaderboard() {
             </div>
             <div className="px-2 flex flex-col justify-start items-center gap-5 w-full">
                 {isLeaderboardOpen == 0 ? (
-                    <div className="flex flex-col justify-start items-center gap-3 w-full">
+                    <div className="flex flex-col justify-start items-center gap-3 w-full min-h-[70vh] max-h-[70vh]">
                         <div className="text-white text-[32px] justify-center font-[Archivo] items-center">Leaderboard</div>
                         <div className="text-white text-[12px] justify-center items-center">Leaderboard & rank of worldwide players</div>
                         <div className="min-h-[40vh] max-h-[40vh] flex flex-col overflow-auto w-full gap-3">
@@ -140,7 +140,7 @@ export default function Leaderboard() {
                         </div>
                     </div>
                 ) : isLeaderboardOpen == 1 ? (
-                    <div className="flex flex-col justify-center items-center gap-3 w-full">
+                    <div className="flex flex-col justify-center items-center gap-3 w-full min-h-[70vh] max-h-[70vh]">
                         <div className="flex justify-between items-center w-full">
                             <div className="flex justify-center items-center gap-1">
                                 <img src="image/leaderboard/star.png" alt="" className="w-4 h-4" />
