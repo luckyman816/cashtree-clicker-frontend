@@ -87,7 +87,7 @@ export default function Leaderboard() {
         setIsLeaderboardOpen(2);
     }
     return (
-        <div className="flex flex-col justify-between items-center h-full w-full bg-[#120F29]">
+        <div className="flex flex-col justify-between items-center h-full w-full bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#120F29]">
             <div className="flex justify-between items-center px-3 w-full py-3">
                 <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
                 <h3
