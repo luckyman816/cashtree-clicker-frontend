@@ -251,9 +251,13 @@ export default function Leaderboard() {
                                 <h1 className="text-white text-xl">Tips to Boost Your Points</h1>
                                 <ul className="flex flex-col justify-start w-full items-start list-disc">
                                     <li className="text-sm text-[#ABA7BA]">Invite Friends:</li>
+                                    <p className="text-[#ABA7BA] text-sm">This is the only way to earn unlimited points, so spread the word and get your friends involved!</p>
                                     <li className="text-sm text-[#ABA7BA]">Complete All Missions:</li>
+                                    <p className="text-[#ABA7BA] text-sm">Maximize your earnings by completing all available challenges.</p>
                                     <li className="text-sm text-[#ABA7BA]">Find the Secret Code:</li>
+                                    <p className="text-[#ABA7BA] text-sm">Discover the hidden code, however you can, to unlock extra points!</p>
                                     <li className="text-sm text-[#ABA7BA]">Stay Active:</li>
+                                    <p className="text-[#ABA7BA] text-sm">Check in every day for additional rewards and updates.</p>
                                 </ul>
                             </div>
                         </div>
