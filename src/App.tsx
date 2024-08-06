@@ -12,6 +12,7 @@ import Boost from "./page/Boost";
 import Mission from "./page/Mission";
 import Leaderboard from "./page/Leaderboard";
 import Wallet from "./page/Wallet";
+import Level from "./page/Level";
 // import MobileQR from "./component/MobileQR";
 function App() {
   const [loading, setLoading] = useState(false);
@@ -46,6 +47,7 @@ function App() {
                 <Route path="leaderboard" element={<Leaderboard />} />
                 <Route path="wallet" element={<Wallet />} />
                 <Route path="boost" element={<Boost />} />
+                <Route path="level" element={<Level />} />
               </Route>
             </Routes>
             <ToastContainer />

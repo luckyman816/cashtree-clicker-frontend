@@ -12,6 +12,7 @@ export default function Level() {
     useEffect(() => {
         setTapLevel(tapLevelState);
     }, [tapLevelState]);
+
     return (
         <div className="w-full h-full flex flex-col justify-between items-center">
             <div className="flex justify-between items-center px-3 w-full py-3">

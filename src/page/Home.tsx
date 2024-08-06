@@ -148,6 +148,9 @@ function Home() {
   const handleBoost = () => {
     navigate('/boost');
   }
+  const handleLevelUp = () => {
+    navigate('/level');
+  }
   console.log("imgStatus", imgStatus);
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
@@ -184,7 +187,7 @@ function Home() {
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
         <ProgressBar value={tapLevel * 10} />
         <div className="flex w-full justify-between items-center p-3">
-          <h1 className="text-[12px] text-white">Level: {levelNames[tapLevel - 1]} &#8250;</h1>
+          <h1 className="text-[12px] text-white cursor-pointer" onClick={handleLevelUp}>Level: {levelNames[tapLevel - 1]} &#8250;</h1>
           <h1 className="text-[12px] text-white">Goal {tapLevel}/10</h1>
         </div>
       </div>
