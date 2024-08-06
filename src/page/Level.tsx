@@ -27,7 +27,7 @@ export default function Level() {
             </div>
             <div className="flex flex-col justify-center items-center gap-4 w-full">
                 <div className="flex flex-col justify-center items-center">
-                    <img src="image/level/beginner_b.png" alt="" className=" w-36 h-36" />
+                    <img src="image/level/beginner_b.png" alt="" className=" w-[140px] h-[140px]" />
                     <h1 className="text-white text-[32px] font-bold">Level {levelNames[tapLevel - 1]}</h1>
                     <p className="text-[#F7BB12] text-sm">Up to {formatNumberWithCommas(levelTargets[tapLevel - 1])}</p>
                 </div>
@@ -39,7 +39,7 @@ export default function Level() {
                     <h1 className="text-[12px] text-white">Goal {tapLevel}/10</h1>
                 </div>
             </div>
-            <div className=" overflow-y-auto w-full max-h-[50vh]">
+            <div className=" overflow-y-auto w-full max-h-[40vh]">
                 <div className="flex flex-col justify-center items-center w-full gap-2">
                     <div className="flex justify-start items-center w-[90%] text-white text-xl font-bold">All Level</div>
                     {
