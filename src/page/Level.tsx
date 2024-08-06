@@ -46,8 +46,8 @@ export default function Level() {
                         levels.map((item, index) => (
                             <div
                                 key={index}
-                                className={`flex w-[90%] my-3 px-3 py-2 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}>
-                                <div className="flex justify-center items-center">
+                                className={`flex w-[90%] my-3 px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}>
+                                <div className="flex justify-center items-center gap-2">
                                     <img src={`/image/mission/${item.icon}.png`} alt="" className="w-10 h-10" />
                                     <div className="flex flex-col gap-1 justify-start items-start">
                                         <h1 className="text-sm text-white">{item.name}</h1>
