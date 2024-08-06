@@ -3,21 +3,23 @@ import { useEffect, useState } from "react";
 import { useSelector } from "../store";
 import toast, { Toaster } from 'react-hot-toast';
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import  { initUtils } from "@telegram-apps/sdk"
 import axios from "../utils/api";
 import "../css/font.css";
-import { users } from "../data";
-import Modal from "../component/modal";
+// import { users } from "../data";
+// import Modal from "../component/modal";
 import Footer from "../component/Footer";
 
 export default function Friends() {
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
+  const utils = initUtils();
   const username_state = useSelector((state) => state.wallet.user?.username);
   const [username, setUsername] = useState<string>(username_state);
   const [friends, setFriends] = useState<any[]>([]);
   const [textToCopy, setTextToCopy] = useState<string>("");
-  const [isInviteModal, setIsInviteModal] = useState<boolean>(false);
+  // const [isInviteModal, setIsInviteModal] = useState<boolean>(false);
   useEffect(() => {
     setUsername(username_state);
     setTextToCopy(`https://t.me/cashtreeTele_bot?start=${username_state}`);
@@ -33,11 +35,12 @@ export default function Friends() {
     }
   });
   const handleOpenInviteModal = () => {
-    setIsInviteModal(true);
+    // setIsInviteModal(true);
+   utils.openTelegramLink(`https://t.me/share/url?url=https://t.me/NomadTestAppBot?start=${username}`)
   }
-  const handleCloseInviteModal = () => {
-    setIsInviteModal(false);
-  }
+  // const handleCloseInviteModal = () => {
+  //   setIsInviteModal(false);
+  // }
   console.log("friends", friends, friends.length);
   console.log("textToCopy", textToCopy);
   return (
@@ -120,7 +123,7 @@ export default function Friends() {
             </div>
           </CopyToClipboard>
         </div>
-        <Modal isOpen={isInviteModal} onClose={handleCloseInviteModal}>
+        {/* <Modal isOpen={isInviteModal} onClose={handleCloseInviteModal}>
           <div className="flex flex-col items-center align-middle gap-3 rounded-[20px] w-full">
             <h1 className="text-2xl text-white">Share to</h1>
             <p className=" text-sm text-white">
@@ -154,7 +157,7 @@ export default function Friends() {
               <span className="flex justify-center items-center text-white text-xl">Cancel</span>
             </div>
           </div>
-        </Modal>
+        </Modal> */}
       </div>
       <Footer />
     </div>
