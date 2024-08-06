@@ -36,7 +36,7 @@ export default function Friends() {
   });
   const handleOpenInviteModal = () => {
     // setIsInviteModal(true);
-   utils.openTelegramLink(`https://t.me/share/url?url=https://t.me/NomadTestAppBot?start=${username}`)
+   utils.openTelegramLink(`https://t.me/share/url?url=https://t.me/cashtreeTele_bot?start=${username}`)
   }
   // const handleCloseInviteModal = () => {
   //   setIsInviteModal(false);
