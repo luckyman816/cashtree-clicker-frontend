@@ -92,7 +92,7 @@ export default function Boost() {
       } else {
         dispatch(updateDoublePoints(username, double_points + 1, moment()));
         dispatch(updateBalance(username, token + 500))
-        toast.success("Refilled successfully");
+        toast.success("Get the double points successfully");
       }
     }
     setIsDoublePointsModalOpen(false);
