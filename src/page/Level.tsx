@@ -52,13 +52,13 @@ export default function Level() {
                                     <div className="flex flex-col gap-1 justify-start items-start">
                                         <h1 className="text-sm text-white">{item.name}</h1>
                                         <h1 className="text-[12px] text-white font-bold">
-                                            {formatNumberWithCommas(Number(item.target))}
+                                            Up to {formatNumberWithCommas(Number(item.target))} Points
                                         </h1>
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-1 justify-center items-center">
                                     <h1 className="text-[10px] text-[#C8A2FB]">Earn to level up</h1>
-                                    <h1 className="text-sm font-bold text-white">+ {formatNumberWithCommas(Number(item.earn))}</h1>
+                                    <h1 className="text-sm font-bold text-white">+ {formatNumberWithCommas(Number(item.earn))}k</h1>
                                 </div>
                             </div>
                         ))
