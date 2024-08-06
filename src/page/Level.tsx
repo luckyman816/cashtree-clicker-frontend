@@ -47,7 +47,7 @@ export default function Level() {
                             <div
                                 key={index}
                                 className={`flex w-[90%] my-3 overflow-hidden relative px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}>
-                                <div className="w-1/3 h-[100px] z-0 absolute scale-110 skew-x-[22deg] -translate-x-20 bg-[linear-gradient(5deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF]"/>
+                                {index == (tapLevel - 1) && <div className="w-1/3 h-[100px] z-0 absolute scale-110 skew-x-[22deg] -translate-x-20 bg-[linear-gradient(5deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF]"/>}
                                 <div className="flex justify-center z-10 items-center gap-2">
                                     <img src={`/image/level/${item.icon}.png`} alt="" className="w-10 h-10" />
                                     <div className="flex flex-col gap-1 justify-start items-start">
