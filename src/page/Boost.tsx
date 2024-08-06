@@ -1,30 +1,39 @@
 import { dispatch, useSelector } from "../store";
 import toast, { Toaster } from 'react-hot-toast';
 import {
-  updateEnergy,
-  updateFullEnergy,
+  updateWallet,
   getWallet,
+  updateBalance,
 } from "../store/reducers/wallet";
-import { getDailyBoost } from "../store/reducers/dailyBoost";
+import { getDailyBoost, updateDoublePoints, updateRefillEnergy } from "../store/reducers/dailyBoost";
 import { useEffect, useState } from "react";
 import Modal from "../component/modal";
 import Footer from "../component/Footer";
+import moment from "moment";
 export default function Boost() {
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const username_state = useSelector((state) => state.wallet.user?.username);
   const limit_state = useSelector((state) => state.wallet.user?.limit);
   const tapLevelState = useSelector((state) => state.wallet.user?.tap_level);
-  const full_energy_state = useSelector(
-    (state) => state.wallet.user?.full_energy
-  );
   const refill_energy_state = useSelector(
-    (state) => state.dailyBoost.daily_refill_energy.refill_energy
+    (state) => state.dailyBoost.daily_refill_energy?.refill_energy
+  )
+  const double_points_state = useSelector(
+    (state) => state.dailyBoost.daily_double_points?.double_points
+  )
+  const refill_energy_date_state = useSelector(
+    (state) => state.dailyBoost.daily_refill_energy?.refill_energy_date
+  )
+  const double_points_date_state = useSelector(
+    (state) => state.dailyBoost.daily_double_points?.double_points_date
   )
   const [token, setToken] = useState<number>(tokenState);
   const [username, setUsername] = useState<string>(username_state);
   const [limit, setLimit] = useState<number>(limit_state);
-  const [full_energy, setFullEnergy] = useState<number>(full_energy_state);
   const [refill_energy, setRefillEnergy] = useState<number>(refill_energy_state);
+  const [refill_energy_date, setRefillEnergyDate] = useState<moment.Moment | null>(refill_energy_date_state ? moment(refill_energy_date_state) : null);
+  const [double_points, setDoublePoints] = useState<number>(double_points_state);
+  const [double_points_date, setDoublePointsDate] = useState<moment.Moment | null>(double_points_date_state ? moment(double_points_date_state) : null);
   useEffect(() => {
     dispatch(getWallet(username));
     dispatch(getDailyBoost(username))
@@ -33,30 +42,78 @@ export default function Boost() {
     setToken(tokenState);
     setUsername(username_state);
     setLimit(limit_state);
-    setFullEnergy(full_energy_state);
     setRefillEnergy(refill_energy_state);
-  }, [tokenState, username_state, limit_state, tapLevelState, full_energy_state, refill_energy_state]);
+    setDoublePoints(double_points_state);
+    setRefillEnergyDate(refill_energy_date_state ? moment(refill_energy_date_state) : null);
+    setDoublePointsDate(double_points_date_state ? moment(double_points_date_state) : null);
+  }, [tokenState, username_state, limit_state, tapLevelState, refill_energy_state, double_points_state, refill_energy_date_state, double_points_date_state]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
-  const handleFullEnergy = () => {
-    console.log("-----full energy💰🏆💪------>", limit_state);
-    if (full_energy + 1 > 3) {
-      toast.error("Full energy limit reached!");
-    } else {
-      dispatch(updateFullEnergy(username, full_energy + 1)).then(() => {
-        dispatch(updateEnergy(username, limit));
-        toast.success("Refilled energy!");
-      });
+  const [diffDaysRefill, setDiffDaysRefill] = useState<number>(0);
+  const [diffDaysDouble, setDiffDaysDouble] = useState<number>(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      calculateDifference(moment());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+  const calculateDifference = (currentDateTime: moment.Moment) => {
+    if (refill_energy_date) {
+      const dateDiffRefill = refill_energy_date
+        ? currentDateTime.diff(refill_energy_date, "seconds")
+        : 0;
+      const dateDiffDouble = double_points_date
+        ? currentDateTime.diff(double_points_date, "seconds")
+        : 0;
+      setDiffDaysRefill(Math.floor(dateDiffRefill / (60 * 60 * 24)));
+      setDiffDaysDouble(Math.floor(dateDiffDouble / (60 * 60 * 24)));
     }
-    setIsModalOpen(false);
   };
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  console.log("-----day----->", diffDaysDouble, diffDaysRefill);
+  const handleRefillEnergy = () => {
+    console.log("-----full energy💰🏆💪------>", limit_state);
+    if (diffDaysRefill == 0) {
+      if (refill_energy + 1 > 3) {
+        toast.error("Maximum value reached!");
+      } else {
+        dispatch(updateRefillEnergy(username, refill_energy + 1, moment()));
+        dispatch(updateWallet(username, (token - 3000), limit));
+        toast.success("Refilled successfully");
+      }
+    }
+    setIsRefillEnergyModalOpen(false);
+  };
+  const handleDoublePoints = () => {
+    if (diffDaysDouble == 0) {
+      if (double_points + 1 > 3) {
+        toast.error("Maximum value reached!");
+      } else {
+        dispatch(updateDoublePoints(username, double_points + 1, moment()));
+        dispatch(updateBalance(username, token + 500))
+        toast.success("Refilled successfully");
+      }
+    }
+    setIsDoublePointsModalOpen(false);
+  }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (diffDaysRefill > 0) {
+        dispatch(updateRefillEnergy(username, 0, moment()));
+      }
+      if (diffDaysDouble > 0) {
+        dispatch(updateDoublePoints(username, 0, moment()));
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [])
+  const [isRefillEnergyModalOpen, setIsRefillEnergyModalOpen] = useState<boolean>(false);
   const handleMouseClick = () => {
-    setIsModalOpen(true);
+    setIsRefillEnergyModalOpen(true);
   };
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+  const handleCloseRefillEnergyModal = () => {
+    setIsRefillEnergyModalOpen(false);
   };
   const [isDoublePointsModalOpen, setIsDoublePointsModalOpen] = useState<boolean>(false);
   const handleOpenDoublePointsModal = () => {
@@ -100,7 +157,7 @@ export default function Boost() {
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-sm text-white">Energy Refrill 3000 P</h3>
               <h3 className="text-[13px] text-white">
-                {full_energy}/3 available
+                {refill_energy}/3 available
               </h3>
             </div>
           </div>
@@ -114,7 +171,7 @@ export default function Boost() {
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-sm text-white">Double Points for 15 Minutes 5000 P</h3>
               <h3 className="text-[13px] text-white">
-                {refill_energy}/3 available
+                {double_points}/3 available
               </h3>
             </div>
           </div>
@@ -122,7 +179,7 @@ export default function Boost() {
         </div>
       </div>
       <Footer />
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+      <Modal isOpen={isRefillEnergyModalOpen} onClose={handleCloseRefillEnergyModal}>
         <div className="flex flex-col items-center align-middle gap-3">
           <img src="image/assets/fillEnergyModal.png" alt="" className=" w-auto h-[80%]" />
           <h1 className="text-2xl text-white">Energy Refill</h1>
@@ -131,7 +188,7 @@ export default function Boost() {
           </p>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleFullEnergy}
+            onClick={handleRefillEnergy}
           >
             <span className="flex justify-center items-center text-white text-xl">Get</span>
           </div>
@@ -145,7 +202,7 @@ export default function Boost() {
             Double your points earned for the next 15 minutes for 5,000 points. Maximum of 3 purchases per day.
           </p>
           <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3" onClick={handleDoublePoints}
           >
             <span className="flex justify-center items-center text-white text-xl">Get</span>
           </div>
