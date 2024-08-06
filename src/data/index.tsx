@@ -156,61 +156,61 @@ export const dailyCoins = [
 
 export const levels = [
   {
-    icon: "image/level/Newbie.png",
+    icon: "Newbie",
     name: "Newbie",
     target: "10000",
     earn: "10000"
   },
   {
-    icon: "image/level/Rookie.png",
+    icon: "Rookie",
     name: "Rookie",
     target: "20000",
     earn: "10000"
   },
   {
-    icon: "image/level/Beginner.png",
+    icon: "Beginner",
     name: "Beginner",
     target: "50000",
     earn: "30000"
   },
   {
-    icon: "image/level/Intermediate.png",
+    icon: "Intermediate",
     name: "Intermediate",
     target: "100000",
     earn: "70000"
   },
   {
-    icon: "image/level/Expert.png",
+    icon: "Expert",
     name: "Expert",
     target: "200000",
     earn: "100000"
   },
   {
-    icon: "image/level/Master.png",
+    icon: "Master",
     name: "Master",
     target: "500000",
     earn: "300000"
   },
   {
-    icon: "image/level/Grandmaster.png",
+    icon: "Grandmaster",
     name: "Grandmaster",
     target: "1000000",
     earn: "500000"
   },
   {
-    icon: "image/level/Legendary.png",
+    icon: "Legendary",
     name: "Legendary",
     target: "3000000",
     earn: "2000000"
   },
   {
-    icon: "image/level/Mythical.png",
+    icon: "Mythical",
     name: "Mythical",
     target: "5000000",
     earn: "2000000"
   },
   {
-    icon: "image/level/Conqueror.png",
+    icon: "Conqueror",
     name: "Conqueror",
     target: "10000000",
     earn: "5000000"
