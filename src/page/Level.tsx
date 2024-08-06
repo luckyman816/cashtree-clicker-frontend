@@ -46,8 +46,8 @@ export default function Level() {
                         levels.map((item, index) => (
                             <div
                                 key={index}
-                                className={`flex w-[90%] my-3 relative px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}>
-                                <div className="w-1/3 h-[100px] overflow-hidden -z-10 absolute scale-110 skew-x-[22deg] -translate-x-20 bg-[linear-gradient(135deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD]"/>
+                                className={`flex w-[90%] my-3 overflow-hidden relative px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}>
+                                <div className="w-1/3 h-[100px] -z-10 absolute scale-110 skew-x-[22deg] -translate-x-20 bg-[linear-gradient(135deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD]"/>
                                 <div className="flex justify-center items-center gap-2">
                                     <img src={`/image/level/${item.icon}.png`} alt="" className="w-10 h-10" />
                                     <div className="flex flex-col gap-1 justify-start items-start">
