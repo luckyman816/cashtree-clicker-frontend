@@ -320,7 +320,6 @@ export default function Mission() {
         </div>
         <div className=" overflow-y-auto w-full max-h-[50vh]">
           <div className="flex flex-col justify-center items-center w-full gap-2">
-            <div className="flex justify-start items-center w-[90%] text-white text-xl font-bold">Daily Task</div>
             {
               dailyCheckItems.map((item, index) => (
                 <div

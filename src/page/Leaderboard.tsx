@@ -100,7 +100,7 @@ export default function Leaderboard() {
                                 <img src="image/leaderboard/currentPlayer.png" alt="" className="w-11 h-11" />
                                 <div className="flex flex-col justify-center items-center">
                                     <h1 className="text-[#FFC107] text-[11px]">Current Players</h1>
-                                    <h1 className="text-white text-sm font-bold">+120.000</h1>
+                                    <h1 className="text-white text-sm font-bold">+{formatNumberWithCommas(players.length)}</h1>
                                 </div>
                             </div>
                             <div className="w-[1px] h-[30px] bg-white"></div>

@@ -83,8 +83,8 @@ export default function Friends() {
           friends.length > 0 ? (
             <div className="min-h-[45%] overflow-y-auto w-full max-h-[45%]">
               {
-                friends.map((friend) => (
-                  <div className="flex w-[95%] justify-between px-3 py-3 items-center rounded-[20px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E57] to-[#7B34EE]">
+                friends.map((friend, index) => (
+                  <div key={index} className="flex w-[95%] justify-between px-3 py-3 items-center rounded-[20px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E57] to-[#7B34EE]">
                     <div className="flex justify-center items-center gap-3">
                       <img src="image/friends/friend.png" alt="" className="w-10 h-10" />
                       <div className="flex flex-col justify-start items-start">
@@ -98,7 +98,6 @@ export default function Friends() {
                     </div>
                   </div>
                 ))
-
               }
 
             </div>
