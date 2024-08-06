@@ -155,15 +155,13 @@ function Home() {
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
       <Toaster />
-      <div className="flex justify-between items-center px-3 w-full py-3">
-        <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
+      <div className="flex justify-center items-center px-3 w-full py-3">
         <h3
           className="text-sm text-[white]"
           style={{ fontFamily: "archivo" }}
         >
           Cashtree Tap to Win
         </h3>
-        <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
       </div>
       <div className="w-[90%] flex flex-col justify-center items-center gap-4">
         <div className="flex justify-between items-center w-full px-3 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[10px] border border-[#B386FB]">
