@@ -193,9 +193,9 @@ function Home() {
         <img className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.png">
         </img>
         <div className="absolute flex justify-center items-center z-20 top-0">
-          <img src="image/assets/coin.png" alt="" className=" w-16 h-16" />
+          <img src="image/assets/coin.png" alt="" className=" w-14 h-14" />
           <h1
-            className=" text-5xl text-white font-bold"
+            className=" text-[46px] text-white font-bold"
             style={{ fontFamily: " archivo" }}
           >
             {formatNumberWithCommas(token)}
