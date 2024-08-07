@@ -169,7 +169,10 @@ function Home() {
             <img src="/image/assets/coin.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-[11px] text-[#FFC107]">Earn Per Tap</h2>
-              <h2 className="text-sm text-[white]">+{tapLevel} Poin</h2>
+              <div className="flex justify-start items-center gap-1">
+                <h2 className="text-sm text-[white]">+{tapLevel} Poin</h2>
+                <img src="/image/assets/info.png" alt="" className="w-3 h-3"/>
+              </div>
             </div>
           </div>
 
