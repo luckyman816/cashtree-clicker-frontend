@@ -315,7 +315,7 @@ export default function Mission() {
       </div>
       <div className="flex flex-col justify-center items-center gap-4 w-full">
         <div className="flex flex-col justify-center items-center">
-          <img src="image/assets/mission.png" alt="" className=" w-36 h-36" />
+          <img src="image/assets/mission.png" alt="" className=" w-[140px] h-[140px]" />
           <h1 className="text-white text-[32px] font-bold">Earn More Coins</h1>
         </div>
         <div className=" overflow-y-auto w-full max-h-[50vh]">

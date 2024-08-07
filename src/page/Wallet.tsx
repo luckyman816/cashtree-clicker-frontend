@@ -33,15 +33,15 @@ export default function WalletPage() {
         </div>
         <div className="flex flex-col w-[90%] justify-start items-center gap-4">
           <div className="flex justify-start text-white text-[17px] font-[Archivo] w-full">Task List</div>
-          <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl px-1" onClick={() => handleOpenWalletModal()}>
-            <img src="image/wallet/connectWallet.png" alt="" className="w-10 h-10" />
-            <div className="flex-7 flex flex-col gap-1 justify-start items-center">
-              <div className="text-white font-[Archivo] text-sm">Connect your CTT wallet address</div>
-              <div className="text-white font-[Archivo] text-xs">Integrate now for Secure Transactions</div>
+          <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl px-3" onClick={() => handleOpenWalletModal()}>
+            <div className="flex gap-1 justify-start items-center">
+              <img src="image/wallet/connectWallet.png" alt="" className="w-10 h-10" />
+              <div className="flex-7 flex flex-col gap-1 justify-start items-center">
+                <div className="text-white font-[Archivo] text-sm">Connect your CTT wallet address</div>
+                <div className="text-white font-[Archivo] text-xs">Integrate now for Secure Transactions</div>
+              </div>
             </div>
-            <div className="flex-1 flex justify-end">
-              <img src="image/wallet/Vector.png" alt="" className="" />
-            </div>
+            <img src="image/wallet/Vector.png" alt="" className="w-2 h-[14px]" />
           </div>
         </div>
       </div>
