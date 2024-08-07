@@ -3,14 +3,11 @@ import /*toast,*/ { Toaster } from 'react-hot-toast';
 import { useState } from "react"
 import "../css/font.css"
 import Modal from "../component/modal";
-import { createThirdwebClient } from "thirdweb";
-import { useConnect } from "thirdweb/react";
-import { createWallet } from "thirdweb/wallets";
-const clientId = "cashtree token";
+import { TonConnectButton, useTonAddress } from "@tonconnect/ui-react";
 export default function WalletPage() {
-  const { connect } = useConnect();
+  const address = useTonAddress();
+  console.log("wallet address---------->", address);
   const [isWalletModal, setIsWalletModal] = useState<boolean>(false)
-  const client = createThirdwebClient({ clientId });
   const handleCloseWalletModal = () => {
     setIsWalletModal(false)
   }
@@ -18,18 +15,7 @@ export default function WalletPage() {
     return setIsWalletModal(true)
   }
   const handleWalletConnect = () => {
-    connect(async () => {
-      const wallet = createWallet("com.bitget.web3"); // pass the wallet id
 
-      // open WalletConnect modal so user can scan the QR code and connect
-      await wallet.connect({
-        client,
-        walletConnect: { showQrModal: true },
-      });
-
-      // return the wallet to set it as active wallet
-      return wallet;
-    })
   }
 
   return (
@@ -64,6 +50,7 @@ export default function WalletPage() {
             <img src="image/wallet/Vector.png" alt="" className="w-2 h-[14px]" />
           </div>
         </div>
+        <TonConnectButton/>
       </div>
       <Footer />
       <Modal isOpen={isWalletModal} onClose={handleCloseWalletModal}>
