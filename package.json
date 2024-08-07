@@ -31,6 +31,7 @@
     "react-toastify": "^10.0.5",
     "redux-persist": "^6.0.0",
     "styled-components": "^6.1.11",
+    "thirdweb": "^5.44.1",
     "web3": "^4.10.0"
   },
   "devDependencies": {

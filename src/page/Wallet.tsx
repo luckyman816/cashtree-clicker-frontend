@@ -3,13 +3,33 @@ import /*toast,*/ { Toaster } from 'react-hot-toast';
 import { useState } from "react"
 import "../css/font.css"
 import Modal from "../component/modal";
+import { createThirdwebClient } from "thirdweb";
+import { useConnect } from "thirdweb/react";
+import { createWallet } from "thirdweb/wallets";
+const clientId = "cashtree token";
 export default function WalletPage() {
+  const { connect } = useConnect();
   const [isWalletModal, setIsWalletModal] = useState<boolean>(false)
+  const client = createThirdwebClient({ clientId });
   const handleCloseWalletModal = () => {
     setIsWalletModal(false)
   }
   const handleOpenWalletModal = () => {
     return setIsWalletModal(true)
+  }
+  const handleWalletConnect = () => {
+    connect(async () => {
+      const wallet = createWallet("com.bitget.web3"); // pass the wallet id
+
+      // open WalletConnect modal so user can scan the QR code and connect
+      await wallet.connect({
+        client,
+        walletConnect: { showQrModal: true },
+      });
+
+      // return the wallet to set it as active wallet
+      return wallet;
+    })
   }
 
   return (
@@ -54,7 +74,7 @@ export default function WalletPage() {
             Connect your crypto wallet. If you don't have one, create it in your Telegram account.
           </p>
           <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3" onClick={handleWalletConnect}
           >
             <span className="flex justify-center items-center text-white text-xl">Connect Now</span>
           </div>
