@@ -12,14 +12,20 @@ import "../css/font.css"
 import "react-toastify/dist/ReactToastify.css";
 
 interface daily_coins_received_status_types {
-    day_1: boolean,
-    day_2: boolean,
-    day_3: boolean,
-    day_4: boolean,
-    day_5: boolean,
-    day_6: boolean,
-    day_7: boolean,
+  day_1: boolean,
+  day_2: boolean,
+  day_3: boolean,
+  day_4: boolean,
+  day_5: boolean,
+  day_6: boolean,
+  day_7: boolean,
 }
+const retweetTwitterLink = "https://x.com/cashtreeglobal";
+const commentMediumLink = "https://medium.com/@CashtreeGlobal";
+const likePostLink = "https://medium.com/@CashtreeGlobal";
+const followInstagramLink = "https://www.instagram.com/cashtree_app/";
+const subscribeYoutubeLink = "https://www.youtube.com/@CashtreeOfficial";
+const telegramGroupLink = "https://t.me/CashtreeOfficialCommunity";
 export default function Mission() {
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
@@ -72,7 +78,7 @@ export default function Mission() {
     setIsReceiveModalOpen(false);
   };
   const handleReceiveDailyCoins = () => {
-    if (diffDays === 1 ) {
+    if (diffDays === 1) {
       if (daily_coins_received_status.day_1 === false) {
         dispatch(updateBalance(username, balance + 500)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 1", true));
@@ -139,117 +145,47 @@ export default function Mission() {
     setBalance(balance_state);
     setDailyCoins(daily_coins_state ? moment(daily_coins_state) : null);
   }, [username_state, balance_state, daily_coins_state, setDailyCoins]);
-  // const telegramGroupLink = "https://t.me/CashtreeOfficialCommunity"
-  // const handleLetsGoTelegramGroup = () => {
-  //   window.open(telegramGroupLink, "_blank");
-  // };
-  // const handleJoinTelgramGroup = () => {
-  //   window.open(telegramGroupLink, "_blank");
-  // };
-  // const handleJoinTelegramChannel = () => {
-  //   window.open(telegramChannelLink, "_blank");
-  // };
-  // const handleTwitterChannel = () => {
-  //   window.open(twitterChannelLink, "_blank");
-  // };
-  // const handleJoinTelegramGroupCheck = async () => {
-  //   try {
-  //     fetch("https://relaxing-dane-lively.ngrok-free.app/joinTG", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Accept: "application/json",
-  //       },
-  //       body: JSON.stringify({ username: username }),
-  //     }).then(async () => {
-  //       await axios.post(`/earnings/${username}`).then((res) => {
-  //         if (res.data.joinTelegram.status) {
-  //           if (!res.data.joinTelegram.earned) {
-  //             dispatch(updateBalance(username, balance + 1000)).then(() => {
-  //               axios.post(`/earnings/update/joinTelegram/${username}`, {
-  //                 status: true,
-  //                 earned: true,
-  //               });
-  //               toast.success("You have received +1000 coins successfully!");
-  //             });
-  //           } else {
-  //             toast.warning("You have already received bonus!");
-  //           }
-  //         } else {
-  //           toast.warning(
-  //             "You didn't join Telegram Channel yet! Please join again"
-  //           );
-  //         }
-  //       });
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-  // const handleSubscribeTelegramChannelCheck = async () => {
-  //   try {
-  //     fetch("https://relaxing-dane-lively.ngrok-free.app/joinTC", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Accept: "application/json",
-  //       },
-  //       body: JSON.stringify({ username: username }),
-  //     }).then(async () => {
-  //       await axios.post(`/earnings/${username}`).then((res) => {
-  //         if (res.data.subscribeTelegram.status) {
-  //           if (!res.data.subscribeTelegram.earned) {
-  //             dispatch(updateBalance(username, balance + 1000)).then(() => {
-  //               axios.post(`/earnings/update/subscribeTelegram/${username}`, {
-  //                 status: true,
-  //                 earned: true,
-  //               });
-  //               toast.success("You have received +1000 coins successfully!");
-  //             });
-  //           } else {
-  //             toast.warning("You have already received bonus!");
-  //           }
-  //         } else {
-  //           toast.warning(
-  //             "You didn't subscribe Telegram Channel yet! Please join again"
-  //           );
-  //         }
-  //       });
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-  // const handleTwitterChannelCheck = async () => {
-  //   await axios.post(`/earnings/${username}`).then((res) => {
-  //     if (!res.data.followTwitter.earned) {
-  //       dispatch(updateBalance(username, balance + 1000)).then(() => {
-  //         axios.post(`/earnings/update/followTwitter/${username}`, {
-  //           status: true,
-  //           earned: true,
-  //         });
-  //         toast.success("You have received +1000 coins successfully!");
-  //       });
-  //     } else {
-  //       toast.warning("You have already received bonus!");
-  //     }
-  //   });
-  // };
-
-  // const handleDailyTask = () => {
-  //   setColorTag(!colorTag);
-  // };
-  // const handleOtherTask = () => {
-  //   setColorTag(!colorTag);
-  // };
-
+  const handleJoinRetweetTwitter = () => {
+    window.open(retweetTwitterLink, "_blank");
+  };
+  const handleJoinCommentMedium = () => {
+    window.open(commentMediumLink, "_blank");
+  }
+  const handleJoinLikePost = () => {
+    window.open(likePostLink, "_blank");
+  }
+  const handleJoinInstagram = () => {
+    window.open(followInstagramLink, "_blank");
+  }
+  const handleJoinYoutube = () => {
+    window.open(subscribeYoutubeLink, "_blank");
+  }
+  const handleJoinTelegramGroup = () => {
+    window.open(telegramGroupLink, "_blank");
+  }
   const [isDailyReward, setIsDailyReward] = useState<boolean>(false);
+  const [isRetweetModal, setIsRetweetModal] = useState<boolean>(false);
+  const [isCommentModal, setIsCommentModal] = useState<boolean>(false);
+  const [isLikeModal, setIsLikeModal] = useState<boolean>(false);
   const [isInstagram, setIsInstagram] = useState<boolean>(false);
   const [isYoutube, setIsYoutube] = useState<boolean>(false);
+  const [isTelegramGroupModal, setIsTelegramGroupModal] = useState<boolean>(false);
   const [isSecretExtra, setIsSecretExtra] = useState<boolean>(false);
   //----------------------Close Personal Modal------------------------------//
   const handleCloseDailyRewardModal = () => {
-    setIsDailyReward(false)
+    setIsDailyReward(false);
+  }
+  const handleCloseRetweetModal = () => {
+    setIsRetweetModal(false);
+  }
+  const handleCloseCommentModal = () => {
+    setIsCommentModal(false);
+  }
+  const handleCloseLikeModal = () => {
+    setIsLikeModal(false);
+  }
+  const handleCloseTelegramGroupModal = () => {
+    setIsTelegramGroupModal(false);
   }
   const handleCloseInstagramModal = () => {
     setIsInstagram(false);
@@ -264,6 +200,12 @@ export default function Mission() {
   const handleOpenDailyTaskModal = (modalName: string) => {
     if (modalName === "dailyCheck") {
       setIsDailyReward(true);
+    } else if (modalName === "retweet") {
+      setIsRetweetModal(true);
+    } else if (modalName === "comment") {
+      setIsCommentModal(true);
+    } else if (modalName === "likePost") {
+      setIsLikeModal(true);
     } else if (modalName === "secretExtra") {
       setIsSecretExtra(true);
     }
@@ -273,33 +215,10 @@ export default function Mission() {
       setIsInstagram(true);
     } else if (modalName == "youtube") {
       setIsYoutube(true);
+    } else if (modalName == "telegram") {
+      setIsTelegramGroupModal(true);
     }
   }
-  // const handleLetsGoTelegramGroupCheck = async () => {
-  //   try {
-  //     await axios.post(`/vibe/${username}`).then((res) => {
-  //       if (
-  //         Math.floor(
-  //           moment().diff(res.data[0]["vibe_date"], "seconds") / (60 * 60 * 24)
-  //         ) >= 1 &&
-  //         res.data[0]["message"]
-  //       ) {
-  //         dispatch(updateBalance(username, balance + 1000)).then(() => {
-  //           axios.post(`/vibe/updateVibe/${username}`, {
-  //             vibe_date: moment(),
-  //           });
-  //           axios.post(`/vibe/updateMessage/${username}`, { message: false });
-  //           toast.success("You have received +1000 coins successfully!");
-  //         });
-  //       } else {
-  //         toast.warning("Did you post a vibe in Channel? \n Or please wait for 24 hours!");
-  //       }
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //     toast.warning(" Please join Telegram Channel");
-  //   }
-  // };
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
       <Toaster />
@@ -455,6 +374,69 @@ export default function Mission() {
 
         </div>
       </Modal>
+      <Modal isOpen={isRetweetModal} onClose={handleCloseRetweetModal}>
+        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+          <img src="image/assets/mission.png" alt="" className=" w-auto h-[80%]" />
+          <h1 className="text-2xl text-white">Retweet a Post</h1>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleJoinRetweetTwitter}
+          >
+            <span className="flex justify-center items-center text-white text-xl">Join Now</span>
+          </div>
+          <div className="flex gap-2 justify-center items-center">
+            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <h1 className="text-2xl text-white font-bold">+25.000</h1>
+          </div>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+          >
+            <span className="flex justify-center items-center text-white text-xl">Check</span>
+          </div>
+        </div>
+      </Modal>
+      <Modal isOpen={isCommentModal} onClose={handleCloseCommentModal}>
+        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+          <img src="image/assets/mission.png" alt="" className=" w-auto h-[80%]" />
+          <h1 className="text-2xl text-white">Comment on a Post</h1>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleJoinCommentMedium}
+          >
+            <span className="flex justify-center items-center text-white text-xl">Join Now</span>
+          </div>
+          <div className="flex gap-2 justify-center items-center">
+            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <h1 className="text-2xl text-white font-bold">+25.000</h1>
+          </div>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+          >
+            <span className="flex justify-center items-center text-white text-xl">Check</span>
+          </div>
+        </div>
+      </Modal>
+      <Modal isOpen={isLikeModal} onClose={handleCloseLikeModal}>
+        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+          <img src="image/assets/mission.png" alt="" className=" w-auto h-[80%]" />
+          <h1 className="text-2xl text-white">Like a Post</h1>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleJoinLikePost}
+          >
+            <span className="flex justify-center items-center text-white text-xl">Join Now</span>
+          </div>
+          <div className="flex gap-2 justify-center items-center">
+            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <h1 className="text-2xl text-white font-bold">+25.000</h1>
+          </div>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+          >
+            <span className="flex justify-center items-center text-white text-xl">Check</span>
+          </div>
+        </div>
+      </Modal>
       <Modal isOpen={isSecretExtra} onClose={handleCloseSecretExtraModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
           <img src="image/mission/secretExtraModal.png" alt="secretExtraModal" className=" w-auto h-[80%]" />
@@ -476,6 +458,12 @@ export default function Mission() {
         <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
           <img src="image/mission/instagramModal.png" alt="instagramModal" className=" w-auto h-[80%]" />
           <h1 className="text-2xl text-white">Follow our Instagram Channel</h1>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleJoinInstagram}
+          >
+            <span className="flex justify-center items-center text-white text-xl">Join Now</span>
+          </div>
           <div className="flex gap-2 justify-center items-center">
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
@@ -483,7 +471,7 @@ export default function Mission() {
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
           >
-            <span className="flex justify-center items-center text-white text-xl">Join Now</span>
+            <span className="flex justify-center items-center text-white text-xl">Check</span>
           </div>
         </div>
       </Modal>
@@ -496,8 +484,30 @@ export default function Mission() {
           </p>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleJoinYoutube}
           >
             <span className="flex justify-center items-center text-white text-xl">Watch Video</span>
+          </div>
+          <div className="flex gap-2 justify-center items-center">
+            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <h1 className="text-2xl text-white font-bold">+25.000</h1>
+          </div>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+          >
+            <span className="flex justify-center items-center text-white text-xl">Check</span>
+          </div>
+        </div>
+      </Modal>
+      <Modal isOpen={isTelegramGroupModal} onClose={handleCloseTelegramGroupModal}>
+        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+          <img src="image/mission/instagramModal.png" alt="instagramModal" className=" w-auto h-[80%]" />
+          <h1 className="text-2xl text-white">Follow our Instagram Channel</h1>
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleJoinTelegramGroup}
+          >
+            <span className="flex justify-center items-center text-white text-xl">Join Now</span>
           </div>
           <div className="flex gap-2 justify-center items-center">
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
