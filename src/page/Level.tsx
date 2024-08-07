@@ -27,7 +27,7 @@ export default function Level() {
             </div>
             <div className="flex flex-col justify-center items-center gap-4 w-full">
                 <div className="flex flex-col justify-center items-center">
-                    <img src="image/level/beginner_b.png" alt="" className=" w-[140px] h-[140px]" />
+                    <img src={`image/level/${levels[tapLevel - 1].icon}_b.png`} alt="" className=" w-[140px] h-[140px]" />
                     <h1 className="text-white text-[32px] font-bold">Level {levelNames[tapLevel - 1]}</h1>
                     <p className="text-[#F7BB12] text-sm">Up to {formatNumberWithCommas(levelTargets[tapLevel - 1])}</p>
                 </div>
