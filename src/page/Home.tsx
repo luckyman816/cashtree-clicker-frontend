@@ -192,7 +192,7 @@ function Home() {
       <div className="flex justify-center items-center relative h-[45vh] w-full">
         <img className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.png">
         </img>
-        <div className="absolute flex justify-center items-center z-20 top-0 mb-2">
+        <div className="absolute flex justify-center items-center z-20 top-0 mb-2 w-full">
           <img src="image/assets/coin.png" alt="" className=" w-14 h-14" />
           <h1
             className=" text-[46px] text-white font-bold"
