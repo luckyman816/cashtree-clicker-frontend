@@ -206,7 +206,7 @@ function Home() {
             className={` rounded-full w-auto h-full  ${remainedEnergy > 0
               ? "cursor-pointer"
               : " opacity-50 "
-              }`}
+              } ${imgStatus ? " border border-transparent" : ""}`}
             src="/image/tap-image/cashtree.png"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseLeave}
