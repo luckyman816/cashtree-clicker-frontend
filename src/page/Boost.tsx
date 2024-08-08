@@ -52,6 +52,7 @@ export default function Boost() {
   }
   const [diffDaysRefill, setDiffDaysRefill] = useState<number>(0);
   const [diffDaysDouble, setDiffDaysDouble] = useState<number>(0);
+  const [diffMinutesDouble, setDiffMinutesDouble] = useState<number>(0);
   useEffect(() => {
     const interval = setInterval(() => {
       calculateDifference(moment());
@@ -69,6 +70,7 @@ export default function Boost() {
         : 0;
       setDiffDaysRefill(Math.floor(dateDiffRefill / (60 * 60 * 24)));
       setDiffDaysDouble(Math.floor(dateDiffDouble / (60 * 60 * 24)));
+      setDiffMinutesDouble(Math.floor((dateDiffDouble % (60 * 60)) / 60));
     }
   };
   console.log("-----day----->", diffDaysDouble, diffDaysRefill);
@@ -90,10 +92,16 @@ export default function Boost() {
       if (double_points + 1 > 3) {
         toast.error("Maximum value reached!");
       } else {
-        dispatch(updateDoublePoints(username, double_points + 1, moment()));
-        dispatch(updateBalance(username, token + 500))
-        toast.success("Get the double points successfully");
+        if (diffMinutesDouble >= 15) {
+          dispatch(updateDoublePoints(username, double_points + 1, moment()));
+          dispatch(updateBalance(username, token + 500))
+          toast.success("Get the double points successfully");
+        } else {
+          toast.error("Please wait for 15 minutes");
+        }
       }
+    } else {
+      toast.error("Please wait next day!")
     }
     setIsDoublePointsModalOpen(false);
   }
