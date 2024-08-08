@@ -72,7 +72,7 @@ export function addDailyBoost(username: string) {
 export function updateRefillEnergy(username: string, refill_energy: number, refill_energy_date: moment.Moment) {
     return async () => {
         try {
-            const response = await axios.post(`dailyBoost/udpateRefillEnergy/${username}`, { refill_energy: refill_energy, refill_energy_date: refill_energy_date });
+            const response = await axios.post(`/dailyBoost/udpateRefillEnergy/${username}`, { refill_energy: refill_energy, refill_energy_date: refill_energy_date });
             dispatch(dailyBoost.actions.updateDailyBoostSuccess(response.data));
         } catch (error) {
             dispatch(dailyBoost.actions.hasError(error));
@@ -82,7 +82,7 @@ export function updateRefillEnergy(username: string, refill_energy: number, refi
 export function updateDoublePoints(username: string, double_points: number, double_points_date: moment.Moment) {
     return async () => {
         try {
-            const response = await axios.post(`dailyBoost/updateDoublePoints/${username}`, { double_points: double_points, double_points_date: double_points_date });
+            const response = await axios.post(`/dailyBoost/updateDoublePoints/${username}`, { double_points: double_points, double_points_date: double_points_date });
             dispatch(dailyBoost.actions.updateDailyBoostSuccess(response.data));
         } catch (error) {
             dispatch(dailyBoost.actions.hasError(error));
