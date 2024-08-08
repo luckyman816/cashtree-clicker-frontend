@@ -94,7 +94,7 @@ export default function Leaderboard() {
                         </div>
                     </div>
                 ) : isLeaderboardOpen == 1 ? (
-                    <div className="flex flex-col justify-center items-center gap-3 w-full min-h-[70vh] max-h-[70vh] m-1">
+                    <div className="flex flex-col justify-center items-center gap-3 w-full min-h-[70vh] max-h-[70vh]">
                         <div className="flex justify-between items-center w-full">
                             <div className="flex justify-center items-center gap-1">
                                 <img src="image/leaderboard/star.png" alt="" className="w-4 h-4" />
