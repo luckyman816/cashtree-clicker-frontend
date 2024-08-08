@@ -225,14 +225,14 @@ export default function Leaderboard() {
             </div>
             <Footer />
             <Modal isOpen={isMilestoneModal} onClose={handleCloseMilestoneModal}>
-                <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+                <div className="flex flex-col items-center align-middle justify-center gap-3 w-full p-3">
                     <img src="image/assets/mission.png" alt="" className=" w-auto h-[80%]" />
                     <div className="w-full flex flex-col justify-start items-start gap-2">
                         <h1 className="text-[20px] text-white text-left">MileStone 1</h1>
                         <h1 className="text-[32px] text-white text-left">Leaderboard Prizes Distribution:</h1>
                     </div>
                     <div className="w-full flex justify-start items-center">
-                        <ul className="flex flex-col justify-start w-[90%] items-start list-disc">
+                        <ul className="flex flex-col justify-start items-start list-disc w-full">
                             <li className="text-sm text-[#C8A2FB]">Rank 1: &nbsp;
                                 {milestone_number == 0 ? <span className="text-sm text-white"> 62,000 $CTT</span>
                                     : milestone_number == 1 ? <span className="text-sm text-white">225,000 $CTT</span>
