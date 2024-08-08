@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import Modal from "../component/modal";
 import moment from "moment";
 import Footer from "../component/Footer";
-import { getDailyCoinsReceivedStatus, updateDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
+import { getDailyCoinsReceivedStatus, updateDailyCoinsReceivedStatus, updateDailyTaskStatus, updateTaskListStatus } from "../store/reducers/dailyCoins";
 import { dailyCheckItems, taskListItems, dailyCoins } from "../data";
 import "../css/font.css"
 import "react-toastify/dist/ReactToastify.css";
@@ -19,6 +19,10 @@ interface daily_coins_received_status_types {
   day_5: boolean,
   day_6: boolean,
   day_7: boolean,
+}
+interface mission_status_types {
+  day: Date,
+  status: boolean,
 }
 const retweetTwitterLink = "https://x.com/cashtreeglobal";
 const commentMediumLink = "https://medium.com/@CashtreeGlobal";
@@ -145,23 +149,119 @@ export default function Mission() {
     setBalance(balance_state);
     setDailyCoins(daily_coins_state ? moment(daily_coins_state) : null);
   }, [username_state, balance_state, daily_coins_state, setDailyCoins]);
+  //-----------------------Mission complete status-------------------------------//
+  const retweet_status_state = useSelector((state) => state.dailyCoins?.retweet_status)
+  const comment_status_state = useSelector((state) => state.dailyCoins?.comment_status)
+  const like_status_state = useSelector((state) => state.dailyCoins?.like_status)
+  const instagram_status_state = useSelector((state) => state.dailyCoins?.instagram_status)
+  const youtube_status_state = useSelector((state) => state.dailyCoins?.youtube_status)
+  const telegram_status_state = useSelector((state) => state.dailyCoins?.telegram_status)
+  const [retweet_status, setRetweetStatus] = useState<mission_status_types>(retweet_status_state)
+  const [comment_status, setCommentStatus] = useState<mission_status_types>(comment_status_state)
+  const [like_status, setLikeStatus] = useState<mission_status_types>(like_status_state)
+  const [instagram_status, setInstagramStatus] = useState<boolean>(instagram_status_state)
+  const [youtube_status, setYoutubeStatus] = useState<boolean>(youtube_status_state)
+  const [telegram_status, setTelegramStatus] = useState<boolean>(telegram_status_state)
+  useEffect(() => {
+    setRetweetStatus(retweet_status_state);
+    setCommentStatus(comment_status_state);
+    setLikeStatus(like_status_state);
+    setInstagramStatus(instagram_status_state);
+    setYoutubeStatus(youtube_status_state);
+    setTelegramStatus(telegram_status_state);
+  }, [retweet_status_state, comment_status_state, like_status_state, instagram_status_state, youtube_status_state, telegram_status_state])
   const handleJoinRetweetTwitter = () => {
-    window.open(retweetTwitterLink, "_blank");
+    if (moment().diff(retweet_status.day, "seconds") / (60 * 60 * 24) > 0) {
+      window.open(retweetTwitterLink, "_blank");
+      dispatch(updateDailyTaskStatus(username, "retweet", moment(), true));
+    } else {
+      toast.error("Please wait for the next day!");
+    }
   };
+  const handleCheckRetweetTwitter = () => {
+    if (retweet_status.status) {
+      dispatch(updateBalance(username, balance + 500)).then(() => {
+        dispatch(updateDailyTaskStatus(username, "retweet", moment(), false));
+        toast.success("You have received " + 500 + " coins!");
+      });
+    } else {
+      toast.error("Please join!");
+    }
+  }
   const handleJoinCommentMedium = () => {
-    window.open(commentMediumLink, "_blank");
+    if (moment().diff(comment_status.day, "seconds") / (60 * 60 * 24) > 0) {
+      window.open(commentMediumLink, "_blank");
+      dispatch(updateDailyTaskStatus(username, "comment", moment(), true));
+    }else {
+      toast.error("Please wait for the next day!");
+    }
+  }
+  const handleCheckCommentMedium = () => {
+    if (comment_status.status) {
+      dispatch(updateBalance(username, balance + 1000)).then(() => {
+        dispatch(updateDailyTaskStatus(username, "comment", moment(), false));
+        toast.success("You have received " + 1000 + " coins!");
+      });
+    } else {
+      toast.error("Please join!");
+    }
   }
   const handleJoinLikePost = () => {
-    window.open(likePostLink, "_blank");
+    if (moment().diff(comment_status.day, "seconds") / (60 * 60 * 24) > 0) {
+      window.open(likePostLink, "_blank");
+      dispatch(updateDailyTaskStatus(username, "like", moment(), true));
+    } else {
+      toast.error("Please wait for the next day!");
+    }
+  }
+  const handleCheckLikePost = () => {
+    if (like_status.status) {
+      dispatch(updateBalance(username, balance + 2000)).then(() => {
+        dispatch(updateDailyTaskStatus(username, "like", moment(), false));
+        toast.success("You have received " + 2000 + " coins!");
+      });
+    } else {
+      toast.error("Please join!");
+    }
   }
   const handleJoinInstagram = () => {
     window.open(followInstagramLink, "_blank");
+    dispatch(updateTaskListStatus(username, "instagram", true));
+  }
+  const handleCheckInstagram = () => {
+    if (instagram_status) {
+      dispatch(updateBalance(username, balance + 1000)).then(() => {
+        toast.success("You have received " + 1000 + " coins!");
+      });
+    } else {
+      toast.error("Please join!");
+    }
   }
   const handleJoinYoutube = () => {
     window.open(subscribeYoutubeLink, "_blank");
+    dispatch(updateTaskListStatus(username, "youtube", true));
+  }
+  const handleCheckYoutube = () => {
+    if (youtube_status) {
+      dispatch(updateBalance(username, balance + 1000)).then(() => {
+        toast.success("You have received " + 1000 + " coins!");
+      });
+    } else {
+      toast.error("Please join!");
+    }
   }
   const handleJoinTelegramGroup = () => {
     window.open(telegramGroupLink, "_blank");
+    dispatch(updateTaskListStatus(username, "telegram", true));
+  }
+  const handleCheckTelegramGroup = () => {
+    if (telegram_status) {
+      dispatch(updateBalance(username, balance + 1000)).then(() => {
+        toast.success("You have received " + 1000 + " coins!");
+      });
+    } else {
+      toast.error("Please join!");
+    }
   }
   const [isDailyReward, setIsDailyReward] = useState<boolean>(false);
   const [isRetweetModal, setIsRetweetModal] = useState<boolean>(false);
@@ -390,6 +490,7 @@ export default function Mission() {
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleCheckRetweetTwitter}
           >
             <span className="flex justify-center items-center text-white text-xl">Check</span>
           </div>
@@ -411,6 +512,7 @@ export default function Mission() {
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleCheckCommentMedium}
           >
             <span className="flex justify-center items-center text-white text-xl">Check</span>
           </div>
@@ -432,6 +534,7 @@ export default function Mission() {
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleCheckLikePost}
           >
             <span className="flex justify-center items-center text-white text-xl">Check</span>
           </div>
@@ -470,6 +573,7 @@ export default function Mission() {
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleCheckInstagram}
           >
             <span className="flex justify-center items-center text-white text-xl">Check</span>
           </div>
@@ -494,6 +598,7 @@ export default function Mission() {
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleCheckYoutube}
           >
             <span className="flex justify-center items-center text-white text-xl">Check</span>
           </div>
@@ -515,6 +620,7 @@ export default function Mission() {
           </div>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleCheckTelegramGroup}
           >
             <span className="flex justify-center items-center text-white text-xl">Check</span>
           </div>

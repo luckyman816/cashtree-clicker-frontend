@@ -15,7 +15,22 @@ const initialState: dailyCoinsStateTypes = {
         day_5: false,
         day_6: false,
         day_7: false,
-    }
+    },
+    retweet_status: {
+        day: new Date(),
+        status: false,
+    },
+    comment_status: {
+        day: new Date(),
+        status: false,
+    },
+    like_status: {
+        day: new Date(),
+        status: false,
+    },
+    instagram_status: false,
+    youtube_status: false,
+    telegram_status: false
 };
 
 const dailyCoins = createSlice({
@@ -29,16 +44,34 @@ const dailyCoins = createSlice({
             state._id = action.payload._id
             state.username = action.payload.username
             state.daily_coins_received_status = action.payload.daily_coins_received_status
+            state.retweet_status = action.payload.retweet_status
+            state.comment_status = action.payload.comment_status
+            state.like_status = action.payload.like_status
+            state.instagram_status = action.payload.instagram_status
+            state.youtube_status = action.payload.youtube_status
+            state.telegram_status = action.payload.telegram_status
         },
         addDailyCoinsReceivedStatusSuccess(state, action) {
             state._id = action.payload._id
             state.username = action.payload.username
             state.daily_coins_received_status = action.payload.daily_coins_received_status
+            state.retweet_status = action.payload.retweet_status
+            state.comment_status = action.payload.comment_status
+            state.like_status = action.payload.like_status
+            state.instagram_status = action.payload.instagram_status
+            state.youtube_status = action.payload.youtube_status
+            state.telegram_status = action.payload.telegram_status
         },
-        updateDailyCoinsReceivedStatusSuccess(state, action) {
+        updateDailyTaskStatusSuccess(state, action) {
             state._id = action.payload._id
             state.username = action.payload.username
             state.daily_coins_received_status = action.payload.daily_coins_received_status
+            state.retweet_status = action.payload.retweet_status
+            state.comment_status = action.payload.comment_status
+            state.like_status = action.payload.like_status
+            state.instagram_status = action.payload.instagram_status
+            state.youtube_status = action.payload.youtube_status
+            state.telegram_status = action.payload.telegram_status
         }
     }
 });
@@ -69,7 +102,27 @@ export function updateDailyCoinsReceivedStatus(username: string, day: string, da
     return async () => {
         try {
             const response = await axios.post(`/dailyCoins/update/${username}`, { day: day, day_status: day_status });
-            dispatch(dailyCoins.actions.updateDailyCoinsReceivedStatusSuccess(response.data));
+            dispatch(dailyCoins.actions.updateDailyTaskStatusSuccess(response.data));
+        } catch (error) {
+            dispatch(dailyCoins.actions.hasError(error));
+        }
+    }
+}
+export function updateDailyTaskStatus(username: string, task: string, day: moment.Moment, day_status: boolean) {
+    return async () => {
+        try {
+            const response = await axios.post(`/dailyCoins/dailyTask/update/${username}`, { task: task, day: day, day_status: day_status });
+            dispatch(dailyCoins.actions.updateDailyTaskStatusSuccess(response.data));
+        } catch (error) {
+            dispatch(dailyCoins.actions.hasError(error));
+        }
+    }
+}
+export function updateTaskListStatus(username: string, task: string, status: boolean){
+    return async () => {
+        try {
+            const response = await axios.post(`/dailyCoins/taskList/update/${username}`, { task: task, status: status });
+            dispatch(dailyCoins.actions.updateDailyTaskStatusSuccess(response.data));
         } catch (error) {
             dispatch(dailyCoins.actions.hasError(error));
         }
