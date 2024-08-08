@@ -28,9 +28,18 @@ const initialState: dailyCoinsStateTypes = {
         day: new Date(),
         status: false,
     },
-    instagram_status: false,
-    youtube_status: false,
-    telegram_status: false
+    instagram_status: {
+        status: false,
+        earned: false,
+    },
+    youtube_status: {
+        status: false,
+        earned: false,
+    },
+    telegram_status: {
+        status: false,
+        earned: false,
+    }
 };
 
 const dailyCoins = createSlice({
@@ -118,10 +127,10 @@ export function updateDailyTaskStatus(username: string, task: string, day: momen
         }
     }
 }
-export function updateTaskListStatus(username: string, task: string, status: boolean){
+export function updateTaskListStatus(username: string, task: string, status: boolean, earned: boolean){
     return async () => {
         try {
-            const response = await axios.post(`/dailyCoins/taskList/update/${username}`, { task: task, status: status });
+            const response = await axios.post(`/dailyCoins/taskList/update/${username}`, { task: task, status: status, earned: earned });
             dispatch(dailyCoins.actions.updateDailyTaskStatusSuccess(response.data));
         } catch (error) {
             dispatch(dailyCoins.actions.hasError(error));

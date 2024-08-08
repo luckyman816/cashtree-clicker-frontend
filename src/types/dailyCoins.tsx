@@ -11,6 +11,10 @@ export interface dailyTaskTypes {
     day: Date;
     status: boolean;
 }
+export interface taskListTypes {
+    status: boolean;
+    earned: boolean;
+}
 export interface dailyCoinsStateTypes{
     _id: string;
     username: string;
@@ -18,8 +22,8 @@ export interface dailyCoinsStateTypes{
     retweet_status: dailyTaskTypes;
     comment_status: dailyTaskTypes;
     like_status: dailyTaskTypes;
-    instagram_status: boolean;
-    youtube_status: boolean;
-    telegram_status: boolean;
+    instagram_status: taskListTypes;
+    youtube_status: taskListTypes;
+    telegram_status: taskListTypes;
     error: object | string | null;
 }

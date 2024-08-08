@@ -24,6 +24,10 @@ interface mission_status_types {
   day: Date,
   status: boolean,
 }
+interface task_status_types {
+  status: boolean,
+  earned: boolean,
+}
 const retweetTwitterLink = "https://x.com/cashtreeglobal";
 const commentMediumLink = "https://medium.com/@CashtreeGlobal";
 const likePostLink = "https://medium.com/@CashtreeGlobal";
@@ -159,9 +163,9 @@ export default function Mission() {
   const [retweet_status, setRetweetStatus] = useState<mission_status_types>(retweet_status_state)
   const [comment_status, setCommentStatus] = useState<mission_status_types>(comment_status_state)
   const [like_status, setLikeStatus] = useState<mission_status_types>(like_status_state)
-  const [instagram_status, setInstagramStatus] = useState<boolean>(instagram_status_state)
-  const [youtube_status, setYoutubeStatus] = useState<boolean>(youtube_status_state)
-  const [telegram_status, setTelegramStatus] = useState<boolean>(telegram_status_state)
+  const [instagram_status, setInstagramStatus] = useState<task_status_types>(instagram_status_state)
+  const [youtube_status, setYoutubeStatus] = useState<task_status_types>(youtube_status_state)
+  const [telegram_status, setTelegramStatus] = useState<task_status_types>(telegram_status_state)
   useEffect(() => {
     setRetweetStatus(retweet_status_state);
     setCommentStatus(comment_status_state);
@@ -192,7 +196,7 @@ export default function Mission() {
     if (moment().diff(comment_status.day, "seconds") / (60 * 60 * 24) > 0) {
       window.open(commentMediumLink, "_blank");
       dispatch(updateDailyTaskStatus(username, "comment", moment(), true));
-    }else {
+    } else {
       toast.error("Please wait for the next day!");
     }
   }
@@ -226,39 +230,51 @@ export default function Mission() {
   }
   const handleJoinInstagram = () => {
     window.open(followInstagramLink, "_blank");
-    dispatch(updateTaskListStatus(username, "instagram", true));
+    dispatch(updateTaskListStatus(username, "instagram", true, true));
   }
   const handleCheckInstagram = () => {
-    if (instagram_status) {
-      dispatch(updateBalance(username, balance + 1000)).then(() => {
-        toast.success("You have received " + 1000 + " coins!");
-      });
+    if (instagram_status.status) {
+      if (!instagram_status.earned) {
+        dispatch(updateBalance(username, balance + 1000)).then(() => {
+          toast.success("You have received " + 1000 + " coins!");
+        });
+      } else {
+        toast.error("You have already received!");
+      }
     } else {
       toast.error("Please join!");
     }
   }
   const handleJoinYoutube = () => {
     window.open(subscribeYoutubeLink, "_blank");
-    dispatch(updateTaskListStatus(username, "youtube", true));
+    dispatch(updateTaskListStatus(username, "youtube", true, true));
   }
   const handleCheckYoutube = () => {
-    if (youtube_status) {
-      dispatch(updateBalance(username, balance + 1000)).then(() => {
-        toast.success("You have received " + 1000 + " coins!");
-      });
+    if (youtube_status.status) {
+      if (!youtube_status.earned) {
+        dispatch(updateBalance(username, balance + 1000)).then(() => {
+          toast.success("You have received " + 1000 + " coins!");
+        });
+      } else {
+        toast.error("You have already received!");
+      }
     } else {
       toast.error("Please join!");
     }
   }
   const handleJoinTelegramGroup = () => {
     window.open(telegramGroupLink, "_blank");
-    dispatch(updateTaskListStatus(username, "telegram", true));
+    dispatch(updateTaskListStatus(username, "telegram", true, true));
   }
   const handleCheckTelegramGroup = () => {
-    if (telegram_status) {
-      dispatch(updateBalance(username, balance + 1000)).then(() => {
-        toast.success("You have received " + 1000 + " coins!");
-      });
+    if (telegram_status.status) {
+      if (telegram_status.earned) {
+        dispatch(updateBalance(username, balance + 1000)).then(() => {
+          toast.success("You have received " + 1000 + " coins!");
+        });
+      } else {
+        toast.error("You have already received!");
+      }
     } else {
       toast.error("Please join!");
     }
