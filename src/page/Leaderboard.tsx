@@ -243,6 +243,65 @@ export default function Leaderboard() {
                                                         : milestone_number == 6 ? <span className="text-sm text-white">2,700,000 $CTT</span>
                                                             : <span className="text-sm text-white">3,500,000 $CTT</span>}
                             </li>
+                            <li className="text-sm text-[#C8A2FB]">Rank 2: &nbsp;
+                                {milestone_number == 0 ? <span className="text-sm text-white"> 46,500 $CTT</span>
+                                    : milestone_number == 1 ? <span className="text-sm text-white">130,000 $CTT</span>
+                                        : milestone_number == 2 ? <span className="text-sm text-white">250,000 $CTT</span>
+                                            : milestone_number == 3 ? <span className="text-sm text-white">500,000 $CTT</span>
+                                                : milestone_number == 4 ? <span className="text-sm text-white">750,000 $CTT</span>
+                                                    : milestone_number == 5 ? <span className="text-sm text-white">1,250,000 $CTT</span>
+                                                        : milestone_number == 6 ? <span className="text-sm text-white">1,800,000 $CTT</span>
+                                                            : <span className="text-sm text-white">2,500,000 $CTT</span>}
+                            </li>
+                            <li className="text-sm text-[#C8A2FB]">Rank 3: &nbsp;
+                                {milestone_number == 0 ? <span className="text-sm text-white">39,000 $CTT</span>
+                                    : milestone_number == 1 ? <span className="text-sm text-white">80,000 $CTT</span>
+                                        : milestone_number == 2 ? <span className="text-sm text-white">150,000 $CTT</span>
+                                            : milestone_number == 3 ? <span className="text-sm text-white">300,000 $CTT</span>
+                                                : milestone_number == 4 ? <span className="text-sm text-white">450,000 $CTT</span>
+                                                    : milestone_number == 5 ? <span className="text-sm text-white">750,000 $CTT</span>
+                                                        : milestone_number == 6 ? <span className="text-sm text-white">1,160,000 $CTT</span>
+                                                            : <span className="text-sm text-white">1,500,000 $CTT</span>}
+                            </li>
+                            <li className="text-sm text-[#C8A2FB]">Rank 4 - 10: &nbsp;
+                                {milestone_number == 0 ? <span className="text-sm text-white">4,500 $CTT each (31,500 $CTT total)</span>
+                                    : milestone_number == 1 ? <span className="text-sm text-white">20,000 $CTT each (140,000 $CTT total)</span>
+                                        : milestone_number == 2 ? <span className="text-sm text-white">28,000 $CTT each (199,500 $CTT total)</span>
+                                            : milestone_number == 3 ? <span className="text-sm text-white">56,000 $CTT each (399,000 $CTT total)</span>
+                                                : milestone_number == 4 ? <span className="text-sm text-white">85,500 $CTT each (598,500 $CTT total)</span>
+                                                    : milestone_number == 5 ? <span className="text-sm text-white">140,000 $CTT each (980,000 $CTT total)</span>
+                                                        : milestone_number == 6 ? <span className="text-sm text-white"> 220,000 $CTT each (1,540,000 $CTT total)</span>
+                                                            : <span className="text-sm text-white">280,000 $CTT each (1,960,000 $CTT total)</span>}
+                            </li>
+                            <li className="text-sm text-[#C8A2FB]">Rank 11 - 50: &nbsp;
+                                {milestone_number == 0 ? <span className="text-sm text-white">1,000 $CTT each (40,000 $CTT total)</span>
+                                    : milestone_number == 1 ? <span className="text-sm text-white">5,000 $CTT each (200,000 $CTT total)</span>
+                                        : milestone_number == 2 ? <span className="text-sm text-white">10,000 $CTT each (400,000 $CTT total)</span>
+                                            : milestone_number == 3 ? <span className="text-sm text-white">20,000 $CTT each (800,000 $CTT total)</span>
+                                                : milestone_number == 4 ? <span className="text-sm text-white">30,000 $CTT each (1,200,000 $CTT total)</span>
+                                                    : milestone_number == 5 ? <span className="text-sm text-white">50,000 $CTT each (2,000,000 $CTT total)</span>
+                                                        : milestone_number == 6 ? <span className="text-sm text-white">75,000 $CTT each (3,000,000 $CTT total)</span>
+                                                            : <span className="text-sm text-white">100,000 $CTT each (4,000,000 $CTT total)</span>}
+                            </li>
+                            <li className="text-sm text-[#C8A2FB]">Rank 51 - 100: &nbsp;
+                                {milestone_number == 0 ? <span className="text-sm text-white">620 $CTT each (31,000 $CTT total)</span>
+                                    : milestone_number == 1 ? <span className="text-sm text-white">2,500 $CTT each (125,000 $CTT total)</span>
+                                        : milestone_number == 2 ? <span className="text-sm text-white">5,010 $CTT each (250,500 $CTT total)</span>
+                                            : milestone_number == 3 ? <span className="text-sm text-white">10,020 $CTT each (501,000 $CTT total)</span>
+                                                : milestone_number == 4 ? <span className="text-sm text-white">15,030 $CTT each (751,500 $CTT total)</span>
+                                                    : milestone_number == 5 ? <span className="text-sm text-white">25,400 $CTT each (1,270,000 $CTT total)</span>
+                                                        : milestone_number == 6 ? <span className="text-sm text-white">36,000 $CTT each (1,800,000 $CTT total)</span>
+                                                            : <span className="text-sm text-white">50,800 $CTT each (2,540,000 $CTT total)</span>}
+                            </li>
+                            <li className="text-sm text-[#C8A2FB]">Rank 101 - 1000: &nbsp;
+                                {milestone_number == 1 ? <span className="text-sm text-white">875 $CTT each (350,000 $CTT total)</span>
+                                    : milestone_number == 2 ? <span className="text-sm text-white">1,000 $CTT each (900,000 $CTT total)</span>
+                                        : milestone_number == 3 ? <span className="text-sm text-white">2,000 $CTT each (1,800,000 $CTT total)</span>
+                                            : milestone_number == 4 ? <span className="text-sm text-white">3,000 $CTT each (2,700,000 $CTT total)</span>
+                                                : milestone_number == 5 ? <span className="text-sm text-white">5,000 $CTT each (4,500,000 $CTT total)</span>
+                                                    : milestone_number == 6 ? <span className="text-sm text-white">7,500 $CTT each (6,750,000 $CTT total)</span>
+                                                        : <span className="text-sm text-white">10,000 $CTT each (9,000,000 $CTT total)</span>}
+                            </li>
                         </ul>
                     </div>
                     <div
