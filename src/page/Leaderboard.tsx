@@ -154,7 +154,7 @@ export default function Leaderboard() {
                                     <img src="image/leaderboard/seasonUser.png" alt="" className="w-8 h-[26px]" />
                                     <div className="flex flex-col justify-center items-center gap-1">
                                         <h1 className="text-white text-lg">Total Players</h1>
-                                        <h1 className="text-[#ABA7BA] text-[10px]">Current all players</h1>
+                                        <h1 className="text-[#ABA7BA] text-[12px]">Current all players</h1>
                                     </div>
                                 </div>
                                 <h1 className="text-[16px] text-white">{formatNumberWithCommas(125350)}</h1>
@@ -234,73 +234,73 @@ export default function Leaderboard() {
                     <div className="w-full flex justify-center items-center">
                         <ul className="flex flex-col justify-start items-start list-disc w-[95%]">
                             <li className="text-sm text-[#C8A2FB]">Rank 1: &nbsp;
-                                {milestone_number == 0 ? <span className="text-[10px] text-white"> 62,000 $CTT</span>
-                                    : milestone_number == 1 ? <span className="text-[10px] text-white">225,000 $CTT</span>
-                                        : milestone_number == 2 ? <span className="text-[10px] text-white">350,000 $CTT</span>
-                                            : milestone_number == 3 ? <span className="text-[10px] text-white">700,000 $CTT</span>
-                                                : milestone_number == 4 ? <span className="text-[10px] text-white">1,050,000 $CTT</span>
-                                                    : milestone_number == 5 ? <span className="text-[10px] text-white">1,750,000 $CTT</span>
-                                                        : milestone_number == 6 ? <span className="text-[10px] text-white">2,700,000 $CTT</span>
-                                                            : <span className="text-[10px] text-white">3,500,000 $CTT</span>}
+                                {milestone_number == 0 ? <span className="text-[12px] text-white"> 62,000 $CTT</span>
+                                    : milestone_number == 1 ? <span className="text-[12px] text-white">225,000 $CTT</span>
+                                        : milestone_number == 2 ? <span className="text-[12px] text-white">350,000 $CTT</span>
+                                            : milestone_number == 3 ? <span className="text-[12px] text-white">700,000 $CTT</span>
+                                                : milestone_number == 4 ? <span className="text-[12px] text-white">1,050,000 $CTT</span>
+                                                    : milestone_number == 5 ? <span className="text-[12px] text-white">1,750,000 $CTT</span>
+                                                        : milestone_number == 6 ? <span className="text-[12px] text-white">2,700,000 $CTT</span>
+                                                            : <span className="text-[12px] text-white">3,500,000 $CTT</span>}
                             </li>
                             <li className="text-sm text-[#C8A2FB]">Rank 2: &nbsp;
-                                {milestone_number == 0 ? <span className="text-[10px] text-white"> 46,500 $CTT</span>
-                                    : milestone_number == 1 ? <span className="text-[10px] text-white">130,000 $CTT</span>
-                                        : milestone_number == 2 ? <span className="text-[10px] text-white">250,000 $CTT</span>
-                                            : milestone_number == 3 ? <span className="text-[10px] text-white">500,000 $CTT</span>
-                                                : milestone_number == 4 ? <span className="text-[10px] text-white">750,000 $CTT</span>
-                                                    : milestone_number == 5 ? <span className="text-[10px] text-white">1,250,000 $CTT</span>
-                                                        : milestone_number == 6 ? <span className="text-[10px] text-white">1,800,000 $CTT</span>
-                                                            : <span className="text-[10px] text-white">2,500,000 $CTT</span>}
+                                {milestone_number == 0 ? <span className="text-[12px] text-white"> 46,500 $CTT</span>
+                                    : milestone_number == 1 ? <span className="text-[12px] text-white">130,000 $CTT</span>
+                                        : milestone_number == 2 ? <span className="text-[12px] text-white">250,000 $CTT</span>
+                                            : milestone_number == 3 ? <span className="text-[12px] text-white">500,000 $CTT</span>
+                                                : milestone_number == 4 ? <span className="text-[12px] text-white">750,000 $CTT</span>
+                                                    : milestone_number == 5 ? <span className="text-[12px] text-white">1,250,000 $CTT</span>
+                                                        : milestone_number == 6 ? <span className="text-[12px] text-white">1,800,000 $CTT</span>
+                                                            : <span className="text-[12px] text-white">2,500,000 $CTT</span>}
                             </li>
                             <li className="text-sm text-[#C8A2FB]">Rank 3: &nbsp;
-                                {milestone_number == 0 ? <span className="text-[10px] text-white">39,000 $CTT</span>
-                                    : milestone_number == 1 ? <span className="text-[10px] text-white">80,000 $CTT</span>
-                                        : milestone_number == 2 ? <span className="text-[10px] text-white">150,000 $CTT</span>
-                                            : milestone_number == 3 ? <span className="text-[10px] text-white">300,000 $CTT</span>
-                                                : milestone_number == 4 ? <span className="text-[10px] text-white">450,000 $CTT</span>
-                                                    : milestone_number == 5 ? <span className="text-[10px] text-white">750,000 $CTT</span>
-                                                        : milestone_number == 6 ? <span className="text-[10px] text-white">1,160,000 $CTT</span>
-                                                            : <span className="text-[10px] text-white">1,500,000 $CTT</span>}
+                                {milestone_number == 0 ? <span className="text-[12px] text-white">39,000 $CTT</span>
+                                    : milestone_number == 1 ? <span className="text-[12px] text-white">80,000 $CTT</span>
+                                        : milestone_number == 2 ? <span className="text-[12px] text-white">150,000 $CTT</span>
+                                            : milestone_number == 3 ? <span className="text-[12px] text-white">300,000 $CTT</span>
+                                                : milestone_number == 4 ? <span className="text-[12px] text-white">450,000 $CTT</span>
+                                                    : milestone_number == 5 ? <span className="text-[12px] text-white">750,000 $CTT</span>
+                                                        : milestone_number == 6 ? <span className="text-[12px] text-white">1,160,000 $CTT</span>
+                                                            : <span className="text-[12px] text-white">1,500,000 $CTT</span>}
                             </li>
                             <li className="text-sm text-[#C8A2FB]">Rank 4 - 10: &nbsp;
-                                {milestone_number == 0 ? <span className="text-[10px] text-white text-wrap">4,500 $CTT each (31,500 $CTT total)</span>
-                                    : milestone_number == 1 ? <span className="text-[10px] text-white text-wrap">20,000 $CTT each (140,000 $CTT total)</span>
-                                        : milestone_number == 2 ? <span className="text-[10px] text-white text-wrap">28,000 $CTT each (199,500 $CTT total)</span>
-                                            : milestone_number == 3 ? <span className="text-[10px] text-white text-wrap">56,000 $CTT each (399,000 $CTT total)</span>
-                                                : milestone_number == 4 ? <span className="text-[10px] text-white text-wrap">85,500 $CTT each (598,500 $CTT total)</span>
-                                                    : milestone_number == 5 ? <span className="text-[10px] text-white text-wrap">140,000 $CTT each (980,000 $CTT total)</span>
-                                                        : milestone_number == 6 ? <span className="text-[10px] text-white text-wrap"> 220,000 $CTT each (1,540,000 $CTT total)</span>
-                                                            : <span className="text-[10px] text-white text-wrap">280,000 $CTT each (1,960,000 $CTT total)</span>}
+                                {milestone_number == 0 ? <span className="text-[12px] text-white text-wrap">4,500 $CTT each (31,500 $CTT total)</span>
+                                    : milestone_number == 1 ? <span className="text-[12px] text-white text-wrap">20,000 $CTT each (140,000 $CTT total)</span>
+                                        : milestone_number == 2 ? <span className="text-[12px] text-white text-wrap">28,000 $CTT each (199,500 $CTT total)</span>
+                                            : milestone_number == 3 ? <span className="text-[12px] text-white text-wrap">56,000 $CTT each (399,000 $CTT total)</span>
+                                                : milestone_number == 4 ? <span className="text-[12px] text-white text-wrap">85,500 $CTT each (598,500 $CTT total)</span>
+                                                    : milestone_number == 5 ? <span className="text-[12px] text-white text-wrap">140,000 $CTT each (980,000 $CTT total)</span>
+                                                        : milestone_number == 6 ? <span className="text-[12px] text-white text-wrap"> 220,000 $CTT each (1,540,000 $CTT total)</span>
+                                                            : <span className="text-[12px] text-white text-wrap">280,000 $CTT each (1,960,000 $CTT total)</span>}
                             </li>
                             <li className="text-sm text-[#C8A2FB]">Rank 11 - 50: &nbsp;
-                                {milestone_number == 0 ? <span className="text-[10px] text-white text-wrap">1,000 $CTT each (40,000 $CTT total)</span>
-                                    : milestone_number == 1 ? <span className="text-[10px] text-white text-wrap">5,000 $CTT each (200,000 $CTT total)</span>
-                                        : milestone_number == 2 ? <span className="text-[10px] text-white text-wrap">10,000 $CTT each (400,000 $CTT total)</span>
-                                            : milestone_number == 3 ? <span className="text-[10px] text-white text-wrap">20,000 $CTT each (800,000 $CTT total)</span>
-                                                : milestone_number == 4 ? <span className="text-[10px] text-white text-wrap">30,000 $CTT each (1,200,000 $CTT total)</span>
-                                                    : milestone_number == 5 ? <span className="text-[10px] text-white text-wrap">50,000 $CTT each (2,000,000 $CTT total)</span>
-                                                        : milestone_number == 6 ? <span className="text-[10px] text-white text-wrap">75,000 $CTT each (3,000,000 $CTT total)</span>
-                                                            : <span className="text-[10px] text-white text-wrap">100,000 $CTT each (4,000,000 $CTT total)</span>}
+                                {milestone_number == 0 ? <span className="text-[12px] text-white text-wrap">1,000 $CTT each (40,000 $CTT total)</span>
+                                    : milestone_number == 1 ? <span className="text-[12px] text-white text-wrap">5,000 $CTT each (200,000 $CTT total)</span>
+                                        : milestone_number == 2 ? <span className="text-[12px] text-white text-wrap">10,000 $CTT each (400,000 $CTT total)</span>
+                                            : milestone_number == 3 ? <span className="text-[12px] text-white text-wrap">20,000 $CTT each (800,000 $CTT total)</span>
+                                                : milestone_number == 4 ? <span className="text-[12px] text-white text-wrap">30,000 $CTT each (1,200,000 $CTT total)</span>
+                                                    : milestone_number == 5 ? <span className="text-[12px] text-white text-wrap">50,000 $CTT each (2,000,000 $CTT total)</span>
+                                                        : milestone_number == 6 ? <span className="text-[12px] text-white text-wrap">75,000 $CTT each (3,000,000 $CTT total)</span>
+                                                            : <span className="text-[12px] text-white text-wrap">100,000 $CTT each (4,000,000 $CTT total)</span>}
                             </li>
                             <li className="text-sm text-[#C8A2FB]">Rank 51 - 100: &nbsp;
-                                {milestone_number == 0 ? <span className="text-[10px] text-white text-wrap">620 $CTT each (31,000 $CTT total)</span>
-                                    : milestone_number == 1 ? <span className="text-[10px] text-white text-wrap">2,500 $CTT each (125,000 $CTT total)</span>
-                                        : milestone_number == 2 ? <span className="text-[10px] text-white text-wrap">5,010 $CTT each (250,500 $CTT total)</span>
-                                            : milestone_number == 3 ? <span className="text-[10px] text-white text-wrap">10,020 $CTT each (501,000 $CTT total)</span>
-                                                : milestone_number == 4 ? <span className="text-[10px] text-white text-wrap">15,030 $CTT each (751,500 $CTT total)</span>
-                                                    : milestone_number == 5 ? <span className="text-[10px] text-white text-wrap">25,400 $CTT each (1,270,000 $CTT total)</span>
-                                                        : milestone_number == 6 ? <span className="text-[10px] text-white text-wrap">36,000 $CTT each (1,800,000 $CTT total)</span>
-                                                            : <span className="text-[10px] text-white text-wrap">50,800 $CTT each (2,540,000 $CTT total)</span>}
+                                {milestone_number == 0 ? <span className="text-[12px] text-white text-wrap">620 $CTT each (31,000 $CTT total)</span>
+                                    : milestone_number == 1 ? <span className="text-[12px] text-white text-wrap">2,500 $CTT each (125,000 $CTT total)</span>
+                                        : milestone_number == 2 ? <span className="text-[12px] text-white text-wrap">5,010 $CTT each (250,500 $CTT total)</span>
+                                            : milestone_number == 3 ? <span className="text-[12px] text-white text-wrap">10,020 $CTT each (501,000 $CTT total)</span>
+                                                : milestone_number == 4 ? <span className="text-[12px] text-white text-wrap">15,030 $CTT each (751,500 $CTT total)</span>
+                                                    : milestone_number == 5 ? <span className="text-[12px] text-white text-wrap">25,400 $CTT each (1,270,000 $CTT total)</span>
+                                                        : milestone_number == 6 ? <span className="text-[12px] text-white text-wrap">36,000 $CTT each (1,800,000 $CTT total)</span>
+                                                            : <span className="text-[12px] text-white text-wrap">50,800 $CTT each (2,540,000 $CTT total)</span>}
                             </li>
                             <li className="text-sm text-[#C8A2FB]">Rank 101 - 1000: &nbsp;
-                                {milestone_number == 1 ? <span className="text-[10px] text-white text-wrap">875 $CTT each (350,000 $CTT total)</span>
-                                    : milestone_number == 2 ? <span className="text-[10px] text-white text-wrap">1,000 $CTT each (900,000 $CTT total)</span>
-                                        : milestone_number == 3 ? <span className="text-[10px] text-white text-wrap">2,000 $CTT each (1,800,000 $CTT total)</span>
-                                            : milestone_number == 4 ? <span className="text-[10px] text-white text-wrap">3,000 $CTT each (2,700,000 $CTT total)</span>
-                                                : milestone_number == 5 ? <span className="text-[10px] text-white text-wrap">5,000 $CTT each (4,500,000 $CTT total)</span>
-                                                    : milestone_number == 6 ? <span className="text-[10px] text-white text-wrap">7,500 $CTT each (6,750,000 $CTT total)</span>
-                                                        : <span className="text-[10px] text-white text-wrap">10,000 $CTT each (9,000,000 $CTT total)</span>}
+                                {milestone_number == 1 ? <span className="text-[12px] text-white text-wrap">875 $CTT each (350,000 $CTT total)</span>
+                                    : milestone_number == 2 ? <span className="text-[12px] text-white text-wrap">1,000 $CTT each (900,000 $CTT total)</span>
+                                        : milestone_number == 3 ? <span className="text-[12px] text-white text-wrap">2,000 $CTT each (1,800,000 $CTT total)</span>
+                                            : milestone_number == 4 ? <span className="text-[12px] text-white text-wrap">3,000 $CTT each (2,700,000 $CTT total)</span>
+                                                : milestone_number == 5 ? <span className="text-[12px] text-white text-wrap">5,000 $CTT each (4,500,000 $CTT total)</span>
+                                                    : milestone_number == 6 ? <span className="text-[12px] text-white text-wrap">7,500 $CTT each (6,750,000 $CTT total)</span>
+                                                        : <span className="text-[12px] text-white text-wrap">10,000 $CTT each (9,000,000 $CTT total)</span>}
                             </li>
                         </ul>
                     </div>
