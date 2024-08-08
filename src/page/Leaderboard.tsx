@@ -5,6 +5,7 @@ import { dispatch, useSelector } from "../store";
 import { getAllUsers } from "../store/reducers/wallet";
 import { milestones } from "../data";
 import "../css/font.css";
+import Modal from "../component/modal";
 
 export default function Leaderboard() {
     function formatNumberWithCommas(number: number, locale = "en-US") {
@@ -28,6 +29,15 @@ export default function Leaderboard() {
     }
     const handleResultClick = () => {
         setIsLeaderboardOpen(2);
+    }
+    const [isMilestoneModal, setIsMilestoneModal] = useState<boolean>(false);
+    const [milestone_number, setMilestoneNumber] = useState<number>(1);
+    const handleCloseMilestoneModal = () => {
+        setIsMilestoneModal(false);
+    }
+    const handleOpenMilestoneModal = (index: number) => {
+        setMilestoneNumber(index);
+        setIsMilestoneModal(true);
     }
     return (
         <div className="flex flex-col justify-between items-center h-full w-full bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#120F29]">
@@ -124,7 +134,7 @@ export default function Leaderboard() {
                                                 <p className="text-[#C8A2FB] text-[12px]">{milestone.players}</p>
                                                 <p className="text-[#C8A2FB] text-[12px]">{milestone.status}</p>
                                             </div>
-                                            <div className="flex justify-center items-center px-3 py-2 text-white text-sm font-bold rounded-[20px] bg-[#7520FF]">More Info</div>
+                                            <div className="flex justify-center items-center px-3 py-2 text-white text-sm font-bold rounded-[20px] bg-[#7520FF]" onClick={() => handleOpenMilestoneModal(index)}>More Info</div>
                                         </div>
                                     ))
                                 }
@@ -214,6 +224,34 @@ export default function Leaderboard() {
                 }
             </div>
             <Footer />
+            <Modal isOpen={isMilestoneModal} onClose={handleCloseMilestoneModal}>
+                <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+                    <img src="image/assets/mission.png" alt="" className=" w-auto h-[80%]" />
+                    <div className="w-full flex flex-col justify-start items-start gap-2">
+                        <h1 className="text-[20px] text-white">MileStone 1</h1>
+                        <h1 className="text-[32px] text-white">Leaderboard Prizes Distribution:</h1>
+                    </div>
+                    <div className="w-full flex justify-start items-center">
+                        <ul className="flex flex-col justify-start w-full items-start list-disc">
+                            <li className="text-sm text-[#C8A2FB]">Rank 1:
+                                {milestone_number == 0 ? <span className="text-sm text-white"> 62,000 $CTT</span>
+                                    : milestone_number == 1 ? <span className="text-sm text-white">225,000 $CTT</span>
+                                        : milestone_number == 2 ? <span className="text-sm text-white">350,000 $CTT</span>
+                                            : milestone_number == 3 ? <span className="text-sm text-white">700,000 $CTT</span>
+                                                : milestone_number == 4 ? <span className="text-sm text-white">1,050,000 $CTT</span>
+                                                    : milestone_number == 5 ? <span className="text-sm text-white">1,750,000 $CTT</span>
+                                                        : milestone_number == 6 ? <span className="text-sm text-white">2,700,000 $CTT</span>
+                                                            : <span className="text-sm text-white">3,500,000 $CTT</span>}
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+                    >
+                        <span className="flex justify-center items-center text-white text-xl">Ok</span>
+                    </div>
+                </div>
+            </Modal>
         </div>
     )
 }
