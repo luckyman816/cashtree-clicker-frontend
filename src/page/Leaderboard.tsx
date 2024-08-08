@@ -94,7 +94,7 @@ export default function Leaderboard() {
                         </div>
                     </div>
                 ) : isLeaderboardOpen == 1 ? (
-                    <div className="flex flex-col justify-center items-center gap-3 w-full min-h-[70vh] max-h-[70vh]">
+                    <div className="flex flex-col justify-center items-center gap-3 w-full min-h-[70vh] max-h-[70vh] m-1">
                         <div className="flex justify-between items-center w-full">
                             <div className="flex justify-center items-center gap-1">
                                 <img src="image/leaderboard/star.png" alt="" className="w-4 h-4" />
@@ -228,12 +228,12 @@ export default function Leaderboard() {
                 <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
                     <img src="image/assets/mission.png" alt="" className=" w-auto h-[80%]" />
                     <div className="w-full flex flex-col justify-start items-start gap-2">
-                        <h1 className="text-[20px] text-white">MileStone 1</h1>
-                        <h1 className="text-[32px] text-white">Leaderboard Prizes Distribution:</h1>
+                        <h1 className="text-[20px] text-white text-left">MileStone 1</h1>
+                        <h1 className="text-[32px] text-white text-left">Leaderboard Prizes Distribution:</h1>
                     </div>
                     <div className="w-full flex justify-start items-center">
-                        <ul className="flex flex-col justify-start w-full items-start list-disc">
-                            <li className="text-sm text-[#C8A2FB]">Rank 1:
+                        <ul className="flex flex-col justify-start w-[90%] items-start list-disc">
+                            <li className="text-sm text-[#C8A2FB]">Rank 1: &nbsp;
                                 {milestone_number == 0 ? <span className="text-sm text-white"> 62,000 $CTT</span>
                                     : milestone_number == 1 ? <span className="text-sm text-white">225,000 $CTT</span>
                                         : milestone_number == 2 ? <span className="text-sm text-white">350,000 $CTT</span>

@@ -623,7 +623,7 @@ export default function Mission() {
       <Modal isOpen={isTelegramGroupModal} onClose={handleCloseTelegramGroupModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
           <img src="image/mission/instagramModal.png" alt="instagramModal" className=" w-auto h-[80%]" />
-          <h1 className="text-2xl text-white">Follow our Instagram Channel</h1>
+          <h1 className="text-2xl text-white">Join Our Telegram Group</h1>
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
             onClick={handleJoinTelegramGroup}
