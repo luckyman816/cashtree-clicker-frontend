@@ -306,6 +306,7 @@ export default function Leaderboard() {
                     </div>
                     <div
                         className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+                        onClick={() => setIsMilestoneModal(false)}
                     >
                         <span className="flex justify-center items-center text-white text-xl">Ok</span>
                     </div>
