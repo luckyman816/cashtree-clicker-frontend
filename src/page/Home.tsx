@@ -117,6 +117,7 @@ function Home() {
           if (tapLevel < 10 && token == levelTargets[tapLevel - 1]) {
             dispatch(updateTapLevel(username, tapLevel + 1));
             dispatch(updateBalance(username, token + levelBonus[tapLevel - 1])).then(() => {
+              setToken(token + levelBonus[tapLevel - 1]);
               toast.success("Level up! 🎉🎉🎉 You received bonus points!");
             })
             dispatch(updateLimit(username, energyLimit[tapLevel]))
