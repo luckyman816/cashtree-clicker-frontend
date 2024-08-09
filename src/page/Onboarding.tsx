@@ -10,16 +10,16 @@ const Onboarding = () => {
             </div>
             <div className="w-full justify-center items-center flex flex-col gap-2 z-20">
                 <div className="w-[90%] justify-start items-start gap-2">
-                    <h1 className="text-white text-[40px]">Welcome to Cashtree Tap-To-Win</h1>
-                    <p className="text-white text-lg">The exciting Web3 tapping game where you can compete to win a massive prize pool of up to 75,000,000 $CTT with a 1000 $CTT entry fee.🏆</p>
-                    <p className="text-white text-sm">Tap, compete, and take home big $CTT prize! 💰</p>
+                    <h1 className="text-white text-[40px] text-right">Welcome to Cashtree Tap-To-Win</h1>
+                    <p className="text-white text-lg text-right">The exciting Web3 tapping game where you can compete to win a massive prize pool of up to 75,000,000 $CTT with a 1000 $CTT entry fee.🏆</p>
+                    <p className="text-white text-sm text-right">Tap, compete, and take home big $CTT prize! 💰</p>
                 </div>
-                <div className="w-full justify-center items-center gap-1">
-                    <div className=" border border-white h-1 w-2 rounded-[2px]"></div>
-                    <div className=" border border-white h-1 w-1 rounded-[2px]"></div>
-                    <div className=" border border-white h-1 w-1 rounded-[2px]"></div>
-                    <div className=" border border-white h-1 w-1 rounded-[2px]"></div>
-                    <div className=" border border-white h-1 w-1 rounded-[2px]"></div>
+                <div className="w-full justify-center items-center gap-1 flex">
+                    <div className=" border border-white h-1 w-4 rounded-[2px] bg-white"></div>
+                    <div className=" border border-white h-1 w-1 rounded-[2px] bg-white"></div>
+                    <div className=" border border-white h-1 w-1 rounded-[2px] bg-white"></div>
+                    <div className=" border border-white h-1 w-1 rounded-[2px] bg-white"></div>
+                    <div className=" border border-white h-1 w-1 rounded-[2px] bg-white"></div>
                 </div>
                 <div className="w-[90%] flex justify-center items-center text-white rounded-[10px] bg-[#7520FF] h-[fit-content] py-4">
                     <span className="text-white text-xl">Next</span>
