@@ -9,11 +9,11 @@ const Loading = () => {
         <h1 className="text-white text-sm">Please wait...</h1>
       </div>
       <div className="flex flex-col justify-center items-center p-10">
-        <div className="text-7xl text-white" style={{ fontFamily: "jockey" }}>
+        <div className="text-[76px] text-white" style={{ fontFamily: "jockey" }}>
           Cashtree Tap To Win
         </div>
-        <div className="text-lg text-white" style={{ fontFamily: "archivo" }}>
-          Keep tapping, keep earning, and see how rich you can get! Compete with friends, unlock awesome rewards, and reign supreme in Cashtree Tap to Win
+        <div className="text-[26px] text-white" style={{ fontFamily: "avenir" }}>
+        Tap, compete & win <br /> the big $CTT prize!
         </div>
       </div>
 

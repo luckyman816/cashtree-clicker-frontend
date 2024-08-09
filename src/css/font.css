@@ -6,6 +6,10 @@
   font-family: 'archivo';
   src: url('./archivo.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'avenir';
+  src: url('./AvenirNext.otf') format('truetype');
+}
 p,h1,h2,span {
   font-family: 'archivo', sans-serif;
 }
