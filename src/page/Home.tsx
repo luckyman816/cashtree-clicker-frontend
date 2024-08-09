@@ -136,7 +136,6 @@ function Home() {
         }
       }
       handleClick(event);
-      event.stopPropagation();
     }
   };
   const handleMouseDown = () => {
