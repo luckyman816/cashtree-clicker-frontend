@@ -77,7 +77,10 @@ function Home() {
         "@keyframes fade-out-top-right {0% {opacity: 1; transform: translateY(0); } 100% {opacity: 0;transform: translateY(-100%);}}",
         0
       );
-
+    const existingDiv = document.querySelector(".dynamic-div");
+    if (existingDiv) {
+      existingDiv.remove();
+    }
     const newDiv = document.createElement("div");
     newDiv.textContent = `${score}`;
     newDiv.style.backgroundPosition = "center";
@@ -137,6 +140,7 @@ function Home() {
         }
       }
       handleClick(event);
+      event.stopPropagation();
     }
   };
   const handleMouseDown = () => {
