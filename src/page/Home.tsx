@@ -49,9 +49,8 @@ function Home() {
   console.log("---Telegram info----->", username);
   useEffect(() => {
     setTapLevel(tapLevelState);
-    setToken(tokenState);
     setRemainedEnergy(energyState);
-  }, [tapLevelState, tokenState, energyState, setTapLevel, setToken, setRemainedEnergy])
+  }, [tapLevelState, tokenState, energyState, setTapLevel, setRemainedEnergy])
   useEffect(() => {
     setLimit(limitState);
   }, [limitState]);
