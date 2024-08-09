@@ -80,7 +80,7 @@ export default function Boost() {
       if (refill_energy + 1 > 3) {
         toast.error("Maximum value reached!");
       } else {
-        if (token < 3000) {
+        if (token > 3000) {
           dispatch(updateRefillEnergy(username, refill_energy + 1, moment()));
           dispatch(updateWallet(username, (token - 3000), limit));
           toast.success("Refilled successfully");
