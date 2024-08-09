@@ -95,7 +95,7 @@ function Home() {
       "animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable";
 
     bodyRef.current && bodyRef.current.appendChild(newDiv);
-    const interval = setTimeout(() => newDiv && newDiv.remove(), 2000);
+    const interval = setTimeout(() => newDiv && newDiv.remove(), 800);
 
     return () => clearTimeout(interval);
   };
