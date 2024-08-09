@@ -43,7 +43,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route index element={<Onboarding />} />
-                <Route path="earn" element={<Home />} />
+                <Route path="home" element={<Home />} />
                 <Route path="mission" element={<Mission />} />
                 <Route path="friends" element={<Friends />} />
                 <Route path="leaderboard" element={<Leaderboard />} />
