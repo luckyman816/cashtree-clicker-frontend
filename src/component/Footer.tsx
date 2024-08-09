@@ -11,11 +11,11 @@ export default function Footer() {
   return (
     <div className="grid grid-cols-5 justify-center items-center px-3 w-full rounded-t-3xl bg-[#120F29] py-4">
       <Link
-        to="/"
+        to="/home"
         className={`flex flex-col items-center justify-center cursor-pointer transform origin-bottom transition ${path === "/" ? "scale-[110%] opacity-100" : "opacity-50 text-white"
           }`}
       >
-        {path === "/" ? <img src="/image/footer/earn_a.png" alt="earn" className=" w-6 h-6 " /> : <img src="/image/footer/earn.png" alt="earn" className=" w-6 h-6 " />}
+        {path === "/home" ? <img src="/image/footer/earn_a.png" alt="earn" className=" w-6 h-6 " /> : <img src="/image/footer/earn.png" alt="earn" className=" w-6 h-6 " />}
         <h1 className={`text-sm`} style={{ fontFamily: "archivo", color:  path === "/" ? "#7520FF" : "white"}}>Earn</h1>
       </Link>
       <Link
