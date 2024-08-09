@@ -104,9 +104,9 @@ function Home() {
       if (remainedEnergy < limit) {
         dispatch(updateEnergy(username, remainedEnergy + 1));
       }
-    }, 216000);
+    }, (11-tapLevel));
     return () => clearInterval(interval);
-  }, [username, remainedEnergy, limit]);
+  }, [username, remainedEnergy, limit, tapLevel]);
 
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token < levelTargets[tapLevel]) {
