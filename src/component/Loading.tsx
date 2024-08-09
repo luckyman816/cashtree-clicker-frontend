@@ -2,11 +2,11 @@ import "./Loading.css";
 import "../css/font.css";
 const Loading = () => {
   return (
-    <div className="w-screen h-screen flex flex-col justify-around items-center" style={{ backgroundImage: "url(/image/loading/cashtree_loading.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+    <div className="w-screen h-screen flex flex-col justify-around items-center" style={{ backgroundImage: "url(/image/loading/cover_new.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
       <div className="flex-1"></div>
       <div className="flex flex-col justify-center items-center">
         <div className="loader"></div>
-        <h1 className="text-white text-sm">Memuat...</h1>
+        <h1 className="text-white text-sm">Please wait...</h1>
       </div>
       <div className="flex flex-col justify-center items-center p-10">
         <div className="text-7xl text-white" style={{ fontFamily: "jockey" }}>
