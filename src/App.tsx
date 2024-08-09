@@ -13,6 +13,7 @@ import Mission from "./page/Mission";
 import Leaderboard from "./page/Leaderboard";
 import Wallet from "./page/Wallet";
 import Level from "./page/Level";
+import Onboarding from "./page/Onboarding";
 // import MobileQR from "./component/MobileQR";
 function App() {
   const [loading, setLoading] = useState(false);
@@ -41,7 +42,8 @@ function App() {
           <ReduxProvider store={store}>
             <Routes>
               <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
+                <Route index element={<Onboarding />} />
+                <Route path="earn" element={<Home />} />
                 <Route path="mission" element={<Mission />} />
                 <Route path="friends" element={<Friends />} />
                 <Route path="leaderboard" element={<Leaderboard />} />
