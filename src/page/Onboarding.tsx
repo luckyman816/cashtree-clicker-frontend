@@ -25,29 +25,29 @@ const Onboarding = () => {
             </div>
             <div className="w-full justify-center items-center flex flex-col gap-2 z-20 flex-grow">
                 {pageNum == 1 ?
-                    <div className="w-[80%] h-[350px] justify-start items-end gap-2">
+                    <div className="w-[80%] h-[350px] justify-end items-end gap-2">
                         <h1 className="text-white text-[40px] text-left">Welcome to Cashtree Tap-To-Win</h1>
                         <p className="text-white text-lg text-left">The exciting Web3 tapping game where you can compete to win a massive prize pool of up to 75,000,000 $CTT with a 1000 $CTT entry fee.🏆</p>
                         <p className="text-white text-sm text-left">Tap, compete, and take home big $CTT prize! 💰</p>
                     </div>
                     : pageNum == 2 ?
-                        <div className="w-[80%] h-[350px] justify-start items-end gap-2">
+                        <div className="w-[80%] h-[350px] justify-end items-end gap-2">
                             <h1 className="text-white text-[40px] text-left">Understanding The Game Rules</h1>
                             <p className="text-white text-sm text-left"><span className="font-bold text-white text-sm">Tap-to-Earn:</span> Accumulate points by tapping the screen and climb the leaderboard. Complete missions, invite friends and redeem codes for extra points. 🎯</p>
                             <p className="text-white text-sm text-left"><span className="font-bold text-white text-sm">Level Up:</span> Increase your level to earn more points per tap and increase energy bar capacity.</p>
                         </div>
                         : pageNum == 3 ?
-                            <div className="w-[80%] h-[350px] justify-start items-end gap-2">
+                            <div className="w-[80%] h-[350px] justify-end items-end gap-2">
                                 <h1 className="text-white text-[40px] text-left">The Rewards and The Milestones</h1>
                                 <p className="text-white text-sm text-left"><span className="font-bold text-white text-sm">Bonus Rewards:</span> Reach top rankings to earn bonus rewards. Points convert to $CTT at event's end.</p>
                                 <p className="text-white text-sm text-left"><span className="font-bold text-white text-sm">More Players, Bigger Prizes:</span> As more players join, the prize pool increases! 🌟 Reach player milestones to unlock larger prize pools for everyone.</p>
                             </div>
                             : pageNum == 4 ?
-                                <div className="w-[80%] h-[350px] justify-start items-end gap-2">
+                                <div className="w-[80%] h-[350px] justify-end items-end gap-2">
                                     <h1 className="text-white text-[40px] text-left">Purchase Your One-Time Entry Fee</h1>
                                     <p className="text-white text-lg text-left">Buy $CTT on Bybit Exchange and transfer it to your crypto wallet. Once transferred, connect your crypto wallet to the game, and pay one-time entry fee 1000 $CTT to enter!</p>
                                 </div>
-                                : <div className="w-[80%] h-[350px] justify-start items-end gap-2">
+                                : <div className="w-[80%] h-[350px] justify-end items-end gap-2">
                                     <h1 className="text-white text-[40px] text-left">Trying the Demo Mode First</h1>
                                     <p className="text-white text-lg text-left">Play the demo for free. Pay the entry fee to unlock all features. Your demo points will carry over when you start the full game!</p>
                                 </div>
