@@ -92,7 +92,6 @@ export function updateWallet(
   };
 }
 export function updateEnergy(username: string, energy: number) {
-  console.log("------>", energy);
   return async () => {
     try {
       const response = await axios.post(`/wallet/updateEnergy/${username}`, {
@@ -129,7 +128,6 @@ export function updateTapLevel(username: string, tap_level: number) {
   };
 }
 export function updateLimit(username: string, limit: number) {
-  console.log("------>", limit);
   return async () => {
     try {
       const response = await axios.post(`/wallet/updateLimit/${username}`, {

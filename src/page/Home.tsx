@@ -35,7 +35,7 @@ function Home() {
   const [limit, setLimit] = useState<number>(limitState);
   useEffect(() => {
     const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
-    // console.log("=========>webapp", webapp);
+    console.log("=========>webapp", webapp);
     if (webapp) {
       setUsername(webapp["user"]["username"]);
       axios.post(`/vibe/add,`, { username: webapp["user"]["username"] });
