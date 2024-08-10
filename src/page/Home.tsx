@@ -98,14 +98,14 @@ function Home() {
 
     return () => clearTimeout(interval);
   };
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (remainedEnergy < limit) {
-        dispatch(updateEnergy(username, remainedEnergy + 1));
-      }
-    }, ((11 - tapLevel) * 1000));
-    return () => clearInterval(interval);
-  }, [username, remainedEnergy, limit, tapLevel]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (remainedEnergy < limit) {
+  //       dispatch(updateEnergy(username, remainedEnergy + 1));
+  //     }
+  //   }, ((11 - tapLevel) * 1000));
+  //   return () => clearInterval(interval);
+  // }, [username, remainedEnergy, limit, tapLevel]);
 
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token < levelTargets[tapLevel]) {
