@@ -49,10 +49,15 @@ function Home() {
   console.log("---Telegram info----->", username);
   useEffect(() => {
     setTapLevel(tapLevelState);
-  }, [tapLevelState, setTapLevel ])
+  }, [tapLevelState, setTapLevel])
   useEffect(() => {
     setLimit(limitState);
   }, [limitState]);
+  useEffect(() => {
+    if (username) {
+      dispatch(insertWallet(username));
+    }
+  }, [username]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
@@ -100,7 +105,7 @@ function Home() {
       if (remainedEnergy < limit) {
         dispatch(updateEnergy(username, remainedEnergy + 1));
       }
-    }, ((11-tapLevel) * 1000));
+    }, ((11 - tapLevel) * 1000));
     return () => clearInterval(interval);
   }, [username, remainedEnergy, limit, tapLevel]);
 
