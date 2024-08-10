@@ -48,9 +48,6 @@ function Home() {
     setTapLevel(user.tap_level)
     setRemainedEnergy(user.energy)
   }, [user])
-  // useEffect(() => {
-  //   dispatch(insertWallet(username));
-  // }, [username]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
@@ -157,7 +154,7 @@ function Home() {
         </h3>
       </div>
       <div className="w-[90%] flex flex-col justify-center items-center gap-4">
-        <div className="flex justify-between items-center w-full px-3 py-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[20px] border border-[#B386FB]">
+        <div className="flex justify-between items-center w-full px-3 py-1 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[20px] border border-[#B386FB]">
           <div className=" flex justify-center items-center p-2 ">
             <img src="/image/assets/coin.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
