@@ -12,7 +12,7 @@ import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
 import {
   insertWallet,
   updateWallet,
-  // updateEnergy,
+  updateEnergy,
   getWallet,
   updateTapLevel,
   updateBalance,
@@ -53,9 +53,9 @@ function Home() {
   useEffect(() => {
     setLimit(limitState);
   }, [limitState]);
-  useEffect(() => {
-    dispatch(insertWallet(username));
-  }, [username]);
+  // useEffect(() => {
+  //   dispatch(insertWallet(username));
+  // }, [username]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
@@ -98,14 +98,14 @@ function Home() {
 
     return () => clearTimeout(interval);
   };
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (remainedEnergy < limit) {
-  //       dispatch(updateEnergy(username, remainedEnergy + 1));
-  //     }
-  //   }, ((11 - tapLevel) * 1000));
-  //   return () => clearInterval(interval);
-  // }, [username, remainedEnergy, limit, tapLevel]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (remainedEnergy < limit) {
+        dispatch(updateEnergy(username, remainedEnergy + 1));
+      }
+    }, ((11 - tapLevel) * 1000));
+    return () => clearInterval(interval);
+  }, [username, remainedEnergy, limit, tapLevel]);
 
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token < levelTargets[tapLevel]) {
