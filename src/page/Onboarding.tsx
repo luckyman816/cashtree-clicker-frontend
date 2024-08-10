@@ -17,11 +17,11 @@ const Onboarding = () => {
             </div>
             <div className="w-full h-full justify-center items-center flex flex-col gap-2 z-20">
                 <div className="w-full justify-center items-center flex z-20 h-[25%]">
-                    {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.png" alt="" className="w-auto h-[25%]" />
-                        : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.png" alt="" className="w-auto h-[25%]" />
-                            : pageNum == 3 ? <img src="/image/onboarding/onboarding_3.png" alt="" className="w-auto h-[25%]" />
-                                : pageNum == 4 ? <img src="/image/onboarding/onboarding_4.png" alt="" className="w-auto h-[25%]" /> :
-                                    <img src="/image/onboarding/onboarding_5.png" alt="" className="w-auto h-auto" />}
+                    {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.png" alt="" className="w-auto h-full" />
+                        : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.png" alt="" className="w-auto h-full" />
+                            : pageNum == 3 ? <img src="/image/onboarding/onboarding_3.png" alt="" className="w-auto h-full" />
+                                : pageNum == 4 ? <img src="/image/onboarding/onboarding_4.png" alt="" className="w-auto h-full" /> :
+                                    <img src="/image/onboarding/onboarding_5.png" alt="" className="w-auto h-full" />}
 
                 </div>
                 {pageNum == 1 ?
