@@ -53,9 +53,6 @@ function Home() {
   useEffect(() => {
     setLimit(limitState);
   }, [limitState]);
-  useEffect(() => {
-    dispatch(insertWallet(username));
-  }, [username]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
