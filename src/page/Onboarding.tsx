@@ -39,17 +39,17 @@ const Onboarding = () => {
                             </div>
                             : pageNum == 3 ?
                                 <div className="w-[80%] h-full flex flex-col justify-start items-start gap-2">
-                                    <h1 className="text-white text-[40px] text-left font-bold">The Rewards and The Milestones</h1>
+                                    <h1 className="text-white text-[40px] text-left font-bold">The Rewards <br /> and The <br /> Milestones</h1>
                                     <p className="text-white text-sm text-left"><span className="font-bold text-white text-sm">Bonus Rewards:</span> Reach top rankings to earn bonus rewards. Points convert to $CTT at event's end.</p>
                                     <p className="text-white text-sm text-left"><span className="font-bold text-white text-sm">More Players, Bigger Prizes:</span> As more players join, the prize pool increases! 🌟 Reach player milestones to unlock larger prize pools for everyone.</p>
                                 </div>
                                 : pageNum == 4 ?
                                     <div className="w-[80%] h-full flex flex-col justify-start items-start gap-2">
-                                        <h1 className="text-white text-[40px] text-left font-bold">Purchase Your One-Time Entry Fee</h1>
+                                        <h1 className="text-white text-[40px] text-left font-bold">Purchase <br /> Your One-Time <br /> Entry Fee</h1>
                                         <p className="text-white text-lg text-left">Buy $CTT on Bybit Exchange and transfer it to your crypto wallet. Once transferred, connect your crypto wallet to the game, and pay one-time entry fee 1000 $CTT to enter!</p>
                                     </div>
                                     : <div className="w-[80%] h-full flex flex-col justify-start items-start gap-2">
-                                        <h1 className="text-white text-[40px] text-left font-bold">Trying the Demo Mode First</h1>
+                                        <h1 className="text-white text-[40px] text-left font-bold">Trying <br /> the Demo Mode <br /> First</h1>
                                         <p className="text-white text-lg text-left">Play the demo for free. Pay the entry fee to unlock all features. Your demo points will carry over when you start the full game!</p>
                                     </div>
                     }
