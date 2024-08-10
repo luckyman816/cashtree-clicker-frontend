@@ -23,17 +23,12 @@ import { addDailyBoost } from "../store/reducers/dailyBoost";
 function Home() {
   const navigate = useNavigate();
   const user = useSelector(state=>state.wallet.user);
-  const usernameState = useSelector((state) => state.wallet.user?.username);
-  const tokenState = useSelector((state) => state.wallet.user?.balance);
-  const energyState = useSelector((state) => state.wallet.user?.energy);
-  const tapLevelState = useSelector((state) => state.wallet.user?.tap_level);
-  const limitState = useSelector((state) => state.wallet.user?.limit);
   const [imgStatus, setImgStatus] = useState(false);
-  const [tapLevel, setTapLevel] = useState<number>(tapLevelState);
-  const [username, setUsername] = useState<string>(usernameState);
-  const [token, setToken] = useState<number>(tokenState);
-  const [remainedEnergy, setRemainedEnergy] = useState<number>(energyState);
-  const [limit, setLimit] = useState<number>(limitState);
+  const [tapLevel, setTapLevel] = useState<number>(0);
+  const [username, setUsername] = useState<string>("");
+  const [token, setToken] = useState<number>(0);
+  const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
+  const [limit, setLimit] = useState<number>(0);
   useEffect(() => {
     const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
     console.log("=========>webapp", webapp);
@@ -49,14 +44,10 @@ function Home() {
   }, []);
   useEffect(() => {
     setToken(user.balance)
+    setLimit(user.limit)
+    setTapLevel(user.tap_level)
+    setRemainedEnergy(user.energy)
   }, [user])
-  console.log("---Telegram info----->", username);
-  useEffect(() => {
-    setTapLevel(tapLevelState);
-  }, [tapLevelState, setTapLevel])
-  useEffect(() => {
-    setLimit(limitState);
-  }, [limitState]);
   // useEffect(() => {
   //   dispatch(insertWallet(username));
   // }, [username]);
