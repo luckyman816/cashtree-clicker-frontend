@@ -16,7 +16,7 @@ const Onboarding = () => {
             <div className=" absolute w-full h-full right-0 top-0 z-10" style={{ backgroundImage: "url(/image/onboarding/gradient.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
             </div>
             <div className="w-full h-full justify-around items-center flex flex-col gap-2 z-20">
-                <div className="w-full justify-center items-center flex z-20 h-[30%]">
+                <div className="w-full justify-center items-center flex z-20 h-[45%]">
                     {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.png" alt="" className="w-auto h-full" />
                         : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.png" alt="" className="w-auto h-full" />
                             : pageNum == 3 ? <img src="/image/onboarding/onboarding_3.png" alt="" className="w-auto h-full" />
@@ -24,7 +24,7 @@ const Onboarding = () => {
                                     <img src="/image/onboarding/onboarding_5.png" alt="" className="w-auto h-full" />}
 
                 </div>
-                <div className="w-full h-[40%] flex justify-center items-center">
+                <div className="w-full h-[45%] flex justify-center items-center">
                     {pageNum == 1 ?
                         <div className="w-[90%] h-full flex flex-col justify-start items-start gap-2">
                             <h1 className="text-white text-[40px] text-left">Welcome to Cashtree Tap-To-Win</h1>
