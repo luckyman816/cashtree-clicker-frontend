@@ -57,11 +57,11 @@ const Onboarding = () => {
                     <div className={`border border-white h-1 ${pageNum == 4 ? "w-4" : "w-1"} rounded-[2px] bg-white`}></div>
                     <div className={`border border-white h-1 ${pageNum == 5 ? "w-4" : "w-1"} rounded-[2px] bg-white`}></div>
                 </div>
-                <div className="w-[80%] flex justify-center items-center text-white rounded-[10px] bg-[#7520FF] h-[fit-content] py-4" onClick={handleNext}>
-                    {
-                        pageNum == 5 ? <span className="text-white text-xl">Start game</span> : <Link to={"/home"}><span className="text-white text-xl">Next</span></Link>
-                    }
-                </div>
+
+                {
+                    pageNum == 5 ? <div className="w-[80%] flex justify-center items-center text-white rounded-[10px] bg-[#7520FF] h-[fit-content] py-4" onClick={handleNext}><span className="text-white text-xl">Start game</span></div> : <Link to={"/home"}><span className="text-white text-xl">Next</span></Link>
+                }
+
             </div>
         </div>
     )
