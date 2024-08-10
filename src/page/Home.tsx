@@ -22,6 +22,7 @@ import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
 import { addDailyBoost } from "../store/reducers/dailyBoost";
 function Home() {
   const navigate = useNavigate();
+  const user = useSelector(state=>state.wallet.user);
   const usernameState = useSelector((state) => state.wallet.user?.username);
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const energyState = useSelector((state) => state.wallet.user?.energy);
@@ -46,6 +47,9 @@ function Home() {
       dispatch(getWallet(webapp["user"]["username"]));
     }
   }, []);
+  useEffect(() => {
+    setToken(user.balance)
+  }, [user])
   console.log("---Telegram info----->", username);
   useEffect(() => {
     setTapLevel(tapLevelState);
