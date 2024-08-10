@@ -1,15 +1,11 @@
 import { useState } from "react";
 import "../css/font.css"
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Onboarding = () => {
-    const navigate = useNavigate()
     const [pageNum, setPageNum] = useState<number>(1)
     const handleNext = () => {
         setPageNum((prevNum) => prevNum + 1)
-        if (pageNum + 1 > 5) {
-            navigate("/home");
-        }
     }
     return (
         <div className=" relative w-screen h-screen flex flex-col justify-around items-center bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#120F29] to-[#7F3AEF]" >
@@ -63,7 +59,7 @@ const Onboarding = () => {
                 </div>
                 <div className="w-[80%] flex justify-center items-center text-white rounded-[10px] bg-[#7520FF] h-[fit-content] py-4" onClick={handleNext}>
                     {
-                        pageNum == 5 ? <span className="text-white text-xl">Start game</span> : <span className="text-white text-xl">Next</span>
+                        pageNum == 5 ? <span className="text-white text-xl">Start game</span> : <Link to={"/home"}><span className="text-white text-xl">Next</span></Link>
                     }
                 </div>
             </div>
