@@ -43,7 +43,7 @@ function Home() {
       dispatch(insertWallet(webapp["user"]["username"]));
       dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
       dispatch(addDailyBoost(webapp["user"]["username"]));
-      dispatch(getWallet(webapp["user"]["username"]))
+      dispatch(getWallet(webapp["user"]["username"]));
     }
   }, []);
   console.log("---Telegram info----->", username);
@@ -54,7 +54,7 @@ function Home() {
     setLimit(limitState);
   }, [limitState]);
   useEffect(() => {
-    dispatch(getWallet(username));
+    dispatch(insertWallet(username));
   }, [username]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
