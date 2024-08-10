@@ -103,7 +103,7 @@ function Home() {
       if (remainedEnergy < limit) {
         dispatch(updateEnergy(username, remainedEnergy + 1));
       }
-    }, (11-tapLevel));
+    }, ((11-tapLevel) * 1000));
     return () => clearInterval(interval);
   }, [username, remainedEnergy, limit, tapLevel]);
 
