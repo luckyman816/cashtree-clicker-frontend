@@ -12,7 +12,7 @@ import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
 import {
   insertWallet,
   updateWallet,
-  updateEnergy,
+  // updateEnergy,
   getWallet,
   updateTapLevel,
   updateBalance,
