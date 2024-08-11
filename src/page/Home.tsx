@@ -29,7 +29,7 @@ function Home() {
   const [token, setToken] = useState<number>(0);
   const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
   const [limit, setLimit] = useState<number>(0);
-  const [progressValue, setProgressValue] = useState<number>(0);
+  const [progressValue, setProgressValue] = useState<number>(levelTargets[tapLevel] - token);
 
   useEffect(() => {
     const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
