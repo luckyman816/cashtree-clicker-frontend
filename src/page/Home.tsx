@@ -98,7 +98,7 @@ function Home() {
     } else {
       setProgressValue((prevValue) => prevValue + 1);
     }
-  }, [])
+  }, [token, progressValue, tapLevel])
   useEffect(() => {
     const interval = setInterval(() => {
       if (remainedEnergy < limit) {
