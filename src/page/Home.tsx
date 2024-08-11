@@ -49,6 +49,7 @@ function Home() {
     setLimit(user.limit)
     setTapLevel(user.tap_level)
     setRemainedEnergy(user.energy)
+    setProgressValue(levelTargets[user.tap_level] - user.balance)
   }, [user])
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
