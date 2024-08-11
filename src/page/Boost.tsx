@@ -137,16 +137,6 @@ export default function Boost() {
   return (
     <div className="h-full w-full flex flex-col justify-between items-center">
       <Toaster />
-      <div className="flex justify-between items-center px-3 py-5 w-full">
-        <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
-        <h3
-          className="text-sm text-[white]"
-          style={{ fontFamily: "archivo" }}
-        >
-          Boosters
-        </h3>
-        <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
-      </div>
       <div className="w-full mt-3 flex flex-col justify-start items-start p-4 gap-4 max-h-[75vh] min-h-[75vh]">
         <div className="flex justify-between items-center w-full px-3 py-5 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] border border-[#B386FB]">
           <div className="flex justify-center items-center">
