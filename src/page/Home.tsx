@@ -29,6 +29,8 @@ function Home() {
   const [token, setToken] = useState<number>(0);
   const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
   const [limit, setLimit] = useState<number>(0);
+  const [progressValue, setProgressValue] = useState<number>(0);
+
   useEffect(() => {
     const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
     console.log("=========>webapp", webapp);
@@ -90,6 +92,13 @@ function Home() {
 
     return () => clearTimeout(interval);
   };
+  useEffect (() => {
+    if(progressValue == (levelTargets[tapLevel] - token)) {
+      setProgressValue(0);
+    } else {
+      setProgressValue((prevValue) => prevValue + 1);
+    }
+  }, [])
   useEffect(() => {
     const interval = setInterval(() => {
       if (remainedEnergy < limit) {
@@ -102,10 +111,10 @@ function Home() {
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token < levelTargets[tapLevel]) {
       setScore(`+${tapLevel}`);
-      if ((token + tapLevel) > levelTargets[tapLevel - 1]) {
-        setToken(levelTargets[tapLevel - 1]);
-        dispatch(updateWallet(username, levelTargets[tapLevel - 1], remainedEnergy - tapLevel)).then(() => {
-          if (tapLevel < 10 && token == levelTargets[tapLevel - 1]) {
+      if ((token + tapLevel) > levelTargets[tapLevel]) {
+        setToken(levelTargets[tapLevel]);
+        dispatch(updateWallet(username, levelTargets[tapLevel], remainedEnergy - tapLevel)).then(() => {
+          if (tapLevel < 10 && token == levelTargets[tapLevel]) {
             dispatch(updateTapLevel(username, tapLevel + 1));
             dispatch(updateBalance(username, token + levelBonus[tapLevel - 1])).then(() => {
               setToken(token + levelBonus[tapLevel - 1]);
@@ -127,6 +136,8 @@ function Home() {
         }
       }
       handleClick(event);
+    } else {
+      toast.error("Not enough energy!");
     }
   };
   const handleMouseDown = () => {
@@ -170,13 +181,13 @@ function Home() {
             <img src="/image/assets/earnLevel.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-[11px] text-[#FFC107]">Earn to level up</h2>
-              <h2 className="text-sm text-[white]">+{formatNumberWithCommas(levelTargets[tapLevel - 1])}k</h2>
+              <h2 className="text-sm text-[white]">+{formatNumberWithCommas(levelTargets[tapLevel])}k</h2>
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
-        <ProgressBar value={tapLevel * 10} />
+        <ProgressBar value={(progressValue * 100 / (levelTargets[tapLevel] - token))} />
         <div className="flex w-full justify-between items-center p-3">
           <h1 className="text-[12px] text-white cursor-pointer" onClick={handleLevelUp}>Level: {levelNames[tapLevel - 1]} &#8250;</h1>
           <h1 className="text-[12px] text-white">Goal {tapLevel}/10</h1>
