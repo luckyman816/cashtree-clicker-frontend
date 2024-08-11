@@ -92,13 +92,7 @@ function Home() {
 
     return () => clearTimeout(interval);
   };
-  useEffect (() => {
-    if(progressValue == (levelTargets[tapLevel] - token)) {
-      setProgressValue(0);
-    } else {
-      setProgressValue((prevValue) => prevValue + 1);
-    }
-  }, [token, tapLevel, progressValue, remainedEnergy])
+    
   console.log("progressValue", remainedEnergy);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -135,6 +129,11 @@ function Home() {
           dispatch(updateWallet(username, token + tapLevel, remainedEnergy - tapLevel));
           setRemainedEnergy(remainedEnergy - tapLevel);
         }
+      }
+      if(progressValue == (levelTargets[tapLevel] - token)) {
+        setProgressValue(0);
+      } else {
+        setProgressValue((prevValue) => prevValue + 1);
       }
       handleClick(event);
     } else {
