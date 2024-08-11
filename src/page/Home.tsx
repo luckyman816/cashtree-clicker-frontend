@@ -94,7 +94,8 @@ function Home() {
     return () => clearTimeout(interval);
   };
     
-  console.log("progressValue", remainedEnergy);
+  console.log("progressValue", (progressValue * 100 / (levelTargets[tapLevel] - token)));
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (remainedEnergy < limit) {
