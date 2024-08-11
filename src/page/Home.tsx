@@ -94,7 +94,7 @@ function Home() {
     return () => clearTimeout(interval);
   };
     
-  console.log("progressValuebar", progressValue, (progressValue * 100 / (levelTargets[tapLevel] - token)));
+  console.log("progressValuebar", progressValue, (progressValue * 100 / (levelTargets[tapLevel] - levelTargets[tapLevel - 1])));
 
   useEffect(() => {
     const interval = setInterval(() => {
