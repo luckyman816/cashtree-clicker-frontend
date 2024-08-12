@@ -572,7 +572,7 @@ export default function Mission() {
           <img
             src="image/mission/dailyRewardModal.png"
             alt="dailyRewardModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Daily Reward</h1>
           <p className=" text-sm text-white">
@@ -705,7 +705,7 @@ export default function Mission() {
           <img
             src="image/assets/mission.png"
             alt=""
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Retweet a Post</h1>
           <div
@@ -735,7 +735,7 @@ export default function Mission() {
           <img
             src="image/assets/mission.png"
             alt=""
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Comment on a Post</h1>
           <div
@@ -765,7 +765,7 @@ export default function Mission() {
           <img
             src="image/assets/mission.png"
             alt=""
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Like a Post</h1>
           <div
@@ -795,7 +795,7 @@ export default function Mission() {
           <img
             src="image/mission/secretExtraModal.png"
             alt="secretExtraModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Secret Extra Point</h1>
           <p className=" text-sm text-white">Enter your secret code</p>
@@ -814,11 +814,11 @@ export default function Mission() {
         </div>
       </Modal>
       <Modal isOpen={isInstagram} onClose={handleCloseInstagramModal}>
-        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full ">
           <img
             src="image/mission/instagramModal.png"
             alt="instagramModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Follow our Instagram Channel</h1>
           <div
@@ -848,7 +848,7 @@ export default function Mission() {
           <img
             src="image/mission/youtubeModal.png"
             alt="youtubeModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">The trend you can't Ignore</h1>
           <p className=" text-sm text-white">
@@ -885,7 +885,7 @@ export default function Mission() {
           <img
             src="image/mission/instagramModal.png"
             alt="instagramModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Join Our Telegram Group</h1>
           <div
