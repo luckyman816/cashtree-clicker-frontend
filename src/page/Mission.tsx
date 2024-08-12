@@ -415,7 +415,7 @@ export default function Mission() {
             >
               <div className="flex justify-center items-center gap-3">
                 <img
-                  src={`/image/mission/secretExtra.png`}
+                  src={`/image/mission/secretExtra.webp`}
                   alt=""
                   className="w-10 h-10"
                 />
@@ -447,7 +447,7 @@ export default function Mission() {
                 >
                   <div className="flex justify-center items-center gap-3">
                     <img
-                      src={`/image/mission/${item.icon}.png`}
+                      src={`/image/mission/${item.icon}.webp`}
                       alt=""
                       className="w-10 h-10"
                     />
@@ -496,7 +496,7 @@ export default function Mission() {
                 >
                   <div className="flex justify-center items-center gap-3">
                     <img
-                      src={`/image/mission/${item.icon}.png`}
+                      src={`/image/mission/${item.icon}.webp`}
                       alt=""
                       className="w-10 h-10 translate-y-[2px]"
                     />
