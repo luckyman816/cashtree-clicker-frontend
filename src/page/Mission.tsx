@@ -338,7 +338,7 @@ export default function Mission() {
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
       <Toaster />
-      <div className="flex flex-col justify-center items-center gap-4 w-full">
+      <div className="flex flex-col justify-center items-center gap-4 w-full mt-8">
         <div className="flex flex-col justify-center items-center">
           <img src="image/assets/mission.png" alt="mission" className=" w-[140px] h-[140px]" />
           <h1 className="text-white text-[32px] font-bold">Earn More Coins</h1>
