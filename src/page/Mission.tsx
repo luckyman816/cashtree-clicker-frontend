@@ -408,7 +408,7 @@ export default function Mission() {
           </h1>
         </div>
         <div className=" overflow-y-auto w-full max-h-[50vh]">
-          <div className="flex flex-col justify-center items-center w-full gap-2">
+          <div className="flex flex-col justify-center items-center w-full">
             <div
               
               className={`flex w-[90%] mt-[30px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4756E5] to-[#47C8FF] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
