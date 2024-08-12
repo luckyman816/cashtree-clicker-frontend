@@ -122,8 +122,10 @@ function Home() {
             toast.error("Maximum level reached!");
           }
         });
+        setProgressValue(0);
       } else {
         setToken(token + tapLevel);
+        setProgressValue((prevValue) => prevValue + 1);
         if (remainedEnergy - tapLevel < 0) {
           dispatch(updateWallet(username, token + tapLevel, 0));
           setRemainedEnergy(0);
@@ -131,11 +133,6 @@ function Home() {
           dispatch(updateWallet(username, token + tapLevel, remainedEnergy - tapLevel));
           setRemainedEnergy(remainedEnergy - tapLevel);
         }
-      }
-      if(progressValue == (levelTargets[tapLevel] - token)) {
-        setProgressValue(0);
-      } else {
-        setProgressValue((prevValue) => prevValue + 1);
       }
       handleClick(event);
     } else {
@@ -189,7 +186,7 @@ function Home() {
         </div>
       </div>
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
-        <ProgressBar value={(progressValue * 100 / (levelTargets[tapLevel] - token))} />
+        <ProgressBar value={(progressValue * 100 / (levelTargets[tapLevel] - levelTargets[tapLevel - 1]))} />
         <div className="flex w-full justify-between items-center p-3">
           <h1 className="text-[12px] text-white cursor-pointer" onClick={handleLevelUp}>Level: {levelNames[tapLevel - 1]} &#8250;</h1>
           <h1 className="text-[12px] text-white">Goal {tapLevel}/10</h1>
