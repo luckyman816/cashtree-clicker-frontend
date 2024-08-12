@@ -436,7 +436,12 @@ export default function Mission() {
             {dailyCheckItems.map((item, index) => (
               <div
                 key={index}
-                className={`flex w-[90%] my-[6px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
+                className={`w-[90%] my-[6px]  bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[rgba(255, 255, 255, 0.4)] to-[rgba(255, 255, 255, 0.02)] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] p-[1px]`}
+                onClick={() => handleOpenDailyTaskModal(item.icon)}
+              >
+                
+              <div
+                className={`flex w-full px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
                 onClick={() => handleOpenDailyTaskModal(item.icon)}
               >
                 <div className="flex justify-center items-center gap-3">
@@ -464,6 +469,7 @@ export default function Mission() {
                   alt="arrowRight"
                   className="w-2 h-4"
                 />
+              </div>
               </div>
             ))}
 
