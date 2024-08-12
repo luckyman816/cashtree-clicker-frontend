@@ -10,6 +10,10 @@
   font-family: 'avenir';
   src: url('./AvenirNext.otf') format('truetype');
 }
+@font-face {
+  font-family: 'archivo-bold';
+  src: url('./archivo-bold.ttf') format('truetype');
+}
 p,h1,h2,span {
   font-family: 'archivo', sans-serif;
 }

@@ -50,23 +50,22 @@ const Onboarding = () => {
                                     </div>
                     }
                 </div>
-                <div className="w-full justify-center items-center gap-1 flex">
-                    <div className={`border border-white h-1 ${pageNum == 1 ? "w-4" : "w-1"} rounded-[2px] bg-white`}></div>
-                    <div className={`border border-white h-1 ${pageNum == 2 ? "w-4" : "w-1"} rounded-[2px] bg-white`}></div>
-                    <div className={`border border-white h-1 ${pageNum == 3 ? "w-4" : "w-1"} rounded-[2px] bg-white`}></div>
-                    <div className={`border border-white h-1 ${pageNum == 4 ? "w-4" : "w-1"} rounded-[2px] bg-white`}></div>
-                    <div className={`border border-white h-1 ${pageNum == 5 ? "w-4" : "w-1"} rounded-[2px] bg-white`}></div>
+                <div className="w-full justify-center items-center gap-1 flex my-5">
+                    <div className={`border border-white h-2 ${pageNum == 1 ? "w-5" : "w-2"} rounded bg-white`}></div>
+                    <div className={`border border-white h-2 ${pageNum == 2 ? "w-5" : "w-2"} rounded bg-white`}></div>
+                    <div className={`border border-white h-2 ${pageNum == 3 ? "w-5" : "w-2"} rounded bg-white`}></div>
+                    <div className={`border border-white h-2 ${pageNum == 4 ? "w-5" : "w-2"} rounded bg-white`}></div>
+                    <div className={`border border-white h-2 ${pageNum == 5 ? "w-5" : "w-2"} rounded bg-white`}></div>
                 </div>
                 {
                     pageNum == 5 ?
-                        <Link to={"/home"} className="w-[80%] flex justify-center items-center text-white rounded-[10px] bg-[#7520FF] h-[fit-content] py-4">
+                        <Link to={"/home"} className="w-[80%] flex justify-center items-center text-white rounded-[20px] bg-[#7520FF] h-[fit-content] py-4">
                             <span className="text-white text-xl">Start game</span>
                         </Link>
                         :
-                        <div className="w-[80%] flex justify-center items-center text-white rounded-[10px] bg-[#7520FF] h-[fit-content] py-4" onClick={handleNext}>
+                        <div className="w-[80%] flex justify-center items-center text-white rounded-[20px] bg-[#7520FF] h-[fit-content] py-4" onClick={handleNext}>
                             <span className="text-white text-xl"> Next </span>
                         </div>
-
                 }
 
             </div>
