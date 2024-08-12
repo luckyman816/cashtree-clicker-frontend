@@ -436,12 +436,12 @@ export default function Mission() {
             {dailyCheckItems.map((item, index) => (
               <div
                 key={index}
-                className={`w-[90%] my-[6px] p-1 rounded-[20px]`}
-                style={{background:"linear-gradient(315deg,rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.02)"}}
+                className={`w-[90%] my-[6px] p-[1px] rounded-[20px]`}
+                style={{background:"linear-gradient(315deg,rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.4)"}}
               >
                 
               <div
-                className={`flex w-full m-[1px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
+                className={`flex w-full px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
                 onClick={() => handleOpenDailyTaskModal(item.icon)}
               >
                 <div className="flex justify-center items-center gap-3">
