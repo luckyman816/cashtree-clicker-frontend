@@ -107,7 +107,7 @@ function Home() {
   }, [username, remainedEnergy, limit, tapLevel]);
 
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (remainedEnergy > 0 && token < levelTargets[tapLevel]) {
+    if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
       setScore(`+${tapLevel}`);
       if ((token + tapLevel) > levelTargets[tapLevel]) {
         setToken(levelTargets[tapLevel]);
