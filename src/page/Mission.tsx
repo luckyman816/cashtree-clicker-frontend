@@ -437,7 +437,7 @@ export default function Mission() {
               <div
                 key={index}
                 className={`w-[90%] my-[6px]  bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[rgba(255, 255, 255, 0.02)] to-[rgba(255, 255, 255, 1)] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px]`}
-                onClick={() => handleOpenDailyTaskModal(item.icon)}
+                
               >
                 
               <div
