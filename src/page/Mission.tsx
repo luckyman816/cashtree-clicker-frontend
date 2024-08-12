@@ -460,7 +460,7 @@ export default function Mission() {
                           <img
                             src="/image/assets/coin.png"
                             alt="coin"
-                            className="w-4 h-4 translate-y-[2.5px]"
+                            className="w-4 h-4 translate-y-[2px]"
                           />
                         </div>
                         <h3 className="text-[14px] leading-[21px] text-white font-bold">
@@ -498,7 +498,7 @@ export default function Mission() {
                     <img
                       src={`/image/mission/${item.icon}.png`}
                       alt=""
-                      className="w-10 h-10 translate-y-[2.5px]"
+                      className="w-10 h-10 translate-y-[2px]"
                     />
                     <div className="flex flex-col justify-start items-start">
                       <h3 className="text-[13px] text-white leading-[18px]">
