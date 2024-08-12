@@ -393,7 +393,7 @@ export default function Mission() {
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
       <Toaster />
-      <div className="flex flex-col justify-center items-center gap-4 w-full mt-8">
+      <div className="flex flex-col justify-center items-center gap-[30px] w-full mt-8">
         <div className="flex flex-col justify-center items-center">
           <img
             src="image/assets/mission.png"
@@ -411,7 +411,7 @@ export default function Mission() {
           <div className="flex flex-col justify-center items-center w-full">
             <div
               
-              className={`flex w-[90%] mt-[30px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4756E5] to-[#47C8FF] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
+              className={`flex w-[90%] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4756E5] to-[#47C8FF] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
               onClick={() => handleOpenDailyTaskModal("secretExtra")}
             >
               <div className="flex justify-center items-center gap-3">
