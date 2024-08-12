@@ -22,7 +22,7 @@ import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
 import { addDailyBoost } from "../store/reducers/dailyBoost";
 function Home() {
   const navigate = useNavigate();
-  const user = useSelector(state=>state.wallet.user);
+  const user = useSelector(state => state.wallet.user);
   const [imgStatus, setImgStatus] = useState(false);
   const [tapLevel, setTapLevel] = useState<number>(0);
   const [username, setUsername] = useState<string>("");
@@ -30,6 +30,7 @@ function Home() {
   const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
   const [limit, setLimit] = useState<number>(0);
   const [progressValue, setProgressValue] = useState<number>(levelTargets[tapLevel] - token);
+  const [targetDiff, setTargetDiff] = useState<number>(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
 
   useEffect(() => {
     const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
@@ -93,7 +94,7 @@ function Home() {
 
     return () => clearTimeout(interval);
   };
-    
+
   console.log("progressValuebar", progressValue, (progressValue * 100 / (levelTargets[tapLevel] - levelTargets[tapLevel - 1])));
 
   useEffect(() => {
@@ -112,7 +113,9 @@ function Home() {
         setToken(levelTargets[tapLevel]);
         dispatch(updateWallet(username, levelTargets[tapLevel], remainedEnergy - tapLevel)).then(() => {
           if (tapLevel < 10 && token == levelTargets[tapLevel]) {
-            dispatch(updateTapLevel(username, tapLevel + 1));
+            dispatch(updateTapLevel(username, tapLevel + 1)).then(() => {
+              setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1]);
+            });
             dispatch(updateBalance(username, token + levelBonus[tapLevel - 1])).then(() => {
               setToken(token + levelBonus[tapLevel - 1]);
               toast.success("Level up! 🎉🎉🎉 You received bonus points!");
@@ -186,7 +189,7 @@ function Home() {
         </div>
       </div>
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
-        <ProgressBar value={(progressValue * 100 / (levelTargets[tapLevel] - levelTargets[tapLevel - 1]))} />
+        <ProgressBar value={(progressValue * 100 / targetDiff)} />
         <div className="flex w-full justify-between items-center p-3">
           <h1 className="text-[12px] text-white cursor-pointer" onClick={handleLevelUp}>Level: {levelNames[tapLevel - 1]} &#8250;</h1>
           <h1 className="text-[12px] text-white">Goal {tapLevel}/10</h1>
