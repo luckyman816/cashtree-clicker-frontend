@@ -436,7 +436,7 @@ export default function Mission() {
             {dailyCheckItems.map((item, index) => (
               <div
                 key={index}
-                className={`flex w-[90%] my-[6px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
+                className={`flex w-[90%] my-[6px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
                 onClick={() => handleOpenDailyTaskModal(item.icon)}
               >
                 <div className="flex justify-center items-center gap-3">
@@ -473,7 +473,7 @@ export default function Mission() {
             {taskListItems.map((item, index) => (
               <div
                 key={index}
-                className={`flex w-[90%] my-[6px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
+                className={`flex w-[90%] my-[6px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
                 onClick={() => handleOpenTaskListModal(item.icon)}
               >
                 <div className="flex justify-center items-center gap-3">
