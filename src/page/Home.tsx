@@ -29,7 +29,7 @@ function Home() {
   const [token, setToken] = useState<number>(0);
   const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
   const [limit, setLimit] = useState<number>(0);
-  const [progressValue, setProgressValue] = useState<number>(levelTargets[tapLevel] - token);
+  const [progressValue, setProgressValue] = useState<number>(token - levelTargets[tapLevel - 1]);
   const [targetDiff, setTargetDiff] = useState<number>(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
 
   useEffect(() => {
@@ -52,6 +52,9 @@ function Home() {
     setRemainedEnergy(user.energy)
     setProgressValue(user.balance)
   }, [user])
+  useEffect(() => {
+    setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
+  }, [tapLevel])
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
