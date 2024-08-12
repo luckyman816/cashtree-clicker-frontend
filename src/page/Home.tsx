@@ -50,11 +50,11 @@ function Home() {
     setLimit(user.limit)
     setTapLevel(user.tap_level)
     setRemainedEnergy(user.energy)
-    setProgressValue(user.balance)
   }, [user])
   useEffect(() => {
     setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
-  }, [tapLevel])
+    setProgressValue(token - levelTargets[tapLevel - 1])
+  }, [tapLevel, token])
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
