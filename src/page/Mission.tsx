@@ -411,7 +411,7 @@ export default function Mission() {
           <div className="flex flex-col justify-center items-center w-full gap-2">
             <div
               
-              className={`flex w-[90%] my-3 px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#47C8FF] to-[#4756E5] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}
+              className={`flex w-[90%] my-3 px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4756E5] to-[#47C8FF] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
               onClick={() => handleOpenDailyTaskModal("secretExtra")}
             >
               <div className="flex justify-center items-center">
@@ -421,7 +421,7 @@ export default function Mission() {
                   className="w-10 h-10"
                 />
                 <div className="flex flex-col gap-1 justify-start items-start">
-                  <h3 className="text-sm text-white">Secret Extra Point</h3>
+                  <h3 className="text-sm text-white">Redeem Secret Code</h3>
                   <div className="flex justify-center items-center">
                     <img
                       src="/image/assets/coin.png"
