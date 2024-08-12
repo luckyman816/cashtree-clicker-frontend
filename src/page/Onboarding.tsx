@@ -59,14 +59,13 @@ const Onboarding = () => {
                 </div>
                 {
                     pageNum == 5 ?
-                        <Link to={"/home"} className="w-[80%] flex justify-center items-center text-white rounded-[10px] bg-[#7520FF] h-[fit-content] py-4">
+                        <Link to={"/home"} className="w-[80%] flex justify-center items-center text-white rounded-[20px] bg-[#7520FF] h-[fit-content] py-4">
                             <span className="text-white text-xl">Start game</span>
                         </Link>
                         :
-                        <div className="w-[80%] flex justify-center items-center text-white rounded-[10px] bg-[#7520FF] h-[fit-content] py-4" onClick={handleNext}>
+                        <div className="w-[80%] flex justify-center items-center text-white rounded-[20px] bg-[#7520FF] h-[fit-content] py-4" onClick={handleNext}>
                             <span className="text-white text-xl"> Next </span>
                         </div>
-
                 }
 
             </div>
