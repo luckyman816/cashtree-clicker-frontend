@@ -452,13 +452,17 @@ export default function Mission() {
                       className="w-10 h-10"
                     />
                     <div className="flex flex-col justify-start items-start">
-                      <h3 className="text-[13px] text-white leading-[18px]">{item.name}</h3>
+                      <h3 className="text-[13px] text-white leading-[18px]">
+                        {item.name}
+                      </h3>
                       <div className="flex justify-center items-center">
-                        <img
-                          src="/image/assets/coin.png"
-                          alt="coin"
-                          className="w-4 h-4"
-                        />
+                        <div className="w-[21px] h-[21px] flex justify-start items-center">
+                          <img
+                            src="/image/assets/coin.png"
+                            alt="coin"
+                            className="w-4 h-4"
+                          />
+                        </div>
                         <h3 className="text-[14px] leading-[21px] text-white font-bold">
                           +{formatNumberWithCommas(25000)}
                         </h3>
@@ -497,13 +501,19 @@ export default function Mission() {
                       className="w-10 h-10"
                     />
                     <div className="flex flex-col justify-start items-start">
-                      <h3 className="text-[13px] text-white leading-[18px]">{item.name}</h3>
+                      <h3 className="text-[13px] text-white leading-[18px]">
+                        {item.name}
+                      </h3>
                       <div className="flex justify-center items-center">
-                        <img
-                          src="/image/assets/coin.png"
-                          alt="coin"
-                          className="w-4 h-4"
-                        />
+                        <div className="w-[21px] h-[21px] flex justify-start items-center">
+                          <div className="w-[21px] h-[21px] flex justify-start items-center">
+                            <img
+                              src="/image/assets/coin.png"
+                              alt="coin"
+                              className="w-4 h-4"
+                            />
+                          </div>
+                        </div>
                         <h3 className="text-[14px] leading-[21px] text-white font-bold">
                           {item.coin}
                         </h3>
