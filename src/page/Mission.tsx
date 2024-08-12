@@ -574,11 +574,11 @@ export default function Mission() {
             alt="dailyRewardModal"
             className=" w-auto h-[200px]"
           />
-          <h1 className="text-2xl text-white">Daily Reward</h1>
-          <p className=" text-sm text-white">
+          <h1 className="text-2xl text-white font-bold">Daily Reward</h1>
+          <p className=" text-sm text-white px-6">
             Accrue coins for logging into the game daily without skipping
           </p>
-          <div className="flex justify-center items-center w-full">
+          <div className="flex justify-center items-center w-full mt-[8px]">
             <div className="flex gap-5 w-[95%] flex-wrap h-auto">
               {dailyCoins.map((item, index) => (
                 <div
@@ -586,103 +586,105 @@ export default function Mission() {
                   className="flex flex-col gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
                 >
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
-                  {index == 0 ? (
-                    daily_coins_received_status.day_1 ? (
-                      <img
-                        src="image/mission/received.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
+                  {
+                    index == 0 ? (
+                        daily_coins_received_status.day_1 ? (
+                          <img
+                            src="image/mission/received.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        ) : (
+                          <img
+                            src="image/assets/coin.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        )
+                      ) : index == 1 ? (
+                        daily_coins_received_status.day_2 ? (
+                          <img
+                            src="image/mission/received.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        ) : (
+                          <img
+                            src="image/assets/coin.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        )
+                      ) : index == 2 ? (
+                        daily_coins_received_status.day_3 ? (
+                          <img
+                            src="image/mission/received.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        ) : (
+                          <img
+                            src="image/assets/coin.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        )
+                      ) : index == 3 ? (
+                        daily_coins_received_status.day_4 ? (
+                          <img
+                            src="image/mission/received.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        ) : (
+                          <img
+                            src="image/assets/coin.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        )
+                      ) : index == 4 ? (
+                        daily_coins_received_status.day_5 ? (
+                          <img
+                            src="image/mission/received.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        ) : (
+                          <img
+                            src="image/assets/coin.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        )
+                      ) : index == 5 ? (
+                        daily_coins_received_status.day_6 ? (
+                          <img
+                            src="image/mission/received.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        ) : (
+                          <img
+                            src="image/assets/coin.png"
+                            alt="coin"
+                            className="w-8 h-8"
+                          />
+                        )
+                      ) : daily_coins_received_status.day_7 ? (
+                        <img
+                          src="image/mission/received.png"
+                          alt="coin"
+                          className="w-8 h-8"
+                        />
+                      ) : (
+                        <img
+                          src="image/assets/coin.png"
+                          alt="coin"
+                          className="w-8 h-8"
+                        />
                     )
-                  ) : index == 1 ? (
-                    daily_coins_received_status.day_2 ? (
-                      <img
-                        src="image/mission/received.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : index == 2 ? (
-                    daily_coins_received_status.day_3 ? (
-                      <img
-                        src="image/mission/received.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : index == 3 ? (
-                    daily_coins_received_status.day_4 ? (
-                      <img
-                        src="image/mission/received.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : index == 4 ? (
-                    daily_coins_received_status.day_5 ? (
-                      <img
-                        src="image/mission/received.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : index == 5 ? (
-                    daily_coins_received_status.day_6 ? (
-                      <img
-                        src="image/mission/received.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.png"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : daily_coins_received_status.day_7 ? (
-                    <img
-                      src="image/mission/received.png"
-                      alt="coin"
-                      className="w-8 h-8"
-                    />
-                  ) : (
-                    <img
-                      src="image/assets/coin.png"
-                      alt="coin"
-                      className="w-8 h-8"
-                    />
-                  )}
+                  }
                   <h1 className="text-sm text-white font-bold">
                     {item.points}
                   </h1>
