@@ -451,15 +451,15 @@ export default function Mission() {
                       alt=""
                       className="w-10 h-10"
                     />
-                    <div className="flex flex-col gap-1 justify-start items-start">
-                      <h3 className="text-sm text-white">{item.name}</h3>
+                    <div className="flex flex-col justify-start items-start">
+                      <h3 className="text-sm text-white leading-[18px]">{item.name}</h3>
                       <div className="flex justify-center items-center">
                         <img
                           src="/image/assets/coin.png"
                           alt="coin"
                           className="w-4 h-4"
                         />
-                        <h3 className="text-[13px] text-white font-bold">
+                        <h3 className="text-[13px] leading-[21px] text-white font-bold">
                           +{formatNumberWithCommas(25000)}
                         </h3>
                       </div>
@@ -496,15 +496,15 @@ export default function Mission() {
                       alt=""
                       className="w-10 h-10"
                     />
-                    <div className="flex flex-col gap-1 justify-start items-start">
-                      <h3 className="text-sm text-white">{item.name}</h3>
+                    <div className="flex flex-col justify-start items-start">
+                      <h3 className="text-sm text-white leading-[18px]">{item.name}</h3>
                       <div className="flex justify-center items-center">
                         <img
                           src="/image/assets/coin.png"
                           alt="coin"
                           className="w-4 h-4"
                         />
-                        <h3 className="text-[13px] text-white font-bold">
+                        <h3 className="text-[14px] leading-[21px] text-white font-bold">
                           {item.coin}
                         </h3>
                       </div>
