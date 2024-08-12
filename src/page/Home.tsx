@@ -50,7 +50,7 @@ function Home() {
     setLimit(user.limit)
     setTapLevel(user.tap_level)
     setRemainedEnergy(user.energy)
-  }, [user])
+  }, [])
   useEffect(() => {
     setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
     setProgressValue(token - levelTargets[tapLevel - 1])
