@@ -8,10 +8,10 @@ const Onboarding = () => {
         setPageNum((prevNum) => prevNum + 1)
     }
     return (
-        <div className=" relative w-screen h-screen flex flex-col justify-center items-center bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#120F29] to-[#7F3AEF] py-5 gap-1" >
+        <div className=" relative w-screen h-screen flex flex-col justify-center items-center bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#120F29] to-[#7F3AEF] py-5" >
             <div className=" absolute w-full h-full right-0 top-0 z-10" style={{ backgroundImage: "url(/image/onboarding/gradient.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
             </div>
-            <div className="w-full h-full justify-around items-center flex flex-col gap-2 z-20">
+            <div className="w-full h-full justify-center items-center flex flex-col gap-1 z-20">
                 <div className="w-full justify-center items-end flex z-20 h-[40%]">
                     {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.png" alt="" className="w-auto h-[90%]" />
                         : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.png" alt="" className="w-auto h-[90%]" />
