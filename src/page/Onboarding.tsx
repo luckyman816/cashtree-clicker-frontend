@@ -20,7 +20,7 @@ const Onboarding = () => {
                                     <img src="/image/onboarding/onboarding_5.png" alt="" className="w-auto h-[90%]" />}
 
                 </div>
-                <div className="w-full h-[40%] flex justify-center items-center">
+                <div className="w-full h-[35%] flex justify-center items-center">
                     {pageNum == 1 ?
                         <div className="w-[80%] h-full flex flex-col justify-start items-start gap-2">
                             <h1 className="text-white text-[40px] text-left font-bold">Welcome to Cashtree Tap-To-Win</h1>
