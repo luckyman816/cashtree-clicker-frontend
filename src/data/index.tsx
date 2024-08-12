@@ -89,12 +89,6 @@ export const dailyCheckItems = [
       name: "Like a Post",
       coin: "+25.000"
     },
-    {
-      id: 5,
-      icon: "secretExtra",
-      name: "Secret Extra Point",
-      coin: "+25.000"
-    },
   ];
 export const taskListItems = [
     {
