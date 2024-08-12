@@ -482,11 +482,11 @@ export default function Mission() {
                 className={`flex w-[90%] my-[6px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 relative`}
                 onClick={() => handleOpenTaskListModal(item.icon)}
                 style={{
-                  borderWidth: '2px',
+                  borderWidth: '1px',
                   borderStyle: 'solid',
-                  borderColor: 'rgba(255, 255, 255, 0.4)',
+                  borderColor: 'rgba(255, 255, 255, 0.02)',
                   WebkitBoxReflect: `none`,
-                  boxShadow: `inset 0 0 0 rgba(255, 255, 255, 0.02)`,
+                  boxShadow: `inset 0 0 0 rgba(255, 255, 255, 0.4)`,
                 }}
               >
                 <div className="flex justify-center items-center gap-3">
