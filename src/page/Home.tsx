@@ -55,13 +55,13 @@ function Home() {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
   const setUserState = () => {
-    setToken(user.balance)
-    setLimit(user.limit)
-    setTapLevel(user.tap_level)
-    setRemainedEnergy(user.energy)
-  }
+    setToken(user.balance);
+    setLimit(user.limit);
+    setTapLevel(user.tap_level);
+    setRemainedEnergy(user.energy);
+  };
   useEffect(() => {
     setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1]);
     setProgressValue(token - levelTargets[tapLevel - 1]);

@@ -36,26 +36,26 @@ function App() {
       {/*!isMobile ? (
         <MobileQR />
       ) : */loading ? (
-        <Loading />
-      ) : (
-        <div className="App h-screen w-screen">
-          <ReduxProvider store={store}>
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<Onboarding />} />
-                <Route path="home" element={<Home />} />
-                <Route path="mission" element={<Mission />} />
-                <Route path="friends" element={<Friends />} />
-                <Route path="leaderboard" element={<Leaderboard />} />
-                <Route path="wallet" element={<Wallet />} />
-                <Route path="boost" element={<Boost />} />
-                <Route path="level" element={<Level />} />
-              </Route>
-            </Routes>
-            <ToastContainer />
-          </ReduxProvider>
-        </div>
-      )}
+          <Loading />
+        ) : (
+          <div className="App h-screen w-screen">
+            <ReduxProvider store={store}>
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<Onboarding />} />
+                  <Route path="home" element={<Home />} />
+                  <Route path="mission" element={<Mission />} />
+                  <Route path="friends" element={<Friends />} />
+                  <Route path="leaderboard" element={<Leaderboard />} />
+                  <Route path="wallet" element={<Wallet />} />
+                  <Route path="boost" element={<Boost />} />
+                  <Route path="level" element={<Level />} />
+                </Route>
+              </Routes>
+              <ToastContainer />
+            </ReduxProvider>
+          </div>
+        )}
     </Router>
   );
 }

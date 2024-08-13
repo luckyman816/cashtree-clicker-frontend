@@ -169,7 +169,7 @@ export default function Boost() {
           className={`w-full flex my-3 px-3 py-3 justify-between items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}
           onClick={handleOpenDoublePointsModal}>
           <div className="flex justify-center items-center gap-1">
-            <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10" />
+            <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10 drop-shadow-[0_20px_50px_#7131D6]" />
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-sm text-white">Double Points for 15 Minutes 5000 P</h3>
               <h3 className="text-[13px] text-white">
@@ -182,8 +182,8 @@ export default function Boost() {
       </div>
       <Footer />
       <Modal isOpen={isRefillEnergyModalOpen} onClose={handleCloseRefillEnergyModal}>
-        <div className="flex flex-col items-center align-middle gap-3">
-          <img src="image/assets/fillEnergyModal.png" alt="" className=" w-auto h-[80%]" />
+        <div className="flex flex-col items-center align-middle rounded-[20px] gap-5 my-5 h-full">
+          <img src="image/assets/fillEnergyModal.png" alt="" className=" w-auto h-[50%] drop-shadow-[0_20px_50px_#7131D6]" />
           <h1 className="text-2xl text-white">Energy Refill</h1>
           <p className=" text-sm text-white">
             Refill your energy bar instantly for 3,000 points. Maximum of 3 purchases per day
@@ -197,8 +197,8 @@ export default function Boost() {
         </div>
       </Modal>
       <Modal isOpen={isDoublePointsModalOpen} onClose={handleCloseDoublePointsModal}>
-        <div className="flex flex-col items-center align-middle gap-3 rounded-[20px]">
-          <img src="image/assets/doublePointsModal.png" alt="" className=" w-auto h-[80%]" />
+        <div className="flex flex-col items-center align-middle rounded-[20px] gap-5 my-5 h-full">
+          <img src="image/assets/doublePointsModal.png" alt="" className=" w-auto h-[50%]" />
           <h1 className="text-2xl text-white">Double Points</h1>
           <p className=" text-sm text-white">
             Double your points earned for the next 15 minutes for 5,000 points. Maximum of 3 purchases per day.
