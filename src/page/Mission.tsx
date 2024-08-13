@@ -935,16 +935,15 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
-            <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
-              onClick={handleCheckTelegramGroup}
-            >
-              <span className="flex justify-center items-center text-white text-xl">
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleJoinTelegramGroup}
+          >
+            <span className="flex justify-center items-center text-white text-xl">
               Check
-              </span>
-            </div>
+            </span>
           </div>
+          
           
         </div>
       </Modal>
