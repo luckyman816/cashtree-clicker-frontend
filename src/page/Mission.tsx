@@ -575,15 +575,15 @@ export default function Mission() {
             className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white font-bold">Daily Reward</h1>
-          <p className=" text-sm text-white px-6">
+          <p className=" text-sm text-white px-9">
             Accrue coins for logging into the game daily without skipping
           </p>
           <div className="flex justify-center items-center w-full mt-[8px]">
-            <div className="flex gap-5 w-[95%] flex-wrap h-auto">
+            <div className="flex gap-[10px] w-[95%] flex-wrap h-auto">
               {dailyCoins.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
+                  className="flex flex-col w-[72px] h-[84px] gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
                 >
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
                   {
@@ -693,7 +693,7 @@ export default function Mission() {
             </div>
           </div>
           <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px]"
             onClick={handleOpenReceiveModal}
           >
             <span className="flex justify-center items-center text-white text-xl">
