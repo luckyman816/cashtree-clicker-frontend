@@ -558,9 +558,9 @@ export default function Mission() {
             </span>
           </div>
 
-          <div className="px-[15px] w-full h-[56px]">
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
               onClick={handleResetDailyCoins}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -695,9 +695,9 @@ export default function Mission() {
               ))}
             </div>
           </div>
-          <div className="px-[15px] w-full h-[56px]">
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
               onClick={handleOpenReceiveModal}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -728,9 +728,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px]">
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
               onClick={handleCheckRetweetTwitter}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -763,9 +763,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px]">
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
               onClick={handleCheckCommentMedium}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -796,9 +796,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px]">
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
               onClick={handleCheckLikePost}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -825,9 +825,9 @@ export default function Mission() {
             />
           </div>
 
-          <div className="px-[15px] w-full h-[56px]">
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
             >
               <span className="flex justify-center items-center text-white text-xl">
               Check
@@ -859,9 +859,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px]">
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
               onClick={handleCheckInstagram}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -897,9 +897,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px]">
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
               onClick={handleCheckYoutube}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -934,9 +934,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px]">
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
               onClick={handleCheckTelegramGroup}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -944,7 +944,7 @@ export default function Mission() {
               </span>
             </div>
           </div>
-          
+
         </div>
       </Modal>
     </div>
