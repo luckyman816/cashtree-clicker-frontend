@@ -4,8 +4,14 @@ const Loading = () => {
   return (
     <div className="w-screen h-screen flex flex-col justify-around items-center" style={{ backgroundImage: "url(/image/loading/cover-new.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
       <div className="flex-1"></div>
-      <div className="flex flex-col justify-center items-center">
-        <div className="loader"></div>
+      <div className="flex flex-col justify-center items-center gap-10">
+        <div className="loader">
+          <img
+            src="/image/loading/loading.png"
+            alt="loading"
+            className="w-full h-full"
+            />
+        </div>
         <h1 className="text-white text-sm">Please wait...</h1>
       </div>
       <div className="flex flex-col justify-center items-center p-10">

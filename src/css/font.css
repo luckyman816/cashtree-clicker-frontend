@@ -14,6 +14,7 @@
   font-family: 'archivo-bold';
   src: url('./archivo-bold.ttf') format('truetype');
 }
+
 p,h1,h2,span {
   font-family: 'archivo', sans-serif;
 }

@@ -410,13 +410,12 @@ export default function Mission() {
         <div className=" overflow-y-auto w-full max-h-[50vh]">
           <div className="flex flex-col justify-center items-center w-full">
             <div
-              
-              className={`flex w-[90%] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4756E5] to-[#47C8FF] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
+              className={`flex w-[90%] px-3 py-3 items-center justify-between bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] from-[#4756E5] to-[#47C8FF] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
               onClick={() => handleOpenDailyTaskModal("secretExtra")}
             >
               <div className="flex justify-center items-center gap-3">
                 <img
-                  src={`/image/mission/secretExtra.png`}
+                  src={`/image/mission/secretExtra.webp`}
                   alt=""
                   className="w-10 h-10"
                 />
@@ -437,39 +436,45 @@ export default function Mission() {
               <div
                 key={index}
                 className={`w-[90%] my-[6px] p-[1px] rounded-[20px]`}
-                style={{background:"linear-gradient(315deg,rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.4)"}}
+                style={{
+                  background:
+                    "linear-gradient(340deg,rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.4)",
+                }}
               >
-                
-              <div
-                className={`flex w-full px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
-                onClick={() => handleOpenDailyTaskModal(item.icon)}
-              >
-                <div className="flex justify-center items-center gap-3">
-                  <img
-                    src={`/image/mission/${item.icon}.png`}
-                    alt=""
-                    className="w-10 h-10"
-                  />
-                  <div className="flex flex-col gap-1 justify-start items-start">
-                    <h3 className="text-sm text-white">{item.name}</h3>
-                    <div className="flex justify-center items-center">
-                      <img
-                        src="/image/assets/coin.png"
-                        alt="coin"
-                        className="w-4 h-4"
-                      />
-                      <h3 className="text-[13px] text-white font-bold">
-                        +{formatNumberWithCommas(25000)}
+                <div
+                  className={`flex w-full px-3 py-3 items-center justify-between bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
+                  onClick={() => handleOpenDailyTaskModal(item.icon)}
+                >
+                  <div className="flex justify-center items-center gap-3">
+                    <img
+                      src={`/image/mission/${item.icon}.webp`}
+                      alt=""
+                      className="w-10 h-10"
+                    />
+                    <div className="flex flex-col justify-start items-start">
+                      <h3 className="text-[13px] text-white leading-[18px]">
+                        {item.name}
                       </h3>
+                      <div className="flex justify-center items-center">
+                        <div className="w-[21px] h-[21px] flex justify-start items-center">
+                          <img
+                            src="/image/assets/coin.png"
+                            alt="coin"
+                            className="w-4 h-4 translate-y-[2px]"
+                          />
+                        </div>
+                        <h3 className="text-[14px] leading-[21px] text-white font-bold">
+                          +{formatNumberWithCommas(25000)}
+                        </h3>
+                      </div>
                     </div>
                   </div>
+                  <img
+                    src="/image/icon/arrowRight.png"
+                    alt="arrowRight"
+                    className="w-2 h-4"
+                  />
                 </div>
-                <img
-                  src="/image/icon/arrowRight.png"
-                  alt="arrowRight"
-                  className="w-2 h-4"
-                />
-              </div>
               </div>
             ))}
 
@@ -479,41 +484,48 @@ export default function Mission() {
             {taskListItems.map((item, index) => (
               <div
                 key={index}
-                className={`flex w-[90%] my-[6px] px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 relative`}
-                onClick={() => handleOpenTaskListModal(item.icon)}
+                className={`w-[90%] my-[6px] p-[1px] rounded-[20px]`}
                 style={{
-                  borderWidth: '2px',
-                  borderStyle: 'solid',
-                  borderColor: 'rgba(255, 255, 255, 0.4)',
-                  WebkitBoxReflect: `none`,
-                  boxShadow: `inset 0 0 0 rgba(255, 255, 255, 0.02)`,
+                  background:
+                    "linear-gradient(340deg,rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.4)",
                 }}
               >
-                <div className="flex justify-center items-center gap-3">
-                  <img
-                    src={`/image/mission/${item.icon}.png`}
-                    alt=""
-                    className="w-10 h-10"
-                  />
-                  <div className="flex flex-col gap-1 justify-start items-start">
-                    <h3 className="text-sm text-white">{item.name}</h3>
-                    <div className="flex justify-center items-center">
-                      <img
-                        src="/image/assets/coin.png"
-                        alt="coin"
-                        className="w-4 h-4"
-                      />
-                      <h3 className="text-[13px] text-white font-bold">
-                        {item.coin}
+                <div
+                  className={`flex w-full px-3 py-3 items-center justify-between bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border-none`}
+                  onClick={() => handleOpenTaskListModal(item.icon)}
+                >
+                  <div className="flex justify-center items-center gap-3">
+                    <img
+                      src={`/image/mission/${item.icon}.webp`}
+                      alt=""
+                      className="w-10 h-10 translate-y-[2px]"
+                    />
+                    <div className="flex flex-col justify-start items-start">
+                      <h3 className="text-[13px] text-white leading-[18px]">
+                        {item.name}
                       </h3>
+                      <div className="flex justify-center items-center">
+                        <div className="w-[21px] h-[21px] flex justify-start items-center">
+                          <div className="w-[21px] h-[21px] flex justify-start items-center">
+                            <img
+                              src="/image/assets/coin.png"
+                              alt="coin"
+                              className="w-4 h-4"
+                            />
+                          </div>
+                        </div>
+                        <h3 className="text-[14px] leading-[21px] text-white font-bold">
+                          {item.coin}
+                        </h3>
+                      </div>
                     </div>
                   </div>
+                  <img
+                    src="/image/icon/arrowRight.png"
+                    alt="arrowRight"
+                    className="w-2 h-4"
+                  />
                 </div>
-                <img
-                  src="/image/icon/arrowRight.png"
-                  alt="arrowRight"
-                  className="w-2 h-4"
-                />
               </div>
             ))}
           </div>
@@ -521,14 +533,16 @@ export default function Mission() {
       </div>
       <Footer />
       <Modal isOpen={isReceiveModalOpen} onClose={handleCloseReceiveModal}>
-        <div className="flex flex-col items-center align-middle gap-3 px-3 py-3 w-full">
+        <div className="flex flex-col items-center align-middle gap-[20px] px-3 py-3 w-full">
           <img
             src="image/assets/sand-timer.png"
             alt=""
             className=" w-12 h-12"
           />
-          <h1 className="text-2xl text-white">Daily Coins</h1>
-          <p className=" text-sm text-white">You can get the Daily Coins!</p>
+          <div>
+            <h1 className="text-2xl text-white">Daily Coins</h1>
+            <p className=" text-sm text-white">You can get the Daily Coins!</p>
+          </div>
           <h2 className=" text-xl text-white">
             Remaining Time:{" "}
             <span className="text-2xl text-[red]">{diffDays}</span> &nbsp;d{" "}
@@ -537,21 +551,27 @@ export default function Mission() {
             &nbsp;m <span className="text-2xl text-[white]">{diffSeconds}</span>{" "}
             &nbsp;s
           </h2>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleReceiveDailyCoins}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Receive Daily Points
-            </span>
+
+          <div className="px-[15px] w-full h-[56px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleReceiveDailyCoins}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Receive Daily Points
+              </span>
+            </div>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleResetDailyCoins}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Reset Daily Points
-            </span>
+
+          <div className="px-[15px] w-full h-[56px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleResetDailyCoins}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Reset Daily Points
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
@@ -560,18 +580,20 @@ export default function Mission() {
           <img
             src="image/mission/dailyRewardModal.png"
             alt="dailyRewardModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
-          <h1 className="text-2xl text-white">Daily Reward</h1>
-          <p className=" text-sm text-white">
-            Accrue coins for logging into the game daily without skipping
-          </p>
-          <div className="flex justify-center items-center w-full">
-            <div className="flex gap-5 w-[95%] flex-wrap h-auto">
+          <div>
+            <h1 className="text-2xl text-white font-bold">Daily Reward</h1>
+            <p className=" text-sm text-white px-9">
+              Accrue coins for logging into the game daily without skipping
+            </p>
+          </div>
+          <div className="flex justify-center items-center w-full mt-[8px]">
+            <div className="flex gap-[10px] w-[95%] flex-wrap h-auto">
               {dailyCoins.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
+                  className="flex flex-col w-[22.5%] h-[84px] gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
                 >
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
                   {index == 0 ? (
@@ -678,190 +700,233 @@ export default function Mission() {
               ))}
             </div>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleOpenReceiveModal}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Claim Now
-            </span>
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleOpenReceiveModal}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Claim Now
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
       <Modal isOpen={isRetweetModal} onClose={handleCloseRetweetModal}>
-        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+        <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
             src="image/assets/mission.png"
             alt=""
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Retweet a Post</h1>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleJoinRetweetTwitter}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Join Now
-            </span>
+          <div className="px-[15px] w-full h-[56px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleJoinRetweetTwitter}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Join Now
+              </span>
+            </div>
           </div>
+
           <div className="flex gap-2 justify-center items-center">
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckRetweetTwitter}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Check
-            </span>
+
+          <div className="px-[15px] w-full h-[56px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleCheckRetweetTwitter}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Check
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
       <Modal isOpen={isCommentModal} onClose={handleCloseCommentModal}>
-        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+        <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
             src="image/assets/mission.png"
             alt=""
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Comment on a Post</h1>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleJoinCommentMedium}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Join Now
-            </span>
+
+          <div className="px-[15px] w-full h-[56px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleJoinCommentMedium}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Join Now
+              </span>
+            </div>
           </div>
+
           <div className="flex gap-2 justify-center items-center">
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckCommentMedium}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Check
-            </span>
+
+          <div className="px-[15px] w-full h-[56px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleCheckCommentMedium}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Check
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
       <Modal isOpen={isLikeModal} onClose={handleCloseLikeModal}>
-        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+        <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
             src="image/assets/mission.png"
             alt=""
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Like a Post</h1>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleJoinLikePost}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Join Now
-            </span>
+
+          <div className="px-[15px] w-full h-[56px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleJoinLikePost}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Join Now
+              </span>
+            </div>
           </div>
+
           <div className="flex gap-2 justify-center items-center">
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckLikePost}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Check
-            </span>
+
+          <div className="px-[15px] w-full h-[56px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleCheckLikePost}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Check
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
       <Modal isOpen={isSecretExtra} onClose={handleCloseSecretExtraModal}>
-        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+        <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
             src="image/mission/secretExtraModal.png"
             alt="secretExtraModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
-          <h1 className="text-2xl text-white">Secret Extra Point</h1>
-          <p className=" text-sm text-white">Enter your secret code</p>
-          <div className="w-[80%] bg-[white] flex justify-center items-center rounded-[20px] px-3 py-4">
+          <div>
+            <h1 className="text-2xl text-white">Secret Extra Point</h1>
+            <p className=" text-sm text-white">Enter your secret code</p>
+          </div>
+          <div className="w-[80%] bg-[white] flex justify-center items-center rounded-[20px] px-3 py-4 mt-[20px]">
             <input
               type="text"
               className="bg-white outline-none border-none w-[90%]"
               placeholder="Enter code here"
             />
           </div>
-          <div className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3">
-            <span className="flex justify-center items-center text-white text-xl">
-              Check
-            </span>
+
+          <div className="px-[15px] w-full h-[56px] mb-[10px]">
+            <div className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3">
+              <span className="flex justify-center items-center text-white text-xl">
+                Check
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
       <Modal isOpen={isInstagram} onClose={handleCloseInstagramModal}>
-        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+        <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full ">
           <img
             src="image/mission/instagramModal.png"
             alt="instagramModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Follow our Instagram Channel</h1>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleJoinInstagram}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Join Now
-            </span>
+
+          <div className="px-[15px] w-full h-[56px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleJoinInstagram}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Join Now
+              </span>
+            </div>
           </div>
+
           <div className="flex gap-2 justify-center items-center">
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckInstagram}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Check
-            </span>
+
+          <div className="px-[15px] w-full h-[56px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleCheckInstagram}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Check
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
       <Modal isOpen={isYoutube} onClose={handleCloseYoutubeModal}>
-        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+        <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
             src="image/mission/youtubeModal.png"
             alt="youtubeModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
-          <h1 className="text-2xl text-white">The trend you can't Ignore</h1>
-          <p className=" text-sm text-white">
-            Trump's crypto frenzy, over 1 million meme coins and false crypto
-            promise
-          </p>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleJoinYoutube}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Watch Video
-            </span>
+          <div>
+            <h1 className="text-2xl text-white">The trend you can't Ignore</h1>
+            <p className=" text-sm text-white">
+              Trump's crypto frenzy, over 1 million meme coins and false crypto
+              promise
+            </p>
           </div>
+
+          <div className="px-[15px] w-full h-[56px] ">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleJoinYoutube}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Watch Video
+              </span>
+            </div>
+          </div>
+
           <div className="flex gap-2 justify-center items-center">
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckYoutube}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Check
-            </span>
+
+          <div className="px-[15px] w-full h-[56px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleCheckYoutube}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Check
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
@@ -869,32 +934,39 @@ export default function Mission() {
         isOpen={isTelegramGroupModal}
         onClose={handleCloseTelegramGroupModal}
       >
-        <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
+        <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
             src="image/mission/instagramModal.png"
             alt="instagramModal"
-            className=" w-auto h-[80%]"
+            className=" w-auto h-[200px]"
           />
           <h1 className="text-2xl text-white">Join Our Telegram Group</h1>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleJoinTelegramGroup}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Join Now
-            </span>
+
+          <div className="px-[15px] w-full h-[56px] ">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleJoinTelegramGroup}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Join Now
+              </span>
+            </div>
           </div>
+
           <div className="flex gap-2 justify-center items-center">
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckTelegramGroup}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Check
-            </span>
+
+          <div className="px-[15px] w-full h-[56px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+              onClick={handleCheckTelegramGroup}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
+                Check
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
