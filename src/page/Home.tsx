@@ -45,18 +45,17 @@ function Home() {
         await dispatch(insertWallet(webapp["user"]["username"]));
         await dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
         await dispatch(addDailyBoost(webapp["user"]["username"]));
-        await dispatch(getWallet(webapp["user"]["username"]));
+        await dispatch(getWallet(webapp["user"]["username"])).then(() => {
+          setToken(user.balance)
+          setLimit(user.limit)
+          setTapLevel(user.tap_level)
+          setRemainedEnergy(user.energy)
+        });
       }
     } catch (error) {
       console.log(error);
     }
   }
-  useEffect(() => {
-    setToken(user.balance)
-    setLimit(user.limit)
-    setTapLevel(user.tap_level)
-    setRemainedEnergy(user.energy)
-  }, [user])
   useEffect(() => {
     setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
     setProgressValue(token - levelTargets[tapLevel - 1])
