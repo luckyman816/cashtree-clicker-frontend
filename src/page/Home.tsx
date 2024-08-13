@@ -47,12 +47,12 @@ function Home() {
         await dispatch(addDailyBoost(webapp["user"]["username"]));
         await dispatch(getWallet(webapp["user"]["username"]));
       }
-      setUserState();
+      setUserState(user);
     } catch (error) {
       console.log(error);
     }
   }
-  const setUserState = () => {
+  const setUserState = (user: any) => {
     setToken(user.balance)
     setLimit(user.limit)
     setTapLevel(user.tap_level)
