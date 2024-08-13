@@ -29,6 +29,7 @@ function Home() {
   const [token, setToken] = useState<number>(0);
   const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
   const [limit, setLimit] = useState<number>(0);
+  const [hasRunEffect, setHasRunEffect] = useState(false); 
   const [progressValue, setProgressValue] = useState<number>(token - levelTargets[tapLevel - 1]);
   const [targetDiff, setTargetDiff] = useState<number>(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
   useEffect(() => {
@@ -45,17 +46,21 @@ function Home() {
         await dispatch(insertWallet(webapp["user"]["username"]));
         await dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
         await dispatch(addDailyBoost(webapp["user"]["username"]));
-        await dispatch(getWallet(webapp["user"]["username"])).then(() => {
-          setToken(user.balance)
-          setLimit(user.limit)
-          setTapLevel(user.tap_level)
-          setRemainedEnergy(user.energy)
-        });
+        await dispatch(getWallet(webapp["user"]["username"]));
       }
     } catch (error) {
       console.log(error);
     }
   }
+  useEffect(() => {
+    if (user && !hasRunEffect) {
+      setToken(user.balance);
+      setLimit(user.limit);
+      setTapLevel(user.tap_level);
+      setRemainedEnergy(user.energy);
+      setHasRunEffect(true); // Mark the effect as run
+    }
+  }, [user, hasRunEffect]);
   useEffect(() => {
     setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
     setProgressValue(token - levelTargets[tapLevel - 1])
