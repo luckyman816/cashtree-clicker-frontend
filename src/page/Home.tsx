@@ -117,8 +117,8 @@ function Home() {
       const interval = setInterval(() => {
         if (username && remainedEnergy < limit) {
           dispatch(updateEnergy(username, remainedEnergy + 1));
+          setRemainedEnergy(remainedEnergy + 1)
         }
-        console.log("---------internal energy--------------->")
       }, ((11 - tapLevel) * 1000));
       return () => clearInterval(interval);
     }
