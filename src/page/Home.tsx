@@ -186,13 +186,8 @@ function Home() {
   };
   console.log("imgStatus", imgStatus);
   return (
-    <div className="flex flex-col justify-between items-center h-full w-full">
+    <div className="flex flex-col justify-between items-center h-full w-full mt-5">
       <Toaster />
-      <div className="flex justify-center items-center px-3 w-full py-3">
-        <h3 className="text-sm text-[white]" style={{ fontFamily: "archivo" }}>
-          Cashtree Tap to Win
-        </h3>
-      </div>
       <div className="w-[90%] flex flex-col justify-center items-center gap-4">
         <div className="flex justify-between items-center w-full px-3 py-1 bg-[linear-gradient(330deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[20px] border border-[#9165D6]">
           <div className=" flex justify-center items-center p-2 ">
