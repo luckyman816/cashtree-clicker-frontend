@@ -549,29 +549,27 @@ export default function Mission() {
             &nbsp;m <span className="text-2xl text-[white]">{diffSeconds}</span>{" "}
             &nbsp;s
           </h2>
-
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
-            <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
-              onClick={handleReceiveDailyCoins}
-            >
-              <span className="flex justify-center items-center text-white text-xl">
+          <div
+            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            onClick={handleReceiveDailyCoins}
+          >
+            <span className="flex justify-center items-center text-white text-xl">
               Receive Daily Points
-              </span>
-            </div>
+            </span>
           </div>
 
           <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
               onClick={handleResetDailyCoins}
             >
               <span className="flex justify-center items-center text-white text-xl">
-              Reset Daily Points
+                Reset Daily Points
               </span>
             </div>
           </div>
 
+          
         </div>
       </Modal>
       <Modal isOpen={isDailyReward} onClose={handleCloseDailyRewardModal}>
@@ -697,9 +695,9 @@ export default function Mission() {
               ))}
             </div>
           </div>
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+          <div className="px-[15px] w-full h-[56px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
               onClick={handleOpenReceiveModal}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -730,9 +728,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+          <div className="px-[15px] w-full h-[56px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
               onClick={handleCheckRetweetTwitter}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -740,6 +738,8 @@ export default function Mission() {
               </span>
             </div>
           </div>
+
+         
         </div>
       </Modal>
       <Modal isOpen={isCommentModal} onClose={handleCloseCommentModal}>
@@ -763,9 +763,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+          <div className="px-[15px] w-full h-[56px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
               onClick={handleCheckCommentMedium}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -773,7 +773,6 @@ export default function Mission() {
               </span>
             </div>
           </div>
-
         </div>
       </Modal>
       <Modal isOpen={isLikeModal} onClose={handleCloseLikeModal}>
@@ -797,9 +796,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+          <div className="px-[15px] w-full h-[56px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
               onClick={handleCheckLikePost}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -807,7 +806,6 @@ export default function Mission() {
               </span>
             </div>
           </div>
-
         </div>
       </Modal>
       <Modal isOpen={isSecretExtra} onClose={handleCloseSecretExtraModal}>
@@ -827,15 +825,16 @@ export default function Mission() {
             />
           </div>
 
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+          <div className="px-[15px] w-full h-[56px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
             >
               <span className="flex justify-center items-center text-white text-xl">
               Check
               </span>
             </div>
           </div>
+
 
         </div>
       </Modal>
@@ -860,9 +859,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+          <div className="px-[15px] w-full h-[56px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
               onClick={handleCheckInstagram}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -871,7 +870,6 @@ export default function Mission() {
             </div>
           </div>
 
-          
         </div>
       </Modal>
       <Modal isOpen={isYoutube} onClose={handleCloseYoutubeModal}>
@@ -899,9 +897,9 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+          <div className="px-[15px] w-full h-[56px]">
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
               onClick={handleCheckYoutube}
             >
               <span className="flex justify-center items-center text-white text-xl">
@@ -909,6 +907,7 @@ export default function Mission() {
               </span>
             </div>
           </div>
+
         </div>
       </Modal>
       <Modal
@@ -935,15 +934,16 @@ export default function Mission() {
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckTelegramGroup}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
+          <div className="px-[15px] w-full h-[56px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px] h-full"
+              onClick={handleCheckTelegramGroup}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Check
-            </span>
+              </span>
+            </div>
           </div>
-          
           
         </div>
       </Modal>
