@@ -61,6 +61,7 @@ function Home() {
       setHasRunEffect(true); // Mark the effect as run
     }
   }, [user, hasRunEffect]);
+  console.log("--user.balance--->", user.balance);
   useEffect(() => {
     setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
     setProgressValue(token - levelTargets[tapLevel - 1])
