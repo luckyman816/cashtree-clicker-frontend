@@ -937,7 +937,7 @@ export default function Mission() {
 
           <div
             className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleJoinTelegramGroup}
+            onClick={handleCheckTelegramGroup}
           >
             <span className="flex justify-center items-center text-white text-xl">
               Check
