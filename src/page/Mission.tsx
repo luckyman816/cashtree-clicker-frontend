@@ -683,7 +683,7 @@ export default function Mission() {
             onClick={handleOpenReceiveModal}
           >
             <span className="flex justify-center items-center text-white text-xl">
-              Claimmmmmmmmmmmmmmmmmmmmmmmmmmm Now
+              Claim Now
             </span>
           </div>
         </div>
