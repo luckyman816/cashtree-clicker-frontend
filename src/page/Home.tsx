@@ -40,12 +40,12 @@ function Home() {
       console.log("=========>webapp", webapp);
       if (webapp) {
         setUsername(webapp["user"]["username"]);
-        axios.post(`/vibe/add,`, { username: webapp["user"]["username"] });
-        axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
-        dispatch(insertWallet(webapp["user"]["username"]));
-        dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
-        dispatch(addDailyBoost(webapp["user"]["username"]));
-        dispatch(getWallet(webapp["user"]["username"]));
+        await axios.post(`/vibe/add,`, { username: webapp["user"]["username"] });
+        await axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
+        await dispatch(insertWallet(webapp["user"]["username"]));
+        await dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
+        await dispatch(addDailyBoost(webapp["user"]["username"]));
+        await dispatch(getWallet(webapp["user"]["username"]));
       }
       setUserState();
     } catch (error) {
