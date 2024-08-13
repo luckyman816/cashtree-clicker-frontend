@@ -12,7 +12,7 @@ import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
 import {
   insertWallet,
   updateWallet,
-  // updateEnergy,
+  updateEnergy,
   getWallet,
   updateTapLevel,
   updateBalance,
@@ -29,7 +29,7 @@ function Home() {
   const [token, setToken] = useState<number>(0);
   const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
   const [limit, setLimit] = useState<number>(0);
-  const [hasRunEffect, setHasRunEffect] = useState(false); 
+  const [hasRunEffect, setHasRunEffect] = useState(false);
   const [progressValue, setProgressValue] = useState<number>(token - levelTargets[tapLevel - 1]);
   const [targetDiff, setTargetDiff] = useState<number>(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
   useEffect(() => {
@@ -52,7 +52,7 @@ function Home() {
       console.log(error);
     }
   }
- useEffect(() => {
+  useEffect(() => {
     if (user.tap_level != 0 && !hasRunEffect) {
       setToken(user.balance);
       setLimit(user.limit);
@@ -112,14 +112,16 @@ function Home() {
 
   console.log("progressValuebar", progressValue, (progressValue * 100 / (targetDiff)));
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (username && remainedEnergy < limit) {
-  //       dispatch(updateEnergy(username, remainedEnergy + 1));
-  //     }
-  //   }, ((11 - tapLevel) * 1000));
-  //   return () => clearInterval(interval);
-  // }, [username, remainedEnergy, limit, tapLevel]);
+  useEffect(() => {
+    if (tapLevel != 0) {
+      const interval = setInterval(() => {
+        if (username && remainedEnergy < limit) {
+          dispatch(updateEnergy(username, remainedEnergy + 1));
+        }
+      }, ((11 - tapLevel) * 1000));
+      return () => clearInterval(interval);
+    }
+  }, [username, remainedEnergy, limit, tapLevel]);
 
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
