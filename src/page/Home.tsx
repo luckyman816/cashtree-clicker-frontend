@@ -254,7 +254,7 @@ function Home() {
           <img
             className={` rounded-full w-auto h-[90%]  ${
               remainedEnergy > 0 ? "cursor-pointer" : " opacity-50 "
-            } ${imgStatus ? " border border-transparent" : ""}`}
+            } ${imgStatus ? " border border-transparent" : ""} drop-shadow-[0_10px_20px_#9D3AFFCC]`}
             src="/image/tap-image/cashtree.png"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseLeave}
