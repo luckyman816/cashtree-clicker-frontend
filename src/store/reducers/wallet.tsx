@@ -10,9 +10,9 @@ const initialState: walletStateProps = {
     username: "",
     balance: 0,
     energy: 0,
-    full_energy: 1,
-    tap_level: 1,
-    limit: 5000,
+    full_energy: 0,
+    tap_level: 0,
+    limit: 0,
     daily_coins: new Date()
   },
   friend : false,
