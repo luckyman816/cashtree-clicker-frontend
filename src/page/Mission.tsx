@@ -690,16 +690,16 @@ export default function Mission() {
               ))}
             </div>
           </div>
-          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+          {/* <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]"> */}
             <div
-              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 h-full"
+              className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
               onClick={handleOpenReceiveModal}
             >
               <span className="flex justify-center items-center text-white text-xl">
                 Claim Now
               </span>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </Modal>
       <Modal isOpen={isRetweetModal} onClose={handleCloseRetweetModal}>
