@@ -235,7 +235,7 @@ function Home() {
       </div>
       <div className="flex justify-center items-center relative h-[45vh] w-full">
         <img
-          className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[15%]"
+          className="flex justify-center items-center absolute w-auto h-[95%] z-10 bg-cover bg-no-repeat bottom-[15%]"
           src="/image/tap-image/cashtree_bg.png"
         ></img>
         <div className="absolute flex justify-center items-center z-20 top-0 mb-2 w-full">
@@ -249,10 +249,10 @@ function Home() {
         </div>
         <div
           ref={bodyRef}
-          className="absolute bottom-[-10%] w-auto h-full z-50"
+          className="absolute bottom-[-15%] w-auto h-full z-50"
         >
           <img
-            className={` rounded-full w-auto h-full  ${
+            className={` rounded-full w-auto h-[90%]  ${
               remainedEnergy > 0 ? "cursor-pointer" : " opacity-50 "
             } ${imgStatus ? " border border-transparent" : ""}`}
             src="/image/tap-image/cashtree.png"
