@@ -53,7 +53,7 @@ function Home() {
     }
   }
  useEffect(() => {
-    if (user.balance != 0 && user.limit != 0 && user.tap_level != 0 && !hasRunEffect) {
+    if (user.tap_level != 0 && !hasRunEffect) {
       setToken(user.balance);
       setLimit(user.limit);
       setTapLevel(user.tap_level);
