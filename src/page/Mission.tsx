@@ -549,14 +549,6 @@ export default function Mission() {
             &nbsp;m <span className="text-2xl text-[white]">{diffSeconds}</span>{" "}
             &nbsp;s
           </h2>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleReceiveDailyCoins}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
-              Receive Daily Points
-            </span>
-          </div>
 
           <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
             <div
