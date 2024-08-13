@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, useRef } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import Footer from "../component/Footer";
 import ProgressBar from "../component/ProgressBar";
 import { dispatch, useSelector } from "../store";
@@ -22,39 +22,50 @@ import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
 import { addDailyBoost } from "../store/reducers/dailyBoost";
 function Home() {
   const navigate = useNavigate();
-  const user = useSelector(state => state.wallet.user);
+  const user = useSelector((state) => state.wallet.user);
   const [imgStatus, setImgStatus] = useState(false);
   const [tapLevel, setTapLevel] = useState<number>(0);
   const [username, setUsername] = useState<string>("");
   const [token, setToken] = useState<number>(0);
   const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
   const [limit, setLimit] = useState<number>(0);
-  const [progressValue, setProgressValue] = useState<number>(token - levelTargets[tapLevel - 1]);
-  const [targetDiff, setTargetDiff] = useState<number>(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
-
+  const [progressValue, setProgressValue] = useState<number>(
+    token - levelTargets[tapLevel - 1]
+  );
+  const [targetDiff, setTargetDiff] = useState<number>(
+    levelTargets[tapLevel] - levelTargets[tapLevel - 1]
+  );
   useEffect(() => {
-    const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
-    console.log("=========>webapp", webapp);
-    if (webapp) {
-      setUsername(webapp["user"]["username"]);
-      axios.post(`/vibe/add,`, { username: webapp["user"]["username"] });
-      axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
-      dispatch(insertWallet(webapp["user"]["username"]));
-      dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
-      dispatch(addDailyBoost(webapp["user"]["username"]));
-      dispatch(getWallet(webapp["user"]["username"]));
-    }
+    setUserData();
   }, []);
-  useEffect(() => {
+  const setUserData = async () => {
+    try {
+      const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
+      console.log("=========>webapp", webapp);
+      if (webapp) {
+        setUsername(webapp["user"]["username"]);
+        axios.post(`/vibe/add,`, { username: webapp["user"]["username"] });
+        axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
+        dispatch(insertWallet(webapp["user"]["username"]));
+        dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
+        dispatch(addDailyBoost(webapp["user"]["username"]));
+        dispatch(getWallet(webapp["user"]["username"]));
+      }
+      setUserState();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const setUserState = () => {
     setToken(user.balance)
     setLimit(user.limit)
     setTapLevel(user.tap_level)
     setRemainedEnergy(user.energy)
-  }, [user])
+  }
   useEffect(() => {
-    setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
-    setProgressValue(token - levelTargets[tapLevel - 1])
-  }, [tapLevel, token])
+    setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1]);
+    setProgressValue(token - levelTargets[tapLevel - 1]);
+  }, [tapLevel, token]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
@@ -98,32 +109,46 @@ function Home() {
     return () => clearTimeout(interval);
   };
 
-  console.log("progressValuebar", progressValue, (progressValue * 100 / (targetDiff)));
+  console.log(
+    "progressValuebar",
+    progressValue,
+    (progressValue * 100) / targetDiff
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (remainedEnergy < limit) {
         dispatch(updateEnergy(username, remainedEnergy + 1));
       }
-    }, ((11 - tapLevel) * 1000));
+    }, (11 - tapLevel) * 1000);
     return () => clearInterval(interval);
   }, [username, remainedEnergy, limit, tapLevel]);
 
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
       setScore(`+${tapLevel}`);
-      if ((token + tapLevel) > levelTargets[tapLevel]) {
+      if (token + tapLevel > levelTargets[tapLevel]) {
         setToken(levelTargets[tapLevel]);
-        dispatch(updateWallet(username, levelTargets[tapLevel], remainedEnergy - tapLevel)).then(() => {
+        dispatch(
+          updateWallet(
+            username,
+            levelTargets[tapLevel],
+            remainedEnergy - tapLevel
+          )
+        ).then(() => {
           if (tapLevel < 10 && token == levelTargets[tapLevel]) {
             dispatch(updateTapLevel(username, tapLevel + 1)).then(() => {
-              setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1]);
+              setTargetDiff(
+                levelTargets[tapLevel] - levelTargets[tapLevel - 1]
+              );
             });
-            dispatch(updateBalance(username, token + levelBonus[tapLevel - 1])).then(() => {
+            dispatch(
+              updateBalance(username, token + levelBonus[tapLevel - 1])
+            ).then(() => {
               setToken(token + levelBonus[tapLevel - 1]);
               toast.success("Level up! 🎉🎉🎉 You received bonus points!");
-            })
-            dispatch(updateLimit(username, energyLimit[tapLevel]))
+            });
+            dispatch(updateLimit(username, energyLimit[tapLevel]));
           } else {
             toast.error("Maximum level reached!");
           }
@@ -136,7 +161,9 @@ function Home() {
           dispatch(updateWallet(username, token + tapLevel, 0));
           setRemainedEnergy(0);
         } else {
-          dispatch(updateWallet(username, token + tapLevel, remainedEnergy - tapLevel));
+          dispatch(
+            updateWallet(username, token + tapLevel, remainedEnergy - tapLevel)
+          );
           setRemainedEnergy(remainedEnergy - tapLevel);
         }
       }
@@ -152,20 +179,17 @@ function Home() {
     setImgStatus(false);
   };
   const handleBoost = () => {
-    navigate('/boost');
-  }
+    navigate("/boost");
+  };
   const handleLevelUp = () => {
-    navigate('/level');
-  }
+    navigate("/level");
+  };
   console.log("imgStatus", imgStatus);
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
       <Toaster />
       <div className="flex justify-center items-center px-3 w-full py-3">
-        <h3
-          className="text-sm text-[white]"
-          style={{ fontFamily: "archivo" }}
-        >
+        <h3 className="text-sm text-[white]" style={{ fontFamily: "archivo" }}>
           Cashtree Tap to Win
         </h3>
       </div>
@@ -183,24 +207,37 @@ function Home() {
           </div>
           <div className="w-[1px] h-[30px] bg-white"></div>
           <div className=" flex justify-center items-center p-2 ">
-            <img src="/image/assets/earnLevel.png" alt="" className=" w-11 h-11" />
+            <img
+              src="/image/assets/earnLevel.png"
+              alt=""
+              className=" w-11 h-11"
+            />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-[11px] text-[#FFC107]">Earn to level up</h2>
-              <h2 className="text-sm text-[white]">+{formatNumberWithCommas(levelTargets[tapLevel])}k</h2>
+              <h2 className="text-sm text-[white]">
+                +{formatNumberWithCommas(levelTargets[tapLevel])}k
+              </h2>
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
-        <ProgressBar value={(progressValue * 100 / targetDiff)} />
+        <ProgressBar value={(progressValue * 100) / targetDiff} />
         <div className="flex w-full justify-between items-center p-3">
-          <h1 className="text-[12px] text-white cursor-pointer" onClick={handleLevelUp}>Level: {levelNames[tapLevel - 1]} &#8250;</h1>
+          <h1
+            className="text-[12px] text-white cursor-pointer"
+            onClick={handleLevelUp}
+          >
+            Level: {levelNames[tapLevel - 1]} &#8250;
+          </h1>
           <h1 className="text-[12px] text-white">Goal {tapLevel}/10</h1>
         </div>
       </div>
       <div className="flex justify-center items-center relative h-[45vh] w-full">
-        <img className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.png">
-        </img>
+        <img
+          className="flex justify-center items-center absolute w-auto h-[90%] z-10 bg-cover bg-no-repeat bottom-[15%]"
+          src="/image/tap-image/cashtree_bg.png"
+        ></img>
         <div className="absolute flex justify-center items-center z-20 top-0 mb-2 w-full">
           <img src="image/assets/coin.png" alt="" className=" w-14 h-14" />
           <h1
@@ -210,12 +247,14 @@ function Home() {
             {formatNumberWithCommas(token)}
           </h1>
         </div>
-        <div ref={bodyRef} className="absolute bottom-[-10%] w-auto h-full z-50">
+        <div
+          ref={bodyRef}
+          className="absolute bottom-[-10%] w-auto h-full z-50"
+        >
           <img
-            className={` rounded-full w-auto h-full  ${remainedEnergy > 0
-              ? "cursor-pointer"
-              : " opacity-50 "
-              } ${imgStatus ? " border border-transparent" : ""}`}
+            className={` rounded-full w-auto h-full  ${
+              remainedEnergy > 0 ? "cursor-pointer" : " opacity-50 "
+            } ${imgStatus ? " border border-transparent" : ""}`}
             src="/image/tap-image/cashtree.png"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseLeave}
@@ -237,15 +276,16 @@ function Home() {
                 {remainedEnergy} &#8725; {limit}
               </p>
             </div>
-            <div className=" my-2 w-[fit-content] flex justify-center items-center gap-1" onClick={handleBoost}>
+            <div
+              className=" my-2 w-[fit-content] flex justify-center items-center gap-1"
+              onClick={handleBoost}
+            >
               <img
                 src="/image/assets/boost.png"
                 alt="lightning"
                 className="w-8 h-8 inline"
               />
-              <p className="text-[16px] text-[#F7BB12]">
-                Boost
-              </p>
+              <p className="text-[16px] text-[#F7BB12]">Boost</p>
             </div>
           </div>
         </div>
