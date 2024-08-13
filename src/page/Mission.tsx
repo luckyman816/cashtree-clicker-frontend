@@ -549,22 +549,29 @@ export default function Mission() {
             &nbsp;m <span className="text-2xl text-[white]">{diffSeconds}</span>{" "}
             &nbsp;s
           </h2>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleReceiveDailyCoins}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
+
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              onClick={handleReceiveDailyCoins}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Receive Daily Points
-            </span>
+              </span>
+            </div>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleResetDailyCoins}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
+
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              onClick={handleResetDailyCoins}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Reset Daily Points
-            </span>
+              </span>
+            </div>
           </div>
+
         </div>
       </Modal>
       <Modal isOpen={isDailyReward} onClose={handleCloseDailyRewardModal}>
@@ -722,13 +729,16 @@ export default function Mission() {
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckRetweetTwitter}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
+
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              onClick={handleCheckRetweetTwitter}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Check
-            </span>
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
@@ -752,14 +762,18 @@ export default function Mission() {
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckCommentMedium}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
+
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              onClick={handleCheckCommentMedium}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Check
-            </span>
+              </span>
+            </div>
           </div>
+
         </div>
       </Modal>
       <Modal isOpen={isLikeModal} onClose={handleCloseLikeModal}>
@@ -782,14 +796,18 @@ export default function Mission() {
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckLikePost}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
+
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              onClick={handleCheckLikePost}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Check
-            </span>
+              </span>
+            </div>
           </div>
+
         </div>
       </Modal>
       <Modal isOpen={isSecretExtra} onClose={handleCloseSecretExtraModal}>
@@ -808,11 +826,17 @@ export default function Mission() {
               placeholder="Enter code here"
             />
           </div>
-          <div className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3 mt-[18px]">
-            <span className="flex justify-center items-center text-white text-xl">
+
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Check
-            </span>
+              </span>
+            </div>
           </div>
+
         </div>
       </Modal>
       <Modal isOpen={isInstagram} onClose={handleCloseInstagramModal}>
@@ -835,14 +859,19 @@ export default function Mission() {
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckInstagram}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
+
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              onClick={handleCheckInstagram}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Check
-            </span>
+              </span>
+            </div>
           </div>
+
+          
         </div>
       </Modal>
       <Modal isOpen={isYoutube} onClose={handleCloseYoutubeModal}>
@@ -869,13 +898,16 @@ export default function Mission() {
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckYoutube}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
+
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              onClick={handleCheckYoutube}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Check
-            </span>
+              </span>
+            </div>
           </div>
         </div>
       </Modal>
@@ -902,14 +934,18 @@ export default function Mission() {
             <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
-          <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
-            onClick={handleCheckTelegramGroup}
-          >
-            <span className="flex justify-center items-center text-white text-xl">
+
+          <div className="px-[15px] w-full h-[56px] mt-[18px] mb-[10px]">
+            <div
+              className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3  h-full"
+              onClick={handleCheckTelegramGroup}
+            >
+              <span className="flex justify-center items-center text-white text-xl">
               Check
-            </span>
+              </span>
+            </div>
           </div>
+          
         </div>
       </Modal>
     </div>
