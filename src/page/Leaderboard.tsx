@@ -42,9 +42,8 @@ export default function Leaderboard() {
   return (
     <div className="flex flex-col justify-between items-center h-full w-full bg-[linear-gradient(25deg,_var(--tw-gradient-stops))] from-[#3b1e6a] to-[#120F29]">
       <Toaster />
-
       <div className="p-5 flex flex-col justify-start items-center gap-[30px] w-full mt-8 relative">
-        <div className="flex w-full h-8 bg-[#120F29] justify-start items-center border-b-2 border-[#3C375C] mt-8">
+        <div className="flex w-full h-8 bg-[#120F29] justify-start items-center border-b-2 border-[#3C375C]">
           <div
             className={`w-1/3 h-full text-sm translate-y-[2px]  ${
               isLeaderboardOpen == 0
