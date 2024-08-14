@@ -132,7 +132,7 @@ function Home() {
         setTapLevel(tapLevel + 1);
         setLimit(energyLimit[tapLevel + 1]);
         dispatch(updateWallet(username, levelTargets[tapLevel], remainedEnergy - tapLevel)).then(() => {
-          if (tapLevel < 10 && (token + tapLevel) == levelTargets[tapLevel]) {
+          if (tapLevel < 10) {
             dispatch(updateTapLevel(username, tapLevel + 1)).then(() => {
               setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1]);
             });
