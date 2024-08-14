@@ -219,7 +219,7 @@ function Home() {
             {formatNumberWithCommas(token)}
           </h3>
         </div>
-        <div ref={bodyRef} className={`absolute bottom-[-20%] w-auto h-full z-50 ${imgStatus ? " p-3" : ""}`}>
+        <div ref={bodyRef} className={`absolute bottom-[-20%] w-auto h-full z-50 ${imgStatus ? " p-3" : ""}`} onClick={handleTap}>
           <img
             className={` rounded-full w-auto h-[85%] ${remainedEnergy > 0
               ? "cursor-pointer"
@@ -228,7 +228,7 @@ function Home() {
             src="/image/tap-image/cashtree.png"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseLeave}
-            onClick={handleTap}
+            
           />
         </div>
       </div>
