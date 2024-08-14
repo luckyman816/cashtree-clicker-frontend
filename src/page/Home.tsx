@@ -158,7 +158,7 @@ function Home() {
         }
       }
       handleClick(event);
-    } else {
+    } else if (remainedEnergy - tapLevel <= 0){
       toast.error("Not enough energy!");
     }
   };
