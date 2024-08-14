@@ -218,7 +218,7 @@ export default function Leaderboard() {
               </div>
             </div>
             <div className="flex w-full justify-center items-center ">
-              <div className="flex justify-around w-full items-center flex-wrap min-h-[30vh] max-h-[50vh] overflow-y-auto gap-[16px]">
+              <div className="flex justify-around w-full items-center flex-wrap min-h-[30vh] max-h-[45vh] overflow-y-auto gap-[16px]">
                 {milestones.map((milestone, index) => (
                   <div
                     key={index}

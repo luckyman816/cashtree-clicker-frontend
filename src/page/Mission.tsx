@@ -836,7 +836,7 @@ export default function Mission() {
           <div className="w-[80%] bg-[white] flex justify-center items-center rounded-[20px] px-3 py-4 mt-[20px]">
             <input
               type="text"
-              className="bg-white outline-none border-none w-[90%]"
+              className="bg-white outline-none border-none w-[90%] text-[gray]"
               placeholder="Enter code here"
             />
           </div>
