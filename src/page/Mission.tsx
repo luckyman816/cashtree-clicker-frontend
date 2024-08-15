@@ -61,7 +61,7 @@ export default function Mission() {
     useState<daily_coins_received_status_types>(
       daily_coins_received_status_state
     );
-  const [diffDays, setDiffDays] = useState<number>(0);
+  const [diffDays, setDiffDays] = useState<number>(1);
   const [diffHours, setDiffHours] = useState<number>(0);
   const [diffMinutes, setDiffMinutes] = useState<number>(0);
   const [diffSeconds, setDiffSeconds] = useState<number>(0);
@@ -593,7 +593,7 @@ export default function Mission() {
               {dailyCoins.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col w-[22.5%] h-[84px] gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
+                  className="flex flex-col w-[22%] h-[84px] gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
                 >
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
                   {index == 0 ? (
