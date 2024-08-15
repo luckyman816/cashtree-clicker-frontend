@@ -420,7 +420,7 @@ export default function Mission() {
                   className="w-10 h-10"
                 />
                 <div className="flex flex-col gap-1 justify-start items-center">
-                  <h3 className="text-base text-white">Redeem Secret Code</h3>
+                  <h3 className="text-base text-white">Redeemmmmmmmmmmmmmm Secret Code</h3>
                 </div>
               </div>
               <img
