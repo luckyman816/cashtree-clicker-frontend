@@ -94,6 +94,26 @@ export default function Mission() {
   const handleCloseReceiveModal = () => {
     setIsReceiveModalOpen(false);
   };
+
+const getDailyCoinsReceivedStatusByIndex = ( index: number) => {
+  switch(index){
+    case 1:
+    return daily_coins_received_status.day_1; break;
+    case 2:
+    return daily_coins_received_status.day_2; break;
+    case 3:
+    return daily_coins_received_status.day_3; break;
+    case 4:
+    return daily_coins_received_status.day_4; break;
+    case 5:
+    return daily_coins_received_status.day_5; break;
+    case 6:
+    return daily_coins_received_status.day_6; break;
+    case 7:
+
+  }
+}
+
   const handleReceiveDailyCoins = () => {
     if (diffDays === 1) {
       if (daily_coins_received_status.day_1 === false) {
@@ -596,8 +616,8 @@ export default function Mission() {
                   className="flex flex-col w-[22%] h-[84px] gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
                 >
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
-                  {index == 0 ? (
-                    daily_coins_received_status.day_1 ? (
+                  {
+                    getDailyCoinsReceivedStatusByIndex(index + 1) ? (
                       <img
                         src="image/mission/received.webp"
                         alt="coin"
@@ -610,89 +630,7 @@ export default function Mission() {
                         className="w-8 h-8"
                       />
                     )
-                  ) : index == 1 ? (
-                    daily_coins_received_status.day_2 ? (
-                      <img
-                        src="image/mission/received.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : index == 2 ? (
-                    daily_coins_received_status.day_3 ? (
-                      <img
-                        src="image/mission/received.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : index == 3 ? (
-                    daily_coins_received_status.day_4 ? (
-                      <img
-                        src="image/mission/received.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : index == 4 ? (
-                    daily_coins_received_status.day_5 ? (
-                      <img
-                        src="image/mission/received.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : index == 5 ? (
-                    daily_coins_received_status.day_6 ? (
-                      <img
-                        src="image/mission/received.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <img
-                        src="image/assets/coin.webp"
-                        alt="coin"
-                        className="w-8 h-8"
-                      />
-                    )
-                  ) : daily_coins_received_status.day_7 ? (
-                    <img
-                      src="image/mission/received.webp"
-                      alt="coin"
-                      className="w-8 h-8"
-                    />
-                  ) : (
-                    <img
-                      src="image/assets/coin.webp"
-                      alt="coin"
-                      className="w-8 h-8"
-                    />
-                  )}
+                  }
                   <h1 className="text-sm text-white font-bold">
                     {item.points}
                   </h1>
