@@ -140,7 +140,7 @@ export default function Boost() {
       <div className="w-full mt-3 flex flex-col justify-start items-start p-4 gap-4 max-h-[75vh] min-h-[75vh]">
         <div className="flex justify-between items-center w-full px-3 py-5 bg-[linear-gradient(330deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] hover:from-[#751DDA] hover:to-[#D740FF] rounded-[20px] border border-[#B386FB]">
           <div className="flex justify-center items-center">
-            <img src="/image/assets/coin.png" alt="" className="w-12 h-12" />
+            <img src="/image/assets/coin.webp" alt="" className="w-12 h-12" />
             <h1 className="text-sm text-[#FFC107] ">Your points</h1>
           </div>
           <h1 className="text-white text-4xl font-bold">
@@ -155,7 +155,7 @@ export default function Boost() {
           onClick={handleMouseClick}
         >
           <div className="flex justify-center items-center gap-1">
-            <img src="/image/assets/fillEnergy.png" alt="" className="w-10 h-10" />
+            <img src="/image/assets/fillEnergy.webp" alt="" className="w-10 h-10" />
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-sm text-white">Energy Refrill 3000 P</h3>
               <h3 className="text-[13px] text-white">
@@ -163,13 +163,13 @@ export default function Boost() {
               </h3>
             </div>
           </div>
-          <img src="image/icon/arrowRight.png" alt="" className="w-2 h-4" />
+          <img src="image/icon/arrowRight.webp" alt="" className="w-2 h-4" />
         </div>
         <div
           className={`w-full flex my-3 px-3 py-3 justify-between items-center bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#A944FD] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2`}
           onClick={handleOpenDoublePointsModal}>
           <div className="flex justify-center items-center gap-1">
-            <img src="/image/assets/doublePoint.png" alt="" className="w-10 h-10 drop-shadow-[0_20px_50px_#7131D6]" />
+            <img src="/image/assets/doublePoint.webp" alt="" className="w-10 h-10 drop-shadow-[0_20px_50px_#7131D6]" />
             <div className="flex flex-col gap-1 justify-start items-start">
               <h3 className="text-sm text-white">Double Points for 15 Minutes 5000 P</h3>
               <h3 className="text-[13px] text-white">
@@ -177,13 +177,13 @@ export default function Boost() {
               </h3>
             </div>
           </div>
-          <img src="image/icon/arrowRight.png" alt="" className="w-2 h-4" />
+          <img src="image/icon/arrowRight.webp" alt="" className="w-2 h-4" />
         </div>
       </div>
       <Footer />
       <Modal isOpen={isRefillEnergyModalOpen} onClose={handleCloseRefillEnergyModal}>
         <div className="flex flex-col items-center align-middle rounded-[20px] gap-5 my-5 h-full">
-          <img src="image/assets/fillEnergyModal.png" alt="" className=" w-auto h-[50%] drop-shadow-[0_20px_50px_#7131D6]" />
+          <img src="image/assets/fillEnergyModal.webp" alt="" className=" w-auto h-[50%] drop-shadow-[0_20px_50px_#7131D6]" />
           <h1 className="text-2xl text-white">Energy Refill</h1>
           <p className=" text-sm text-white">
             Refill your energy bar instantly for 3,000 points. Maximum of 3 purchases per day
@@ -198,7 +198,7 @@ export default function Boost() {
       </Modal>
       <Modal isOpen={isDoublePointsModalOpen} onClose={handleCloseDoublePointsModal}>
         <div className="flex flex-col items-center align-middle rounded-[20px] gap-5 my-5 h-full">
-          <img src="image/assets/doublePointsModal.png" alt="" className=" w-auto h-[50%]" />
+          <img src="image/assets/doublePointsModal.webp" alt="" className=" w-auto h-[50%]" />
           <h1 className="text-2xl text-white">Double Points</h1>
           <p className=" text-sm text-white">
             Double your points earned for the next 15 minutes for 5,000 points. Maximum of 3 purchases per day.

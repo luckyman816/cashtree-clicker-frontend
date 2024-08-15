@@ -16,18 +16,18 @@ export default function Level() {
     return (
         <div className="w-full h-full flex flex-col justify-between items-center">
             <div className="flex justify-between items-center px-3 w-full py-3">
-                <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
+                <img src="image/icon/back.webp" alt="" className=" w-4 h-4" />
                 <h3
                     className="text-sm text-[white]"
                     style={{ fontFamily: "archivo" }}
                 >
                     Your Level
                 </h3>
-                <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
+                <img src="image/icon/menu.webp" alt="" className=" w-5 h-5" />
             </div>
             <div className="flex flex-col justify-center items-center gap-4 w-full">
                 <div className="flex flex-col justify-center items-center">
-                    <img src={`image/level/${levels[tapLevel - 1].icon}_b.png`} alt="" className=" w-[140px] h-[140px]" />
+                    <img src={`image/level/${levels[tapLevel - 1].icon}_b.webp`} alt="" className=" w-[140px] h-[140px]" />
                     <h1 className="text-white text-[32px] font-bold">Level {levelNames[tapLevel - 1]}</h1>
                     <p className="text-[#F7BB12] text-sm">Up to {formatNumberWithCommas(levelTargets[tapLevel - 1])}</p>
                 </div>
@@ -49,7 +49,7 @@ export default function Level() {
                                 className={`flex w-[90%] my-3 overflow-hidden relative px-3 py-3 items-center justify-between bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#240C4D] to-[#8137F9] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)]  rounded-[20px] gap-2 border border-[#B286FA]`}>
                                 {index == (tapLevel - 1) && <div className="w-1/3 h-[100px] z-0 absolute scale-110 skew-x-[22deg] -translate-x-20 bg-[linear-gradient(5deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF]"/>}
                                 <div className="flex justify-center z-10 items-center gap-2">
-                                    <img src={`/image/level/${item.icon}.png`} alt="" className="w-10 h-10" />
+                                    <img src={`/image/level/${item.icon}.webp`} alt="" className="w-10 h-10" />
                                     <div className="flex flex-col gap-1 justify-start items-start">
                                         <h1 className="text-sm text-white">{item.name}</h1>
                                         <h1 className="text-[12px] text-white font-bold">

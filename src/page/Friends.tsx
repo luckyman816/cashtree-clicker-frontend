@@ -61,7 +61,7 @@ export default function Friends() {
               You and your friend will receive bonuses
             </p>
             <img
-              src="image/friends/info.png"
+              src="image/friends/info.webp"
               alt="info"
               className="w-[14px] h-[14px]"
             />
@@ -69,7 +69,7 @@ export default function Friends() {
         </div>
         <div className="flex w-full h-[80px] my-[10px] justify-between px-3 py-3 items-center rounded-[17px] bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#AA45FE]">
           <div className="flex justify-center items-center gap-3">
-            <img src="image/friends/friends.png" alt="" className="w-10 h-10" />
+            <img src="image/friends/friends.webp" alt="" className="w-10 h-10" />
             <div className="flex flex-col justify-start items-start">
               <h3
                 className="flex justify-center items-center gap-[6px] text-white text-[16px]"
@@ -77,7 +77,7 @@ export default function Friends() {
               >
                 Invite a friend
                 <img
-                  src="image/friends/info.png"
+                  src="image/friends/info.webp"
                   alt="info"
                   className="w-[14px] h-[14px]"
                 />
@@ -88,7 +88,7 @@ export default function Friends() {
             </div>
           </div>
           <div className="flex justify-center items-center gap-1">
-            <img src="image/assets/coin.png" alt="coin" className="w-5 h-5" />
+            <img src="image/assets/coin.webp" alt="coin" className="w-5 h-5" />
             <h1
               className="text-[white] text-[16px]"
               style={{ fontFamily: "archivo-bold" }}
@@ -122,7 +122,7 @@ export default function Friends() {
                 >
                   <div className="flex justify-center items-center gap-3">
                     <img
-                      src="image/friends/friend.png"
+                      src="image/friends/friend.webp"
                       alt=""
                       className="w-10 h-10"
                     />
@@ -135,7 +135,7 @@ export default function Friends() {
                   </div>
                   <div className="flex justify-center items-center gap-1">
                     <img
-                      src="image/assets/coin.png"
+                      src="image/assets/coin.webp"
                       alt="coin"
                       className="w-5 h-5"
                     />
@@ -170,7 +170,7 @@ export default function Friends() {
           </div>
           <CopyToClipboard text={textToCopy} onCopy={handleCopy}>
             <div className="w-[80px] h-[56px] bg-[#7520FF] rounded-[10px] flex justify-center items-center py-2">
-              <img src="image/friends/invite.png" alt="" className="w-6 h-6" />
+              <img src="image/friends/invite.webp" alt="" className="w-6 h-6" />
             </div>
           </CopyToClipboard>
         </div>
@@ -181,7 +181,7 @@ export default function Friends() {
               Select chat
             </p>
             <div className="w-[90%] flex justify-start items-center py-2 px-2 bg-[#3B1E6A] rounded-[30px]">
-              <img src="image/friends/search.png" alt="" className="w-5 h-5" />
+              <img src="image/friends/search.webp" alt="" className="w-5 h-5" />
               <input type="text" className="bg-[#3B1E6A] outline-none border-none w-[90%] text-[#ABA7BA]" placeholder="Search" />
             </div>
             <div className="min-h-[20vh] max-h-[30vh] overflow-y-auto overflow-hidden w-full">
