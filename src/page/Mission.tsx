@@ -61,7 +61,7 @@ export default function Mission() {
     useState<daily_coins_received_status_types>(
       daily_coins_received_status_state
     );
-  const [diffDays, setDiffDays] = useState<number>(1);
+  const [diffDays, setDiffDays] = useState<number>(0);
   const [diffHours, setDiffHours] = useState<number>(0);
   const [diffMinutes, setDiffMinutes] = useState<number>(0);
   const [diffSeconds, setDiffSeconds] = useState<number>(0);
