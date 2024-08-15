@@ -612,8 +612,15 @@ const getDailyCoinsReceivedStatusByIndex = ( index: number) => {
             <div className="flex gap-[10px] w-[95%] flex-wrap h-auto">
               {dailyCoins.map((item, index) => (
                 <div
-                  key={index}
-                  className="flex flex-col w-[22%] h-[84px] gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
+                key={index}
+                className={`w-[22%] p-[1px] rounded-[10px]`}
+                style={{
+                  background:
+                    "linear-gradient(340deg,rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.4)",
+                }}
+              >
+                <div
+                  className="flex flex-col w-full h-[84px] gap-1 py-1 px-3 justify-center items-center rounded-[10px] bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] from-[#200063] to-[#4C20FF]"
                 >
                   <h1 className="text-sm text-white font-bold">{item.day}</h1>
                   {
@@ -634,6 +641,7 @@ const getDailyCoinsReceivedStatusByIndex = ( index: number) => {
                   <h1 className="text-sm text-white font-bold">
                     {item.points}
                   </h1>
+                </div>
                 </div>
               ))}
             </div>

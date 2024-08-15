@@ -13,7 +13,7 @@ const initialState: walletStateProps = {
     full_energy: 0,
     tap_level: 0,
     limit: 0,
-    daily_coins: new Date(Date.now() + 86400000)
+    daily_coins: new Date()
   },
   friend : false,
   users: [],
