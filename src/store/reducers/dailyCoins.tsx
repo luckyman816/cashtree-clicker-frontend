@@ -8,7 +8,7 @@ const initialState: dailyCoinsStateTypes = {
     _id: "",
     username: "",
     daily_coins_received_status: {
-        day_1: false,
+        day_1: true,
         day_2: false,
         day_3: false,
         day_4: false,

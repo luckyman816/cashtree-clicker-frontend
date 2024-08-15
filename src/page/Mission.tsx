@@ -65,11 +65,11 @@ export default function Mission() {
   const [diffHours, setDiffHours] = useState<number>(0);
   const [diffMinutes, setDiffMinutes] = useState<number>(0);
   const [diffSeconds, setDiffSeconds] = useState<number>(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       calculateDifference(moment());
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
   const calculateDifference = (currentDateTime: moment.Moment) => {
