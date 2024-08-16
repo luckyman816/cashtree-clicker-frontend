@@ -617,44 +617,43 @@ export default function Mission() {
               {dailyCoins.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col w-[22.5%] h-[84px] gap-1 py-1 px-3 justify-center items-center border border-[#B286FA] rounded-[10px]"
+                  className={`w-[22%] p-[${
+                    getDailyCoinsReceivedStatusByIndex(index + 1)
+                      ? `0px`
+                      : `1px`
+                  }] rounded-[10px]`}
+                  style={{
+                    background:
+                      "linear-gradient(340deg,rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.4)",
+                  }}
                 >
-                  <h1 className="text-sm text-white font-bold">{item.day}</h1>
-                  {dailyCoins.map((item, index) => (
-                    <div
-                      key={index}
-                      className={`w-[22%] p-[${getDailyCoinsReceivedStatusByIndex(index + 1) ?`0px`:`1px`}] rounded-[10px]`}
-                      style={{
-                        background:
-                          "linear-gradient(340deg,rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.4)",
-                      }}
-                    >
-                      <div className={`flex flex-col w-full h-[84px] gap-1 py-1 px-3 justify-center items-center rounded-[10px] bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] ${getDailyCoinsReceivedStatusByIndex(index + 1)?`from-[#8137F9] to-[#C8A2FB]`:diffDays===1?`from-[#4756E5] to-[#47C8FF]`:`from-[#51229D] to-[#51229D]`}`}>
-                        <h1 className="text-sm text-white font-bold">
-                          {item.day}
-                        </h1>
-                        {getDailyCoinsReceivedStatusByIndex(index + 1) ? (
-                          <img
-                            src="image/mission/received.webp"
-                            alt="coin"
-                            className="w-8 h-8"
-                          />
-                        ) : (
-                          <img
-                            src="image/assets/coin.webp"
-                            alt="coin"
-                            className="w-8 h-8"
-                          />
-                        )}
-                        <h1 className="text-sm text-white font-bold">
-                          {item.points}
-                        </h1>
-                      </div>
-                    </div>
-                  ))}
-                  <h1 className="text-sm text-white font-bold">
-                    {item.points}
-                  </h1>
+                  <div
+                    className={`flex flex-col w-full h-[84px] gap-1 py-1 px-3 justify-center items-center rounded-[10px] bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] ${
+                      getDailyCoinsReceivedStatusByIndex(index + 1)
+                        ? `from-[#8137F9] to-[#C8A2FB]`
+                        : diffDays === 1
+                        ? `from-[#4756E5] to-[#47C8FF]`
+                        : `from-[#51229D] to-[#51229D]`
+                    }`}
+                  >
+                    <h1 className="text-sm text-white font-bold">{item.day}</h1>
+                    {getDailyCoinsReceivedStatusByIndex(index + 1) ? (
+                      <img
+                        src="image/mission/received.webp"
+                        alt="coin"
+                        className="w-8 h-8"
+                      />
+                    ) : (
+                      <img
+                        src="image/assets/coin.webp"
+                        alt="coin"
+                        className="w-8 h-8"
+                      />
+                    )}
+                    <h1 className="text-sm text-white font-bold">
+                      {item.points}
+                    </h1>
+                  </div>
                 </div>
               ))}
             </div>
