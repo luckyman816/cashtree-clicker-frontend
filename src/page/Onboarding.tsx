@@ -12,7 +12,7 @@ const Onboarding = () => {
             <div className=" absolute w-full h-full right-0 top-0 z-10" style={{ backgroundImage: "url(/image/onboarding/gradient.webp)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
             </div>
             <div className="w-full h-full justify-end items-center flex flex-col gap-1 z-20 px-[30px] pb-[60px]">
-                <div className="w-full flex-grow justify-center items-end flex z-20">
+                <div className="w-full flex-1 justify-center items-end flex z-20">
                     {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.webp" alt="" className="w-auto h-[90%]" />
                         : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.webp" alt="" className="w-auto h-[90%]" />
                             : pageNum == 3 ? <img src="/image/onboarding/onboarding_3.webp" alt="" className="w-auto h-[90%]" />
@@ -20,7 +20,7 @@ const Onboarding = () => {
                                     <img src="/image/onboarding/onboarding_5.webp" alt="" className="w-auto h-[90%]" />}
 
                 </div>
-                <div className="w-full flex justify-center items-center">
+                <div className="w-full flex justify-center items-center z-20">
                     {pageNum == 1 ?
                         <div className="w-full h-full flex flex-col justify-start items-start gap-2">
                             <h1 className="text-white text-[40px] text-left font-bold">Welcome to Cashtree Tap-To-Win</h1>
@@ -50,7 +50,7 @@ const Onboarding = () => {
                                     </div>
                     }
                 </div>
-                <div className="w-full justify-center items-center gap-1 flex my-5">
+                <div className="w-full justify-center items-center gap-1 flex my-5 z-20">
                     <div className={`border border-white h-2 ${pageNum == 1 ? "w-5" : "w-2"} rounded bg-white`}></div>
                     <div className={`border border-white h-2 ${pageNum == 2 ? "w-5" : "w-2"} rounded bg-white`}></div>
                     <div className={`border border-white h-2 ${pageNum == 3 ? "w-5" : "w-2"} rounded bg-white`}></div>
@@ -59,11 +59,11 @@ const Onboarding = () => {
                 </div>
                 {
                     pageNum == 5 ?
-                        <Link to={"/home"} className="w-full flex justify-center items-center text-white rounded-[20px] bg-[#7520FF] h-[56px] py-4">
+                        <Link to={"/home"} className="w-full flex justify-center items-center text-white rounded-[20px] bg-[#7520FF] h-[56px] py-4 z-20">
                             <span className="text-white text-xl">Start game</span>
                         </Link>
                         :
-                        <div className="w-full flex justify-center items-center text-white rounded-[20px] bg-[#7520FF] h-[56px] py-4" onClick={handleNext}>
+                        <div className="w-full flex justify-center items-center text-white rounded-[20px] bg-[#7520FF] h-[56px] py-4 z-20" onClick={handleNext}>
                             <span className="text-white text-xl"> Next </span>
                         </div>
                 }
