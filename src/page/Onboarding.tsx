@@ -11,7 +11,7 @@ const Onboarding = () => {
         <div className=" relative w-screen h-screen flex flex-col justify-center items-center bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#120F29] to-[#7F3AEF] py-5" >
             <div className=" absolute w-full h-full right-0 top-0 z-10" style={{ backgroundImage: "url(/image/onboarding/gradient.webp)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
             </div>
-            <div className="w-full h-full justify-center items-center flex flex-col gap-1 z-20">
+            <div className="w-full h-full justify-around items-center flex flex-col gap-1 z-20">
                 <div className="w-full h-[35%] justify-center items-end flex z-20">
                     {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.webp" alt="" className="w-auto h-[90%]" />
                         : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.webp" alt="" className="w-auto h-[90%]" />
@@ -20,7 +20,7 @@ const Onboarding = () => {
                                     <img src="/image/onboarding/onboarding_5.webp" alt="" className="w-auto h-[90%]" />}
 
                 </div>
-                <div className="w-full flex justify-center items-center">
+                <div className="w-full h-[40%] flex justify-center items-center">
                     {pageNum == 1 ?
                         <div className="w-[80%] h-full flex flex-col justify-start items-start gap-2">
                             <h1 className="text-white text-[40px] text-left font-bold">Welcome to Cashtree Tap-To-Win</h1>
