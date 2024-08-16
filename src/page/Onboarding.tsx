@@ -11,13 +11,13 @@ const Onboarding = () => {
         <div className=" relative w-screen h-screen bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#120F29] to-[#7F3AEF] py-5" >
             <div className=" absolute w-full h-full right-0 top-0 z-10" style={{ backgroundImage: "url(/image/onboarding/gradient.webp)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
             </div>
-            <div className="w-full h-full justify-end items-center flex flex-col gap-1 z-20 px-[30px] pb-[60px]">
+            <div className="w-full h-full justify-end items-center flex flex-col gap-1 z-20 px-[30px] pb-[30px]">
                 <div className="w-full flex-1 justify-center items-end flex z-20">
-                    {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.webp" alt="" className="w-auto h-[70%] max-h-[300px]" />
-                        : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.webp" alt="" className="w-auto h-[70%] max-h-[300px]" />
-                            : pageNum == 3 ? <img src="/image/onboarding/onboarding_3.webp" alt="" className="w-auto h-[70%] max-h-[300px]" />
-                                : pageNum == 4 ? <img src="/image/onboarding/onboarding_4.webp" alt="" className="w-auto h-[70%] max-h-[300px]" /> :
-                                    <img src="/image/onboarding/onboarding_5.webp" alt="" className="w-auto h-[70%] max-h-[300px]" />}
+                    {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.webp" alt="" className="w-auto h-[70%] max-h-[350px]" />
+                        : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.webp" alt="" className="w-auto h-[70%] max-h-[350px]" />
+                            : pageNum == 3 ? <img src="/image/onboarding/onboarding_3.webp" alt="" className="w-auto h-[70%] max-h-[350px]" />
+                                : pageNum == 4 ? <img src="/image/onboarding/onboarding_4.webp" alt="" className="w-auto h-[70%] max-h-[350px]" /> :
+                                    <img src="/image/onboarding/onboarding_5.webp" alt="" className="w-auto h-[70%] max-h-[350px]" />}
 
                 </div>
                 <div className="w-full flex justify-center items-center z-20">
