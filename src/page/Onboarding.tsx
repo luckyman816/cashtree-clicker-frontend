@@ -11,7 +11,7 @@ const Onboarding = () => {
         <div className=" relative w-screen h-screen bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#120F29] to-[#7F3AEF] py-5" >
             <div className=" absolute w-full h-full right-0 top-0 z-10" style={{ backgroundImage: "url(/image/onboarding/gradient.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
             </div>
-            <div className="w-full h-full justify-end items-center flex flex-col gap-1 z-20 px-[30px] pb-[30px]">
+            <div className="w-full h-full justify-between items-center flex flex-col gap-1 z-20 px-[30px] pb-[30px]">
                 <div className="w-full flex-1 justify-center items-end flex z-20">
                     {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.png" alt="" className="w-auto h-[70%] max-h-[350px]" />
                         : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.png" alt="" className="w-auto h-[70%] max-h-[350px]" />

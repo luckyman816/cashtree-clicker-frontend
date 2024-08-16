@@ -633,7 +633,7 @@ export default function Mission() {
                   }}
                 >
                   <div
-                    className={`flex flex-col w-full h-[84px] gap-1 py-1 px-3 justify-center items-center rounded-[10px] bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] ${
+                    className={`flex flex-col w-full h-[84px] gap-1 py-1 px-3 justify-center items-center rounded-[10px] bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] ${
                       getDailyCoinsReceivedStatusByIndex(index + 1)
                         ? `from-[#692df5] to-[#a546ff]`
                         : (diffDays === 1 && getDailyCoinsReceivedStatusByIndex(index))
