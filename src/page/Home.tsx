@@ -39,19 +39,7 @@ function Home() {
   useEffect(() => {
     setUserData();
   }, []);
-  // useEffect(() => {
-  //   for (let i: number = 0; i < levelTargets.length; i++) {
-  //     if (token < levelTargets[i]) {
-  //       setTapLevel(i);
-  //       setLimit(energyLimit[i]);
-  //       dispatch(updateTapLevel(user.username, i));
-  //       dispatch(updateLimit(user.username, energyLimit[i]));
-  //       setTargetDiff(levelTargets[i] - levelTargets[i - 1]);
-  //       setProgressValue(token - levelTargets[i - 1]);
-  //       break;
-  //     }
-  //   }
-  // },[]);
+
   const setUserData = async () => {
     try {
       const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
@@ -143,8 +131,8 @@ function Home() {
     if (tapLevel != 0) {
       const interval = setInterval(() => {
         if (username && remainedEnergy < limit) {
-          dispatch(updateEnergy(username, remainedEnergy + 1));
-          setRemainedEnergy(remainedEnergy + 1);
+          dispatch(updateEnergy(username, remainedEnergy + tapLevel));
+          setRemainedEnergy(remainedEnergy + tapLevel);
         }
       }, (11 - tapLevel) * 1000);
       return () => clearInterval(interval);
@@ -154,6 +142,7 @@ function Home() {
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
       setScore(`+${tapLevel}`);
+      console.log("---------------------------------->", tapLevel);
       if (token + tapLevel > levelTargets[tapLevel]) {
         setToken(levelTargets[tapLevel]);
         setTapLevel(tapLevel + 1);
