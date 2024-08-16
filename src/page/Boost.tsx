@@ -70,14 +70,15 @@ export default function Boost() {
       const dateDiffDouble = double_points_date
         ? currentDateTime.diff(double_points_date, "seconds")
         : 0;
-      setDiffDaysRefill(Math.floor(dateDiffRefill / (60 * 60 * 24)));
+      setDiffDaysRefill(Math.floor(dateDiffRefill / (60 * 60 * 24)) + 1);
       setDiffDaysDouble(Math.floor(dateDiffDouble / (60 * 60 * 24)));
       setDiffMinutesDouble(Math.floor((dateDiffDouble % (60 * 60)) / 60)+15);
     }
   };
   console.log("-----day----->", diffDaysDouble, diffDaysRefill);
   const handleRefillEnergy = () => {
-    console.log("-----full energy💰🏆💪------>", limit_state);
+    console.log("-----full energy💰🏆💪------>", limit);
+    console.log("-----full energy💰🏆💪???------>", diffDaysRefill);
     if (diffDaysRefill == 0) {
       if (refill_energy + 1 > 3) {
         toast.error("Maximum value reached!");
