@@ -5,7 +5,9 @@ import {
   getWallet,
   updateBalance,
 } from "../store/reducers/wallet";
+import {levelTargets, energyLimit} from "../data";
 import { getDailyBoost, updateDoublePoints, updateRefillEnergy } from "../store/reducers/dailyBoost";
+import { updateTapLevel, updateLimit } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
 import Modal from "../component/modal";
 import Footer from "../component/Footer";
@@ -99,6 +101,13 @@ export default function Boost() {
         if (diffMinutesDouble >= 15) {
           dispatch(updateDoublePoints(username, double_points + 1, moment()));
           dispatch(updateBalance(username, token + 500))
+          for (let i: number = 0; i < levelTargets.length; i++) {
+            if ((token + 500) < levelTargets[i]) {
+              dispatch(updateTapLevel(username, i));
+              dispatch(updateLimit(username, energyLimit[i]));
+              break;
+            }
+          }
           toast.success("Get the double points successfully");
         } else {
           toast.error("Please wait for 15 minutes");
