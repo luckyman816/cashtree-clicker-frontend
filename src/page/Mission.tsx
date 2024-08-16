@@ -78,7 +78,7 @@ export default function Mission() {
       const dateDiff = daily_coins
         ? currentDateTime.diff(daily_coins, "seconds")
         : 0;
-      setDiffDays(Math.floor(dateDiff / (60 * 60 * 24)));
+      setDiffDays(Math.floor(dateDiff / (60 * 60 * 24)) + 1);
       setDiffHours(Math.floor((dateDiff % (60 * 60 * 24)) / (60 * 60)));
       setDiffMinutes(Math.floor((dateDiff % (60 * 60)) / 60));
       setDiffSeconds(Math.floor(dateDiff % 60));
