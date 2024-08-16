@@ -70,7 +70,7 @@ export default function Boost() {
         : 0;
       setDiffDaysRefill(Math.floor(dateDiffRefill / (60 * 60 * 24)));
       setDiffDaysDouble(Math.floor(dateDiffDouble / (60 * 60 * 24)));
-      setDiffMinutesDouble(Math.floor((dateDiffDouble % (60 * 60)) / 60));
+      setDiffMinutesDouble(Math.floor((dateDiffDouble % (60 * 60)) / 60)+15);
     }
   };
   console.log("-----day----->", diffDaysDouble, diffDaysRefill);
