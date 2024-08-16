@@ -439,7 +439,7 @@ export default function Mission() {
             >
               <div className="flex justify-center items-center gap-3">
                 <img
-                  src={`/image/mission/secretExtra.webp`}
+                  src={`/image/mission/secretExtra.png`}
                   alt=""
                   className="w-10 h-10"
                 />
@@ -471,7 +471,7 @@ export default function Mission() {
                 >
                   <div className="flex justify-center items-center gap-3">
                     <img
-                      src={`/image/mission/${item.icon}.webp`}
+                      src={`/image/mission/${item.icon}.png`}
                       alt=""
                       className="w-10 h-10"
                     />
@@ -520,7 +520,7 @@ export default function Mission() {
                 >
                   <div className="flex justify-center items-center gap-3">
                     <img
-                      src={`/image/mission/${item.icon}.webp`}
+                      src={`/image/mission/${item.icon}.png`}
                       alt=""
                       className="w-10 h-10 translate-y-[2px]"
                     />
@@ -639,13 +639,13 @@ export default function Mission() {
                     <h1 className="text-sm text-white font-bold">{item.day}</h1>
                     {getDailyCoinsReceivedStatusByIndex(index + 1) ? (
                       <img
-                        src="image/mission/received.webp"
+                        src="image/mission/received.png"
                         alt="coin"
                         className="w-8 h-8"
                       />
                     ) : (
                       <img
-                        src="image/assets/coin.webp"
+                        src="image/assets/coin.png"
                         alt="coin"
                         className="w-8 h-8"
                       />
