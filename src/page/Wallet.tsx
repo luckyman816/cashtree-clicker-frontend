@@ -23,17 +23,17 @@ export default function WalletPage() {
       <div className="flex flex-col justify-center items-center gap-2 w-full">
         <Toaster />
         <div className="flex justify-between items-center px-3 w-full mt-3">
-          <img src="image/icon/back.webp" alt="" className=" w-4 h-4" />
+          <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
           <h3
             className="text-sm text-[white]"
             style={{ fontFamily: "archivo" }}
           >
             Cashtree Tap to Win
           </h3>
-          <img src="image/icon/menu.webp" alt="" className=" w-5 h-5" />
+          <img src="image/icon/menu.png" alt="" className=" w-5 h-5" />
         </div>
         <div className="flex flex-col w-full justify-center items-center gap-2">
-          <img src="image/wallet/cointap.webp" alt="" className="w-48 h-48" />
+          <img src="image/wallet/cointap.png" alt="" className="w-48 h-48" />
           <div className="text-3xl text-white font-[Archivo] font-bold">Wallet</div>
           <div className="text-sm text-white font-[Archivo]">Your wallet connect address</div>
         </div>
@@ -41,13 +41,13 @@ export default function WalletPage() {
           <div className="flex justify-start text-white text-[17px] font-[Archivo] w-full">Task List</div>
           <div className="flex flex-row justify-between items-center bg-gradient-to-br from-[#AE47FF] to-[#6929F1] w-full h-16 rounded-2xl px-3" onClick={() => handleOpenWalletModal()}>
             <div className="flex gap-1 justify-start items-center">
-              <img src="image/wallet/connectWallet.webp" alt="" className="w-10 h-10" />
+              <img src="image/wallet/connectWallet.png" alt="" className="w-10 h-10" />
               <div className="flex-7 flex flex-col gap-1 justify-start items-center">
                 <div className="text-white font-[Archivo] text-sm">Connect your CTT wallet address</div>
                 <div className="text-white font-[Archivo] text-xs">Integrate now for Secure Transactions</div>
               </div>
             </div>
-            <img src="image/wallet/Vector.webp" alt="" className="w-2 h-[14px]" />
+            <img src="image/wallet/Vector.png" alt="" className="w-2 h-[14px]" />
           </div>
         </div>
         <TonConnectButton/>
@@ -55,7 +55,7 @@ export default function WalletPage() {
       <Footer />
       <Modal isOpen={isWalletModal} onClose={handleCloseWalletModal}>
         <div className="flex flex-col items-center align-middle gap-3 rounded-[20px]">
-          <img src="image/wallet/cointap.webp" alt="" className=" w-auto h-[80%]" />
+          <img src="image/wallet/cointap.png" alt="" className=" w-auto h-[80%]" />
           <h1 className="text-2xl text-white">Connet your Wallet address</h1>
           <p className=" text-sm text-white">
             Connect your crypto wallet. If you don't have one, create it in your Telegram account.

@@ -181,18 +181,18 @@ function Home() {
       <div className="w-[90%] flex flex-col justify-center items-center gap-4 mt-12">
         <div className="flex justify-between items-center w-full px-3 py-1 bg-[linear-gradient(330deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[20px] border border-[#9165D6]">
           <div className=" flex justify-center items-center p-2 ">
-            <img src="/image/assets/coin.webp" alt="" className=" w-11 h-11" />
+            <img src="/image/assets/coin.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-[11px] text-[#FFC107]">Earn Per Tap</h2>
               <div className="flex justify-start items-center gap-1">
                 <h3 className="text-sm text-[white]" style={{ fontFamily: "archivo-bold" }}>+{tapLevel} Poin</h3>
-                <img src="/image/assets/info.webp" alt="" className="w-3 h-3" />
+                <img src="/image/assets/info.png" alt="" className="w-3 h-3" />
               </div>
             </div>
           </div>
           <div className="w-[1px] h-[30px] bg-white"></div>
           <div className=" flex justify-center items-center p-2 ">
-            <img src="/image/assets/earnLevel.webp" alt="" className=" w-11 h-11" />
+            <img src="/image/assets/earnLevel.png" alt="" className=" w-11 h-11" />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-[11px] text-[#FFC107]">Earn to level up</h2>
               <h3 className="text-sm text-[white] font-bold" style={{ fontFamily: "archivo-bold" }}>+{formatNumberWithCommas(levelTargets[tapLevel])}k</h3>
@@ -208,10 +208,10 @@ function Home() {
         </div>
       </div>
       <div className="flex justify-center items-center relative h-[45vh] w-full">
-        <img className="flex justify-center items-center absolute w-auto h-[92%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.webp">
+        <img className="flex justify-center items-center absolute w-auto h-[92%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.png">
         </img>
         <div className="absolute flex justify-center items-center z-20 top-0 mb-2 w-full">
-          <img src="image/assets/coin.webp" alt="" className=" w-[15%] h-auto" />
+          <img src="image/assets/coin.png" alt="" className=" w-[15%] h-auto" />
           <h3
             className=" text-[46px] text-white"
             style={{ fontFamily: " archivo-bold" }}
@@ -225,7 +225,7 @@ function Home() {
               ? "cursor-pointer"
               : " opacity-50 "
               } drop-shadow-[0_20px_50px_#9D3AFFCC]`}
-            src="/image/tap-image/cashtree.webp"
+            src="/image/tap-image/cashtree.png"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseLeave}
             
@@ -238,7 +238,7 @@ function Home() {
           <div className="flex justify-between w-full items-center px-3">
             <div className=" my-2 w-[fit-content] flex justify-center items-center gap-1">
               <img
-                src="/image/assets/energy_home.webp"
+                src="/image/assets/energy_home.png"
                 alt="lightning"
                 className="w-8 h-8 inline"
               />
@@ -248,7 +248,7 @@ function Home() {
             </div>
             <div className=" my-2 w-[fit-content] flex justify-center items-center gap-1" onClick={handleBoost}>
               <img
-                src="/image/assets/boost.webp"
+                src="/image/assets/boost.png"
                 alt="lightning"
                 className="w-8 h-8 inline"
               />

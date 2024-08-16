@@ -91,7 +91,7 @@ export default function Leaderboard() {
                   )}
                   <div className="flex-[1.5] py-2 z-10">
                     <img
-                      src="image/leaderboard/playerIcon.webp"
+                      src="image/leaderboard/playerIcon.png"
                       alt=""
                       className="w-[42px] h-[42px]"
                     />
@@ -104,7 +104,7 @@ export default function Leaderboard() {
                       {player.username}
                     </h1>
                     <div className="flex justify-start items-center gap-1">
-                      <img src="image/leaderboard/coin.webp" alt="" />
+                      <img src="image/leaderboard/coin.png" alt="" />
                       <h1 className="text-white text-[12px] ">
                         {formatNumberWithCommas(player.balance)}
                       </h1>
@@ -121,21 +121,21 @@ export default function Leaderboard() {
                     {index + 1}
                     {index == 0 && (
                       <img
-                        src="image/leaderboard/firstWinner.webp"
+                        src="image/leaderboard/firstWinner.png"
                         alt="winner1"
                         className="w-[35px] h-[35px] mx-[4px]"
                       />
                     )}
                     {index == 1 && (
                       <img
-                        src="image/leaderboard/secondWinner.webp"
+                        src="image/leaderboard/secondWinner.png"
                         alt="winner1"
                         className="w-[35px] h-[35px] mx-[4px]"
                       />
                     )}
                     {index == 2 && (
                       <img
-                        src="image/leaderboard/thirdWinner.webp"
+                        src="image/leaderboard/thirdWinner.png"
                         alt="winner1"
                         className="w-[35px] h-[35px] mx-[4px]"
                       />
@@ -147,7 +147,7 @@ export default function Leaderboard() {
             <div className="w-[90%] h-[80px] flex justify-between items-center  bg-gradient-to-br from-[#AE47FF] to-[#6929F1] rounded-[12px] px-[17.5px] fixed bottom-[100px]">
               <div className="flex-[1] py-4">
                 <img
-                  src="image/leaderboard/playerIcon.webp"
+                  src="image/leaderboard/playerIcon.png"
                   alt=""
                   className="w-[42px] h-[42px]"
                 />
@@ -160,7 +160,7 @@ export default function Leaderboard() {
                   {players[0]?.username}
                 </h1>
                 <div className="flex justify-start items-center gap-1">
-                  <img src="image/leaderboard/coin.webp" alt="" />
+                  <img src="image/leaderboard/coin.png" alt="" />
                   <h1 className="text-white text-[12px] ">
                     {formatNumberWithCommas(players[0]?.balance)}
                   </h1>
@@ -177,7 +177,7 @@ export default function Leaderboard() {
               <div className="w-full h-[36px] flex justify-between items-center">
                 <h1 className="text-white text-[18px]">Prize Pool</h1>
                 <img
-                  src="image/leaderboard/iconctt.webp"
+                  src="image/leaderboard/iconctt.png"
                   alt="iconctt"
                   className="w-[36px] h-[36px]"
                 />
@@ -224,7 +224,7 @@ export default function Leaderboard() {
                     className="flex flex-col justify-center min-w-[46%] max-w-[48%] items-center py-2 px-4 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7F36F7] border border-[#885ECE] rounded-[20px]"
                   >
                     <img
-                      src={`/image/leaderboard/${milestone.imgpath}.webp`}
+                      src={`/image/leaderboard/${milestone.imgpath}.png`}
                       alt=""
                       className="w-20 h-20"
                     />
@@ -264,7 +264,7 @@ export default function Leaderboard() {
                   </span>
                 </h1>
                 <img
-                  src="image/leaderboard/season.webp"
+                  src="image/leaderboard/season.png"
                   alt=""
                   className="w-16 h-[70px]"
                 />
@@ -276,7 +276,7 @@ export default function Leaderboard() {
               <div className="flex w-[95%] px-5 py-2 justify-between items-center rounded-[10px] bg-[#2D2865]">
                 <div className="flex justify-center items-center gap-2">
                   <img
-                    src="image/leaderboard/seasonUser.webp"
+                    src="image/leaderboard/seasonUser.png"
                     alt=""
                     className="w-8 h-[26px]"
                   />
@@ -321,7 +321,7 @@ export default function Leaderboard() {
                 <div className="flex justify-between items-center w-full">
                   <h1 className="text-white text-xl">Current Status</h1>
                   <img
-                    src="image/leaderboard/arrow.webp"
+                    src="image/leaderboard/arrow.png"
                     alt=""
                     className="w-4 h-2"
                   />
@@ -330,7 +330,7 @@ export default function Leaderboard() {
                   <div className="flex justify-between items-center gap-2 w-full">
                     <div className="flex gap-1 justify-center items-center">
                       <img
-                        src="image/leaderboard/point.webp"
+                        src="image/leaderboard/point.png"
                         alt=""
                         className="w-9 h-9"
                       />
@@ -350,7 +350,7 @@ export default function Leaderboard() {
                   <div className="flex justify-between items-center gap-2 w-full">
                     <div className="flex justify-center items-center gap-1">
                       <img
-                        src="image/leaderboard/rank.webp"
+                        src="image/leaderboard/rank.png"
                         alt=""
                         className="w-9 h-9"
                       />
@@ -417,7 +417,7 @@ export default function Leaderboard() {
       <Modal isOpen={isMilestoneModal} onClose={handleCloseMilestoneModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
           <img
-            src="image/assets/mission.webp"
+            src="image/assets/mission.png"
             alt=""
             className=" w-auto h-[80%]"
           />
