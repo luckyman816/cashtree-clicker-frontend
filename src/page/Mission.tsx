@@ -116,6 +116,11 @@ export default function Mission() {
         return daily_coins_received_status.day_6;
         break;
       case 7:
+        return daily_coins_received_status.day_7;
+        break;
+      default:
+        return true;
+        break;
     }
   };
   const handleReceiveDailyCoins = () => {
@@ -631,7 +636,7 @@ export default function Mission() {
                     className={`flex flex-col w-full h-[84px] gap-1 py-1 px-3 justify-center items-center rounded-[10px] bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] ${
                       getDailyCoinsReceivedStatusByIndex(index + 1)
                         ? `from-[#692df5] to-[#a546ff]`
-                        : diffDays === 1
+                        : (diffDays === 1 && getDailyCoinsReceivedStatusByIndex(index))
                         ? `from-[#4756E5] to-[#47C8FF]`
                         : `from-[#51229D] to-[#51229D]`
                     }`}
