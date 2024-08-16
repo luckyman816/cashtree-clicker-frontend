@@ -396,7 +396,7 @@ export default function Mission() {
       <div className="flex flex-col justify-center items-center gap-[30px] w-full mt-8">
         <div className="flex flex-col justify-center items-center">
           <img
-            src="image/assets/mission.png"
+            src="image/assets/mission.webp"
             alt="mission"
             className=" w-[180px] h-[180px]"
           />
@@ -415,7 +415,7 @@ export default function Mission() {
             >
               <div className="flex justify-center items-center gap-3">
                 <img
-                  src={`/image/mission/secretExtra.png`}
+                  src={`/image/mission/secretExtra.webp`}
                   alt=""
                   className="w-10 h-10"
                 />
@@ -424,7 +424,7 @@ export default function Mission() {
                 </div>
               </div>
               <img
-                src="/image/icon/arrowRight.png"
+                src="/image/icon/arrowRight.webp"
                 alt="arrowRight"
                 className="w-2 h-4"
               />
@@ -447,7 +447,7 @@ export default function Mission() {
                 >
                   <div className="flex justify-center items-center gap-3">
                     <img
-                      src={`/image/mission/${item.icon}.png`}
+                      src={`/image/mission/${item.icon}.webp`}
                       alt=""
                       className="w-10 h-10"
                     />
@@ -458,7 +458,7 @@ export default function Mission() {
                       <div className="flex justify-center items-center">
                         <div className="w-[21px] h-[21px] flex justify-start items-center">
                           <img
-                            src="/image/assets/coin.png"
+                            src="/image/assets/coin.webp"
                             alt="coin"
                             className="w-4 h-4 translate-y-[2px]"
                           />
@@ -470,7 +470,7 @@ export default function Mission() {
                     </div>
                   </div>
                   <img
-                    src="/image/icon/arrowRight.png"
+                    src="/image/icon/arrowRight.webp"
                     alt="arrowRight"
                     className="w-2 h-4"
                   />
@@ -496,7 +496,7 @@ export default function Mission() {
                 >
                   <div className="flex justify-center items-center gap-3">
                     <img
-                      src={`/image/mission/${item.icon}.png`}
+                      src={`/image/mission/${item.icon}.webp`}
                       alt=""
                       className="w-10 h-10 translate-y-[2px]"
                     />
@@ -508,7 +508,7 @@ export default function Mission() {
                         <div className="w-[21px] h-[21px] flex justify-start items-center">
                           <div className="w-[21px] h-[21px] flex justify-start items-center">
                             <img
-                              src="/image/assets/coin.png"
+                              src="/image/assets/coin.webp"
                               alt="coin"
                               className="w-4 h-4"
                             />
@@ -521,7 +521,7 @@ export default function Mission() {
                     </div>
                   </div>
                   <img
-                    src="/image/icon/arrowRight.png"
+                    src="/image/icon/arrowRight.webp"
                     alt="arrowRight"
                     className="w-2 h-4"
                   />
@@ -535,7 +535,7 @@ export default function Mission() {
       <Modal isOpen={isReceiveModalOpen} onClose={handleCloseReceiveModal}>
         <div className="flex flex-col items-center align-middle gap-[20px] px-3 py-3 w-full">
           <img
-            src="image/assets/sand-timer.png"
+            src="image/assets/sand-timer.webp"
             alt=""
             className=" w-12 h-12"
           />
@@ -578,7 +578,7 @@ export default function Mission() {
       <Modal isOpen={isDailyReward} onClose={handleCloseDailyRewardModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-3 w-full">
           <img
-            src="image/mission/dailyRewardModal.png"
+            src="image/mission/dailyRewardModal.webp"
             alt="dailyRewardModal"
             className=" w-auto h-[200px]"
           />
@@ -599,13 +599,13 @@ export default function Mission() {
                   {index == 0 ? (
                     daily_coins_received_status.day_1 ? (
                       <img
-                        src="image/mission/received.png"
+                        src="image/mission/received.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
                     ) : (
                       <img
-                        src="image/assets/coin.png"
+                        src="image/assets/coin.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
@@ -613,13 +613,13 @@ export default function Mission() {
                   ) : index == 1 ? (
                     daily_coins_received_status.day_2 ? (
                       <img
-                        src="image/mission/received.png"
+                        src="image/mission/received.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
                     ) : (
                       <img
-                        src="image/assets/coin.png"
+                        src="image/assets/coin.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
@@ -627,13 +627,13 @@ export default function Mission() {
                   ) : index == 2 ? (
                     daily_coins_received_status.day_3 ? (
                       <img
-                        src="image/mission/received.png"
+                        src="image/mission/received.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
                     ) : (
                       <img
-                        src="image/assets/coin.png"
+                        src="image/assets/coin.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
@@ -641,13 +641,13 @@ export default function Mission() {
                   ) : index == 3 ? (
                     daily_coins_received_status.day_4 ? (
                       <img
-                        src="image/mission/received.png"
+                        src="image/mission/received.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
                     ) : (
                       <img
-                        src="image/assets/coin.png"
+                        src="image/assets/coin.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
@@ -655,13 +655,13 @@ export default function Mission() {
                   ) : index == 4 ? (
                     daily_coins_received_status.day_5 ? (
                       <img
-                        src="image/mission/received.png"
+                        src="image/mission/received.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
                     ) : (
                       <img
-                        src="image/assets/coin.png"
+                        src="image/assets/coin.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
@@ -669,26 +669,26 @@ export default function Mission() {
                   ) : index == 5 ? (
                     daily_coins_received_status.day_6 ? (
                       <img
-                        src="image/mission/received.png"
+                        src="image/mission/received.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
                     ) : (
                       <img
-                        src="image/assets/coin.png"
+                        src="image/assets/coin.webp"
                         alt="coin"
                         className="w-8 h-8"
                       />
                     )
                   ) : daily_coins_received_status.day_7 ? (
                     <img
-                      src="image/mission/received.png"
+                      src="image/mission/received.webp"
                       alt="coin"
                       className="w-8 h-8"
                     />
                   ) : (
                     <img
-                      src="image/assets/coin.png"
+                      src="image/assets/coin.webp"
                       alt="coin"
                       className="w-8 h-8"
                     />
@@ -715,7 +715,7 @@ export default function Mission() {
       <Modal isOpen={isRetweetModal} onClose={handleCloseRetweetModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
-            src="image/assets/mission.png"
+            src="image/assets/mission.webp"
             alt=""
             className=" w-auto h-[200px]"
           />
@@ -732,7 +732,7 @@ export default function Mission() {
           </div>
 
           <div className="flex gap-2 justify-center items-center">
-            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <img src="image/assets/coin.webp" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
@@ -751,7 +751,7 @@ export default function Mission() {
       <Modal isOpen={isCommentModal} onClose={handleCloseCommentModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
-            src="image/assets/mission.png"
+            src="image/assets/mission.webp"
             alt=""
             className=" w-auto h-[200px]"
           />
@@ -769,7 +769,7 @@ export default function Mission() {
           </div>
 
           <div className="flex gap-2 justify-center items-center">
-            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <img src="image/assets/coin.webp" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
@@ -788,7 +788,7 @@ export default function Mission() {
       <Modal isOpen={isLikeModal} onClose={handleCloseLikeModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
-            src="image/assets/mission.png"
+            src="image/assets/mission.webp"
             alt=""
             className=" w-auto h-[200px]"
           />
@@ -806,7 +806,7 @@ export default function Mission() {
           </div>
 
           <div className="flex gap-2 justify-center items-center">
-            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <img src="image/assets/coin.webp" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
@@ -825,7 +825,7 @@ export default function Mission() {
       <Modal isOpen={isSecretExtra} onClose={handleCloseSecretExtraModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
-            src="image/mission/secretExtraModal.png"
+            src="image/mission/secretExtraModal.webp"
             alt="secretExtraModal"
             className=" w-auto h-[200px]"
           />
@@ -853,7 +853,7 @@ export default function Mission() {
       <Modal isOpen={isInstagram} onClose={handleCloseInstagramModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full ">
           <img
-            src="image/mission/instagramModal.png"
+            src="image/mission/instagramModal.webp"
             alt="instagramModal"
             className=" w-auto h-[200px]"
           />
@@ -871,7 +871,7 @@ export default function Mission() {
           </div>
 
           <div className="flex gap-2 justify-center items-center">
-            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <img src="image/assets/coin.webp" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
@@ -890,7 +890,7 @@ export default function Mission() {
       <Modal isOpen={isYoutube} onClose={handleCloseYoutubeModal}>
         <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
-            src="image/mission/youtubeModal.png"
+            src="image/mission/youtubeModal.webp"
             alt="youtubeModal"
             className=" w-auto h-[200px]"
           />
@@ -914,7 +914,7 @@ export default function Mission() {
           </div>
 
           <div className="flex gap-2 justify-center items-center">
-            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <img src="image/assets/coin.webp" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
@@ -936,7 +936,7 @@ export default function Mission() {
       >
         <div className="flex flex-col items-center align-middle justify-center gap-[20px] w-full">
           <img
-            src="image/mission/instagramModal.png"
+            src="image/mission/instagramModal.webp"
             alt="instagramModal"
             className=" w-auto h-[200px]"
           />
@@ -954,7 +954,7 @@ export default function Mission() {
           </div>
 
           <div className="flex gap-2 justify-center items-center">
-            <img src="image/assets/coin.png" alt="" className="w-12 h-12" />
+            <img src="image/assets/coin.webp" alt="" className="w-12 h-12" />
             <h1 className="text-2xl text-white font-bold">+25.000</h1>
           </div>
 
