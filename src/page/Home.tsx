@@ -47,8 +47,10 @@ function Home() {
   useEffect(() => {
     for (let i: number = 0; i < levelTargets.length; i++) {
       if (token < levelTargets[i]) {
-        dispatch(updateTapLevel(user.username, i));
         setTapLevel(i);
+        setLimit(energyLimit[i]);
+        dispatch(updateTapLevel(user.username, i));
+        dispatch(updateLimit(user.username, energyLimit[i]));
         setTargetDiff(levelTargets[i] - levelTargets[i - 1]);
         setProgressValue(token - levelTargets[i - 1]);
         break;
