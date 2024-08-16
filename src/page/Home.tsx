@@ -8,12 +8,7 @@ import axios from "../utils/api";
 import "../css/font.css";
 import "../css/spread.css";
 import { useNavigate } from "react-router-dom";
-import {
-  levelNames,
-  levelTargets,
-  levelBonus,
-  energyLimit,
-} from "../data";
+import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
 import {
   insertWallet,
   updateWallet,
@@ -81,16 +76,6 @@ function Home() {
   useEffect(() => {
     if (user.tap_level != 0 && !hasRunEffect) {
       setToken(user.balance);
-      setLimit(user.limit);
-      for (let i: number = 0; i < levelTargets.length; i++) {
-        if (token < levelTargets[i]) {
-          setTapLevel(i);
-          dispatch(updateTapLevel(user.username, i));
-          setTargetDiff(levelTargets[i] - levelTargets[i - 1]);
-          setProgressValue(token - levelTargets[i - 1]);
-          break;
-        }
-      }
       // setTapLevel(user.tap_level);
       setRemainedEnergy(user.energy);
       setHasRunEffect(true); // Mark the effect as run
