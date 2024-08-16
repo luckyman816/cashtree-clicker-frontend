@@ -43,16 +43,18 @@ function Home() {
   );
   useEffect(() => {
     setUserData();
+  }, []);
+  useEffect(() => {
     for (let i: number = 0; i < levelTargets.length; i++) {
       if (token < levelTargets[i]) {
-        setTapLevel(i);
         dispatch(updateTapLevel(user.username, i));
+        setTapLevel(i);
         setTargetDiff(levelTargets[i] - levelTargets[i - 1]);
         setProgressValue(token - levelTargets[i - 1]);
         break;
       }
     }
-  }, []);
+  });
   const setUserData = async () => {
     try {
       const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
