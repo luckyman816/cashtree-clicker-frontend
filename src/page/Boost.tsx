@@ -87,7 +87,7 @@ export default function Boost() {
           dispatch(updateRefillEnergy(username, refill_energy + 1, moment()));
           dispatch(updateWallet(username, (token - 3000), limit));
           for (let i: number = 0; i < levelTargets.length; i++) {
-            if ((token + 500) < levelTargets[i]) {
+            if ((token - 3000) < levelTargets[i]) {
               dispatch(updateTapLevel(username, i));
               dispatch(updateLimit(username, energyLimit[i]));
               break;
