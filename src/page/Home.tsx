@@ -51,7 +51,7 @@ function Home() {
         break;
       }
     }
-  });
+  },[]);
   const setUserData = async () => {
     try {
       const webapp = (window as any).Telegram?.WebApp.initDataUnsafe;
