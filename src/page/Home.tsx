@@ -43,17 +43,6 @@ function Home() {
   );
   useEffect(() => {
     setUserData();
-    setToken(user.balance);
-    setLimit(user.limit);
-    setTapLevel(user.tap_level);
-    for (let i: number = 0; i < levelTargets.length; i++) {
-      if (token < levelTargets[i]) {
-        setTapLevel(i);  
-        break;
-      }
-  }
-    setRemainedEnergy(user.energy);
-    setHasRunEffect(true);
   }, []);
   const setUserData = async () => {
     try {
@@ -80,7 +69,15 @@ function Home() {
     if (user.tap_level != 0 && !hasRunEffect) {
       setToken(user.balance);
       setLimit(user.limit);
-      setTapLevel(user.tap_level);
+      for (let i: number = 0; i < levelTargets.length; i++) {
+        if (token < levelTargets[i]) {
+          setTapLevel(i);
+          setTargetDiff(levelTargets[i] - levelTargets[i - 1]);
+          setProgressValue(token - levelTargets[i - 1]);
+          break;
+        }
+    }
+      // setTapLevel(user.tap_level);
       setRemainedEnergy(user.energy);
       setHasRunEffect(true); // Mark the effect as run
     }
