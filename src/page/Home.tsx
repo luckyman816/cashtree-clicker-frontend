@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, useRef } from "react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import Footer from "../component/Footer";
 import ProgressBar from "../component/ProgressBar";
 import { dispatch, useSelector } from "../store";
@@ -8,7 +8,12 @@ import axios from "../utils/api";
 import "../css/font.css";
 import "../css/spread.css";
 import { useNavigate } from "react-router-dom";
-import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
+import {
+  levelNames,
+  levelTargets,
+  levelBonus,
+  energyLimit,
+} from "../data";
 import {
   insertWallet,
   updateWallet,
@@ -22,7 +27,7 @@ import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
 import { addDailyBoost } from "../store/reducers/dailyBoost";
 function Home() {
   const navigate = useNavigate();
-  const user = useSelector(state => state.wallet.user);
+  const user = useSelector((state) => state.wallet.user);
   const [imgStatus, setImgStatus] = useState(false);
   const [tapLevel, setTapLevel] = useState<number>(0);
   const [username, setUsername] = useState<string>("");
@@ -30,10 +35,25 @@ function Home() {
   const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
   const [limit, setLimit] = useState<number>(0);
   const [hasRunEffect, setHasRunEffect] = useState(false);
-  const [progressValue, setProgressValue] = useState<number>(token - levelTargets[tapLevel - 1]);
-  const [targetDiff, setTargetDiff] = useState<number>(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
+  const [progressValue, setProgressValue] = useState<number>(
+    token - levelTargets[tapLevel - 1]
+  );
+  const [targetDiff, setTargetDiff] = useState<number>(
+    levelTargets[tapLevel] - levelTargets[tapLevel - 1]
+  );
   useEffect(() => {
     setUserData();
+    setToken(user.balance);
+    setLimit(user.limit);
+    setTapLevel(user.tap_level);
+    for (let i: number = 0; i < levelTargets.length; i++) {
+      if (token < levelTargets[i]) {
+        setTapLevel(i);  
+        break;
+      }
+  }
+    setRemainedEnergy(user.energy);
+    setHasRunEffect(true);
   }, []);
   const setUserData = async () => {
     try {
@@ -41,8 +61,12 @@ function Home() {
       console.log("=========>webapp", webapp);
       if (webapp) {
         setUsername(webapp["user"]["username"]);
-        await axios.post(`/vibe/add,`, { username: webapp["user"]["username"] });
-        await axios.post(`/earnings/add`, { username: webapp["user"]["username"] });
+        await axios.post(`/vibe/add,`, {
+          username: webapp["user"]["username"],
+        });
+        await axios.post(`/earnings/add`, {
+          username: webapp["user"]["username"],
+        });
         await dispatch(insertWallet(webapp["user"]["username"]));
         await dispatch(addDailyCoinsReceivedStatus(webapp["user"]["username"]));
         await dispatch(addDailyBoost(webapp["user"]["username"]));
@@ -51,7 +75,7 @@ function Home() {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
   useEffect(() => {
     if (user.tap_level != 0 && !hasRunEffect) {
       setToken(user.balance);
@@ -63,9 +87,9 @@ function Home() {
   }, [user, hasRunEffect]);
   console.log("--user.balance--->", user.balance);
   useEffect(() => {
-    setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1])
-    setProgressValue(token - levelTargets[tapLevel - 1])
-  }, [tapLevel, token])
+    setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1]);
+    setProgressValue(token - levelTargets[tapLevel - 1]);
+  }, [tapLevel, token]);
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
@@ -99,7 +123,7 @@ function Home() {
     newDiv.style.left = `${x + 50}px`;
     newDiv.style.top = `${y}px`;
     newDiv.style.color = "white";
-    newDiv.style.fontFamily = "archivo-bold"
+    newDiv.style.fontFamily = "archivo-bold";
     newDiv.style.zIndex = "30";
     newDiv.className =
       "animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable";
@@ -110,16 +134,20 @@ function Home() {
     return () => clearTimeout(interval);
   };
 
-  console.log("progressValuebar", progressValue, (progressValue * 100 / (targetDiff)));
+  console.log(
+    "progressValuebar",
+    progressValue,
+    (progressValue * 100) / targetDiff
+  );
 
   useEffect(() => {
     if (tapLevel != 0) {
       const interval = setInterval(() => {
         if (username && remainedEnergy < limit) {
           dispatch(updateEnergy(username, remainedEnergy + 1));
-          setRemainedEnergy(remainedEnergy + 1)
+          setRemainedEnergy(remainedEnergy + 1);
         }
-      }, ((11 - tapLevel) * 1000));
+      }, (11 - tapLevel) * 1000);
       return () => clearInterval(interval);
     }
   }, [username, remainedEnergy, limit, tapLevel]);
@@ -127,20 +155,30 @@ function Home() {
   const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
     if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
       setScore(`+${tapLevel}`);
-      if ((token + tapLevel) > levelTargets[tapLevel]) {
+      if (token + tapLevel > levelTargets[tapLevel]) {
         setToken(levelTargets[tapLevel]);
         setTapLevel(tapLevel + 1);
         setLimit(energyLimit[tapLevel + 1]);
-        dispatch(updateWallet(username, levelTargets[tapLevel], remainedEnergy - tapLevel)).then(() => {
+        dispatch(
+          updateWallet(
+            username,
+            levelTargets[tapLevel],
+            remainedEnergy - tapLevel
+          )
+        ).then(() => {
           if (tapLevel < 10) {
             dispatch(updateTapLevel(username, tapLevel + 1)).then(() => {
-              setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1]);
+              setTargetDiff(
+                levelTargets[tapLevel] - levelTargets[tapLevel - 1]
+              );
             });
-            dispatch(updateBalance(username, token + levelBonus[tapLevel - 1])).then(() => {
+            dispatch(
+              updateBalance(username, token + levelBonus[tapLevel - 1])
+            ).then(() => {
               setToken(token + levelBonus[tapLevel - 1]);
               toast.success("Level up! 🎉🎉🎉 You received bonus points!");
-            })
-            dispatch(updateLimit(username, energyLimit[tapLevel + 1]))
+            });
+            dispatch(updateLimit(username, energyLimit[tapLevel + 1]));
           } else {
             toast.error("Maximum level reached!");
           }
@@ -153,12 +191,14 @@ function Home() {
           dispatch(updateWallet(username, token + tapLevel, 0));
           setRemainedEnergy(0);
         } else {
-          dispatch(updateWallet(username, token + tapLevel, remainedEnergy - tapLevel));
+          dispatch(
+            updateWallet(username, token + tapLevel, remainedEnergy - tapLevel)
+          );
           setRemainedEnergy(remainedEnergy - tapLevel);
         }
       }
       handleClick(event);
-    } else if (remainedEnergy - tapLevel <= 0){
+    } else if (remainedEnergy - tapLevel <= 0) {
       toast.error("Not enough energy!");
     }
   };
@@ -169,11 +209,11 @@ function Home() {
     setImgStatus(false);
   };
   const handleBoost = () => {
-    navigate('/boost');
-  }
+    navigate("/boost");
+  };
   const handleLevelUp = () => {
-    navigate('/level');
-  }
+    navigate("/level");
+  };
   console.log("imgStatus", imgStatus);
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
@@ -185,33 +225,58 @@ function Home() {
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-[11px] text-[#FFC107]">Earn Per Tap</h2>
               <div className="flex justify-start items-center gap-1">
-                <h3 className="text-sm text-[white]" style={{ fontFamily: "archivo-bold" }}>+{tapLevel} Poin</h3>
+                <h3
+                  className="text-sm text-[white]"
+                  style={{ fontFamily: "archivo-bold" }}
+                >
+                  +{tapLevel} Poin
+                </h3>
                 <img src="/image/assets/info.webp" alt="" className="w-3 h-3" />
               </div>
             </div>
           </div>
           <div className="w-[1px] h-[30px] bg-white"></div>
           <div className=" flex justify-center items-center p-2 ">
-            <img src="/image/assets/earnLevel.webp" alt="" className=" w-11 h-11" />
+            <img
+              src="/image/assets/earnLevel.webp"
+              alt=""
+              className=" w-11 h-11"
+            />
             <div className="flex flex-col justify-center items-center">
               <h2 className=" text-[11px] text-[#FFC107]">Earn to level up</h2>
-              <h3 className="text-sm text-[white] font-bold" style={{ fontFamily: "archivo-bold" }}>+{formatNumberWithCommas(levelTargets[tapLevel])}k</h3>
+              <h3
+                className="text-sm text-[white] font-bold"
+                style={{ fontFamily: "archivo-bold" }}
+              >
+                +{formatNumberWithCommas(levelTargets[tapLevel])}k
+              </h3>
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col w-full justify-center items-center p-3 gap-2">
-        <ProgressBar value={(progressValue * 100 / targetDiff)} />
+        <ProgressBar value={(progressValue * 100) / targetDiff} />
         <div className="flex w-full justify-between items-center p-3">
-          <h1 className="text-[12px] text-white cursor-pointer" onClick={handleLevelUp}>Level: {levelNames[tapLevel - 1]} &nbsp; &#8250;</h1>
+          <h1
+            className="text-[12px] text-white cursor-pointer"
+            onClick={handleLevelUp}
+          >
+            Level: {levelNames[tapLevel - 1]} &nbsp; &#8250;
+          </h1>
           <h1 className="text-[12px] text-white">{tapLevel}/10</h1>
         </div>
       </div>
       <div className="flex justify-center items-center relative h-[45vh] w-full">
-        <img className="flex justify-center items-center absolute w-auto h-[92%] z-10 bg-cover bg-no-repeat bottom-[15%]" src="/image/tap-image/cashtree_bg.webp">
-        </img>
+        <img
+          className="flex justify-center items-center absolute w-auto h-[92%] z-10 bg-cover bg-no-repeat bottom-[15%]"
+          src="/image/tap-image/cashtree_bg.webp"
+        ></img>
         <div className="absolute flex justify-center items-center z-20 top-0 mb-2 w-full">
-          <img src="image/assets/coin.webp" alt="" className=" w-[15%] h-auto" />
+          <img
+            src="image/assets/coin.webp"
+            alt=""
+            className=" w-[15%] h-auto"
+          />
           <h3
             className=" text-[46px] text-white"
             style={{ fontFamily: " archivo-bold" }}
@@ -219,16 +284,20 @@ function Home() {
             {formatNumberWithCommas(token)}
           </h3>
         </div>
-        <div ref={bodyRef} className={`absolute bottom-[-20%] w-auto h-full z-50 ${imgStatus ? " p-3" : ""}`} onClick={handleTap}>
+        <div
+          ref={bodyRef}
+          className={`absolute bottom-[-20%] w-auto h-full z-50 ${
+            imgStatus ? " p-3" : ""
+          }`}
+          onClick={handleTap}
+        >
           <img
-            className={` rounded-full w-auto h-[85%] ${remainedEnergy > 0
-              ? "cursor-pointer"
-              : " opacity-50 "
-              } drop-shadow-[0_20px_50px_#9D3AFFCC]`}
+            className={` rounded-full w-auto h-[85%] ${
+              remainedEnergy > 0 ? "cursor-pointer" : " opacity-50 "
+            } drop-shadow-[0_20px_50px_#9D3AFFCC]`}
             src="/image/tap-image/cashtree.webp"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseLeave}
-            
           />
         </div>
       </div>
@@ -246,15 +315,16 @@ function Home() {
                 {remainedEnergy} &#8725; {limit}
               </p>
             </div>
-            <div className=" my-2 w-[fit-content] flex justify-center items-center gap-1" onClick={handleBoost}>
+            <div
+              className=" my-2 w-[fit-content] flex justify-center items-center gap-1"
+              onClick={handleBoost}
+            >
               <img
                 src="/image/assets/boost.webp"
                 alt="lightning"
                 className="w-8 h-8 inline"
               />
-              <p className="text-[16px] text-[#F7BB12]">
-                Boost
-              </p>
+              <p className="text-[16px] text-[#F7BB12]">Boost</p>
             </div>
           </div>
         </div>

@@ -11,6 +11,7 @@ export default function Level() {
     const [tapLevel, setTapLevel] = useState<number>(tapLevelState);
     useEffect(() => {
         setTapLevel(tapLevelState);
+        
     }, [tapLevelState]);
 
     return (

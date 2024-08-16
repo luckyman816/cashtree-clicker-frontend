@@ -63,7 +63,24 @@ export const users = [
 export const levelNames = ['Newbie', 'Rookie', 'Beginner', 'Intermediate', 'Expert', 'Master', 'Grandmaster', 'Legendary', 'Mythical', 'Conqueror'];
 export const levelTargets = [0, 10000, 20000, 50000, 100000, 200000, 500000, 1000000, 3000000, 5000000, 10000000];
 export const levelBonus = [1000, 2000, 5000, 10000, 20000, 35000, 50000, 75000, 150000];
-export const energyLimit = [5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 10000]
+export const energyLimit = [5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 10000];
+
+export function tokenToLevel(token: number){
+    for (let i: number = 0; i < levelTargets.length; i++) {
+        if (token < levelTargets[i]) {
+            return i;
+        }
+    }
+}
+
+export function tokenToProgress(token: number) {
+    for (let i = 0; i < levelTargets.length; i++) {
+        if (token < levelTargets[i]) {
+            return (token - levelTargets[i - 1]) * 100 / (levelTargets[i] - levelTargets[i - 1]);
+        }
+    }
+}
+
 export const dailyCheckItems = [
     {
       id: 1,
