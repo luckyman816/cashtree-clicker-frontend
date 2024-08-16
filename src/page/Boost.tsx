@@ -70,7 +70,7 @@ export default function Boost() {
       const dateDiffDouble = double_points_date
         ? currentDateTime.diff(double_points_date, "seconds")
         : 0;
-      setDiffDaysRefill(Math.floor(dateDiffRefill / (60 * 60 * 24)) + 1);
+      setDiffDaysRefill(Math.floor(dateDiffRefill / (60 * 60 * 24)));
       setDiffDaysDouble(Math.floor(dateDiffDouble / (60 * 60 * 24)));
       setDiffMinutesDouble(Math.floor((dateDiffDouble % (60 * 60)) / 60)+15);
     }
@@ -79,13 +79,20 @@ export default function Boost() {
   const handleRefillEnergy = () => {
     console.log("-----full energy💰🏆💪------>", limit);
     console.log("-----full energy💰🏆💪???------>", diffDaysRefill);
-    if (diffDaysRefill == 0) {
+    if (diffDaysRefill != 0) {
       if (refill_energy + 1 > 3) {
         toast.error("Maximum value reached!");
       } else {
         if (token > 3000) {
           dispatch(updateRefillEnergy(username, refill_energy + 1, moment()));
           dispatch(updateWallet(username, (token - 3000), limit));
+          for (let i: number = 0; i < levelTargets.length; i++) {
+            if ((token + 500) < levelTargets[i]) {
+              dispatch(updateTapLevel(username, i));
+              dispatch(updateLimit(username, energyLimit[i]));
+              break;
+            }
+          }
           toast.success("Refilled successfully");
         } else  {
           toast.error("Insufficient balance!");
