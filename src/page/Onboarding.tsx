@@ -13,11 +13,11 @@ const Onboarding = () => {
             </div>
             <div className="w-full h-full justify-end items-center flex flex-col gap-1 z-20 px-[30px] pb-[60px]">
                 <div className="w-full flex-1 justify-center items-end flex z-20">
-                    {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.webp" alt="" className="w-auto h-[90%]" />
-                        : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.webp" alt="" className="w-auto h-[90%]" />
-                            : pageNum == 3 ? <img src="/image/onboarding/onboarding_3.webp" alt="" className="w-auto h-[90%]" />
-                                : pageNum == 4 ? <img src="/image/onboarding/onboarding_4.webp" alt="" className="w-auto h-[90%]" /> :
-                                    <img src="/image/onboarding/onboarding_5.webp" alt="" className="w-auto h-[90%]" />}
+                    {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.webp" alt="" className="w-auto h-[70%] max-h-[300px]" />
+                        : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.webp" alt="" className="w-auto h-[70%] max-h-[300px]" />
+                            : pageNum == 3 ? <img src="/image/onboarding/onboarding_3.webp" alt="" className="w-auto h-[70%] max-h-[300px]" />
+                                : pageNum == 4 ? <img src="/image/onboarding/onboarding_4.webp" alt="" className="w-auto h-[70%] max-h-[300px]" /> :
+                                    <img src="/image/onboarding/onboarding_5.webp" alt="" className="w-auto h-[70%] max-h-[300px]" />}
 
                 </div>
                 <div className="w-full flex justify-center items-center z-20">
