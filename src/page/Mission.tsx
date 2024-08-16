@@ -78,7 +78,7 @@ export default function Mission() {
       const dateDiff = daily_coins
         ? currentDateTime.diff(daily_coins, "seconds")
         : 0;
-      setDiffDays(Math.floor(dateDiff / (60 * 60 * 24)));
+      setDiffDays(Math.floor(dateDiff / (60 * 60 * 24)) + 1);
       setDiffHours(Math.floor((dateDiff % (60 * 60 * 24)) / (60 * 60)));
       setDiffMinutes(Math.floor((dateDiff % (60 * 60)) / 60));
       setDiffSeconds(Math.floor(dateDiff % 60));
@@ -624,13 +624,13 @@ export default function Mission() {
                   }] rounded-[10px]`}
                   style={{
                     background:
-                      "linear-gradient(340deg,rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.4)",
+                      "linear-gradient(340deg,rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.6)",
                   }}
                 >
                   <div
                     className={`flex flex-col w-full h-[84px] gap-1 py-1 px-3 justify-center items-center rounded-[10px] bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] ${
                       getDailyCoinsReceivedStatusByIndex(index + 1)
-                        ? `from-[#8137F9] to-[#C8A2FB]`
+                        ? `from-[#692df5] to-[#a546ff]`
                         : diffDays === 1
                         ? `from-[#4756E5] to-[#47C8FF]`
                         : `from-[#51229D] to-[#51229D]`
