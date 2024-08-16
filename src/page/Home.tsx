@@ -143,6 +143,7 @@ function Home() {
     if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
       setScore(`+${tapLevel}`);
       console.log("---------------------------------->", tapLevel);
+      console.log("---------------------------------->", limit);
       if (token + tapLevel > levelTargets[tapLevel]) {
         setToken(levelTargets[tapLevel]);
         setTapLevel(tapLevel + 1);
@@ -167,6 +168,7 @@ function Home() {
               toast.success("Level up! 🎉🎉🎉 You received bonus points!");
             });
             dispatch(updateLimit(username, energyLimit[tapLevel + 1]));
+            setLimit(energyLimit[tapLevel + 1]);
           } else {
             toast.error("Maximum level reached!");
           }
