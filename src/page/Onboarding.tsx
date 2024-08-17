@@ -12,7 +12,7 @@ const Onboarding = () => {
             <div className=" absolute w-full h-full right-0 top-0 z-10" style={{ backgroundImage: "url(/image/onboarding/gradient.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
             </div>
             <div className="w-full h-full justify-between items-center flex flex-col gap-1 z-20 px-[30px] pb-[30px]">
-                <div className="w-full flex-1 justify-center items-start flex z-20">
+                <div className="w-full flex-1 justify-center items-center flex z-20">
                     {pageNum == 1 ? <img src="/image/onboarding/onboarding_1.png" alt="" className="w-auto h-[70%] max-h-[350px]" />
                         : pageNum == 2 ? <img src="/image/onboarding/onboarding_2.png" alt="" className="w-auto h-[70%] max-h-[350px]" />
                             : pageNum == 3 ? <img src="/image/onboarding/onboarding_3.png" alt="" className="w-auto h-[70%] max-h-[350px]" />
