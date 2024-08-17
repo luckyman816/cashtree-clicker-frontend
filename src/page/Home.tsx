@@ -307,7 +307,7 @@ function Home() {
         if (token + tapLevel > levelTargets[tapLevel]) {
           setToken(levelTargets[tapLevel]);
           setTapLevel(tapLevel + 1);
-          setLimit(energyLimit[tapLevel + 1]);
+          setLimit(energyLimit[tapLevel]);
           dispatch(
             updateWallet(
               username,
@@ -327,8 +327,8 @@ function Home() {
                 setToken(token + levelBonus[tapLevel - 1]);
                 toast.success("Level up! 🎉🎉🎉 You received bonus points!");
               });
-              dispatch(updateLimit(username, energyLimit[tapLevel + 1]));
-              setLimit(energyLimit[tapLevel + 1]);
+              dispatch(updateLimit(username, energyLimit[tapLevel]));
+              setLimit(energyLimit[tapLevel]);
             } else {
               toast.error("Maximum level reached!");
             }
