@@ -27,7 +27,7 @@ function Home() {
   const [tapLevel, setTapLevel] = useState<number>(0);
   const [username, setUsername] = useState<string>("");
   const [token, setToken] = useState<number>(0);
-  const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
+  const [remainedEnergy, setRemainedEnergy] = useState<number>(5000);
   const [limit, setLimit] = useState<number>(0);
   const [hasRunEffect, setHasRunEffect] = useState(false);
   const [progressValue, setProgressValue] = useState<number>(
@@ -224,10 +224,10 @@ function Home() {
           dispatch(updateEnergy(username, remainedEnergy + tapLevel));
           setRemainedEnergy(remainedEnergy + tapLevel);
         }
-        if (remainedEnergy > limit) {
-          dispatch(updateEnergy(username, limit));
-          setRemainedEnergy(limit);
-        }
+        // if (remainedEnergy > limit) {
+        //   dispatch(updateEnergy(username, limit));
+        //   setRemainedEnergy(limit);
+        // }
       // }, (11 - tapLevel) * 1000);
       },  1000);
       return () => clearInterval(interval);
