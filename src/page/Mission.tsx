@@ -78,7 +78,12 @@ export default function Mission() {
       const dateDiff = daily_coins
         ? currentDateTime.diff(daily_coins, "seconds")
         : 0;
-      setDiffDays(Math.floor(dateDiff / (60 * 60 * 24)));
+      for(let i = 1; i <= 7; i++) {
+        if(getDailyCoinsReceivedStatusByIndex(i)===false&&getDailyCoinsReceivedStatusByIndex(i-1)===true) {
+          setDiffDays(Math.floor(dateDiff / (60 * 60 * 24)) - i + 1);
+
+        }
+      }
       setDiffHours(Math.floor((dateDiff % (60 * 60 * 24)) / (60 * 60)));
       setDiffMinutes(Math.floor((dateDiff % (60 * 60)) / 60));
       setDiffSeconds(Math.floor(dateDiff % 60));
@@ -182,6 +187,7 @@ export default function Mission() {
       dispatch(updateDailyCoins(username, moment())).then(() => {
         setIsReceiveModalOpen(false);
       });
+
     } else if (diffDays > 1) {
       toast.error("The time has already passed! Plesae reset daily coins!");
     } else if (diffDays === 0) {
