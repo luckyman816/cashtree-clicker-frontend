@@ -218,7 +218,7 @@ export default function Boost() {
                 alt=""
                 className="w-10 h-10"
               />
-              <div className="flex flex-col gap-1 justify-start items-start">
+              <div className="flex flex-col justify-start items-start">
                 <h3 className="text-sm text-white">Energy Refrill 3000 P</h3>
                 <h3 className="text-[13px] text-white">
                   {refill_energy}/3 available
@@ -237,7 +237,7 @@ export default function Boost() {
                 alt=""
                 className="w-10 h-10 drop-shadow-[0_20px_50px_#7131D6]"
               />
-              <div className="flex flex-col gap-1 justify-start items-start">
+              <div className="flex flex-col justify-start items-start">
                 <h3 className="text-sm text-white">
                   Double Points for 15 Minutes 5000 P
                 </h3>
