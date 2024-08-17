@@ -255,7 +255,7 @@ export default function Boost() {
         isOpen={isRefillEnergyModalOpen}
         onClose={handleCloseRefillEnergyModal}
       >
-        <div className="flex flex-col items-center align-middle rounded-[20px] gap-5 my-5 h-full">
+        <div className="flex flex-col items-center align-middle rounded-[20px] gap-5 my-5 h-full pl-[18px]">
           <img
             src="image/assets/fillEnergyModal.webp"
             alt=""
@@ -267,7 +267,7 @@ export default function Boost() {
             purchases per day
           </p>
           <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
             onClick={handleRefillEnergy}
           >
             <span className="flex justify-center items-center text-white text-xl">
