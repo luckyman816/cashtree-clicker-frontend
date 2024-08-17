@@ -77,7 +77,8 @@ export default function Boost() {
   };
   console.log("-----day----->", diffDaysDouble, diffDaysRefill);
   const handleRefillEnergy = () => {
-    console.log("-----full energy💰🏆💪------>", limit_state);
+    console.log("-----full energy💰🏆💪------>", limit);
+    console.log("-----full energy💰🏆💪???------>", diffDaysRefill);
     if (diffDaysRefill == 0) {
       if (refill_energy + 1 > 3) {
         toast.error("Maximum value reached!");
@@ -97,7 +98,7 @@ export default function Boost() {
           toast.error("Insufficient balance!");
         }
       }
-    }else {
+    } else {
       toast.error("Please wait next day!")
     }
     setIsRefillEnergyModalOpen(false);
@@ -111,7 +112,7 @@ export default function Boost() {
           dispatch(updateDoublePoints(username, double_points + 1, moment()));
           dispatch(updateBalance(username, token + 500))
           for (let i: number = 0; i < levelTargets.length; i++) {
-            if ((token - 3000) < levelTargets[i]) {
+            if ((token + 500) < levelTargets[i]) {
               dispatch(updateTapLevel(username, i));
               dispatch(updateLimit(username, energyLimit[i]));
               break;
