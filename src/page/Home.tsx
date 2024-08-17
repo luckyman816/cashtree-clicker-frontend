@@ -75,7 +75,10 @@ function Home() {
   };
   useEffect(() => {
     for (let i: number = 0; i < levelTargets.length; i++) {
-      if (token < levelTargets[i]) {
+      if (user.balance < levelTargets[i]) {
+        console.log('====================================');
+        console.log('levelTargets[i]', levelTargets[i]);
+        console.log('====================================');
         dispatch(updateTapLevel(username, i));
         dispatch(updateLimit(username, energyLimit[i]));
         break;
