@@ -79,7 +79,7 @@ export default function Boost() {
   const handleRefillEnergy = () => {
     console.log("-----full energy💰🏆💪------>", limit);
     console.log("-----full energy💰🏆💪???------>", diffDaysRefill);
-    if (diffDaysRefill != 0) {
+    if (diffDaysRefill == 0) {
       if (refill_energy + 1 > 3) {
         toast.error("Maximum value reached!");
       } else {
@@ -98,6 +98,8 @@ export default function Boost() {
           toast.error("Insufficient balance!");
         }
       }
+    } else {
+      toast.error("Please wait next day!")
     }
     setIsRefillEnergyModalOpen(false);
   };
