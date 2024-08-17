@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, useRef } from "react";
-// import toast, { Toaster } from "react-hot-toast";
-import  { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import Footer from "../component/Footer";
 import ProgressBar from "../component/ProgressBar";
 import { dispatch, useSelector } from "../store";
@@ -9,15 +8,14 @@ import axios from "../utils/api";
 import "../css/font.css";
 import "../css/spread.css";
 import { useNavigate } from "react-router-dom";
-import { levelNames, levelTargets, energyLimit } from "../data";
-// import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
+import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
 import {
   insertWallet,
   updateWallet,
   updateEnergy,
   getWallet,
   updateTapLevel,
-  // updateBalance,
+  updateBalance,
   updateLimit,
 } from "../store/reducers/wallet";
 import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
@@ -29,7 +27,7 @@ function Home() {
   const [tapLevel, setTapLevel] = useState<number>(0);
   const [username, setUsername] = useState<string>("");
   const [token, setToken] = useState<number>(0);
-  const [remainedEnergy, setRemainedEnergy] = useState<number>(5000);
+  const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
   const [limit, setLimit] = useState<number>(0);
   const [hasRunEffect, setHasRunEffect] = useState(false);
   const [progressValue, setProgressValue] = useState<number>(
@@ -166,9 +164,10 @@ function Home() {
     // Get the bounding rectangle of the current target
     const rect = event.currentTarget.getBoundingClientRect();
     
+    
     // Calculate the position of the touch relative to the element
-    const x = touch.clientX - rect.left;
-    const y = touch.clientY - rect.top;
+    const x =  Math.random() *(touch.clientX - rect.left);
+    const y = Math.random() * (touch.clientY - rect.top);
   
     // Create a style element for the animation
     const styleElement = document.createElement("style");
@@ -211,36 +210,6 @@ function Home() {
   
     // Cleanup function to clear the timeout
     return () => clearTimeout(interval);
-  };
-  const [isTouching, setIsTouching] = useState(false);
-  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (event.touches.length === 1) {
-      setIsTouching(true);
-      handleTouch(event);
-    } else {
-      setIsTouching(false);
-    }
-  };
-  const handleTouchEnd = () => {
-    if (isTouching) {
-      if (remainedEnergy > 0 && token < 1000000000) {
-        setScore(`+${tapLevel}`);
-        if (token + tapLevel > 1000000000) {
-          setToken(1000000000);
-          dispatch(updateWallet(username, 1000000000, remainedEnergy - tapLevel));
-        } else {
-          setToken(token + tapLevel);
-          if (remainedEnergy - tapLevel < 0) {
-            dispatch(updateWallet(username, token + tapLevel, 0));
-            setRemainedEnergy(0);
-          } else {
-            dispatch(updateWallet(username, token + tapLevel, remainedEnergy - tapLevel));
-            setRemainedEnergy(remainedEnergy - tapLevel);
-          }
-        }
-      }
-    }
-    setIsTouching(false);
   };
   console.log(
     "progressValuebar",
@@ -318,6 +287,62 @@ function Home() {
   //     toast.error("Not enough energy!");
   //   }
   // };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    setImgStatus(false);
+    if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
+      setScore(`+${tapLevel}`);
+      console.log("---------------------------------->", tapLevel);
+      console.log("---------------------------------->", limit);
+      if (token + tapLevel > levelTargets[tapLevel]) {
+        setToken(levelTargets[tapLevel]);
+        setTapLevel(tapLevel + 1);
+        setLimit(energyLimit[tapLevel + 1]);
+        dispatch(
+          updateWallet(
+            username,
+            levelTargets[tapLevel],
+            remainedEnergy - tapLevel
+          )
+        ).then(() => {
+          if (tapLevel < 10) {
+            dispatch(updateTapLevel(username, tapLevel + 1)).then(() => {
+              setTargetDiff(
+                levelTargets[tapLevel] - levelTargets[tapLevel - 1]
+              );
+            });
+            dispatch(
+              updateBalance(username, token + levelBonus[tapLevel - 1])
+            ).then(() => {
+              setToken(token + levelBonus[tapLevel - 1]);
+              toast.success("Level up! 🎉🎉🎉 You received bonus points!");
+            });
+            dispatch(updateLimit(username, energyLimit[tapLevel + 1]));
+            setLimit(energyLimit[tapLevel + 1]);
+          } else {
+            toast.error("Maximum level reached!");
+          }
+        });
+        setProgressValue(0);
+      } else {
+        setToken(token + tapLevel);
+        setProgressValue((prevValue) => prevValue + 1);
+        if (remainedEnergy - tapLevel < 0) {
+          dispatch(updateWallet(username, token + tapLevel, 0));
+          setRemainedEnergy(0);
+        } else {
+          dispatch(
+            updateWallet(username, token + tapLevel, remainedEnergy - tapLevel)
+          );
+          setRemainedEnergy(remainedEnergy - tapLevel);
+        }
+      }
+      handleTouch(event);
+    } else if (remainedEnergy - tapLevel <= 0) {
+      toast.error("Not enough energy!");
+    }
+  }
+
   const handleMouseDown = () => {
     setImgStatus(true);
   };
@@ -414,7 +439,7 @@ function Home() {
             src="/image/tap-image/cashtree.webp"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseLeave}
-            onTouchStart={handleTouchStart}
+            onTouchStart={handleMouseDown}
             onTouchEnd={handleTouchEnd}
           />
         </div>
