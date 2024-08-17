@@ -77,12 +77,13 @@ function Home() {
     for (let i: number = 0; i < levelTargets.length; i++) {
       if (user.balance < levelTargets[i]) {
         dispatch(updateTapLevel(username, i));
-        dispatch(updateLimit(username, energyLimit[i]));
-        console.log('====================================');
-        console.log('tap_level', tapLevel);
-        console.log('====================================');
+        dispatch(updateLimit(username, energyLimit[i - 1]));
         setTapLevel(i);
         setLimit(energyLimit[i - 1]);
+        console.log('====================================');
+        console.log('user.balance', user.balance);
+        console.log('tap_level', tapLevel);
+        console.log('====================================');
         break;
       }
     }
@@ -91,7 +92,7 @@ function Home() {
     if (user.tap_level != 0 && !hasRunEffect) {
       setToken(user.balance);
       for (let i: number = 0; i < levelTargets.length; i++) {
-        if (token < levelTargets[i]) {
+        if (user.balance < levelTargets[i]) {
           dispatch(updateTapLevel(username, i));
           dispatch(updateLimit(username, energyLimit[i - 1]));
           setTapLevel(i);
