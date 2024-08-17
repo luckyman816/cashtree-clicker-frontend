@@ -155,7 +155,91 @@ function Home() {
 
     return () => clearTimeout(interval);
   };
-
+  const handleTouch = (event: React.TouchEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    
+    // Get the first touch point
+    const touch = event.touches[0];
+    
+    // Get the bounding rectangle of the current target
+    const rect = event.currentTarget.getBoundingClientRect();
+    
+    // Calculate the position of the touch relative to the element
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+  
+    // Create a style element for the animation
+    const styleElement = document.createElement("style");
+    document.head.appendChild(styleElement);
+  
+    // Insert keyframes for the fade-out animation
+    styleElement.sheet &&
+      styleElement.sheet.insertRule(
+        "@keyframes fade-out-top-right {0% {opacity: 1; transform: translateY(0); } 100% {opacity: 0; transform: translateY(-100%);}}",
+        0
+      );
+  
+    // Create a new div for the coin display
+    const newDiv = document.createElement("div");
+    newDiv.textContent = `${score}`;
+    newDiv.style.backgroundImage = "url('image/dollar.png')";
+    newDiv.style.backgroundRepeat = "no-repeat";
+    newDiv.style.backgroundPosition = "center";
+    newDiv.style.fontSize = "30px";
+    newDiv.style.paddingLeft = "30px";
+    newDiv.style.display = "flex";
+    newDiv.style.justifyContent = "center";
+    newDiv.style.alignItems = "center";
+    newDiv.style.backgroundSize = "cover";
+    newDiv.style.width = "40px";
+    newDiv.style.height = "40px";
+    newDiv.style.position = "absolute";
+    newDiv.style.left = `${x + 50}px`;
+    newDiv.style.top = `${y}px`;
+    newDiv.style.color = "#58E1E2";
+    newDiv.style.zIndex = "10";
+    newDiv.className =
+      "dynamic-div animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable";
+  
+    // Append the new div to the body or a specific ref
+    bodyRef.current && bodyRef.current.appendChild(newDiv);
+    
+    // Set a timeout to remove the div after 1 second
+    const interval = setTimeout(() => newDiv.remove(), 1000);
+  
+    // Cleanup function to clear the timeout
+    return () => clearTimeout(interval);
+  };
+  const [isTouching, setIsTouching] = useState(false);
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 1) {
+      setIsTouching(true);
+      handleTouch(event);
+    } else {
+      setIsTouching(false);
+    }
+  };
+  const handleTouchEnd = () => {
+    if (isTouching) {
+      if (remainedEnergy > 0 && token < 1000000000) {
+        setScore(`+${tapLevel}`);
+        if (token + tapLevel > 1000000000) {
+          setToken(1000000000);
+          dispatch(updateWallet(username, 1000000000, remainedEnergy - tapLevel));
+        } else {
+          setToken(token + tapLevel);
+          if (remainedEnergy - tapLevel < 0) {
+            dispatch(updateWallet(username, token + tapLevel, 0));
+            setRemainedEnergy(0);
+          } else {
+            dispatch(updateWallet(username, token + tapLevel, remainedEnergy - tapLevel));
+            setRemainedEnergy(remainedEnergy - tapLevel);
+          }
+        }
+      }
+    }
+    setIsTouching(false);
+  };
   console.log(
     "progressValuebar",
     progressValue,
@@ -328,6 +412,8 @@ function Home() {
             src="/image/tap-image/cashtree.webp"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           />
         </div>
       </div>
