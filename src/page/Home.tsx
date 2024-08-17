@@ -204,7 +204,7 @@ function Home() {
     newDiv.style.color = "#58E1E2";
     newDiv.style.zIndex = "50";
     newDiv.className =
-      "dynamic-div animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable";
+      "dynamic-div animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable text-white";
   
     // Append the new div to the body or a specific ref
     bodyRef.current && bodyRef.current.appendChild(newDiv);
@@ -294,6 +294,7 @@ function Home() {
 
   const [isTouching, setIsTouching] = useState(false);
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    setImgStatus(true);
     if (event.touches.length === 1) {
       setIsTouching(true);
       handleTouch(event);
@@ -303,6 +304,7 @@ function Home() {
     }
   };
   const handleTouchEnd = () => {
+    setImgStatus(false);
     if (isTouching) {
       if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
         setScore(`+${tapLevel}`);
@@ -356,7 +358,6 @@ function Home() {
       }
     }
     setIsTouching(false);
-    
   }
 
   const handleMouseDown = () => {
