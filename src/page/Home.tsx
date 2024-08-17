@@ -173,7 +173,8 @@ function Home() {
           dispatch(updateEnergy(username, limit));
           setRemainedEnergy(limit);
         }
-      }, (11 - tapLevel) * 1000);
+      // }, (11 - tapLevel) * 1000);
+      },  1000);
       return () => clearInterval(interval);
     }
   }, [username, remainedEnergy, limit, tapLevel]);
