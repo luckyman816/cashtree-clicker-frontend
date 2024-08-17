@@ -64,13 +64,6 @@ function Home() {
   useEffect(() => {
     if (user.tap_level != 0 && !hasRunEffect) {
       setToken(user.balance);
-      for (let i: number = 0; i < levelTargets.length; i++) {
-        if ((token - 3000) < levelTargets[i]) {
-          dispatch(updateTapLevel(username, i));
-          dispatch(updateLimit(username, energyLimit[i]));
-          break;
-        }
-      }
       setTapLevel(user.tap_level);
       setLimit(user.limit);
       setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1]);
