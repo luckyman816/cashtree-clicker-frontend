@@ -82,6 +82,7 @@ function Home() {
         setLimit(energyLimit[i - 1]);
         console.log('====================================');
         console.log('user.balance', user.balance);
+        console.log('Index', i);
         console.log('tap_level', tapLevel);
         console.log('====================================');
         break;
