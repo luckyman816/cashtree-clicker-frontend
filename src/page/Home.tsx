@@ -198,7 +198,7 @@ function Home() {
     newDiv.style.left = `${x + 50}px`;
     newDiv.style.top = `${y}px`;
     newDiv.style.color = "#58E1E2";
-    newDiv.style.zIndex = "10";
+    newDiv.style.zIndex = "50";
     newDiv.className =
       "dynamic-div animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable";
   
@@ -288,59 +288,71 @@ function Home() {
   //   }
   // };
 
-  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
-    setImgStatus(false);
-    if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
-      setScore(`+${tapLevel}`);
-      console.log("---------------------------------->", tapLevel);
-      console.log("---------------------------------->", limit);
-      if (token + tapLevel > levelTargets[tapLevel]) {
-        setToken(levelTargets[tapLevel]);
-        setTapLevel(tapLevel + 1);
-        setLimit(energyLimit[tapLevel + 1]);
-        dispatch(
-          updateWallet(
-            username,
-            levelTargets[tapLevel],
-            remainedEnergy - tapLevel
-          )
-        ).then(() => {
-          if (tapLevel < 10) {
-            dispatch(updateTapLevel(username, tapLevel + 1)).then(() => {
-              setTargetDiff(
-                levelTargets[tapLevel] - levelTargets[tapLevel - 1]
-              );
-            });
-            dispatch(
-              updateBalance(username, token + levelBonus[tapLevel - 1])
-            ).then(() => {
-              setToken(token + levelBonus[tapLevel - 1]);
-              toast.success("Level up! 🎉🎉🎉 You received bonus points!");
-            });
-            dispatch(updateLimit(username, energyLimit[tapLevel + 1]));
-            setLimit(energyLimit[tapLevel + 1]);
-          } else {
-            toast.error("Maximum level reached!");
-          }
-        });
-        setProgressValue(0);
-      } else {
-        setToken(token + tapLevel);
-        setProgressValue((prevValue) => prevValue + 1);
-        if (remainedEnergy - tapLevel < 0) {
-          dispatch(updateWallet(username, token + tapLevel, 0));
-          setRemainedEnergy(0);
-        } else {
-          dispatch(
-            updateWallet(username, token + tapLevel, remainedEnergy - tapLevel)
-          );
-          setRemainedEnergy(remainedEnergy - tapLevel);
-        }
-      }
+  const [isTouching, setIsTouching] = useState(false);
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 1) {
+      setIsTouching(true);
       handleTouch(event);
-    } else if (remainedEnergy - tapLevel <= 0) {
-      toast.error("Not enough energy!");
+      
+    } else {
+      setIsTouching(false);
     }
+  };
+  const handleTouchEnd = () => {
+    if (isTouching) {
+      if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
+        setScore(`+${tapLevel}`);
+        console.log("---------------------------------->", tapLevel);
+        console.log("---------------------------------->", limit);
+        if (token + tapLevel > levelTargets[tapLevel]) {
+          setToken(levelTargets[tapLevel]);
+          setTapLevel(tapLevel + 1);
+          setLimit(energyLimit[tapLevel + 1]);
+          dispatch(
+            updateWallet(
+              username,
+              levelTargets[tapLevel],
+              remainedEnergy - tapLevel
+            )
+          ).then(() => {
+            if (tapLevel < 10) {
+              dispatch(updateTapLevel(username, tapLevel + 1)).then(() => {
+                setTargetDiff(
+                  levelTargets[tapLevel] - levelTargets[tapLevel - 1]
+                );
+              });
+              dispatch(
+                updateBalance(username, token + levelBonus[tapLevel - 1])
+              ).then(() => {
+                setToken(token + levelBonus[tapLevel - 1]);
+                toast.success("Level up! 🎉🎉🎉 You received bonus points!");
+              });
+              dispatch(updateLimit(username, energyLimit[tapLevel + 1]));
+              setLimit(energyLimit[tapLevel + 1]);
+            } else {
+              toast.error("Maximum level reached!");
+            }
+          });
+          setProgressValue(0);
+        } else {
+          setToken(token + tapLevel);
+          setProgressValue((prevValue) => prevValue + 1);
+          if (remainedEnergy - tapLevel < 0) {
+            dispatch(updateWallet(username, token + tapLevel, 0));
+            setRemainedEnergy(0);
+          } else {
+            dispatch(
+              updateWallet(username, token + tapLevel, remainedEnergy - tapLevel)
+            );
+            setRemainedEnergy(remainedEnergy - tapLevel);
+          }
+        }
+      } else if (remainedEnergy - tapLevel <= 0) {
+        toast.error("Not enough energy!");
+      }
+    }
+    setIsTouching(false);
+    
   }
 
   const handleMouseDown = () => {
@@ -439,7 +451,7 @@ function Home() {
             src="/image/tap-image/cashtree.webp"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseLeave}
-            onTouchStart={handleMouseDown}
+            onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           />
         </div>
