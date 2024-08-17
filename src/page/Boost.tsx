@@ -98,7 +98,7 @@ export default function Boost() {
           toast.error("Insufficient balance!");
         }
       }
-    } else {
+    }else {
       toast.error("Please wait next day!")
     }
     setIsRefillEnergyModalOpen(false);
