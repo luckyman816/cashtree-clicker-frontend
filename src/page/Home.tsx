@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, useRef } from "react";
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
+import  { Toaster } from "react-hot-toast";
 import Footer from "../component/Footer";
 import ProgressBar from "../component/ProgressBar";
 import { dispatch, useSelector } from "../store";
@@ -8,14 +9,15 @@ import axios from "../utils/api";
 import "../css/font.css";
 import "../css/spread.css";
 import { useNavigate } from "react-router-dom";
-import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
+import { levelNames, levelTargets, energyLimit } from "../data";
+// import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
 import {
   insertWallet,
   updateWallet,
   updateEnergy,
   getWallet,
   updateTapLevel,
-  updateBalance,
+  // updateBalance,
   updateLimit,
 } from "../store/reducers/wallet";
 import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
@@ -117,44 +119,44 @@ function Home() {
   }
   const bodyRef = useRef<HTMLDivElement | null>(null);
   const [score, setScore] = useState<string>(`+${tapLevel}`);
-  const handleClick = (event: any) => {
-    event.preventDefault();
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = Math.random() * (event.clientX - rect.left);
-    const y = Math.random() * (event.clientY - rect.top);
+  // const handleClick = (event: any) => {
+  //   event.preventDefault();
+  //   const rect = event.currentTarget.getBoundingClientRect();
+  //   const x = Math.random() * (event.clientX - rect.left);
+  //   const y = Math.random() * (event.clientY - rect.top);
 
-    const styleElement = document.createElement("style");
-    document.head.appendChild(styleElement);
+  //   const styleElement = document.createElement("style");
+  //   document.head.appendChild(styleElement);
 
-    styleElement.sheet &&
-      styleElement.sheet.insertRule(
-        "@keyframes fade-out-top-right {0% {opacity: 1; transform: translateY(0); } 100% {opacity: 0;transform: translateY(-100%);}}",
-        0
-      );
-    const newDiv = document.createElement("div");
-    newDiv.textContent = `${score}`;
-    newDiv.style.backgroundPosition = "center";
-    newDiv.style.fontSize = "30px";
-    newDiv.style.paddingLeft = "30px";
-    newDiv.style.display = "flex";
-    newDiv.style.justifyContent = "center";
-    newDiv.style.alignItems = "center";
-    newDiv.style.width = "46px";
-    newDiv.style.height = "46px";
-    newDiv.style.position = "absolute";
-    newDiv.style.left = `${x + 50}px`;
-    newDiv.style.top = `${y}px`;
-    newDiv.style.color = "white";
-    newDiv.style.fontFamily = "archivo-bold";
-    newDiv.style.zIndex = "30";
-    newDiv.className =
-      "animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable";
+  //   styleElement.sheet &&
+  //     styleElement.sheet.insertRule(
+  //       "@keyframes fade-out-top-right {0% {opacity: 1; transform: translateY(0); } 100% {opacity: 0;transform: translateY(-100%);}}",
+  //       0
+  //     );
+  //   const newDiv = document.createElement("div");
+  //   newDiv.textContent = `${score}`;
+  //   newDiv.style.backgroundPosition = "center";
+  //   newDiv.style.fontSize = "30px";
+  //   newDiv.style.paddingLeft = "30px";
+  //   newDiv.style.display = "flex";
+  //   newDiv.style.justifyContent = "center";
+  //   newDiv.style.alignItems = "center";
+  //   newDiv.style.width = "46px";
+  //   newDiv.style.height = "46px";
+  //   newDiv.style.position = "absolute";
+  //   newDiv.style.left = `${x + 50}px`;
+  //   newDiv.style.top = `${y}px`;
+  //   newDiv.style.color = "white";
+  //   newDiv.style.fontFamily = "archivo-bold";
+  //   newDiv.style.zIndex = "30";
+  //   newDiv.className =
+  //     "animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable";
 
-    bodyRef.current && bodyRef.current.appendChild(newDiv);
-    const interval = setTimeout(() => newDiv && newDiv.remove(), 800);
+  //   bodyRef.current && bodyRef.current.appendChild(newDiv);
+  //   const interval = setTimeout(() => newDiv && newDiv.remove(), 800);
 
-    return () => clearTimeout(interval);
-  };
+  //   return () => clearTimeout(interval);
+  // };
   const handleTouch = (event: React.TouchEvent<HTMLDivElement>) => {
     event.preventDefault();
     
@@ -263,59 +265,59 @@ function Home() {
     }
   }, [username, remainedEnergy, limit, tapLevel]);
 
-  const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
-      setScore(`+${tapLevel}`);
-      console.log("---------------------------------->", tapLevel);
-      console.log("---------------------------------->", limit);
-      if (token + tapLevel > levelTargets[tapLevel]) {
-        setToken(levelTargets[tapLevel]);
-        setTapLevel(tapLevel + 1);
-        setLimit(energyLimit[tapLevel + 1]);
-        dispatch(
-          updateWallet(
-            username,
-            levelTargets[tapLevel],
-            remainedEnergy - tapLevel
-          )
-        ).then(() => {
-          if (tapLevel < 10) {
-            dispatch(updateTapLevel(username, tapLevel + 1)).then(() => {
-              setTargetDiff(
-                levelTargets[tapLevel] - levelTargets[tapLevel - 1]
-              );
-            });
-            dispatch(
-              updateBalance(username, token + levelBonus[tapLevel - 1])
-            ).then(() => {
-              setToken(token + levelBonus[tapLevel - 1]);
-              toast.success("Level up! 🎉🎉🎉 You received bonus points!");
-            });
-            dispatch(updateLimit(username, energyLimit[tapLevel + 1]));
-            setLimit(energyLimit[tapLevel + 1]);
-          } else {
-            toast.error("Maximum level reached!");
-          }
-        });
-        setProgressValue(0);
-      } else {
-        setToken(token + tapLevel);
-        setProgressValue((prevValue) => prevValue + 1);
-        if (remainedEnergy - tapLevel < 0) {
-          dispatch(updateWallet(username, token + tapLevel, 0));
-          setRemainedEnergy(0);
-        } else {
-          dispatch(
-            updateWallet(username, token + tapLevel, remainedEnergy - tapLevel)
-          );
-          setRemainedEnergy(remainedEnergy - tapLevel);
-        }
-      }
-      handleClick(event);
-    } else if (remainedEnergy - tapLevel <= 0) {
-      toast.error("Not enough energy!");
-    }
-  };
+  // const handleTap = (event: React.MouseEvent<HTMLDivElement>) => {
+  //   if (remainedEnergy > 0 && token <= levelTargets[tapLevel]) {
+  //     setScore(`+${tapLevel}`);
+  //     console.log("---------------------------------->", tapLevel);
+  //     console.log("---------------------------------->", limit);
+  //     if (token + tapLevel > levelTargets[tapLevel]) {
+  //       setToken(levelTargets[tapLevel]);
+  //       setTapLevel(tapLevel + 1);
+  //       setLimit(energyLimit[tapLevel + 1]);
+  //       dispatch(
+  //         updateWallet(
+  //           username,
+  //           levelTargets[tapLevel],
+  //           remainedEnergy - tapLevel
+  //         )
+  //       ).then(() => {
+  //         if (tapLevel < 10) {
+  //           dispatch(updateTapLevel(username, tapLevel + 1)).then(() => {
+  //             setTargetDiff(
+  //               levelTargets[tapLevel] - levelTargets[tapLevel - 1]
+  //             );
+  //           });
+  //           dispatch(
+  //             updateBalance(username, token + levelBonus[tapLevel - 1])
+  //           ).then(() => {
+  //             setToken(token + levelBonus[tapLevel - 1]);
+  //             toast.success("Level up! 🎉🎉🎉 You received bonus points!");
+  //           });
+  //           dispatch(updateLimit(username, energyLimit[tapLevel + 1]));
+  //           setLimit(energyLimit[tapLevel + 1]);
+  //         } else {
+  //           toast.error("Maximum level reached!");
+  //         }
+  //       });
+  //       setProgressValue(0);
+  //     } else {
+  //       setToken(token + tapLevel);
+  //       setProgressValue((prevValue) => prevValue + 1);
+  //       if (remainedEnergy - tapLevel < 0) {
+  //         dispatch(updateWallet(username, token + tapLevel, 0));
+  //         setRemainedEnergy(0);
+  //       } else {
+  //         dispatch(
+  //           updateWallet(username, token + tapLevel, remainedEnergy - tapLevel)
+  //         );
+  //         setRemainedEnergy(remainedEnergy - tapLevel);
+  //       }
+  //     }
+  //     handleClick(event);
+  //   } else if (remainedEnergy - tapLevel <= 0) {
+  //     toast.error("Not enough energy!");
+  //   }
+  // };
   const handleMouseDown = () => {
     setImgStatus(true);
   };
@@ -403,7 +405,7 @@ function Home() {
           className={`absolute bottom-[-20%] w-auto h-full z-50 ${
             imgStatus ? " p-3" : ""
           }`}
-          onClick={handleTap}
+          // onClick={handleTap}
         >
           <img
             className={` rounded-full w-auto h-[85%] ${
