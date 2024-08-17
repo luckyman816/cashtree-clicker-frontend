@@ -40,17 +40,17 @@ function Home() {
     setUserData();
   }, []);
 
-  useEffect(() => {
-    for (let i: number = 0; i < levelTargets.length; i++) {
-      if (token < levelTargets[i]) {
-        dispatch(updateTapLevel(username, i));
-        dispatch(updateLimit(username, energyLimit[i]));
-        break;
-      }
-    }
-    setTapLevel(user.tap_level);
-    setLimit(user.limit);
-  });
+  // useEffect(() => {
+  //   for (let i: number = 0; i < levelTargets.length; i++) {
+  //     if (token < levelTargets[i]) {
+  //       dispatch(updateTapLevel(username, i));
+  //       dispatch(updateLimit(username, energyLimit[i]));
+  //       break;
+  //     }
+  //   }
+  //   setTapLevel(user.tap_level);
+  //   setLimit(user.limit);
+  // });
 
   const setUserData = async () => {
     try {
@@ -74,17 +74,22 @@ function Home() {
     }
   };
   useEffect(() => {
+    console.log('====================================');
+    console.log("console.log(user)");
+    console.log('====================================');
+  },[])
+  useEffect(() => {
     if (user.tap_level != 0 && !hasRunEffect) {
       setToken(user.balance);
-      // for (let i: number = 0; i < levelTargets.length; i++) {
-      //   if (token < levelTargets[i]) {
-      //     dispatch(updateTapLevel(username, i));
-      //     dispatch(updateLimit(username, energyLimit[i]));
-      //     break;
-      //   }
-      // }
-      // setTapLevel(user.tap_level);
-      // setLimit(user.limit);
+      for (let i: number = 0; i < levelTargets.length; i++) {
+        if (token < levelTargets[i]) {
+          dispatch(updateTapLevel(username, i));
+          dispatch(updateLimit(username, energyLimit[i]));
+          break;
+        }
+      }
+      setTapLevel(user.tap_level);
+      setLimit(user.limit);
       setRemainedEnergy(user.energy);
       setHasRunEffect(true); // Mark the effect as run
     }
