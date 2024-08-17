@@ -27,7 +27,7 @@ function Home() {
   const [tapLevel, setTapLevel] = useState<number>(0);
   const [username, setUsername] = useState<string>("");
   const [token, setToken] = useState<number>(0);
-  const [remainedEnergy, setRemainedEnergy] = useState<number>(0);
+  const [remainedEnergy, setRemainedEnergy] = useState<number>(5000);
   const [limit, setLimit] = useState<number>(0);
   const [hasRunEffect, setHasRunEffect] = useState(false);
   const [progressValue, setProgressValue] = useState<number>(
