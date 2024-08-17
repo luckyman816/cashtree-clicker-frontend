@@ -65,7 +65,7 @@ function Home() {
     if (user.tap_level != 0 && !hasRunEffect) {
       setToken(user.balance);
       for (let i: number = 0; i < levelTargets.length; i++) {
-        if ((token) < levelTargets[i]) {
+        if (token < levelTargets[i]) {
           dispatch(updateTapLevel(username, i));
           dispatch(updateLimit(username, energyLimit[i]));
           break;
@@ -73,6 +73,7 @@ function Home() {
       }
       setTapLevel(user.tap_level);
       setLimit(user.limit);
+
       setTargetDiff(levelTargets[tapLevel] - levelTargets[tapLevel - 1]);
       setProgressValue(token - levelTargets[tapLevel - 1]);
       setRemainedEnergy(user.energy);
@@ -140,6 +141,10 @@ function Home() {
         if (username && remainedEnergy < limit) {
           dispatch(updateEnergy(username, remainedEnergy + tapLevel));
           setRemainedEnergy(remainedEnergy + tapLevel);
+        }
+        if (remainedEnergy > limit) {
+          dispatch(updateEnergy(username, limit));
+          setRemainedEnergy(limit);
         }
       }, (11 - tapLevel) * 1000);
       return () => clearInterval(interval);
