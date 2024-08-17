@@ -5,9 +5,9 @@ import {
   getWallet,
   updateBalance,
 } from "../store/reducers/wallet";
-import {levelTargets, energyLimit} from "../data";
+// import {levelTargets, energyLimit} from "../data";
 import { getDailyBoost, updateDoublePoints, updateRefillEnergy } from "../store/reducers/dailyBoost";
-import { updateTapLevel, updateLimit } from "../store/reducers/wallet";
+// import { updateTapLevel, updateLimit } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
 import Modal from "../component/modal";
 import Footer from "../component/Footer";
