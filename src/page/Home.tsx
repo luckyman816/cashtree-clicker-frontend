@@ -82,7 +82,7 @@ function Home() {
         console.log('tap_level', tapLevel);
         console.log('====================================');
         setTapLevel(i);
-        setLimit(energyLimit[i]);
+        setLimit(energyLimit[i - 1]);
         break;
       }
     }
@@ -93,7 +93,9 @@ function Home() {
       for (let i: number = 0; i < levelTargets.length; i++) {
         if (token < levelTargets[i]) {
           dispatch(updateTapLevel(username, i));
-          dispatch(updateLimit(username, energyLimit[i]));
+          dispatch(updateLimit(username, energyLimit[i - 1]));
+          setTapLevel(i);
+          setLimit(energyLimit[i - 1]);
           break;
         }
       }
