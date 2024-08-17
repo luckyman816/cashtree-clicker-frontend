@@ -207,7 +207,7 @@ export default function Boost() {
             <span className="text-white text-sm">Reset at 00:00 AM UTCC</span>
           </h1>
         </div>
-        <div className="flex flex-col gap-2 w-full my-3">
+        <div className="flex flex-col gap-3 w-full my-3">
           <div
             className={`w-full flex px-3 py-3 justify-between items-center bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] from-[#6929F1] to-[#AE47FF] hover:bg-[linear-gradient(0.5turn, #711CD9, #CD3CFB)] rounded-[20px] gap-2`}
             onClick={handleMouseClick}
@@ -280,7 +280,7 @@ export default function Boost() {
         isOpen={isDoublePointsModalOpen}
         onClose={handleCloseDoublePointsModal}
       >
-        <div className="flex flex-col items-center align-middle rounded-[20px] gap-5 my-5 h-full">
+        <div className="flex flex-col items-center align-middle rounded-[20px] gap-5 my-5 h-full pl-[18px]">
           <img
             src="image/assets/doublePointsModal.webp"
             alt=""
@@ -292,7 +292,7 @@ export default function Boost() {
             Maximum of 3 purchases per day.
           </p>
           <div
-            className="w-[80%] bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
+            className="w-full bg-[#7520FF] text-white rounded-[10px] flex justify-center items-center py-3"
             onClick={handleDoublePoints}
           >
             <span className="flex justify-center items-center text-white text-xl">
