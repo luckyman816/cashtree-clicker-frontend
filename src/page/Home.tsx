@@ -78,14 +78,14 @@ function Home() {
       if (user.balance < levelTargets[i]) {
         dispatch(updateTapLevel(username, i));
         dispatch(updateLimit(username, energyLimit[i]));
-        setTapLevel(user.tap_level);
-        setLimit(user.limit);
+        console.log('====================================');
+        console.log('tap_level', tapLevel);
+        console.log('====================================');
+        setTapLevel(i);
+        setLimit(energyLimit[i]);
         break;
       }
     }
-    console.log('====================================');
-    console.log('user.tap_level[i]', user.tap_level);
-    console.log('====================================');
   },[])
   useEffect(() => {
     if (user.tap_level != 0 && !hasRunEffect) {
