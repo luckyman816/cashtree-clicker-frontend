@@ -446,6 +446,7 @@ export default function Mission() {
           position:"top-right",
           className: 'animate-none w-full rounded-[20px] fade-toast',
           success: {
+            className:'animate-none w-full rounded-[20px] fade-toast',
             style: {
               transition: 'opacity 0.5s ease-in-out',
               color: "white",
@@ -455,6 +456,7 @@ export default function Mission() {
             },
           },
           error: {
+            className:'animate-none w-full rounded-[20px] fade-toast',
             style: {
               transition: 'opacity 0.5s ease-in-out',
               color: "white",
