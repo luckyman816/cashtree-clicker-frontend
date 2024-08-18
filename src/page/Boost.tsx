@@ -6,9 +6,6 @@ import {
   updateBalance,
 } from "../store/reducers/wallet";
 
-import { updateEnergy,updateTapLevel,updateLimit } from "../store/reducers/wallet";
-import {  levelTargets, energyLimit } from "../data";
-
 // import {levelTargets, energyLimit} from "../data";
 import {
   getDailyBoost,
@@ -26,7 +23,6 @@ const TOAST_LIMIT = 1;
 
 
 export default function Boost() {
-
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const username_state = useSelector((state) => state.wallet.user?.username);
   const limit_state = useSelector((state) => state.wallet.user?.limit);
@@ -58,49 +54,6 @@ export default function Boost() {
     useState<moment.Moment | null>(
       double_points_date_state ? moment(double_points_date_state) : null
     );
-
-
-    const [tapLevel, setTapLevel] = useState<number>(0);
-    const [remainedEnergy, setRemainedEnergy] = useState<number>(5000);
-  
-    const user = useSelector((state) => state.wallet.user);
-  
-    useEffect(() => {
-      for (let i: number = 0; i < levelTargets.length; i++) {
-        if (user.balance < levelTargets[i]) {
-          dispatch(updateTapLevel(username, i));
-          dispatch(updateLimit(username, energyLimit[i - 1]));
-          setTapLevel(i);
-          setLimit(energyLimit[i - 1]);
-          break;
-        }
-      }
-      console.log('====================================');
-      console.log('user.balance', user.balance);
-      console.log('Index', limit);
-      console.log('tap_level', tapLevel);
-      console.log('====================================');
-      setRemainedEnergy(user.energy);
-    },[])
-  
-    useEffect(() => {
-      if (tapLevel != 0) {
-        const interval = setInterval(() => {
-          if (username && remainedEnergy < limit) {
-            dispatch(updateEnergy(username, remainedEnergy + tapLevel));
-            setRemainedEnergy(remainedEnergy + tapLevel);
-          }
-          // if (remainedEnergy > limit) {
-          //   dispatch(updateEnergy(username, limit));
-          //   setRemainedEnergy(limit);
-          // }
-        // }, (11 - tapLevel) * 1000);
-        },  1000);
-        return () => clearInterval(interval);
-      }
-    }, [username, remainedEnergy, limit, tapLevel]);
-
-
   useEffect(() => {
     dispatch(getWallet(username));
     dispatch(getDailyBoost(username));
