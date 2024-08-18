@@ -1,6 +1,6 @@
 // import axios from "../utils/api";
 import { useSelector, dispatch } from "../store";
-import { updateBalance, updateDailyCoins } from "../store/reducers/wallet";
+import { updateBalance, updateDailyCoins,updateEnergy,updateTapLevel,updateLimit } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
 import toast, { Toaster,useToasterStore  } from "react-hot-toast";
 import Modal from "../component/modal";
@@ -13,9 +13,10 @@ import {
   updateDailyTaskStatus,
   updateTaskListStatus,
 } from "../store/reducers/dailyCoins";
-import { dailyCheckItems, taskListItems, dailyCoins } from "../data";
+import { dailyCheckItems, taskListItems, dailyCoins, levelTargets, energyLimit } from "../data";
 import "../css/font.css";
 import "react-toastify/dist/ReactToastify.css";
+
 
 interface daily_coins_received_status_types {
   day_1: boolean;
@@ -45,6 +46,61 @@ const subscribeYoutubeLink = "https://www.youtube.com/@CashtreeOfficial";
 const telegramGroupLink = "https://t.me/CashtreeOfficialCommunity";
 export default function Mission() {
 
+  const [tapLevel, setTapLevel] = useState<number>(0);
+  const [remainedEnergy, setRemainedEnergy] = useState<number>(5000);
+  const [limit, setLimit] = useState<number>(0);
+
+  const username_state = useSelector((state) => state.wallet.user?.username);
+  const balance_state = useSelector((state) => state.wallet.user?.balance);
+  const [username, setUsername] = useState<string>(username_state);
+  const [balance, setBalance] = useState<number>(balance_state);
+
+  const user = useSelector((state) => state.wallet.user);
+
+  useEffect(() => {
+    for (let i: number = 0; i < levelTargets.length; i++) {
+      if (user.balance < levelTargets[i]) {
+        dispatch(updateTapLevel(username, i));
+        dispatch(updateLimit(username, energyLimit[i - 1]));
+        setTapLevel(i);
+        setLimit(energyLimit[i - 1]);
+        console.log('====================================');
+        console.log('user.balance', user.balance);
+        console.log('Index', i);
+        console.log('tap_level', tapLevel);
+        console.log('====================================');
+        break;
+      }
+    }
+    if (remainedEnergy > limit) {
+        dispatch(updateEnergy(username, limit));
+        setRemainedEnergy(limit);
+    }
+  },[])
+
+  useEffect(() => {
+    if (user.tap_level != 0) {
+      setRemainedEnergy(user.energy);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (tapLevel != 0) {
+      const interval = setInterval(() => {
+        if (username && remainedEnergy < limit) {
+          dispatch(updateEnergy(username, remainedEnergy + tapLevel));
+          setRemainedEnergy(remainedEnergy + tapLevel);
+        }
+        // if (remainedEnergy > limit) {
+        //   dispatch(updateEnergy(username, limit));
+        //   setRemainedEnergy(limit);
+        // }
+      // }, (11 - tapLevel) * 1000);
+      },  1000);
+      return () => clearInterval(interval);
+    }
+  }, [username, remainedEnergy, limit, tapLevel]);
+
   const { toasts } = useToasterStore();
 
   useEffect(() => {
@@ -58,10 +114,7 @@ export default function Mission() {
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
-  const username_state = useSelector((state) => state.wallet.user?.username);
-  const balance_state = useSelector((state) => state.wallet.user?.balance);
-  const [username, setUsername] = useState<string>(username_state);
-  const [balance, setBalance] = useState<number>(balance_state);
+
   //-------------------------Get the Daily Coins Modal Function----------------------//
   const daily_coins_state = useSelector(
     (state) => state.wallet.user?.daily_coins
