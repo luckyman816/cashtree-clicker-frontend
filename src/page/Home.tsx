@@ -201,7 +201,6 @@ function Home() {
     newDiv.style.position = "absolute";
     newDiv.style.left = `${x + 50}px`;
     newDiv.style.top = `${y}px`;
-    newDiv.style.color = "#58E1E2";
     newDiv.style.zIndex = "50";
     newDiv.className =
       "dynamic-div animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable text-white";
