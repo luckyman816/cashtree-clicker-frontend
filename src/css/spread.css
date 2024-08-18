@@ -32,3 +32,15 @@
 .bg-color-animation {
   animation: colorSpread 1s linear forwards infinite;
 }
+
+.fade-toast {
+  opacity: 0; /* Start with toast hidden */
+}
+
+.fade-toast[data-state='visible'] {
+  opacity: 1; /* Fade in */
+}
+
+.fade-toast[data-state='hidden'] {
+  opacity: 0; /* Fade out */
+}

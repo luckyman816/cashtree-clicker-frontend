@@ -147,7 +147,7 @@ export default function Mission() {
       if (daily_coins_received_status.day_1 === false) {
         dispatch(updateBalance(username, balance + 500)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 1", true));
-          toast.success("You have received " + 500 + " coins!");
+          toast.success("You have received " + 500 + " coins!", {duration: 3000});
         });
       } else if (
         daily_coins_received_status.day_1 &&
@@ -155,7 +155,7 @@ export default function Mission() {
       ) {
         dispatch(updateBalance(username, balance + 1000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 2", true));
-          toast.success("You have received " + 1000 + " coins!");
+          toast.success("You have received " + 1000 + " coins!", {duration: 3000});
         });
       } else if (
         daily_coins_received_status.day_2 &&
@@ -163,7 +163,7 @@ export default function Mission() {
       ) {
         dispatch(updateBalance(username, balance + 2000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 3", true));
-          toast.success("You have received " + 2000 + " coins!");
+          toast.success("You have received " + 2000 + " coins!", {duration: 3000});
         });
       } else if (
         daily_coins_received_status.day_3 &&
@@ -171,7 +171,7 @@ export default function Mission() {
       ) {
         dispatch(updateBalance(username, balance + 3000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 4", true));
-          toast.success("You have received " + 3000 + " coins!");
+          toast.success("You have received " + 3000 + " coins!", {duration: 3000});
         });
       } else if (
         daily_coins_received_status.day_4 &&
@@ -179,7 +179,7 @@ export default function Mission() {
       ) {
         dispatch(updateBalance(username, balance + 4000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 5", true));
-          toast.success("You have received " + 4000 + " coins!");
+          toast.success("You have received " + 4000 + " coins!", {duration: 3000});
         });
       } else if (
         daily_coins_received_status.day_5 &&
@@ -187,7 +187,7 @@ export default function Mission() {
       ) {
         dispatch(updateBalance(username, balance + 5000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 6", true));
-          toast.success("You have received " + 5000 + " coins!");
+          toast.success("You have received " + 5000 + " coins!", {duration: 3000});
         });
       } else if (
         daily_coins_received_status.day_6 &&
@@ -195,7 +195,7 @@ export default function Mission() {
       ) {
         dispatch(updateBalance(username, balance + 10000)).then(() => {
           dispatch(updateDailyCoinsReceivedStatus(username, "Day 7", true));
-          toast.success("You have received " + 10000 + " coins!");
+          toast.success("You have received " + 10000 + " coins!", {duration: 3000});
         });
       }
       dispatch(updateDailyCoins(username, moment())).then(() => {
@@ -203,14 +203,14 @@ export default function Mission() {
       });
 
     } else if (diffDays > 1) {
-      toast.error("The time has already passed! Plesae reset daily coins!");
+      toast.error("The time has already passed! Plesae reset daily coins!", {duration: 3000});
     } else if (diffDays === 0) {
-      toast.error("Please wait for the next day!");
+      toast.error("Please wait for the next day!", {duration: 3000});
     }
   };
   const handleResetDailyCoins = () => {
     dispatch(updateDailyCoins(username, moment())).then(() => {
-      toast.success("The time is reset ");
+      toast.success("The time is reset ", {duration: 3000});
       setIsReceiveModalOpen(false);
     });
   };
@@ -282,17 +282,17 @@ export default function Mission() {
       window.open(retweetTwitterLink, "_blank");
       dispatch(updateDailyTaskStatus(username, "retweet", moment(), true));
     } else {
-      toast.error("Please wait for the next day!");
+      toast.error("Please wait for the next day!", {duration: 3000});
     }
   };
   const handleCheckRetweetTwitter = () => {
     if (retweet_status.status) {
       dispatch(updateBalance(username, balance + 500)).then(() => {
         dispatch(updateDailyTaskStatus(username, "retweet", moment(), false));
-        toast.success("You have received " + 500 + " coins!");
+        toast.success("You have received " + 500 + " coins!", {duration: 3000});
       });
     } else {
-      toast.error("Please join!");
+      toast.error("Please join!", {duration: 3000});
     }
   };
   const handleJoinCommentMedium = () => {
@@ -300,17 +300,17 @@ export default function Mission() {
       window.open(commentMediumLink, "_blank");
       dispatch(updateDailyTaskStatus(username, "comment", moment(), true));
     } else {
-      toast.error("Please wait for the next day!");
+      toast.error("Please wait for the next day!", {duration: 3000});
     }
   };
   const handleCheckCommentMedium = () => {
     if (comment_status.status) {
       dispatch(updateBalance(username, balance + 1000)).then(() => {
         dispatch(updateDailyTaskStatus(username, "comment", moment(), false));
-        toast.success("You have received " + 1000 + " coins!");
+        toast.success("You have received " + 1000 + " coins!", {duration: 3000});
       });
     } else {
-      toast.error("Please join!");
+      toast.error("Please join!", {duration: 3000});
     }
   };
   const handleJoinLikePost = () => {
@@ -318,17 +318,17 @@ export default function Mission() {
       window.open(likePostLink, "_blank");
       dispatch(updateDailyTaskStatus(username, "like", moment(), true));
     } else {
-      toast.error("Please wait for the next day!");
+      toast.error("Please wait for the next day!", {duration: 3000});
     }
   };
   const handleCheckLikePost = () => {
     if (like_status.status) {
       dispatch(updateBalance(username, balance + 2000)).then(() => {
         dispatch(updateDailyTaskStatus(username, "like", moment(), false));
-        toast.success("You have received " + 2000 + " coins!");
+        toast.success("You have received " + 2000 + " coins!", {duration: 3000});
       });
     } else {
-      toast.error("Please join!");
+      toast.error("Please join!", {duration: 3000});
     }
   };
   const handleJoinInstagram = () => {
@@ -339,13 +339,13 @@ export default function Mission() {
     if (instagram_status.status) {
       if (!instagram_status.earned) {
         dispatch(updateBalance(username, balance + 1000)).then(() => {
-          toast.success("You have received " + 1000 + " coins!");
+          toast.success("You have received " + 1000 + " coins!", {duration: 3000});
         });
       } else {
-        toast.error("You have already received!");
+        toast.error("You have already received!", {duration: 3000});
       }
     } else {
-      toast.error("Please join!");
+      toast.error("Please join!", {duration: 3000});
     }
   };
   const handleJoinYoutube = () => {
@@ -356,13 +356,13 @@ export default function Mission() {
     if (youtube_status.status) {
       if (!youtube_status.earned) {
         dispatch(updateBalance(username, balance + 1000)).then(() => {
-          toast.success("You have received " + 1000 + " coins!");
+          toast.success("You have received " + 1000 + " coins!", {duration: 3000});
         });
       } else {
-        toast.error("You have already received!");
+        toast.error("You have already received!", {duration: 3000});
       }
     } else {
-      toast.error("Please join!");
+      toast.error("Please join!", {duration: 3000});
     }
   };
   const handleJoinTelegramGroup = () => {
@@ -373,13 +373,13 @@ export default function Mission() {
     if (telegram_status.status) {
       if (telegram_status.earned) {
         dispatch(updateBalance(username, balance + 1000)).then(() => {
-          toast.success("You have received " + 1000 + " coins!");
+          toast.success("You have received " + 1000 + " coins!", {duration: 3000});
         });
       } else {
-        toast.error("You have already received!");
+        toast.error("You have already received!", {duration: 3000});
       }
     } else {
-      toast.error("Please join!");
+      toast.error("Please join!", {duration: 3000});
     }
   };
   const [isDailyReward, setIsDailyReward] = useState<boolean>(false);
@@ -441,9 +441,28 @@ export default function Mission() {
   };
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
-      <Toaster 
+      <Toaster
         toastOptions={{
-          className: 'border-none bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] from-[rgba(243, 243, 243, 0.03)] to-[rgba(255, 255, 255, 0.34)] w-full rounded-[20px]',
+          className: ' w-full rounded-[20px] fade-toast',
+          style: {
+            transition: 'opacity 0.5s ease-in-out', // Transition for fade effect
+          },
+          success: {
+            style: {
+              transition: 'opacity 0.5s ease-in-out',
+              border:"none",
+              borderRadius:"20px",
+              backgroundImage: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
+            },
+          },
+          error: {
+            style: {
+              transition: 'opacity 0.5s ease-in-out',
+              border:"none",
+              borderRadius:"20px",
+              backgroundImage: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
+            },
+          },
         }}
       />
       <div className="flex flex-col justify-center items-center gap-[30px] w-full mt-8">

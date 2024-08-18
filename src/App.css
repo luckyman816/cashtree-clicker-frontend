@@ -95,3 +95,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.fade-toast {
+  opacity: 0; /* Start with toast hidden */
+}
+
+.fade-toast[data-state='visible'] {
+  opacity: 1; /* Fade in */
+}
+
+.fade-toast[data-state='hidden'] {
+  opacity: 0; /* Fade out */
+}
