@@ -72,17 +72,12 @@ export default function Mission() {
         break;
       }
     }
+    setRemainedEnergy(user.energy);
     if (remainedEnergy > limit) {
         dispatch(updateEnergy(username, limit));
         setRemainedEnergy(limit);
     }
   },[])
-
-  useEffect(() => {
-    if (user.tap_level != 0) {
-      setRemainedEnergy(user.energy);
-    }
-  }, [user]);
 
   useEffect(() => {
     if (tapLevel != 0) {
