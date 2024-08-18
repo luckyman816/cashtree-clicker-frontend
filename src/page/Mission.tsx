@@ -455,10 +455,9 @@ export default function Mission() {
               // transition: 'opacity 0.5s ease-in-out',
               animationName:"toaster",
               animationDuration: "5s",
-              color: "white",
               border:"none",
               borderRadius:"20px",
-              background: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
+              background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
             },
           },
           error: {
@@ -471,10 +470,9 @@ export default function Mission() {
               // transition: 'opacity 0.5s ease-in-out',
               animationName:"toaster",
               animationDuration: "5s",
-              color: "white",
               border:"none",
               borderRadius:"20px",
-              background: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
+              background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
             },
             
           },
