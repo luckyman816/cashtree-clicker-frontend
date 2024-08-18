@@ -6,6 +6,7 @@ import toast, { Toaster,useToasterStore  } from "react-hot-toast";
 import Modal from "../component/modal";
 import moment from "moment";
 import Footer from "../component/Footer";
+import "../App.css";
 import {
   getDailyCoinsReceivedStatus,
   updateDailyCoinsReceivedStatus,
@@ -443,12 +444,11 @@ export default function Mission() {
     <div className="w-full h-full flex flex-col justify-between items-center">
       <Toaster
         toastOptions={{
-          position:"top-right",
           className: 'animate-none w-full rounded-[20px] fade-toast',
           success: {
             className:'animate-none w-full rounded-[20px] fade-toast',
             style: {
-              animation:'none',
+              animation: "ease-in-out .5s",
               transition: 'opacity 0.5s ease-in-out',
               color: "white",
               border:"none",
@@ -459,7 +459,7 @@ export default function Mission() {
           error: {
             className:'animate-none w-full rounded-[20px] fade-toast',
             style: {
-              animation:'none',
+              animation:'ease-in-out .5s',
               transition: 'opacity 0.5s ease-in-out',
               color: "white",
               border:"none",
