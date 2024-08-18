@@ -64,19 +64,15 @@ export default function Mission() {
         dispatch(updateLimit(username, energyLimit[i - 1]));
         setTapLevel(i);
         setLimit(energyLimit[i - 1]);
-        console.log('====================================');
-        console.log('user.balance', user.balance);
-        console.log('Index', i);
-        console.log('tap_level', tapLevel);
-        console.log('====================================');
         break;
       }
     }
+    console.log('====================================');
+    console.log('user.balance', user.balance);
+    console.log('Index', limit);
+    console.log('tap_level', tapLevel);
+    console.log('====================================');
     setRemainedEnergy(user.energy);
-    if (remainedEnergy > limit) {
-        dispatch(updateEnergy(username, limit));
-        setRemainedEnergy(limit);
-    }
   },[])
 
   useEffect(() => {
