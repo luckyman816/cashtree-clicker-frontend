@@ -110,7 +110,7 @@ function Home() {
       dispatch(updateEnergy(username, limit));
       setRemainedEnergy(limit);
     } 
-  },[])
+  })
 
   useEffect(() => {
     if (user.tap_level != 0 && !hasRunEffect) {
