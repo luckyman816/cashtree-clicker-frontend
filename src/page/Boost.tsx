@@ -11,7 +11,6 @@ import {
   updateDoublePoints,
   updateRefillEnergy,
 } from "../store/reducers/dailyBoost";
-import { levelTargets, energyLimit } from "../data";
 // import { updateTapLevel, updateLimit } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
 import Modal from "../component/modal";
@@ -128,16 +127,7 @@ export default function Boost() {
       } else {
         if (token > 3000) {
           dispatch(updateRefillEnergy(username, refill_energy + 1, moment()));
-
-          for (let i: number = 0; i < levelTargets.length; i++) {
-            if ((token > levelTargets[i]) && ((token - 3000) < levelTargets[i])) {
-              dispatch(updateWallet(username, token - 3000, energyLimit[i - 1]));
-              break;
-            }
-            dispatch(updateWallet(username, token - 3000, limit));
-          }
-
-
+          dispatch(updateWallet(username, token - 3000, limit));
           // for (let i: number = 0; i < levelTargets.length; i++) {
           //   if ((token - 3000) < levelTargets[i]) {
           //     dispatch(updateTapLevel(username, i));
