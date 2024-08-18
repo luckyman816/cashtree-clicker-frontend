@@ -170,8 +170,8 @@ function Home() {
     
     
     // Calculate the position of the touch relative to the element
-    const x =  Math.random() *(touch.clientX - rect.left);
-    const y = Math.random() * (touch.clientY - rect.top);
+    const x =  touch.clientX - rect.left;
+    const y =  touch.clientY - rect.top;
   
     // Create a style element for the animation
     const styleElement = document.createElement("style");
