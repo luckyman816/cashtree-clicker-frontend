@@ -106,7 +106,6 @@ function Home() {
   },[])
   useEffect(() => {
     if (remainedEnergy > limit) {
-      dispatch(updateEnergy(username, limit));
       setRemainedEnergy(limit);
   }
   })
