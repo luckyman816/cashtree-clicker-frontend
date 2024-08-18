@@ -1,12 +1,61 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../css/font.css"
 import { Link } from "react-router-dom";
+import { useSelector, dispatch } from "../store";
+import { updateEnergy,updateTapLevel,updateLimit } from "../store/reducers/wallet";
+import {  levelTargets, energyLimit } from "../data";
 
 const Onboarding = () => {
     const [pageNum, setPageNum] = useState<number>(1)
     const handleNext = () => {
         setPageNum((prevNum) => prevNum + 1)
     }
+
+
+    const username_state = useSelector((state) => state.wallet.user?.username);
+  const [username, ] = useState<string>(username_state);
+  const [tapLevel, setTapLevel] = useState<number>(0);
+  const [remainedEnergy, setRemainedEnergy] = useState<number>(5000);
+  const [limit, setLimit] = useState<number>(0);
+
+
+  const user = useSelector((state) => state.wallet.user);
+
+  useEffect(() => {
+    for (let i: number = 0; i < levelTargets.length; i++) {
+      if (user.balance < levelTargets[i]) {
+        dispatch(updateTapLevel(username, i));
+        dispatch(updateLimit(username, energyLimit[i - 1]));
+        setTapLevel(i);
+        setLimit(energyLimit[i - 1]);
+        break;
+      }
+    }
+    console.log('====================================');
+    console.log('user.balance', user.balance);
+    console.log('Index', limit);
+    console.log('tap_level', tapLevel);
+    console.log('====================================');
+    setRemainedEnergy(user.energy);
+  },[])
+
+  useEffect(() => {
+    if (tapLevel != 0) {
+      const interval = setInterval(() => {
+        if (username && remainedEnergy < limit) {
+          dispatch(updateEnergy(username, remainedEnergy + tapLevel));
+          setRemainedEnergy(remainedEnergy + tapLevel);
+        }
+        // if (remainedEnergy > limit) {
+        //   dispatch(updateEnergy(username, limit));
+        //   setRemainedEnergy(limit);
+        // }
+      // }, (11 - tapLevel) * 1000);
+      },  1000);
+      return () => clearInterval(interval);
+    }
+  }, [username, remainedEnergy, limit, tapLevel]);
+  
     return (
         <div className=" relative w-screen h-screen bg-[linear-gradient(0deg,_var(--tw-gradient-stops))] from-[#120F29] to-[#7F3AEF] py-5" >
             <div className=" absolute w-full h-full right-0 top-0 z-10" style={{ backgroundImage: "url(/image/onboarding/gradient.png)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
