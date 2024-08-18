@@ -30,8 +30,8 @@ function Home() {
   const [token, setToken] = useState<number>(0);
   const [tapLevel, setTapLevel] = useState<number>(0);
   const [username, setUsername] = useState<string>("");
-  const [remainedEnergy, setRemainedEnergy] = useState<number>(5000);
-  const [limit, setLimit] = useState<number>(0);
+  const [remainedEnergy, setRemainedEnergy] = useState<number>(10000);
+  const [limit, setLimit] = useState<number>(10000);
   const [hasRunEffect, setHasRunEffect] = useState(false);
   const [progressValue, setProgressValue] = useState<number>(
     token - levelTargets[tapLevel - 1]
@@ -94,10 +94,7 @@ function Home() {
         dispatch(updateLimit(username, energyLimit[i - 1]));
         setTapLevel(i);
         setLimit(energyLimit[i - 1]);
-        if (remainedEnergy > energyLimit[i - 1]) {
-            dispatch(updateEnergy(username, energyLimit[i - 1]));
-            setRemainedEnergy(energyLimit[i - 1]);
-        }
+        
         console.log('====================================');
         console.log('user.balance', user.balance);
         console.log('Index', i);
@@ -105,6 +102,10 @@ function Home() {
         console.log('====================================');
         break;
       }
+    }
+    if (remainedEnergy > limit) {
+      dispatch(updateEnergy(username, limit));
+      setRemainedEnergy(limit);
     }
   },[])
   useEffect(() => {
