@@ -47,9 +47,9 @@ export default function Mission() {
   const { toasts } = useToasterStore();
 
   useEffect(() => {
-    
+
     if (toasts.length > TOAST_LIMIT) {
-      const excessToasts = toasts.slice(0, toasts.length - TOAST_LIMIT);
+      const excessToasts = toasts.slice(TOAST_LIMIT, toasts.length);
       excessToasts.forEach(t => toast.dismiss(t.id));
     }
   }, [toasts]);
