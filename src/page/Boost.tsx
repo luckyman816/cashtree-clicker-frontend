@@ -1,5 +1,5 @@
 import { dispatch, useSelector } from "../store";
-import toast, { Toaster } from "react-hot-toast";
+import toast, { Toaster,useToasterStore } from "react-hot-toast";
 import {
   updateWallet,
   getWallet,
@@ -16,6 +16,11 @@ import { useEffect, useState } from "react";
 import Modal from "../component/modal";
 import Footer from "../component/Footer";
 import moment from "moment";
+
+
+const TOAST_LIMIT = 1;
+
+
 export default function Boost() {
   const tokenState = useSelector((state) => state.wallet.user?.balance);
   const username_state = useSelector((state) => state.wallet.user?.username);
@@ -52,6 +57,18 @@ export default function Boost() {
     dispatch(getWallet(username));
     dispatch(getDailyBoost(username));
   }, [username]);
+  
+  const { toasts } = useToasterStore();
+  
+  useEffect(() => {
+    
+    if (toasts.length > TOAST_LIMIT) {
+      const excessToasts = toasts.slice(0, toasts.length - TOAST_LIMIT);
+      excessToasts.forEach(t => toast.dismiss(t.id));
+    }
+  }, [toasts]);
+
+
   useEffect(() => {
     setToken(tokenState);
     setUsername(username_state);
@@ -182,7 +199,42 @@ export default function Boost() {
   };
   return (
     <div className="h-full w-full flex flex-col justify-between items-center">
-      <Toaster />
+      <Toaster
+      toastOptions={{
+        className: 'w-full rounded-[20px] fade-toast',
+        success: {
+          className:' w-full rounded-[20px] fade-toast',
+          style: {
+            position:"absolute",
+            top:"180px",
+            left:"0%",
+            // animation:"ease-in .5s",
+            // transition: 'opacity 0.5s ease-in-out',
+            animationName:"toaster",
+            animationDuration: "5s",
+            border:"none",
+            borderRadius:"20px",
+            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+          },
+        },
+        error: {
+          className:'w-full rounded-[20px] fade-toast',
+          style: {
+            position:"absolute",
+            top:"180px",
+            left:"0%",
+            // animation:'ease-in .5s',
+            // transition: 'opacity 0.5s ease-in-out',
+            animationName:"toaster",
+            animationDuration: "5s",
+            border:"none",
+            borderRadius:"20px",
+            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+          },
+          
+        },
+      }}
+      />
       <div className="w-full mt-3 flex flex-col justify-start items-start p-4 gap-4 max-h-[75vh] min-h-[75vh]">
         <div
           className={`w-full my-[6px] p-[1px] rounded-[20px]`}

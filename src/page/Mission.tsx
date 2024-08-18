@@ -443,40 +443,40 @@ export default function Mission() {
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
       <Toaster
-        toastOptions={{
-          className: 'w-full rounded-[20px] fade-toast',
-          success: {
-            className:' w-full rounded-[20px] fade-toast',
-            style: {
-              position:"absolute",
-              top:"180px",
-              left:"0%",
-              // animation:"ease-in .5s",
-              // transition: 'opacity 0.5s ease-in-out',
-              animationName:"toaster",
-              animationDuration: "5s",
-              border:"none",
-              borderRadius:"20px",
-              background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
-            },
+      toastOptions={{
+        className: 'w-full rounded-[20px] fade-toast',
+        success: {
+          className:' w-full rounded-[20px] fade-toast',
+          style: {
+            position:"absolute",
+            top:"180px",
+            left:"0%",
+            // animation:"ease-in .5s",
+            // transition: 'opacity 0.5s ease-in-out',
+            animationName:"toaster",
+            animationDuration: "5s",
+            border:"none",
+            borderRadius:"20px",
+            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
           },
-          error: {
-            className:'w-full rounded-[20px] fade-toast',
-            style: {
-              position:"absolute",
-              top:"180px",
-              left:"0%",
-              // animation:'ease-in .5s',
-              // transition: 'opacity 0.5s ease-in-out',
-              animationName:"toaster",
-              animationDuration: "5s",
-              border:"none",
-              borderRadius:"20px",
-              background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
-            },
-            
+        },
+        error: {
+          className:'w-full rounded-[20px] fade-toast',
+          style: {
+            position:"absolute",
+            top:"180px",
+            left:"0%",
+            // animation:'ease-in .5s',
+            // transition: 'opacity 0.5s ease-in-out',
+            animationName:"toaster",
+            animationDuration: "5s",
+            border:"none",
+            borderRadius:"20px",
+            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
           },
-        }}
+          
+        },
+      }}     
       />
       <div className="flex flex-col justify-center items-center gap-[30px] w-full mt-8">
         <div className="flex flex-col justify-center items-center">

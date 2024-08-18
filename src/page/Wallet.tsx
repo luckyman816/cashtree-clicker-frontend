@@ -1,9 +1,12 @@
 import Footer from "../component/Footer";
-import /*toast,*/ { Toaster } from 'react-hot-toast';
-import { useState } from "react"
+import toast, { Toaster,useToasterStore } from 'react-hot-toast';
+import { useState, useEffect } from "react"
 import "../css/font.css"
 import Modal from "../component/modal";
 import { TonConnectButton, useTonAddress } from "@tonconnect/ui-react";
+
+const TOAST_LIMIT = 1;
+
 export default function WalletPage() {
   const address = useTonAddress();
   console.log("wallet address---------->", address);
@@ -18,10 +21,55 @@ export default function WalletPage() {
 
   }
 
+  const { toasts } = useToasterStore();
+
+  useEffect(() => {
+    
+    if (toasts.length > TOAST_LIMIT) {
+      const excessToasts = toasts.slice(0, toasts.length - TOAST_LIMIT);
+      excessToasts.forEach(t => toast.dismiss(t.id));
+    }
+  }, [toasts]);
+
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
       <div className="flex flex-col justify-center items-center gap-2 w-full">
-        <Toaster />
+        <Toaster
+        toastOptions={{
+          className: 'w-full rounded-[20px] fade-toast',
+          success: {
+            className:' w-full rounded-[20px] fade-toast',
+            style: {
+              position:"absolute",
+              top:"180px",
+              left:"0%",
+              // animation:"ease-in .5s",
+              // transition: 'opacity 0.5s ease-in-out',
+              animationName:"toaster",
+              animationDuration: "5s",
+              border:"none",
+              borderRadius:"20px",
+              background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+            },
+          },
+          error: {
+            className:'w-full rounded-[20px] fade-toast',
+            style: {
+              position:"absolute",
+              top:"180px",
+              left:"0%",
+              // animation:'ease-in .5s',
+              // transition: 'opacity 0.5s ease-in-out',
+              animationName:"toaster",
+              animationDuration: "5s",
+              border:"none",
+              borderRadius:"20px",
+              background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+            },
+            
+          },
+        }}
+        />
         <div className="flex justify-between items-center px-3 w-full mt-3">
           <img src="image/icon/back.png" alt="" className=" w-4 h-4" />
           <h3

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { useSelector } from "../store";
-import toast, { Toaster } from "react-hot-toast";
+import toast, { Toaster,useToasterStore  } from "react-hot-toast";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import  { initUtils } from "@telegram-apps/sdk"
 import axios from "../utils/api";
@@ -9,6 +9,8 @@ import "../css/font.css";
 // import { users } from "../data";
 // import Modal from "../component/modal";
 import Footer from "../component/Footer";
+
+const TOAST_LIMIT = 1;
 
 export default function Friends() {
   function formatNumberWithCommas(number: number, locale = "en-US") {
@@ -27,6 +29,19 @@ export default function Friends() {
   ]);
   const [textToCopy, setTextToCopy] = useState<string>("");
   // const [isInviteModal, setIsInviteModal] = useState<boolean>(false);
+
+
+  const { toasts } = useToasterStore();
+
+  useEffect(() => {
+    
+    if (toasts.length > TOAST_LIMIT) {
+      const excessToasts = toasts.slice(0, toasts.length - TOAST_LIMIT);
+      excessToasts.forEach(t => toast.dismiss(t.id));
+    }
+  }, [toasts]);
+
+
   useEffect(() => {
     setUsername(username_state);
     setTextToCopy(`https://t.me/cashtreeTele_bot?start=${username_state}`);
@@ -52,7 +67,42 @@ export default function Friends() {
   console.log("textToCopy", textToCopy);
   return (
     <div className="h-full w-full flex flex-col justify-between items-center">
-      <Toaster />
+      <Toaster
+      toastOptions={{
+        className: 'w-full rounded-[20px] fade-toast',
+        success: {
+          className:' w-full rounded-[20px] fade-toast',
+          style: {
+            position:"absolute",
+            top:"180px",
+            left:"0%",
+            // animation:"ease-in .5s",
+            // transition: 'opacity 0.5s ease-in-out',
+            animationName:"toaster",
+            animationDuration: "5s",
+            border:"none",
+            borderRadius:"20px",
+            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+          },
+        },
+        error: {
+          className:'w-full rounded-[20px] fade-toast',
+          style: {
+            position:"absolute",
+            top:"180px",
+            left:"0%",
+            // animation:'ease-in .5s',
+            // transition: 'opacity 0.5s ease-in-out',
+            animationName:"toaster",
+            animationDuration: "5s",
+            border:"none",
+            borderRadius:"20px",
+            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+          },
+          
+        },
+      }}
+      />
       <div className="p-5 flex flex-col justify-center items-center gap-5 w-full h-[90%] mt-8">
         <div className="flex flex-col gap-[6px] w-full justify-center items-center text-[32px] leading-[35px] text-white font-bold">
           Invite Friends

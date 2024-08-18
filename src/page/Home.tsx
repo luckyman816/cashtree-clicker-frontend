@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, useRef } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast, { Toaster,useToasterStore } from "react-hot-toast";
 import Footer from "../component/Footer";
 import ProgressBar from "../component/ProgressBar";
 import { dispatch, useSelector } from "../store";
@@ -20,6 +20,9 @@ import {
 } from "../store/reducers/wallet";
 import { addDailyCoinsReceivedStatus } from "../store/reducers/dailyCoins";
 import { addDailyBoost } from "../store/reducers/dailyBoost";
+
+const TOAST_LIMIT = 1;
+
 function Home() {
   const navigate = useNavigate();
   const user = useSelector((state) => state.wallet.user);
@@ -73,6 +76,17 @@ function Home() {
       console.log(error);
     }
   };
+
+  const { toasts } = useToasterStore();
+
+  useEffect(() => {
+    
+    if (toasts.length > TOAST_LIMIT) {
+      const excessToasts = toasts.slice(0, toasts.length - TOAST_LIMIT);
+      excessToasts.forEach(t => toast.dismiss(t.id));
+    }
+  }, [toasts]);
+
   useEffect(() => {
     for (let i: number = 0; i < levelTargets.length; i++) {
       if (user.balance < levelTargets[i]) {
@@ -374,7 +388,42 @@ function Home() {
   console.log("imgStatus", imgStatus);
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
-      <Toaster />
+      <Toaster
+      toastOptions={{
+        className: 'w-full rounded-[20px] fade-toast',
+        success: {
+          className:' w-full rounded-[20px] fade-toast',
+          style: {
+            position:"absolute",
+            top:"180px",
+            left:"0%",
+            // animation:"ease-in .5s",
+            // transition: 'opacity 0.5s ease-in-out',
+            animationName:"toaster",
+            animationDuration: "5s",
+            border:"none",
+            borderRadius:"20px",
+            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+          },
+        },
+        error: {
+          className:'w-full rounded-[20px] fade-toast',
+          style: {
+            position:"absolute",
+            top:"180px",
+            left:"0%",
+            // animation:'ease-in .5s',
+            // transition: 'opacity 0.5s ease-in-out',
+            animationName:"toaster",
+            animationDuration: "5s",
+            border:"none",
+            borderRadius:"20px",
+            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+          },
+          
+        },
+      }}
+      />
       <div className="w-[90%] flex flex-col justify-center items-center gap-4 mt-12">
         <div className="flex justify-between items-center w-full px-3 py-1 bg-[linear-gradient(330deg,_var(--tw-gradient-stops))] from-[#2A0E58] to-[#7B34EF] rounded-[20px] border border-[#9165D6]">
           <div className=" flex justify-center items-center p-2 ">
