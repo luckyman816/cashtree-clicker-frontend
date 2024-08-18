@@ -2,7 +2,7 @@
 import { useSelector, dispatch } from "../store";
 import { updateBalance, updateDailyCoins } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast, { Toaster,useToasterStore  } from "react-hot-toast";
 import Modal from "../component/modal";
 import moment from "moment";
 import Footer from "../component/Footer";
@@ -33,6 +33,9 @@ interface task_status_types {
   status: boolean;
   earned: boolean;
 }
+
+const TOAST_LIMIT = 3;
+
 const retweetTwitterLink = "https://x.com/cashtreeglobal";
 const commentMediumLink = "https://medium.com/@CashtreeGlobal";
 const likePostLink = "https://medium.com/@CashtreeGlobal";
@@ -40,6 +43,17 @@ const followInstagramLink = "https://www.instagram.com/cashtree_app/";
 const subscribeYoutubeLink = "https://www.youtube.com/@CashtreeOfficial";
 const telegramGroupLink = "https://t.me/CashtreeOfficialCommunity";
 export default function Mission() {
+  
+  const { toasts } = useToasterStore();
+
+  useEffect(() => {
+    // Filter visible toasts
+    const visibleToasts = toasts.filter((_, i) => i >= TOAST_LIMIT);
+
+    // Dismiss toasts beyond the limit
+    visibleToasts.forEach((t) => toast.dismiss(t.id));
+  }, [toasts]);
+
   function formatNumberWithCommas(number: number, locale = "en-US") {
     return new Intl.NumberFormat(locale).format(number);
   }
