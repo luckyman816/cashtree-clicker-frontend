@@ -45,15 +45,15 @@ const followInstagramLink = "https://www.instagram.com/cashtree_app/";
 const subscribeYoutubeLink = "https://www.youtube.com/@CashtreeOfficial";
 const telegramGroupLink = "https://t.me/CashtreeOfficialCommunity";
 export default function Mission() {
-
+  
+  const balance_state = useSelector((state) => state.wallet.user?.balance);
+  const [balance, setBalance] = useState<number>(balance_state);
+  const username_state = useSelector((state) => state.wallet.user?.username);
+  const [username, setUsername] = useState<string>(username_state);
   const [tapLevel, setTapLevel] = useState<number>(0);
   const [remainedEnergy, setRemainedEnergy] = useState<number>(5000);
   const [limit, setLimit] = useState<number>(0);
 
-  const username_state = useSelector((state) => state.wallet.user?.username);
-  const balance_state = useSelector((state) => state.wallet.user?.balance);
-  const [username, setUsername] = useState<string>(username_state);
-  const [balance, setBalance] = useState<number>(balance_state);
 
   const user = useSelector((state) => state.wallet.user);
 
