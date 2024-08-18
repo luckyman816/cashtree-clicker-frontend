@@ -199,7 +199,7 @@ function Home() {
     newDiv.style.width = "40px";
     newDiv.style.height = "40px";
     newDiv.style.position = "absolute";
-    newDiv.style.left = `${x + 50}px`;
+    newDiv.style.left = `${x}px`;
     newDiv.style.top = `${y}px`;
     newDiv.style.zIndex = "50";
     newDiv.className =
