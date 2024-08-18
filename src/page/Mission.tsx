@@ -443,16 +443,14 @@ export default function Mission() {
     <div className="w-full h-full flex flex-col justify-between items-center">
       <Toaster
         toastOptions={{
+          position:"top-right",
           className: ' w-full rounded-[20px] fade-toast',
-          style: {
-            transition: 'opacity 0.5s ease-in-out', // Transition for fade effect
-          },
           success: {
             style: {
               transition: 'opacity 0.5s ease-in-out',
               border:"none",
               borderRadius:"20px",
-              backgroundImage: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
+              background: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
             },
           },
           error: {
@@ -460,7 +458,7 @@ export default function Mission() {
               transition: 'opacity 0.5s ease-in-out',
               border:"none",
               borderRadius:"20px",
-              backgroundImage: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
+              background: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
             },
           },
         }}
