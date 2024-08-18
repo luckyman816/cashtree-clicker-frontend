@@ -34,7 +34,7 @@ interface task_status_types {
   earned: boolean;
 }
 
-const TOAST_LIMIT = 3;
+const TOAST_LIMIT = 1;
 
 const retweetTwitterLink = "https://x.com/cashtreeglobal";
 const commentMediumLink = "https://medium.com/@CashtreeGlobal";
@@ -43,7 +43,7 @@ const followInstagramLink = "https://www.instagram.com/cashtree_app/";
 const subscribeYoutubeLink = "https://www.youtube.com/@CashtreeOfficial";
 const telegramGroupLink = "https://t.me/CashtreeOfficialCommunity";
 export default function Mission() {
-  
+
   const { toasts } = useToasterStore();
 
   useEffect(() => {
