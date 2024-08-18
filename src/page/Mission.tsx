@@ -449,8 +449,8 @@ export default function Mission() {
             className:' w-full rounded-[20px] fade-toast',
             style: {
               position:"absolute",
-              top:"30%",
-              left:"10%",
+              top:"180px",
+              left:"0%",
               // animation:"ease-in .5s",
               // transition: 'opacity 0.5s ease-in-out',
               animationName:"toaster",
@@ -465,8 +465,8 @@ export default function Mission() {
             className:'w-full rounded-[20px] fade-toast',
             style: {
               position:"absolute",
-              top:"30%",
-              left:"10%",
+              top:"180px",
+              left:"0%",
               // animation:'ease-in .5s',
               // transition: 'opacity 0.5s ease-in-out',
               animationName:"toaster",
