@@ -47,9 +47,9 @@ export default function Mission() {
   const { toasts } = useToasterStore();
 
   useEffect(() => {
-
+    
     if (toasts.length > TOAST_LIMIT) {
-      const excessToasts = toasts.slice(TOAST_LIMIT, toasts.length);
+      const excessToasts = toasts.slice(0, toasts.length - TOAST_LIMIT);
       excessToasts.forEach(t => toast.dismiss(t.id));
     }
   }, [toasts]);
@@ -441,7 +441,11 @@ export default function Mission() {
   };
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
-      <Toaster />
+      <Toaster 
+        toastOptions={{
+          className: 'border-none bg-[linear-gradient(340deg,_var(--tw-gradient-stops))] from-[rgba(243, 243, 243, 0.03)] to-[rgba(255, 255, 255, 0.34)] w-full rounded-[20px]',
+        }}
+      />
       <div className="flex flex-col justify-center items-center gap-[30px] w-full mt-8">
         <div className="flex flex-col justify-center items-center">
           <img
