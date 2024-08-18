@@ -448,6 +448,7 @@ export default function Mission() {
           success: {
             className:'animate-none w-full rounded-[20px] fade-toast',
             style: {
+              animation:'none',
               transition: 'opacity 0.5s ease-in-out',
               color: "white",
               border:"none",
@@ -458,6 +459,7 @@ export default function Mission() {
           error: {
             className:'animate-none w-full rounded-[20px] fade-toast',
             style: {
+              animation:'none',
               transition: 'opacity 0.5s ease-in-out',
               color: "white",
               border:"none",
