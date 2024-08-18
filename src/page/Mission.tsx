@@ -47,11 +47,11 @@ export default function Mission() {
   const { toasts } = useToasterStore();
 
   useEffect(() => {
-    // Filter visible toasts
-    const visibleToasts = toasts.filter((_, i) => i >= TOAST_LIMIT);
-
-    // Dismiss toasts beyond the limit
-    visibleToasts.forEach((t) => toast.dismiss(t.id));
+    
+    if (toasts.length > TOAST_LIMIT) {
+      const excessToasts = toasts.slice(0, toasts.length - TOAST_LIMIT);
+      excessToasts.forEach(t => toast.dismiss(t.id));
+    }
   }, [toasts]);
 
   function formatNumberWithCommas(number: number, locale = "en-US") {
