@@ -444,11 +444,14 @@ export default function Mission() {
     <div className="w-full h-full flex flex-col justify-between items-center">
       <Toaster
         toastOptions={{
-          className: 'animate-none w-full rounded-[20px] fade-toast',
+          className: 'w-full rounded-[20px] fade-toast',
           success: {
-            className:'animate-none w-full rounded-[20px] fade-toast',
+            className:' w-full rounded-[20px] fade-toast',
             style: {
-              animation: "ease-in-out .5s",
+              position:"absolute",
+              top:"30%",
+              left:"10%",
+              animation:"ease-in .5s",
               transition: 'opacity 0.5s ease-in-out',
               color: "white",
               border:"none",
@@ -457,9 +460,12 @@ export default function Mission() {
             },
           },
           error: {
-            className:'animate-none w-full rounded-[20px] fade-toast',
+            className:'w-full rounded-[20px] fade-toast',
             style: {
-              animation:'ease-in-out .5s',
+              position:"absolute",
+              top:"30%",
+              left:"10%",
+              animation:'ease-in .5s',
               transition: 'opacity 0.5s ease-in-out',
               color: "white",
               border:"none",
