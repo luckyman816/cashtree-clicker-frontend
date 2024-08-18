@@ -11,7 +11,7 @@ import {
   updateDoublePoints,
   updateRefillEnergy,
 } from "../store/reducers/dailyBoost";
-import { levelNames, levelTargets, levelBonus, energyLimit } from "../data";
+import { levelTargets, energyLimit } from "../data";
 // import { updateTapLevel, updateLimit } from "../store/reducers/wallet";
 import { useEffect, useState } from "react";
 import Modal from "../component/modal";
