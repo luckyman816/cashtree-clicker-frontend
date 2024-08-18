@@ -452,7 +452,9 @@ export default function Mission() {
               top:"30%",
               left:"10%",
               // animation:"ease-in .5s",
-              transition: 'opacity 0.5s ease-in-out',
+              // transition: 'opacity 0.5s ease-in-out',
+              animationName:"toaster",
+              animationDuration: "5s",
               color: "white",
               border:"none",
               borderRadius:"20px",
@@ -466,12 +468,15 @@ export default function Mission() {
               top:"30%",
               left:"10%",
               // animation:'ease-in .5s',
-              transition: 'opacity 0.5s ease-in-out',
+              // transition: 'opacity 0.5s ease-in-out',
+              animationName:"toaster",
+              animationDuration: "5s",
               color: "white",
               border:"none",
               borderRadius:"20px",
               background: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
             },
+            
           },
         }}
       />

@@ -17,33 +17,32 @@
   }
 }
 
-  ::-webkit-scrollbar {
-    width: 10px; /* Adjust the width of the scrollbar */
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the tracking area */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scroll thumb */
-    border-radius: 10px; /* Roundness of the scroll thumb */
-    &:hover {
-      background: #555; /* Color of the scroll thumb on hover */
-    }
-  }
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar */
+}
 
-  .not-selectable {
-    user-select: none;
-    pointer-events: none;
-  }
-  
-  /* For Firefox */
-  * {
-    scrollbar-width: thin; /* "auto" or "thin" */
-    scrollbar-color: #888 #f1f1f1; /* thumb and track color */
-  }
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the tracking area */
+}
 
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scroll thumb */
+  border-radius: 10px; /* Roundness of the scroll thumb */
+  &:hover {
+    background: #555; /* Color of the scroll thumb on hover */
+  }
+}
+
+.not-selectable {
+  user-select: none;
+  pointer-events: none;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #888 #f1f1f1; /* thumb and track color */
+}
 
 .animate-fadeInMoveUp {
   animation-name: fadeInMoveUp;
@@ -58,7 +57,7 @@
   justify-content: center;
   margin: 0 auto;
   text-align: center;
-  background: linear-gradient(to top, #4A14A5, #2C0A64);
+  background: linear-gradient(to top, #4a14a5, #2c0a64);
 }
 
 .logo {
@@ -82,6 +81,13 @@
     transform: rotate(360deg);
   }
 }
+@keyframes toaster {
+  0% {opacity: 0;}
+  5% {opacity: 1;}
+  95% {opacity: 1;}
+  0% {opacity: 0;}
+
+}
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
@@ -100,10 +106,10 @@
   opacity: 0; /* Start with toast hidden */
 }
 
-.fade-toast[data-state='visible'] {
+.fade-toast[data-state="visible"] {
   opacity: 1; /* Fade in */
 }
 
-.fade-toast[data-state='hidden'] {
+.fade-toast[data-state="hidden"] {
   opacity: 0; /* Fade out */
 }
