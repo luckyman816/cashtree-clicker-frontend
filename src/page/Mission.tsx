@@ -444,10 +444,11 @@ export default function Mission() {
       <Toaster
         toastOptions={{
           position:"top-right",
-          className: ' w-full rounded-[20px] fade-toast',
+          className: 'animate-none w-full rounded-[20px] fade-toast',
           success: {
             style: {
               transition: 'opacity 0.5s ease-in-out',
+              color: "white",
               border:"none",
               borderRadius:"20px",
               background: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
@@ -456,6 +457,7 @@ export default function Mission() {
           error: {
             style: {
               transition: 'opacity 0.5s ease-in-out',
+              color: "white",
               border:"none",
               borderRadius:"20px",
               background: "linear-gradient(340deg,rgba(243, 243, 243, 0.03),rgba(255, 255, 255, 0.34))",
