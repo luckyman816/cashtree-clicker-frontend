@@ -352,7 +352,7 @@ export default function Leaderboard() {
             </div>
           </div>
         ) : (
-          <div className="min-h-[70vh] max-h-[70vh] overflow-y-auto w-[95%]">
+          <div className="min-h-[70vh] max-h-[70vh] overflow-y-auto w-[97%]">
             <div className="flex flex-col justify-center items-center gap-3 w-full">
               <div className="flex justify-between items-center w-full gap-4">
                 <h1 className="text-white text-xl font-bold text-left">
@@ -391,27 +391,27 @@ export default function Leaderboard() {
               </div>
               <div className="flex flex-col gap-1 w-full justify-start items-start">
                 <h1 className="text-white text-xl">
-                  Milestone 8 With Total Reward
+                  Milestone 1 With Total Reward
                 </h1>
                 <h1 className="text-white font-bold text-4xl">
-                  {formatNumberWithCommas(75000000)}$CTT
+                  {formatNumberWithCommas(750000)}$CTT
                 </h1>
               </div>
-              <div className="flex gap-3 justify-center items-center">
-                <div className="flex flex-col gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#7520FF] rounded-[10px] p-5">
+              <div className="flex gap-3 justify-center items-center w-full">
+                <div className="flex flex-col flex-grow gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#7520FF] rounded-[10px] p-5">
                   <h1 className="text-white text-[12px]">
                     Reward For Leaderboard
                   </h1>
                   <h1 className="text-white font-bold text-[18px]">
-                    {formatNumberWithCommas(25000000)}$CTT
+                    {formatNumberWithCommas(250000)}$CTT
                   </h1>
                 </div>
-                <div className="flex flex-col gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF] rounded-[10px] p-5">
+                <div className="flex flex-col flex-grow gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF] rounded-[10px] p-5">
                   <h1 className="text-white text-[12px]">
-                    Reward For Leaderboard
+                    Reward For Conversion Point
                   </h1>
                   <h1 className="text-white font-bold text-[18px]">
-                    {formatNumberWithCommas(25000000)}$CTT
+                    {formatNumberWithCommas(500000)}$CTT
                   </h1>
                 </div>
               </div>
