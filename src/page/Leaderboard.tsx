@@ -400,18 +400,18 @@ export default function Leaderboard() {
               <div className="flex gap-3 justify-center items-center w-full">
                 <div className="flex flex-col flex-grow gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#7520FF] rounded-[10px] p-5">
                   <h1 className="text-white text-[12px]">
-                    Reward For Leaderboard
+                    Reward For<br/> Leaderboard
                   </h1>
                   <h1 className="text-white font-bold text-[18px]">
-                    {formatNumberWithCommas(250000)}$CTT
+                    {formatNumberWithCommas(250000)}<br/>$CTT
                   </h1>
                 </div>
                 <div className="flex flex-col flex-grow gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF] rounded-[10px] p-5">
                   <h1 className="text-white text-[12px]">
-                    Reward For Conversion Point
+                    Reward For<br/> Conversion Point
                   </h1>
                   <h1 className="text-white font-bold text-[18px]">
-                    {formatNumberWithCommas(500000)}$CTT
+                    {formatNumberWithCommas(500000)}<br/>$CTT
                   </h1>
                 </div>
               </div>
