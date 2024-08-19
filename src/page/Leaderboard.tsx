@@ -398,19 +398,19 @@ export default function Leaderboard() {
                 </h1>
               </div>
               <div className="flex gap-3 justify-center items-center w-full">
-                <div className="flex flex-col flex-grow gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#7520FF] rounded-[10px] p-5">
+                <div className="flex flex-col flex-1 gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#7520FF] rounded-[10px] p-5">
                   <h1 className="text-white text-[12px]">
                     Reward For<br/> Leaderboard
                   </h1>
-                  <h1 className="text-white font-bold text-[18px]">
+                  <h1 className="text-white font-bold text-[18px] text-left">
                     {formatNumberWithCommas(250000)}<br/>$CTT
                   </h1>
                 </div>
-                <div className="flex flex-col flex-grow gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF] rounded-[10px] p-5">
+                <div className="flex flex-col flex-1 gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF] rounded-[10px] p-5">
                   <h1 className="text-white text-[12px]">
                     Reward For<br/> Conversion Point
                   </h1>
-                  <h1 className="text-white font-bold text-[18px]">
+                  <h1 className="text-white font-bold text-[18px] text-left">
                     {formatNumberWithCommas(500000)}<br/>$CTT
                   </h1>
                 </div>
@@ -442,7 +442,7 @@ export default function Leaderboard() {
                       </div>
                     </div>
                     <h1 className="text-[16px] text-white">
-                      {formatNumberWithCommas(3450899)}
+                      {formatNumberWithCommas(user.balance)}
                     </h1>
                   </div>
                   <div className="flex justify-between items-center gap-2 w-full">
