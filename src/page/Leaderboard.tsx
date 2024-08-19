@@ -367,7 +367,7 @@ export default function Leaderboard() {
                   className="w-16 h-[70px]"
                 />
               </div>
-              <div className="flex justify-start items-center text-white text-sm w-[90%]">
+              <div className="flex justify-start items-center text-white text-sm w-[90%] text-left">
                 8 August - 22 August 2024 <br />
                 Game Status:
               </div>
@@ -399,7 +399,7 @@ export default function Leaderboard() {
               </div>
               <div className="flex gap-3 justify-center items-center w-full">
                 <div className="flex flex-col flex-1 gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#3B1E6A] to-[#7520FF] rounded-[10px] p-5">
-                  <h1 className="text-white text-[12px]">
+                  <h1 className="text-white text-[12px] text-left">
                     Reward For<br/> Leaderboard
                   </h1>
                   <h1 className="text-white font-bold text-[18px] text-left">
@@ -407,7 +407,7 @@ export default function Leaderboard() {
                   </h1>
                 </div>
                 <div className="flex flex-col flex-1 gap-2 bg-[linear-gradient(315deg,_var(--tw-gradient-stops))] from-[#4517A8] to-[#D940FF] rounded-[10px] p-5">
-                  <h1 className="text-white text-[12px]">
+                  <h1 className="text-white text-[12px] text-left">
                     Reward For<br/> Conversion Point
                   </h1>
                   <h1 className="text-white font-bold text-[18px] text-left">
