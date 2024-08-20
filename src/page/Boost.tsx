@@ -225,7 +225,7 @@ export default function Boost() {
               // animation:"ease-in .5s",
               // transition: 'opacity 0.5s ease-in-out',
               animationName: "toaster",
-              animationDuration: "5s",
+              animationDuration: "1s",
               border: "none",
               borderRadius: "20px",
               background:
@@ -241,7 +241,7 @@ export default function Boost() {
               // animation:'ease-in .5s',
               // transition: 'opacity 0.5s ease-in-out',
               animationName: "toaster",
-              animationDuration: "5s",
+              animationDuration: "1s",
               border: "none",
               borderRadius: "20px",
               background:
