@@ -97,7 +97,7 @@ function Home() {
         
         console.log('====================================');
         console.log('user.balance', user.balance);
-        console.log('Index', i);
+        console.log('Index---------------------------------', i);
         console.log('tap_level', tapLevel);
         console.log('====================================');
         break;
