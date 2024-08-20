@@ -137,7 +137,7 @@ export default function Boost() {
           toast.error("Insufficient balance!");
         }
       }
-    } else if (diffDaysRefill > 1) {
+    } else if (diffDaysRefill >= 1) {
       if (token > 3000) {
         dispatch(updateRefillEnergy(username, 1, moment()));
         dispatch(updateWallet(username, token - 3000, limit));
@@ -168,7 +168,7 @@ export default function Boost() {
           toast.error("Please wait for 15 minutes");
         }
       }
-    } else if (diffDaysDouble > 1) {
+    } else if (diffDaysDouble >= 1) {
       dispatch(updateDoublePoints(username, 1, moment()));
       dispatch(updateBalance(username, token + 500));
       // for (let i: number = 0; i < levelTargets.length; i++) {
