@@ -1,5 +1,5 @@
 import { dispatch, useSelector } from "../store";
-import toast, { Toaster,useToasterStore } from "react-hot-toast";
+import toast, { Toaster, useToasterStore } from "react-hot-toast";
 import {
   updateWallet,
   getWallet,
@@ -18,9 +18,7 @@ import Modal from "../component/modal";
 import Footer from "../component/Footer";
 import moment from "moment";
 
-
 const TOAST_LIMIT = 1;
-
 
 export default function Boost() {
   const tokenState = useSelector((state) => state.wallet.user?.balance);
@@ -58,17 +56,15 @@ export default function Boost() {
     dispatch(getWallet(username));
     dispatch(getDailyBoost(username));
   }, [username]);
-  
+
   const { toasts } = useToasterStore();
-  
+
   useEffect(() => {
-    
     if (toasts.length > TOAST_LIMIT) {
       const excessToasts = toasts.slice(0, toasts.length - TOAST_LIMIT);
-      excessToasts.forEach(t => toast.dismiss(t.id));
+      excessToasts.forEach((t) => toast.dismiss(t.id));
     }
   }, [toasts]);
-
 
   useEffect(() => {
     setToken(tokenState);
@@ -141,6 +137,12 @@ export default function Boost() {
           toast.error("Insufficient balance!");
         }
       }
+    } else if (diffDaysRefill >= 1) {
+      if (token > 3000) {
+        dispatch(updateRefillEnergy(username, 1, moment()));
+        dispatch(updateWallet(username, token - 3000, limit));
+        toast.success("Refilled successfully");
+      }
     } else {
       toast.error("Please wait next day!");
     }
@@ -166,6 +168,17 @@ export default function Boost() {
           toast.error("Please wait for 15 minutes");
         }
       }
+    } else if (diffDaysDouble >= 1) {
+      dispatch(updateDoublePoints(username, 1, moment()));
+      dispatch(updateBalance(username, token + 500));
+      // for (let i: number = 0; i < levelTargets.length; i++) {
+      //   if ((token + 500) < levelTargets[i]) {
+      //     dispatch(updateTapLevel(username, i));
+      //     dispatch(updateLimit(username, energyLimit[i]));
+      //     break;
+      //   }
+      // }
+      toast.success("Get the double points successfully");
     } else {
       toast.error("Please wait next day!");
     }
@@ -201,40 +214,41 @@ export default function Boost() {
   return (
     <div className="h-full w-full flex flex-col justify-between items-center">
       <Toaster
-      toastOptions={{
-        className: 'w-full rounded-[20px] fade-toast',
-        success: {
-          className:' w-full rounded-[20px] fade-toast',
-          style: {
-            position:"absolute",
-            top:"180px",
-            left:"0%",
-            // animation:"ease-in .5s",
-            // transition: 'opacity 0.5s ease-in-out',
-            animationName:"toaster",
-            animationDuration: "5s",
-            border:"none",
-            borderRadius:"20px",
-            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+        toastOptions={{
+          className: "w-full rounded-[20px] fade-toast",
+          success: {
+            className: " w-full rounded-[20px] fade-toast",
+            style: {
+              position: "absolute",
+              top: "180px",
+              left: "0%",
+              // animation:"ease-in .5s",
+              // transition: 'opacity 0.5s ease-in-out',
+              animationName: "toaster",
+              animationDuration: "1s",
+              border: "none",
+              borderRadius: "20px",
+              background:
+                "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+            },
           },
-        },
-        error: {
-          className:'w-full rounded-[20px] fade-toast',
-          style: {
-            position:"absolute",
-            top:"180px",
-            left:"0%",
-            // animation:'ease-in .5s',
-            // transition: 'opacity 0.5s ease-in-out',
-            animationName:"toaster",
-            animationDuration: "5s",
-            border:"none",
-            borderRadius:"20px",
-            background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+          error: {
+            className: "w-full rounded-[20px] fade-toast",
+            style: {
+              position: "absolute",
+              top: "180px",
+              left: "0%",
+              // animation:'ease-in .5s',
+              // transition: 'opacity 0.5s ease-in-out',
+              animationName: "toaster",
+              animationDuration: "1s",
+              border: "none",
+              borderRadius: "20px",
+              background:
+                "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
+            },
           },
-          
-        },
-      }}
+        }}
       />
       <div className="w-full mt-3 flex flex-col justify-start items-start p-4 gap-4 max-h-[75vh] min-h-[75vh]">
         <div

@@ -30,8 +30,8 @@ function Home() {
   const [token, setToken] = useState<number>(0);
   const [tapLevel, setTapLevel] = useState<number>(0);
   const [username, setUsername] = useState<string>("");
-  const [remainedEnergy, setRemainedEnergy] = useState<number>(10000);
-  const [limit, setLimit] = useState<number>(10000);
+  const [limit, setLimit] = useState<number>(user.limit);
+  const [remainedEnergy, setRemainedEnergy] = useState<number>(user.energy);
   const [hasRunEffect, setHasRunEffect] = useState(false);
   const [progressValue, setProgressValue] = useState<number>(
     token - levelTargets[tapLevel - 1]
@@ -97,7 +97,7 @@ function Home() {
         
         console.log('====================================');
         console.log('user.balance', user.balance);
-        console.log('Index', i);
+        console.log('Index---------------------------------', i);
         console.log('tap_level', tapLevel);
         console.log('====================================');
         break;
@@ -240,8 +240,12 @@ function Home() {
   );
 
   useEffect(() => {
-    if (tapLevel != 0) {
+    if (tapLevel != 0 && hasRunEffect) {
       const interval = setInterval(() => {
+        if(remainedEnergy > limit) {
+          dispatch(updateEnergy(username, limit));
+          setRemainedEnergy(limit);
+        }
         if (username && remainedEnergy < limit) {
           dispatch(updateEnergy(username, remainedEnergy + tapLevel));
           setRemainedEnergy(remainedEnergy + tapLevel);
@@ -405,7 +409,7 @@ function Home() {
             // animation:"ease-in .5s",
             // transition: 'opacity 0.5s ease-in-out',
             animationName:"toaster",
-            animationDuration: "5s",
+            animationDuration: "1s",
             border:"none",
             borderRadius:"20px",
             background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
@@ -420,7 +424,7 @@ function Home() {
             // animation:'ease-in .5s',
             // transition: 'opacity 0.5s ease-in-out',
             animationName:"toaster",
-            animationDuration: "5s",
+            animationDuration: "1s",
             border:"none",
             borderRadius:"20px",
             background: "linear-gradient(340deg,rgba(243, 243, 243, 1),rgba(255, 255, 255, 1))",
