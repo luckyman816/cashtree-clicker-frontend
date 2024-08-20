@@ -240,9 +240,9 @@ function Home() {
   );
 
   useEffect(() => {
-    if (tapLevel != 0) {
+    if (tapLevel != 0 && hasRunEffect) {
       const interval = setInterval(() => {
-        if(remainedEnergy > limit && hasRunEffect) {
+        if(remainedEnergy > limit) {
           dispatch(updateEnergy(username, limit));
           setRemainedEnergy(limit);
         }
